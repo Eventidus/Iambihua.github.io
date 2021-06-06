@@ -3,7 +3,7 @@
   <entry>
     <title>平平淡淡无奇贰零贰零年总结</title>
     <url>/2021/06/05/Thinking/summary-2020/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="理由"><a href="#理由" class="headerlink" title="理由"></a>理由</h2><p>看着网络平台上很多人都在晒自己的2020年度总结，有的是长篇大文，有的甚至连自己出生到现在的30年人生也总结了。</p>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="理由"><a href="#理由" class="headerlink" title="理由"></a>理由</h2><p>看着网络平台上很多人都在晒自己的2020年度总结，有的是长篇大文，有的甚至连自己出生到现在的30年人生也总结了。</p>
 <p>我突然就很想写一篇自己的年度总结。</p>
 <p>如果写成了，那将会是我人生的第一篇年度总结，往后也可能会坚持继续写下去吧。</p>
 <p>但谁又知道呢，未来实在太抽象。</p>
@@ -51,7 +51,7 @@
   <entry>
     <title>如果问题无法解决，那就换个问法继续解决</title>
     <url>/2021/06/05/Thinking/NIC_dirver/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>前几天早上起床洗嗽后，开始开启Window系统解决昨晚遗留的问题。</p>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>前几天早上起床洗嗽后，开始开启Window系统解决昨晚遗留的问题。</p>
 <p>可刚显示桌面后却发现电脑是无网络状态，打开网络图标发现所有WIFI信号全消失了，只有有线网络可以使用。</p>
 <p>于是我又打开网络适配器选项界面，发现WLAN选项不见了，其他该有的都在。</p>
 <p>我马上想到可能是网卡驱动的问题，于是又打开设备管理器中的网络适配器。</p>
@@ -100,7 +100,7 @@
   <entry>
     <title>确定自己努力的方向</title>
     <url>/2021/06/05/Thinking/learning-direction/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote>
 <p>前几天跟一位老朋友聊了下专业上的事，以及以后的就业选择。<br>她已经打算报考教资，但是以后并不打算当老师，报考教资也无非在毕业时多点人生选择。<br>她更愿意去互联网企业体验，所以想努力一把，然而苦于没有明确的学习方向。<br>由于时间限制，我们当时并没有聊太多。<br>但是我觉得我可以趁空写一篇博文，一来总结自己的思考经验，二来也希望对她有一定的借鉴帮助吧。<br>当然此文除了为那位朋友写，也是为昨晚痛哭流涕开始努力的室友写！😜<br>注意内容仅为个人建议，而且内容适用于计算机专业学生，实际还是以大家自身真实情况为准。</p>
 </blockquote>
 <span id="more"></span>
@@ -162,7 +162,7 @@
   <entry>
     <title>关于知识学习和公众号的思考</title>
     <url>/2021/06/05/Thinking/knowledge%20and%20public%20account%20/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="如何学习知识"><a href="#如何学习知识" class="headerlink" title="如何学习知识"></a>如何学习知识</h2><ul>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="如何学习知识"><a href="#如何学习知识" class="headerlink" title="如何学习知识"></a>如何学习知识</h2><ul>
 <li><p>系统性</p>
 <p>学习应该是系统性的，而非碎片化的，只有系统性地学习知识才能强化记忆加深理解。</p>
 <p>因为一个系统性的知识体系包含多个知识板块，而每个知识板块又包含多个知识。</p>
@@ -202,7 +202,7 @@
   <entry>
     <title>关于大学生活的一点思考总结</title>
     <url>/2021/06/05/Thinking/About_college/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote>
 <p>以此文送给即将步入大学校园的可爱学弟学妹们，祝愿你们在大学遇到更好的伙伴，更好的师长，特别是更好的自己。</p>
 </blockquote>
 <p>下文是我对两年大学生活的总结思考，这其中的许多观点说不上是否绝对正确。</p>
@@ -311,7 +311,7 @@
   <entry>
     <title>SQL总结</title>
     <url>/2021/06/05/studynotes/sql/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote>
 <p>文本记录了自己学习SQL时的一些知识点总结。</p>
 <p>学习于<a href="https://www.liaoxuefeng.com/wiki/1177760294764384">廖雪峰的SQL教程</a></p>
 </blockquote>
@@ -355,7 +355,7 @@
   <entry>
     <title>语义化版本2.0.0介绍</title>
     <url>/2021/06/05/studynotes/semver2.0.0/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="语义化版本2-0-0介绍"><a href="#语义化版本2-0-0介绍" class="headerlink" title="语义化版本2.0.0介绍"></a>语义化版本2.0.0介绍</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>语义化版本是为了解决软件开发过程中依赖关系混乱或者依赖锁死的情况。</p>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="语义化版本2-0-0介绍"><a href="#语义化版本2-0-0介绍" class="headerlink" title="语义化版本2.0.0介绍"></a>语义化版本2.0.0介绍</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>语义化版本是为了解决软件开发过程中依赖关系混乱或者依赖锁死的情况。</p>
 <p>它的标准格式如下：</p>
 <blockquote>
 <p><strong>x.y.z</strong></p>
@@ -414,7 +414,7 @@
   <entry>
     <title>搜索技巧</title>
     <url>/2021/06/05/studynotes/SearchSkills/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><strong>本期歌曲推荐《白兰鸽巡游记》</strong></p>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p><strong>本期歌曲推荐《白兰鸽巡游记》</strong></p>
 <p>“<em>年少时总是向往南方，直到青丝暮成雪的那天，才发现南方和我都是相逢一笑过客，同白兰鸽在一个安静的早晨飞回北方吧，那里冬天的寒风再怎样刺骨，可那是我的故乡啊</em>“——网易云音乐热评.</p>
 <h1 id="1-关键词搜索"><a href="#1-关键词搜索" class="headerlink" title="1.关键词搜索"></a>1.关键词搜索</h1><blockquote>
 <p>加双引号” “ 搜索法，有时候当我们搜索查找某个关键词时，加上双引号浏览器会返回与关键词相匹配吻合的结果，这样会极大提高搜索结果的准确性,详见下图。</p>
@@ -451,7 +451,7 @@
   <entry>
     <title>npm常用命令</title>
     <url>/2021/06/05/studynotes/npm-command/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="npm常见命令"><a href="#npm常见命令" class="headerlink" title="npm常见命令"></a>npm常见命令</h1><h2 id="一-npm-amp-yarn介绍"><a href="#一-npm-amp-yarn介绍" class="headerlink" title="一.npm&amp;yarn介绍"></a>一.npm&amp;yarn介绍</h2><p>npm是一个基于Node.js的包管理工具。<br>yarn是Facebook、Google、Exponent 和 Tilde 联合推出了一个新的 包管理工具,与npm相比有些优势。<br>npm在安装Node.js时会被一并安装，yarn则需要额外安装。</p>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="npm常见命令"><a href="#npm常见命令" class="headerlink" title="npm常见命令"></a>npm常见命令</h1><h2 id="一-npm-amp-yarn介绍"><a href="#一-npm-amp-yarn介绍" class="headerlink" title="一.npm&amp;yarn介绍"></a>一.npm&amp;yarn介绍</h2><p>npm是一个基于Node.js的包管理工具。<br>yarn是Facebook、Google、Exponent 和 Tilde 联合推出了一个新的 包管理工具,与npm相比有些优势。<br>npm在安装Node.js时会被一并安装，yarn则需要额外安装。</p>
 <h2 id="二-npm-amp-cnpm的关系"><a href="#二-npm-amp-cnpm的关系" class="headerlink" title="二.npm&amp;cnpm的关系"></a>二.npm&amp;cnpm的关系</h2><h3 id="1-介绍"><a href="#1-介绍" class="headerlink" title="1.介绍"></a>1.介绍</h3><p>由于npm服务器在国外，所以在国内安装速度不是很理想，于是淘宝团队开发了一个npmjs.org的镜像，可以有效解决下载过于缓慢的问题。这是淘宝团队对它的介绍。</p>
 <blockquote>
 <blockquote>
@@ -491,7 +491,7 @@
   <entry>
     <title>Markdown</title>
     <url>/2021/06/05/studynotes/Markdown%E8%AF%AD%E6%B3%95/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="Markdown介绍"><a href="#Markdown介绍" class="headerlink" title="Markdown介绍"></a>Markdown介绍</h1><p>什么是Markdown?它是一种轻量级的文本标记语言，使用它可以更方便地编辑文档。</p>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="Markdown介绍"><a href="#Markdown介绍" class="headerlink" title="Markdown介绍"></a>Markdown介绍</h1><p>什么是Markdown?它是一种轻量级的文本标记语言，使用它可以更方便地编辑文档。</p>
 <p>很多网站都利用它来撰写文档或用于在论坛发消息等等。</p>
 <p>说到这大家可能就像在听天书一样，因为搞不懂专业用语。  </p>
 <p> 事实上这并不是什么计算机编程语言，而是通用的普通人都可以学的标记语言，贱简单呐。</p>
@@ -599,7 +599,7 @@
   <entry>
     <title>Java反射</title>
     <url>/2021/06/05/studynotes/java-reflection/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote>
 <p>本文是Java反射篇，学习于<a href="https://www.liaoxuefeng.com/wiki/1252599548343744">廖雪峰的Java教程</a></p>
 </blockquote>
 <h2 id="Java反射"><a href="#Java反射" class="headerlink" title="Java反射"></a>Java反射</h2><h3 id="1-Class类"><a href="#1-Class类" class="headerlink" title="1.Class类"></a>1.Class类</h3><ul>
@@ -727,7 +727,7 @@
   <entry>
     <title>Java面向对象基础</title>
     <url>/2021/06/05/studynotes/java-object-oriented/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote>
 <p>本文是Java的面向对象篇，学习于<a href="https://www.liaoxuefeng.com/">廖雪峰的Java教程</a>.</p>
 </blockquote>
 <h2 id="面向对象基础"><a href="#面向对象基础" class="headerlink" title="面向对象基础"></a>面向对象基础</h2><h3 id="1-方法"><a href="#1-方法" class="headerlink" title="1.方法"></a>1.方法</h3><ul>
@@ -928,7 +928,7 @@
   <entry>
     <title>JDBC编程</title>
     <url>/2021/06/05/studynotes/java-jdbc/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote>
 <p>本文是Java泛型篇，学习于<a href="https://www.liaoxuefeng.com/wiki/1252599548343744">廖雪峰的Java教程</a></p>
 </blockquote>
 <h2 id="JDBC编程"><a href="#JDBC编程" class="headerlink" title="JDBC编程"></a>JDBC编程</h2><h3 id="1-JDBC概述"><a href="#1-JDBC概述" class="headerlink" title="1.JDBC概述"></a>1.JDBC概述</h3><ul>
@@ -952,7 +952,7 @@
   <entry>
     <title>Java泛型</title>
     <url>/2021/06/05/studynotes/java-genericity/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote>
 <p>本文是Java泛型篇，学习于<a href="https://www.liaoxuefeng.com/wiki/1252599548343744">廖雪峰的Java教程</a></p>
 </blockquote>
 <h2 id="Java泛型"><a href="#Java泛型" class="headerlink" title="Java泛型"></a>Java泛型</h2><h3 id="1"><a href="#1" class="headerlink" title="1."></a>1.</h3>]]></content>
@@ -967,7 +967,7 @@
   <entry>
     <title>Java异常</title>
     <url>/2021/06/05/studynotes/java-exception/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote>
 <p>本文是Java异常篇，学习于<a href="https://www.liaoxuefeng.com/wiki/1252599548343744">廖雪峰的Java教程</a></p>
 </blockquote>
 <h2 id="Java异常"><a href="#Java异常" class="headerlink" title="Java异常"></a>Java异常</h2><h3 id="1-异常类型"><a href="#1-异常类型" class="headerlink" title="1.异常类型"></a>1.异常类型</h3><ul>
@@ -1117,7 +1117,7 @@
   <entry>
     <title>Java核心类</title>
     <url>/2021/06/05/studynotes/java-core-classes/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote>
 <p>本文是Java的面向对象篇，学习于<a href="https://www.liaoxuefeng.com/">廖雪峰的Java教程</a>.</p>
 </blockquote>
 <h2 id="Java核心类"><a href="#Java核心类" class="headerlink" title="Java核心类"></a>Java核心类</h2><h3 id="1-String"><a href="#1-String" class="headerlink" title="1.String"></a>1.String</h3><ul>
@@ -1335,7 +1335,7 @@
   <entry>
     <title>Java注解</title>
     <url>/2021/06/05/studynotes/java-annotation/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote>
 <p>本文是Java注解篇，学习于<a href="https://www.liaoxuefeng.com/wiki/1252599548343744">廖雪峰的Java教程</a></p>
 </blockquote>
 <h2 id="Java注解"><a href="#Java注解" class="headerlink" title="Java注解"></a>Java注解</h2><h3 id="1-注解"><a href="#1-注解" class="headerlink" title="1.注解"></a>1.注解</h3><ul>
@@ -1435,7 +1435,7 @@
   <entry>
     <title>Java入门</title>
     <url>/2021/06/05/studynotes/java-%20introduction%20/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote>
 <p>本文是Java的入门学习篇，学习于<a href="https://www.liaoxuefeng.com/wiki/1252599548343744">廖雪峰的Java教程</a>。</p>
 </blockquote>
 <h2 id="1-Java介绍"><a href="#1-Java介绍" class="headerlink" title="1.Java介绍"></a>1.Java介绍</h2><p>最早由James golis开发，起初叫oak.</p>
@@ -1684,7 +1684,7 @@
   <entry>
     <title>HTML</title>
     <url>/2021/06/05/studynotes/HTML/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h1><p>1.一种描述网页的文本标记语言.<br>2.通过HTML标签来表述网页.</p>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h1><p>1.一种描述网页的文本标记语言.<br>2.通过HTML标签来表述网页.</p>
 <h2 id="一-HTML元素"><a href="#一-HTML元素" class="headerlink" title="一.HTML元素"></a>一.HTML元素</h2><p>1.HTML元素是开始标签到束标签之间的文本内容.<br>2.空元素在开始标签中结束。（在开始标签后尖括号加斜杠/).</p>
 <h2 id="二-HTML文档"><a href="#二-HTML文档" class="headerlink" title="二.HTML文档"></a>二.HTML文档</h2><p>1.HTML文档=网页=HTML标签+纯文本.<br>2.以. htm 或 .html 为后缀名.<br>3.<DOCTYPE>声明HTML版本.</p>
 <h2 id="三-基本HTML标签以及对应的属性"><a href="#三-基本HTML标签以及对应的属性" class="headerlink" title="三.基本HTML标签以及对应的属性"></a>三.基本HTML标签以及对应的属性</h2><p>1.用来描述网页.<br>2.以尖括号成对出现.<br>3.属性值由双引号括起来，如果属性值本身有双引号，就用单引号.</p>
@@ -2075,7 +2075,7 @@
   <entry>
     <title>Hexo版本升级指南</title>
     <url>/2021/06/05/studynotes/Hexo-upgrade/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="Hexo版本升级指南"><a href="#Hexo版本升级指南" class="headerlink" title="Hexo版本升级指南"></a>Hexo版本升级指南</h1><h3 id="1-更新升级hexo"><a href="#1-更新升级hexo" class="headerlink" title="1.更新升级hexo"></a>1.更新升级hexo</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="Hexo版本升级指南"><a href="#Hexo版本升级指南" class="headerlink" title="Hexo版本升级指南"></a>Hexo版本升级指南</h1><h3 id="1-更新升级hexo"><a href="#1-更新升级hexo" class="headerlink" title="1.更新升级hexo"></a>1.更新升级hexo</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
 
 <h3 id="2-查看可更新npm依赖包并升级"><a href="#2-查看可更新npm依赖包并升级" class="headerlink" title="2.查看可更新npm依赖包并升级"></a>2.查看可更新npm依赖包并升级</h3><h4 id="安装npm-check包"><a href="#安装npm-check包" class="headerlink" title="安装npm-check包"></a>安装npm-check包</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install npm-check -g</span><br></pre></td></tr></table></figure>
 <h4 id="检查可更新依赖包并升级"><a href="#检查可更新依赖包并升级" class="headerlink" title="检查可更新依赖包并升级"></a>检查可更新依赖包并升级</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm-check -u</span><br></pre></td></tr></table></figure>
@@ -2100,7 +2100,7 @@
   <entry>
     <title>Git入门学习</title>
     <url>/2021/06/05/studynotes/Git/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h1><h2 id="git介绍"><a href="#git介绍" class="headerlink" title="git介绍"></a>git介绍</h2><ol>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h1><h2 id="git介绍"><a href="#git介绍" class="headerlink" title="git介绍"></a>git介绍</h2><ol>
 <li><p>由Linus用C语言编写.</p>
 </li>
 <li><p>分布式版本控制系统</p>
@@ -2221,7 +2221,7 @@
 <h2 id="git远程仓库"><a href="#git远程仓库" class="headerlink" title="git远程仓库"></a>git远程仓库</h2><ol>
 <li><p>生成SSHKey</p>
 <ul>
-<li>ssh-keygen -t rsa -C  “<a href="mailto:&#117;&#115;&#101;&#x72;&#x40;&#x65;&#120;&#97;&#109;&#112;&#x6c;&#x65;&#46;&#x63;&#111;&#x6d;">&#117;&#115;&#101;&#x72;&#x40;&#x65;&#120;&#97;&#109;&#112;&#x6c;&#x65;&#46;&#x63;&#111;&#x6d;</a>“.</li>
+<li>ssh-keygen -t rsa -C  “<a href="mailto:&#117;&#x73;&#x65;&#x72;&#64;&#x65;&#120;&#97;&#x6d;&#112;&#108;&#101;&#x2e;&#x63;&#x6f;&#109;">&#117;&#x73;&#x65;&#x72;&#64;&#x65;&#120;&#97;&#x6d;&#112;&#108;&#101;&#x2e;&#x63;&#x6f;&#109;</a>“.</li>
 <li>id_rsa 私钥，id_ras.pub公钥.</li>
 </ul>
 </li>
@@ -2240,7 +2240,7 @@
 <ul>
 <li><p>两种关联方式：</p>
 <ul>
-<li>git remote add origin <a href="mailto:&#103;&#x69;&#116;&#x40;&#x67;&#x69;&#116;&#104;&#x75;&#98;&#46;&#x63;&#111;&#x6d;">&#103;&#x69;&#116;&#x40;&#x67;&#x69;&#116;&#104;&#x75;&#98;&#46;&#x63;&#111;&#x6d;</a>:用户名/ 仓库名.git.</li>
+<li>git remote add origin <a href="mailto:&#103;&#105;&#x74;&#x40;&#x67;&#x69;&#x74;&#x68;&#117;&#98;&#46;&#x63;&#x6f;&#109;">&#103;&#105;&#x74;&#x40;&#x67;&#x69;&#x74;&#x68;&#117;&#98;&#46;&#x63;&#x6f;&#109;</a>:用户名/ 仓库名.git.</li>
 <li>git remote add origin <a href="https://github.com/%E7%94%A8%E6%88%B7%E5%90%8D/%E4%BB%93%E5%BA%93%E5%90%8D.git">https://github.com/用户名/仓库名.git</a></li>
 </ul>
 </li>
@@ -2266,7 +2266,7 @@
 <ul>
 <li><p>两种克隆方式：</p>
 <ul>
-<li>git clone <a href="mailto:&#x67;&#105;&#116;&#x40;&#103;&#105;&#116;&#x68;&#x75;&#x62;&#x2e;&#x63;&#x6f;&#x6d;">&#x67;&#105;&#116;&#x40;&#103;&#105;&#116;&#x68;&#x75;&#x62;&#x2e;&#x63;&#x6f;&#x6d;</a>:用户名/仓库名.git.</li>
+<li>git clone <a href="mailto:&#103;&#105;&#x74;&#x40;&#103;&#105;&#x74;&#104;&#117;&#98;&#46;&#99;&#111;&#109;">&#103;&#105;&#x74;&#x40;&#103;&#105;&#x74;&#104;&#117;&#98;&#46;&#99;&#111;&#109;</a>:用户名/仓库名.git.</li>
 <li>git clone <a href="https://github/%E7%94%A8%E6%88%B7%E5%90%8D/%E4%BB%93%E5%BA%93%E5%90%8D.git">https://github/用户名/仓库名.git</a>.</li>
 </ul>
 </li>
@@ -2477,7 +2477,7 @@
   <entry>
     <title>CSS</title>
     <url>/2021/06/05/studynotes/CSS/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h1><h2 id="CSS介绍"><a href="#CSS介绍" class="headerlink" title="CSS介绍"></a>CSS介绍</h2><h3 id="Cascading-Style-Sheets层叠样式表的简称。"><a href="#Cascading-Style-Sheets层叠样式表的简称。" class="headerlink" title="Cascading Style Sheets层叠样式表的简称。"></a>Cascading Style Sheets层叠样式表的简称。</h3><h3 id="用来表现HTML或XHTML。"><a href="#用来表现HTML或XHTML。" class="headerlink" title="用来表现HTML或XHTML。"></a>用来表现HTML或XHTML。</h3><h3 id="用处"><a href="#用处" class="headerlink" title="用处"></a>用处</h3><ul>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h1><h2 id="CSS介绍"><a href="#CSS介绍" class="headerlink" title="CSS介绍"></a>CSS介绍</h2><h3 id="Cascading-Style-Sheets层叠样式表的简称。"><a href="#Cascading-Style-Sheets层叠样式表的简称。" class="headerlink" title="Cascading Style Sheets层叠样式表的简称。"></a>Cascading Style Sheets层叠样式表的简称。</h3><h3 id="用来表现HTML或XHTML。"><a href="#用来表现HTML或XHTML。" class="headerlink" title="用来表现HTML或XHTML。"></a>用来表现HTML或XHTML。</h3><h3 id="用处"><a href="#用处" class="headerlink" title="用处"></a>用处</h3><ul>
 <li><p>外部样式表</p>
 <ul>
 <li>适用于多个页面应用同一样式的场景</li>
@@ -2619,7 +2619,7 @@
   <entry>
     <title>博客搭建</title>
     <url>/2021/06/05/Share/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>本文是对个人搭建博客以来的一系列经验总结，觉得学习到了很多，干货满满，特记录下来分享到博客，提供给大家有用的建议，同时也少踏坑。</p>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>本文是对个人搭建博客以来的一系列经验总结，觉得学习到了很多，干货满满，特记录下来分享到博客，提供给大家有用的建议，同时也少踏坑。</p>
 <p>注意本文不包含详细具体的博客搭建教程，只是提供一些相关的配置流程。</p>
 <span id="more"></span>
 
@@ -2682,7 +2682,7 @@
   <entry>
     <title>实用网站2</title>
     <url>/2021/06/05/Share/website2/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>这期向大家推荐几个压箱底的实用网站，这些网站工具可以更好地提升大家的数字生活效率和扩展知识面。</p>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>这期向大家推荐几个压箱底的实用网站，这些网站工具可以更好地提升大家的数字生活效率和扩展知识面。</p>
 <h2 id="1-AI人工智能无损放大"><a href="#1-AI人工智能无损放大" class="headerlink" title="1.AI人工智能无损放大 "></a><a href="https://bigjpg.com/" title="1.AI人工智能无损放大 ">1.AI人工智能无损放大 </a></h2><p>这是一个特别的图片放大网站，与传统的图片放大软件比如<em>photozoom</em>或者<em>PS</em>不同，因为这些传统软件放大后的图片依然有明显的模糊感，边缘的重影以及噪点，这个网站放大后的图片就不会有明显的模糊感，而且本身很清晰的图片在这里放大后色彩会更明显更清晰，当然你也可以不用放大而仅降噪也可以提高清晰度。这个网站也提供了不限平台软件下载和小程序。</p>
 <p><img src="https://imgkr.cn-bj.ufileos.com/147e34f0-f62b-481f-9179-a2819a6898a1.png"></p>
 <h2 id="2-船长解析-VIP在线解析"><a href="#2-船长解析-VIP在线解析" class="headerlink" title="2.船长解析-VIP在线解析"></a><a href="http://czjx8.com/" title="2.船长解析-VIP在线解析">2.船长解析-VIP在线解析</a></h2><p>这是一个免费的视频平台网站，悄悄告诉你，可观看各大平台<em>vip</em>和<em>付费视频</em>哦，而且视频画质也是很清晰呢，咱们要低调使用。具体用法是先在热门视频网站比如某讯打开要观看的影片，复制浏览器上方地址，最后粘贴在这个网站空白处并单击<strong>立即播放</strong>就可以，如果播放失败也没关系，一共有3个接口，更换接口就即可,也可支持手机观看。</p>
@@ -2714,7 +2714,7 @@
   <entry>
     <title>实用网站1</title>
     <url>/2021/06/05/Share/website1/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote>
 <p><strong>本期歌曲推荐《借我》</strong><br>*”不是纵容的悲怆与哭喊，而是平静的呢喃与诉说。”*——网易云音乐热评</p>
 </blockquote>
 <hr>
@@ -2769,7 +2769,7 @@
   <entry>
     <title>Typora</title>
     <url>/2021/06/05/Share/Typora%20editor/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="Typora-1"><a href="#Typora-1" class="headerlink" title="Typora[1]"></a><strong>Typora</strong>[1]</h1><p>微信搜索公众号<strong>哔哗</strong>并关注可发现更多优质文章。 这期介绍一款我觉得<strong>最好的Markdown编辑器</strong>,文末下面有<strong>Typora安装包链接</strong>[2]。 考虑到大家可能还不了解Markdown编辑器，所以在这里先给大家介绍富文本编辑器如<em>Word</em>跟Markdown编辑器的区别。</p>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="Typora-1"><a href="#Typora-1" class="headerlink" title="Typora[1]"></a><strong>Typora</strong>[1]</h1><p>微信搜索公众号<strong>哔哗</strong>并关注可发现更多优质文章。 这期介绍一款我觉得<strong>最好的Markdown编辑器</strong>,文末下面有<strong>Typora安装包链接</strong>[2]。 考虑到大家可能还不了解Markdown编辑器，所以在这里先给大家介绍富文本编辑器如<em>Word</em>跟Markdown编辑器的区别。</p>
 <h2 id="1-Markdown-amp-富文本"><a href="#1-Markdown-amp-富文本" class="headerlink" title="1.Markdown&amp;富文本"></a><strong>1.Markdown&amp;富文本</strong></h2><p>大家平常用的最多的编辑器类型应该是富文本吧，<em>word</em>算是富文本编辑器的一种，下图是它的操作界面类型。 <img src="https://imgkr.cn-bj.ufileos.com/932811f9-bb28-406d-bb7c-5b90a4f1b99b.png" alt="img"></p>
 <p>那Markdown编辑器跟它有什么区别，也可见下图。 <img src="https://imgkr.cn-bj.ufileos.com/21b9a3f6-a608-49ff-ba9e-eb67a1112457.png" alt="img"></p>
 <p>可以看到两者操作界面非常不同，Markdown多了两种操作界面，左边是编辑区，是可以用<strong>markdown标记语法</strong>编写内容的区域，而右边是预览区域，是左边编辑区用Markdown标记语法编写后的内容展示区，也是最终展示给用户的文本样式。那什么是markdown标记语法？大家可以先观察一下上图左边编辑区的文本内容，是不是不明白 <em>#</em> 号的作用？其实它是一级标题的意思，是将它后面的文本内容设为一级标题，如果有两个##号呢？那就是二级标题的意思。具体我也不用多说，如果你们感兴趣的话我在这里推荐实用Markdown教程<strong>草鸟教程Markdown</strong>[3]，我起初就是在这里入门的，而且教程内容不多也简单易学，基本上<em>学习+实践</em>40分钟左右就基本全学完了。下面开始迎接我们的主角Typora。</p>
@@ -2796,7 +2796,7 @@
   <entry>
     <title>搜索引擎</title>
     <url>/2021/06/05/Share/SearchEngine/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="1-多吉搜索"><a href="#1-多吉搜索" class="headerlink" title="1.多吉搜索"></a><a href="https://www.dogedoge.com/">1.多吉搜索</a></h1><blockquote>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="1-多吉搜索"><a href="#1-多吉搜索" class="headerlink" title="1.多吉搜索"></a><a href="https://www.dogedoge.com/">1.多吉搜索</a></h1><blockquote>
 <p>不追踪不误导你的搜索引擎，光是不误导三个字，我都觉得它是针对某度，而且也没有广告宣传。这款搜索引擎我体验下来，觉得特别惊喜，搜索速度飞快，结果返回准确度高。我觉得平常使用的话，还是可以用它来替代某度搜索。<br><img src="https://gitee.com/liubeep/blogimage/raw/master/img/20200529160307.png" alt="Snipaste_2020-05-26_22-36-42"> </p>
 </blockquote>
 <h1 id="2-magi搜索"><a href="#2-magi搜索" class="headerlink" title="2.magi搜索"></a><a href="https://magi.com/">2.magi搜索</a></h1><blockquote>
@@ -2826,7 +2826,7 @@
   <entry>
     <title>三款网盘工具</title>
     <url>/2021/06/05/Share/netdisk/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote>
 <p><strong>本期歌曲推荐《岁月神偷》</strong></p>
 <p>“<em>唐朝的离婚书是这样写的：愿娘子相离之后， 重梳婵鬓美扫峨眉 ，巧呈窈窕之姿 ，选聘高官之主 ，解怨释结更莫相憎 ，一别两宽各生欢喜</em>“——网易云音乐热评.</p>
 </blockquote>
@@ -2874,7 +2874,7 @@
   <entry>
     <title>思维导图</title>
     <url>/2021/06/05/Share/mindmapping/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote>
 <p>本期歌曲推荐：《不露声色》</p>
 <p>“中伤不是你的强项，黑夜看不见你的坚强，流放变成我的苍凉，鼓声牵引着谁的心脏。”——网页云音乐热评</p>
 </blockquote>
@@ -2915,7 +2915,7 @@
   <entry>
     <title>DeepL</title>
     <url>/2021/06/05/Share/DeepL/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><hr>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><hr>
 <hr>
 <h1 id="DeepL"><a href="#DeepL" class="headerlink" title="DeepL"></a>DeepL</h1><blockquote>
 <p>科技巨头谷歌（Google）、微软（Microsoft）和脸书（Facebook）都将机器学习应用到翻译领域，但一家名为DeepL的小公司却超越了他们，并且提高了该领域的标准。<br>其翻译速度可与规模庞大的竞争者相媲美，但比我们使用过的任何一个翻译工具都要准确和细致。<br>——<a href="https://techcrunch.com/2017/08/29/deepl-schools-other-online-translators-with-clever-machine-learning/" title="动点科技（TechCrunch）">动点科技（TechCrunch）</a>美国</p>
@@ -2957,7 +2957,7 @@
   <entry>
     <title>Android软件1</title>
     <url>/2021/06/05/Share/Android1/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>在我的认知观里，一款优秀的软件应该满足以下特性，另外我也整理了以下几个我觉得生活中很实用的软件。</p>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>在我的认知观里，一款优秀的软件应该满足以下特性，另外我也整理了以下几个我觉得生活中很实用的软件。</p>
 <blockquote>
 <ul>
 <li>一个软件就应该做好一件事。</li>
@@ -3015,7 +3015,7 @@
   <entry>
     <title>《习惯的力量》</title>
     <url>/2021/06/05/ReadingNotes/%E4%B9%A0%E6%83%AF%E7%9A%84%E5%8A%9B%E9%87%8F/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>前些天读了查尔斯·都希格的<strong>《习惯的力量》</strong>一书，译者是吴奕俊,曹烨。</p>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>前些天读了查尔斯·都希格的<strong>《习惯的力量》</strong>一书，译者是吴奕俊,曹烨。</p>
 <img src="https://gitee.com/liubeep/blogimage/raw/master/img/20200723081104.jpeg" alt="img" style="zoom: 33%;" />
 
 <p>我并没有读完这本书，相反只是阅读了<em><strong>个人的习惯</strong></em>这部分，其余两部分是<em><strong>成功的组织机构的习惯</strong></em>和<em><strong>社会的习惯</strong></em>。</p>
@@ -3068,7 +3068,7 @@
   <entry>
     <title>GitHub实用开源项目收藏</title>
     <url>/2021/06/05/projects/githubrep/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote>
 <ul>
 <li>本页面整理收藏GitHub的开源仓库</li>
 <li>除了方便自身使用外也方便大家找到感兴趣的开源项目</li>
@@ -3129,7 +3129,7 @@
   <entry>
     <title>plan for the second half of 2020</title>
     <url>/2021/06/05/projects/2020.9.5/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote>
 <p>这是我的2020年下半学期(包括寒假）学习计划，目前为私密状态，仅我自己可见。</p>
 <p>但我会在新学期开始后公开。</p>
 <p>之所以这样做，是因为一旦告诉别人自己的目标，可能就很难实现了。</p>
@@ -3232,7 +3232,7 @@
   <entry>
     <title>Learning how to learn part1</title>
     <url>/2021/06/05/Coursere/Learning%20how%20to%20learn%20prat%201/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="Learning-how-to-learn-prat-1"><a href="#Learning-how-to-learn-prat-1" class="headerlink" title="Learning how to learn -prat 1"></a>Learning how to learn -prat 1</h1><h2 id="一-两种思考模式"><a href="#一-两种思考模式" class="headerlink" title="一.两种思考模式"></a>一.两种思考模式</h2><h3 id="1-专注模式"><a href="#1-专注模式" class="headerlink" title="1.专注模式"></a>1.专注模式</h3><ul>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="Learning-how-to-learn-prat-1"><a href="#Learning-how-to-learn-prat-1" class="headerlink" title="Learning how to learn -prat 1"></a>Learning how to learn -prat 1</h1><h2 id="一-两种思考模式"><a href="#一-两种思考模式" class="headerlink" title="一.两种思考模式"></a>一.两种思考模式</h2><h3 id="1-专注模式"><a href="#1-专注模式" class="headerlink" title="1.专注模式"></a>1.专注模式</h3><ul>
 <li>当我们大脑在专心思考某个问题时大脑所处的模式，是比较紧密的思考模式。</li>
 </ul>
 <h3 id="2-发散模式"><a href="#2-发散模式" class="headerlink" title="2.发散模式"></a>2.发散模式</h3><ul>
@@ -3307,7 +3307,7 @@
   <entry>
     <title>Learning how to learn part4</title>
     <url>/2021/06/05/Coursere/Learning%20how%20to%20learn%20part%204/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="Learning-how-to-learn-part4"><a href="#Learning-how-to-learn-part4" class="headerlink" title="Learning how to learn part4"></a>Learning how to learn part4</h1><h2 id="一-学习技巧类"><a href="#一-学习技巧类" class="headerlink" title="一.学习技巧类"></a>一.学习技巧类</h2><h3 id="1-比喻和类比"><a href="#1-比喻和类比" class="headerlink" title="1.比喻和类比"></a>1.比喻和类比</h3><ul>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="Learning-how-to-learn-part4"><a href="#Learning-how-to-learn-part4" class="headerlink" title="Learning how to learn part4"></a>Learning how to learn part4</h1><h2 id="一-学习技巧类"><a href="#一-学习技巧类" class="headerlink" title="一.学习技巧类"></a>一.学习技巧类</h2><h3 id="1-比喻和类比"><a href="#1-比喻和类比" class="headerlink" title="1.比喻和类比"></a>1.比喻和类比</h3><ul>
 <li>更好地理解当前概念</li>
 <li>摆脱思维定势</li>
 </ul>
@@ -3344,7 +3344,7 @@
   <entry>
     <title>Learning how to learn part3</title>
     <url>/2021/06/05/Coursere/Learning%20how%20to%20learn%20part%203/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="Learning-how-to-learn-part-3"><a href="#Learning-how-to-learn-part-3" class="headerlink" title="Learning how to learn part 3"></a>Learning how to learn part 3</h1><h2 id="一-拖延症"><a href="#一-拖延症" class="headerlink" title="一.拖延症"></a>一.拖延症</h2><h3 id="1-如何应对拖延症"><a href="#1-如何应对拖延症" class="headerlink" title="1.如何应对拖延症"></a>1.如何应对拖延症</h3><ul>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="Learning-how-to-learn-part-3"><a href="#Learning-how-to-learn-part-3" class="headerlink" title="Learning how to learn part 3"></a>Learning how to learn part 3</h1><h2 id="一-拖延症"><a href="#一-拖延症" class="headerlink" title="一.拖延症"></a>一.拖延症</h2><h3 id="1-如何应对拖延症"><a href="#1-如何应对拖延症" class="headerlink" title="1.如何应对拖延症"></a>1.如何应对拖延症</h3><ul>
 <li>专注于学习过程而不是学习结果</li>
 <li>排除干扰，防止出现拖延行为</li>
 <li>制定任务计划</li>
@@ -3389,7 +3389,7 @@
   <entry>
     <title>Learning how to learn part2</title>
     <url>/2021/06/05/Coursere/Learning%20how%20to%20learn%20part%202/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="Learning-how-to-learn-part2"><a href="#Learning-how-to-learn-part2" class="headerlink" title="Learning how to learn -part2"></a>Learning how to learn -part2</h1><h2 id="一-组块"><a href="#一-组块" class="headerlink" title="一.组块"></a>一.组块</h2><h3 id="1-什么是组块"><a href="#1-什么是组块" class="headerlink" title="1. 什么是组块"></a>1. 什么是组块</h3><p>组块是大脑中的一种神经信息片段。</p>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="Learning-how-to-learn-part2"><a href="#Learning-how-to-learn-part2" class="headerlink" title="Learning how to learn -part2"></a>Learning how to learn -part2</h1><h2 id="一-组块"><a href="#一-组块" class="headerlink" title="一.组块"></a>一.组块</h2><h3 id="1-什么是组块"><a href="#1-什么是组块" class="headerlink" title="1. 什么是组块"></a>1. 什么是组块</h3><p>组块是大脑中的一种神经信息片段。</p>
 <h3 id="2-组块化"><a href="#2-组块化" class="headerlink" title="2. 组块化"></a>2. 组块化</h3><ul>
 <li>组块整体化可以让更多信息联系起来。</li>
 </ul>
@@ -3451,7 +3451,7 @@
   <entry>
     <title>Git起步</title>
     <url>/2021/06/05/advancedgit/start/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="Git进阶学习"><a href="#Git进阶学习" class="headerlink" title="Git进阶学习"></a>Git进阶学习</h1><blockquote>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="Git进阶学习"><a href="#Git进阶学习" class="headerlink" title="Git进阶学习"></a>Git进阶学习</h1><blockquote>
 <p>本文是Git的进阶学习篇，来源于<a href="https://git-scm.com/book/zh/v2">Git官方网站</a>.<br>入门篇可点击<a href="https://www.lbihua.cn/StudyNotes/Git.html">Git入门学习篇</a>阅读.<br>进阶学习之基础篇可点击<a href="https://www.lbihua.cn/AdvancedGit/Basic.html">基础</a>.<br>进阶学习之分支篇可点击<a href="https://www.lbihua.cn/AdvancedGit/Branch.html">分支</a>.</p>
 </blockquote>
 <h2 id="一-入门"><a href="#一-入门" class="headerlink" title="一.入门"></a>一.入门</h2><ol>
@@ -3521,7 +3521,7 @@
   <entry>
     <title>Git分支</title>
     <url>/2021/06/05/advancedgit/branch/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="Git进阶学习"><a href="#Git进阶学习" class="headerlink" title="Git进阶学习"></a>Git进阶学习</h1><blockquote>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="Git进阶学习"><a href="#Git进阶学习" class="headerlink" title="Git进阶学习"></a>Git进阶学习</h1><blockquote>
 <p>本文是Git的进阶学习篇，来源于<a href="https://git-scm.com/book/zh/v2">Git官方网站</a>.<br>入门篇可点击<a href="https://www.lbihua.cn/2020/07/11/Git/">Git入门学习篇</a>阅读.<br>进阶学习之基础篇可点击<a href="https://www.lbihua.cn/AdvancedGit/Basic.html">基础</a>.<br>进阶学习之起步篇可点击<a href="https://www.lbihua.cn/AdvancedGit/Start.html">起步</a>.</p>
 </blockquote>
 <h2 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h2><ol>
@@ -3611,7 +3611,7 @@
   <entry>
     <title>Git基础</title>
     <url>/2021/06/05/advancedgit/basic/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="Git进阶学习"><a href="#Git进阶学习" class="headerlink" title="Git进阶学习"></a>Git进阶学习</h1><blockquote>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="Git进阶学习"><a href="#Git进阶学习" class="headerlink" title="Git进阶学习"></a>Git进阶学习</h1><blockquote>
 <p>本文是Git的进阶学习篇，来源于<a href="https://git-scm.com/book/zh/v2">Git官方网站</a>.<br>入门篇可点击<a href="https://www.lbihua.cn/StudyNotes/Git.html">Git入门学习篇</a>阅读.<br>进阶学习之起步篇可点击<a href="https://www.lbihua.cn/AdvancedGit/Start.html">起步</a>.<br>进阶学习之分支篇可点击<a href="https://www.lbihua.cn/AdvancedGit/Branch.html">分支</a>.</p>
 </blockquote>
 <h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><ol>
