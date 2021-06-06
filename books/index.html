@@ -16,7 +16,7 @@
         name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1"
       />
-      <title>博客搭建 |  BiHua&#39;s Blog</title>
+      <title style="text-align: center;">读书 |  BiHua&#39;s Blog</title>
   <meta name="generator" content="hexo-theme-ayer">
       
       <link rel="shortcut icon" href="/favicon.ico" />
@@ -74,8 +74,8 @@ var _hmt = _hmt || [];
     <main class="content on">
       <section class="outer">
   <article
-  id="post-Share/博客搭建"
-  class="article article-type-post"
+  id="-books"
+  class="article article-type-"
   itemscope
   itemprop="blogPost"
   data-scroll-reveal
@@ -85,97 +85,259 @@ var _hmt = _hmt || [];
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  博客搭建
+  读书
 </h1>
  
 
       
     </header>
-     
-    <div class="article-meta">
-      <a href="/2021/06/05/Share/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" class="article-date">
-  <time datetime="2021-06-05T03:47:05.880Z" itemprop="datePublished">2021-06-05</time>
-</a> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E5%88%86%E4%BA%AB/">分享</a>
-  </div>
-  
-<div class="word_count">
-    <span class="post-time">
-        <span class="post-meta-item-icon">
-            <i class="ri-quill-pen-line"></i>
-            <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">933</span>
-        </span>
-    </span>
-
-    <span class="post-time">
-        &nbsp; | &nbsp;
-        <span class="post-meta-item-icon">
-            <i class="ri-book-open-line"></i>
-            <span class="post-meta-item-text"> Reading time≈</span>
-            <span class="post-count">3 min</span>
-        </span>
-    </span>
-</div>
- 
-    </div>
-      
-    <div class="tocbot"></div>
-
-
-
-
-  
+       
     <div class="article-entry" itemprop="articleBody">
        
-  <p>本文是对个人搭建博客以来的一系列经验总结，觉得学习到了很多，干货满满，特记录下来分享到博客，提供给大家有用的建议，同时也少踏坑。</p>
-<p>注意本文不包含详细具体的博客搭建教程，只是提供一些相关的配置流程。</p>
-<span id="more"></span>
+  <blockquote>
+    <p>进一寸有一寸的欢喜</p>
+</blockquote>
 
-<h2 id="一-博客框架选择"><a href="#一-博客框架选择" class="headerlink" title="一.博客框架选择"></a>一.博客框架选择</h2><p>如果不想自己自力更生地敲代码搭建自己的个人博客，那么可以试试协助建站的个人博客框架。</p>
-<p>我在这里推荐一些在GitHub有相当多star的博客框架，各位可以根据自己的兴趣选择博客框架。</p>
-<p>另外本博客采用的是Hexo框架。</p>
-<ol>
-<li><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/">Hexo</a></li>
-<li><a target="_blank" rel="noopener" href="https://halo.run/">Halo</a></li>
-<li><a target="_blank" rel="noopener" href="https://gohugo.io/">Hugo</a></li>
-<li><a target="_blank" rel="noopener" href="https://b3log.org/solo/">Solo</a></li>
-<li><a target="_blank" rel="noopener" href="https://zh-cn.wordpress.com/">WordPress</a></li>
-</ol>
-<p>这是我目前知道的几个博客框架。</p>
-<p>如果对前面几个框架并不怎么满意，可以自己百度&amp;谷歌寻找博客框架。</p>
-<p>这样的博客框架在网上还是比较多的，各个博客框架都有自己的优缺点。</p>
-<p>在这里就不一一介绍了，建议大家选择容易上手的博客框架来协助搭建本人博客。</p>
-<h2 id="二-博客主题选择"><a href="#二-博客主题选择" class="headerlink" title="二.博客主题选择"></a>二.博客主题选择</h2><p>差不多每个博客框架官网都有自己的主题页面。</p>
-<p>在主题页面可以挑选自己喜欢的主题样式，比如Hexo的主题页面。</p>
-<p><img src="https://gitee.com/liubeep/blogimage/raw/master/img/20200906203311.png" alt="image-20200906203310839"></p>
-<p><img src="https://gitee.com/liubeep/blogimage/raw/master/img/20200906203130.png" alt="image-20200906203121441"></p>
-<p>完全不用担心不会如何搭建的问题，因为一般来说每个主题样式都有相应的配置文档。</p>
-<p>到时只需要根据配置文档来就可以了。</p>
-<p>当然配置的过程中肯定会有一系列难搞的问题出现。</p>
-<p>这很正常，建议事前先自己百度&amp;谷歌，如果实在查询不到可以试试在主题作者的群里咨询。</p>
-<h2 id="三-Github-Pages-VS-云服务器"><a href="#三-Github-Pages-VS-云服务器" class="headerlink" title="三.Github Pages VS 云服务器"></a>三.Github Pages VS 云服务器</h2><p>如果不想购买云服务器，可以试试GitHub提供的Github Pages，完全免费。</p>
-<p>但是有一个明确的缺点是网站访问速度很慢，不是一般的慢，有时候甚至打不开网站。</p>
-<p>如果使用云服务器，网站访问速度一定会有明显的提高。</p>
-<p>这样也更有利于为网站带来大量访问量，当然前提是你的博文足够有吸引力。</p>
-<p>当然如果选择使用云服务器，随之而来的便是昂贵的服务器价格。</p>
-<p>如果打算长时间维护自己的个人网站，这样的成本实在是太大了。</p>
-<h2 id="四-国内服务器VS国外服务器"><a href="#四-国内服务器VS国外服务器" class="headerlink" title="四.国内服务器VS国外服务器"></a>四.国内服务器VS国外服务器</h2><p>如果打算使用云服务器，免不了要考虑云服务器的选择。</p>
-<p>国内的云服务器提供商有腾讯云，阿里云，华为云等等。</p>
-<p>国外的服务器有Google云，AWS，搬瓦工等。</p>
-<p>国外的云服务器相比于国内，有免备案，性价比高等优点。</p>
-<p>当然速度可能有点不理想，不过一般来说应该没什么大的影响。</p>
-<p>因为没用过国外服务器，所以关于云服务器的选择就不多说了。</p>
-<p>感兴趣的朋友可以纤细了解下。</p>
-<h2 id="五-域名"><a href="#五-域名" class="headerlink" title="五.域名"></a>五.域名</h2><p>如果用GitHub Pages,Gitee,或者Coding部署站点，一般会提供二级域名。</p>
-<p>如果想拥有自己的独立域名，可以考虑购买域名。</p>
-<p>域名注册商可以考虑腾讯云，阿里云，华为云等，当然也可以考虑国外的。</p>
-<p>在这里分别放一下阿里云或者腾讯云的域名购买价格，供大家参考。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Iambihua/CDN/img/20200910201016.png" alt="阿里云域名"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/Iambihua/CDN/img/20200910201100.png" alt="腾讯云域名"></p>
-<p>注意如果购买了国内的域名，是一定要备案的，否则会停止对域名的解析。</p>
-<p>更可恶的是，</p>
+<style>
+    
+.hexo-douban-tabs {
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+.hexo-douban-tab {
+    padding: 5px;
+}
+
+.hexo-douban-active {
+    background: #657b83;
+    color: #fff;
+}
+
+.hexo-douban-item {
+    padding-bottom: 10px;
+    position: relative;
+    clear: both;
+    min-height: 170px;
+    padding: 10px 0;
+    border-bottom: 1px #ddd solid;
+}
+
+@media screen and (max-width: 600px) {
+    .hexo-douban-item {
+        width: 100%;
+    }
+}
+
+.hexo-douban-picture {
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 100px;
+}
+
+.hexo-douban-info {
+    padding-left: 120px;
+}
+
+.hexo-douban-meta {
+    font-size: 12px;
+    padding-right: 10px;
+}
+
+.hexo-douban-comments {
+    font-size: 12px;
+}
+
+.hexo-douban-pagination {
+    margin-top: 15px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.hexo-douban-button {
+    padding: 5px;
+}
+
+.hexo-douban-button:hover {
+    background: #657b83;
+    color: #fff;
+}
+
+.hexo-douban-hide {
+    display: none;
+}
+
+.hexo-douban-show {
+    display: block;
+}
+
+
+</style>
+
+<div class="hexo-douban-tabs">
+    <a class="hexo-douban-tab" id="hexo-douban-tab1" href="javascript:;"
+       rel="external">
+        bookReading
+        (0)</a>
+    <a class="hexo-douban-tab" id="hexo-douban-tab2" href="javascript:;"
+       rel="external">
+        bookWish
+        (0)</a>
+    <a class="hexo-douban-tab" id="hexo-douban-tab3" href="javascript:;"
+       rel="external">
+        bookRead
+        (0)</a>
+</div>
+<div>
+    <div id="hexo-douban-item1">
+        
+        <div class="hexo-douban-pagination">
+    <a class="hexo-douban-button hexo-douban-firstpage" href="javascript:;"> top</a>
+    <a class="hexo-douban-button hexo-douban-previouspage" href="javascript:;">prev</a>
+    <span class="hexo-douban-pagenum">2 / 3</span>
+    <a class="hexo-douban-button hexo-douban-nextpage" href="javascript:;">next</a>
+    <a class="hexo-douban-button hexo-douban-lastpage" href="javascript:;">end</a>
+</div>
+    </div>
+    <div id="hexo-douban-item2">
+        
+        <div class="hexo-douban-pagination">
+    <a class="hexo-douban-button hexo-douban-firstpage" href="javascript:;"> top</a>
+    <a class="hexo-douban-button hexo-douban-previouspage" href="javascript:;">prev</a>
+    <span class="hexo-douban-pagenum">2 / 3</span>
+    <a class="hexo-douban-button hexo-douban-nextpage" href="javascript:;">next</a>
+    <a class="hexo-douban-button hexo-douban-lastpage" href="javascript:;">end</a>
+</div>
+
+    </div>
+    <div id="hexo-douban-item3">
+        
+        <div class="hexo-douban-pagination">
+    <a class="hexo-douban-button hexo-douban-firstpage" href="javascript:;"> top</a>
+    <a class="hexo-douban-button hexo-douban-previouspage" href="javascript:;">prev</a>
+    <span class="hexo-douban-pagenum">2 / 3</span>
+    <a class="hexo-douban-button hexo-douban-nextpage" href="javascript:;">next</a>
+    <a class="hexo-douban-button hexo-douban-lastpage" href="javascript:;">end</a>
+</div>
+    </div>
+
+</div>
+
+<script>
+    /**
+ * Created by myths on 18-2-8.
+ */
+
+Element.prototype.siblings = function () {
+    var siblingElement = [];
+    var sibs = this.parentNode.children;
+    for (var i = 0; i < sibs.length; i++) {
+        if (sibs[i] !== this) {
+            siblingElement.push(sibs[i]);
+        }
+    }
+    return siblingElement;
+};
+function tabClick() {
+    //修改标签样式
+    this.classList.add('hexo-douban-active');
+    var sibs = this.siblings();
+    for (var j = 0; j < sibs.length; j++) {
+        sibs[j].classList.remove('hexo-douban-active');
+    }
+    //显示对应板块
+    var itemId = this.id.replace('tab', 'item');
+    var target = document.getElementById(itemId);
+    target.classList.remove('hexo-douban-hide');
+    target.classList.add('hexo-douban-show');
+    sibs = document.getElementById(itemId).siblings();
+    for (var k = 0; k < sibs.length; k++) {
+        sibs[k].classList.remove('hexo-douban-show');
+        sibs[k].classList.add('hexo-douban-hide');
+    }
+}
+var tabs = document.getElementsByClassName("hexo-douban-tab");
+for (var i = 0; i < tabs.length; i++) {
+    tabs[i].onclick = tabClick;
+    tabs[i].onclick.apply(tabs[i]);
+}
+tabs[2].click();
+
+    var firstpages = document.getElementsByClassName("hexo-douban-firstpage");
+var previouspages = document.getElementsByClassName("hexo-douban-previouspage");
+var nextpages = document.getElementsByClassName("hexo-douban-nextpage");
+var lastpages = document.getElementsByClassName("hexo-douban-lastpage");
+var pagenums = document.getElementsByClassName("hexo-douban-pagenum");
+
+function makePageNum(num, arr) {
+    return (num + 1) + ' / ' + (Math.ceil(arr.length / 10 === 0 ? 1 : Math.ceil(arr.length / 10)));
+}
+
+function firstBtn() {
+    var sibs = this.parentNode.siblings();
+    displayPage(sibs, 0);
+    this.parentNode.getElementsByClassName('hexo-douban-pagenum')[0].innerText = makePageNum(0, sibs);
+}
+
+function previousBtn() {
+    var sibs = this.parentNode.siblings();
+    var currNum = this.parentNode.getElementsByClassName('hexo-douban-pagenum')[0].innerText;
+    currNum = currNum.substr(0, currNum.indexOf('/') - 1);
+    currNum = parseInt(currNum, 10) - 1;
+    if (currNum > 0) {
+        currNum--;
+    }
+    displayPage(sibs, currNum);
+    this.parentNode.getElementsByClassName('hexo-douban-pagenum')[0].innerText = makePageNum(currNum, sibs);
+}
+
+function nextBtn() {
+    var sibs = this.parentNode.siblings();
+    var currNum = this.parentNode.getElementsByClassName('hexo-douban-pagenum')[0].innerText;
+    currNum = currNum.substr(0, currNum.indexOf('/') - 1);
+    currNum = parseInt(currNum, 10) - 1;
+    if (currNum < Math.ceil(sibs.length / 10) - 1) {
+        currNum++;
+    }
+    displayPage(sibs, currNum);
+    this.parentNode.getElementsByClassName('hexo-douban-pagenum')[0].innerText = makePageNum(currNum, sibs);
+}
+
+function lastBtn() {
+    var sibs = this.parentNode.siblings();
+    displayPage(sibs, Math.ceil(sibs.length / 10) - 1);
+    this.parentNode.getElementsByClassName('hexo-douban-pagenum')[0].innerText = makePageNum(Math.ceil(sibs.length / 10) - 1 === -1 ? 0 : Math.ceil(sibs.length / 10) - 1, sibs);
+}
+
+function displayPage(arr, num) {
+    for (var i = 0; i < arr.length; i++) {
+        if (Math.floor(i / 10) === num) {
+            arr[i].classList.remove('hexo-douban-hide');
+            var img = arr[i].getElementsByTagName('img')[0];
+            img.src = img.getAttribute('data-src');
+        } else {
+            arr[i].classList.add('hexo-douban-hide');
+        }
+    }
+}
+
+for (var i = 0; i < firstpages.length; i++) {
+
+    //add listener
+    firstpages[i].onclick = firstBtn;
+    previouspages[i].onclick = previousBtn;
+    nextpages[i].onclick = nextBtn;
+    lastpages[i].onclick = lastBtn;
+
+    //set page num
+    var size = pagenums[i].parentNode.siblings().length;
+    pagenums[i].innerText = '1 / ' + (Math.ceil(size / 10) === 0 ? 1 : Math.ceil(size / 10));
+    firstpages[i].click();
+}
+
+</script>
+
  
       <!-- reward -->
       
@@ -246,87 +408,18 @@ var _hmt = _hmt || [];
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://lbihua.cn/2021/06/05/Share/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://lbihua.cn/books/" alt="微信分享二维码">
     </div>
 </div>
 
 <div id="share-mask"></div>  
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Blog/" rel="tag">Blog</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CDN/" rel="tag">CDN</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GitHub-Actions/" rel="tag">GitHub Actions</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GitHub-Pages/" rel="tag">GitHub Pages</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%9F%9F%E5%90%8D/" rel="tag">域名</a></li></ul>
-
     </footer>
   </div>
 
    
-  <nav class="article-nav">
-    
-      <a href="/2021/06/05/studynotes/CSS/" class="article-nav-link">
-        <strong class="article-nav-caption">上一篇</strong>
-        <div class="article-nav-title">
-          
-            CSS
-          
-        </div>
-      </a>
-    
-    
-      <a href="/2021/06/05/Share/website2/" class="article-nav-link">
-        <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">实用网站2</div>
-      </a>
-    
-  </nav>
-
    
-<!-- valine评论 -->
-<div id="vcomments-box">
-  <div id="vcomments"></div>
-</div>
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script>
-<script>
-  new Valine({
-    el: "#vcomments",
-    app_id: "n5SOYjqlktD33S0dVjdm4gn8-gzGzoHsz",
-    app_key: "sX08q4nK1pdqj7Kvsnhs0prh",
-    path: window.location.pathname,
-    avatar: "monsterid",
-    placeholder: "填写邮箱可以收到回复通知哦~",
-    recordIP: true,
-  });
-  const infoEle = document.querySelector("#vcomments .info");
-  if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
-    infoEle.childNodes.forEach(function (item) {
-      item.parentNode.removeChild(item);
-    });
-  }
-</script>
-<style>
-  #vcomments-box {
-    padding: 5px 30px;
-  }
-
-  @media screen and (max-width: 800px) {
-    #vcomments-box {
-      padding: 5px 0px;
-    }
-  }
-
-  #vcomments-box #vcomments {
-    background-color: #fff;
-  }
-
-  .v .vlist .vcard .vh {
-    padding-right: 20px;
-  }
-
-  .v .vlist .vcard {
-    padding-left: 10px;
-  }
-</style>
-
  
-   
-     
+    
 </article>
 
 </section>
@@ -427,7 +520,15 @@ var _hmt = _hmt || [];
     </li>
     
     <li class="nav-item">
-      <a class="nav-item-link" href="/about">关于我</a>
+      <a class="nav-item-link" href="/books">读书</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/movies">电影</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/about">关于</a>
     </li>
     
   </ul>
@@ -482,22 +583,6 @@ var _hmt = _hmt || [];
 <script src="/js/lazyload.min.js"></script>
 
 <!-- Tocbot -->
- 
-<script src="/js/tocbot.min.js"></script>
-
-<script>
-  tocbot.init({
-    tocSelector: ".tocbot",
-    contentSelector: ".article-entry",
-    headingSelector: "h1, h2, h3, h4, h5, h6",
-    hasInnerContainers: true,
-    scrollSmooth: true,
-    scrollContainer: "main",
-    positionFixedSelector: ".tocbot",
-    positionFixedClass: "is-position-fixed",
-    fixedSidebarOffset: "auto",
-  });
-</script>
 
 <script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
 <link
