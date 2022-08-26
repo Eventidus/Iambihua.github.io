@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>恍惚</title>
+  
+  <subtitle>人必须坚持不懈地生成和创造才能臻于完满</subtitle>
+  <link href="http://example.com/atom.xml" rel="self"/>
+  
+  <link href="http://example.com/"/>
+  <updated>2022-08-26T11:55:34.712Z</updated>
+  <id>http://example.com/</id>
+  
+  <author>
+    <name>恍惚</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="http://example.com/2022/08/26/%E5%BC%82%E6%AD%A5%E6%93%8D%E4%BD%9C/"/>
+    <id>http://example.com/2022/08/26/%E5%BC%82%E6%AD%A5%E6%93%8D%E4%BD%9C/</id>
+    <published>2022-08-26T11:55:34.489Z</published>
+    <updated>2022-08-26T11:55:34.712Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;异步操作&quot;&gt;&lt;a href=&quot;#异步操作&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://example.com/2022/08/26/this%E5%85%B3%E9%94%AE%E5%AD%97/"/>
+    <id>http://example.com/2022/08/26/this%E5%85%B3%E9%94%AE%E5%AD%97/</id>
+    <published>2022-08-26T11:55:15.407Z</published>
+    <updated>2022-08-26T11:55:15.656Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;this关键字&quot;&gt;&lt;a href=&quot;#this关键字&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://example.com/2022/08/26/Promise%E5%AF%B9%E8%B1%A1/"/>
+    <id>http://example.com/2022/08/26/Promise%E5%AF%B9%E8%B1%A1/</id>
+    <published>2022-08-26T11:54:56.482Z</published>
+    <updated>2022-08-26T11:54:56.768Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Promise对象&quot;&gt;&lt;a href=&quot;#Promise对象&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://example.com/2022/08/26/package.json%E4%BB%8B%E7%BB%8D/"/>
+    <id>http://example.com/2022/08/26/package.json%E4%BB%8B%E7%BB%8D/</id>
+    <published>2022-08-26T11:54:37.309Z</published>
+    <updated>2022-08-26T11:54:37.575Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;package-json介绍&quot;&gt;&lt;a href=&quot;#package-json介绍&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://example.com/2022/08/26/Module%E8%AF%AD%E6%B3%95/"/>
+    <id>http://example.com/2022/08/26/Module%E8%AF%AD%E6%B3%95/</id>
+    <published>2022-08-26T11:54:18.568Z</published>
+    <updated>2022-08-26T11:54:18.799Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Module语法&quot;&gt;&lt;a href=&quot;#Module语法&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://example.com/2022/08/26/Module%E7%9A%84%E5%8A%A0%E8%BD%BD%E5%AE%9E%E7%8E%B0/"/>
+    <id>http://example.com/2022/08/26/Module%E7%9A%84%E5%8A%A0%E8%BD%BD%E5%AE%9E%E7%8E%B0/</id>
+    <published>2022-08-26T11:53:49.957Z</published>
+    <updated>2022-08-26T11:53:50.209Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Module的加载实现&quot;&gt;&lt;a href=&quot;#Module的加载实现&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://example.com/2022/08/26/Generator%E5%87%BD%E6%95%B0%E8%AF%AD%E6%B3%95/"/>
+    <id>http://example.com/2022/08/26/Generator%E5%87%BD%E6%95%B0%E8%AF%AD%E6%B3%95/</id>
+    <published>2022-08-26T11:53:29.539Z</published>
+    <updated>2022-08-26T11:53:29.789Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Generator函数语法&quot;&gt;&lt;a href=&quot;#Generator函数语法&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://example.com/2022/08/26/ECMAScript6/"/>
+    <id>http://example.com/2022/08/26/ECMAScript6/</id>
+    <published>2022-08-26T11:53:07.043Z</published>
+    <updated>2022-08-26T11:53:07.291Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;ECMAScript6&quot;&gt;&lt;a href=&quot;#ECMAScript6&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://example.com/2022/08/26/async%E5%87%BD%E6%95%B0/"/>
+    <id>http://example.com/2022/08/26/async%E5%87%BD%E6%95%B0/</id>
+    <published>2022-08-26T11:52:43.605Z</published>
+    <updated>2022-08-26T11:52:43.893Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;async函数&quot;&gt;&lt;a href=&quot;#async函数&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://example.com/2022/08/26/Iterator%E9%81%8D%E5%8E%86%E5%99%A8/"/>
+    <id>http://example.com/2022/08/26/Iterator%E9%81%8D%E5%8E%86%E5%99%A8/</id>
+    <published>2022-08-26T11:52:15.049Z</published>
+    <updated>2022-08-26T11:52:15.690Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;async函数&quot;&gt;&lt;a href=&quot;#async函数&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://example.com/2022/08/26/CORS%E9%80%9A%E4%BF%A1/"/>
+    <id>http://example.com/2022/08/26/CORS%E9%80%9A%E4%BF%A1/</id>
+    <published>2022-08-26T11:51:48.577Z</published>
+    <updated>2022-08-26T11:51:48.826Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;CORS通信&quot;&gt;&lt;a href=&quot;#CORS通信&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://example.com/2022/08/26/VueRouter/"/>
+    <id>http://example.com/2022/08/26/VueRouter/</id>
+    <published>2022-08-26T11:47:29.153Z</published>
+    <updated>2022-08-26T11:47:29.491Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;VueRouter&quot;&gt;&lt;a href=&quot;#VueRouter&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://example.com/2022/08/26/Vuex%20%20/"/>
+    <id>http://example.com/2022/08/26/Vuex%20%20/</id>
+    <published>2022-08-26T11:45:49.861Z</published>
+    <updated>2022-08-26T11:45:50.311Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Vuex&quot;&gt;&lt;a href=&quot;#Vuex&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>DeepL</title>
+    <link href="http://example.com/2021/06/19/DeepL/"/>
+    <id>http://example.com/2021/06/19/DeepL/</id>
+    <published>2021-06-19T01:33:43.000Z</published>
+    <updated>2021-08-07T05:58:51.000Z</updated>
+    
+    
+    <summary type="html">DeepL才是最强大的翻译器！</summary>
+    
+    
+    
+    <category term="分享" scheme="http://example.com/categories/%E5%88%86%E4%BA%AB/"/>
+    
+    
+    <category term="工具" scheme="http://example.com/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>语义化版本2.0.0介绍</title>
+    <link href="http://example.com/2021/06/15/semver2.0.0/"/>
+    <id>http://example.com/2021/06/15/semver2.0.0/</id>
+    <published>2021-06-15T04:43:23.000Z</published>
+    <updated>2021-08-07T05:58:51.000Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;语义化版本2-0-0介绍&quot;&gt;&lt;a href=&quot;#语义化版本2-0-0介绍&quot; class=&quot;headerlink&quot; title=&quot;语义化版本2.0.0介绍&quot;&gt;&lt;/a&gt;语义化版本2.0.0介绍&lt;/h1&gt;&lt;h2 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h2&gt;&lt;p&gt;语义化版本是为了解决软件开发过程中依赖关系混乱或者依赖锁死的情况。&lt;/p&gt;
+&lt;p&gt;它的标准格式如下：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;x.y.z&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;其中x表示主版本号，y表示次版本号，z表示修订号。&lt;/p&gt;
+&lt;p&gt;对这几种版本号的解释如下：&lt;/p&gt;
+&lt;p&gt;X 主版本号，表示做了&lt;strong&gt;不向下兼容的修改&lt;/strong&gt;时递增。&lt;/p&gt;
+&lt;p&gt;Y 次版本号，表示做了&lt;strong&gt;向下兼容的新增及修改&lt;/strong&gt;时递增。&lt;/p&gt;
+&lt;p&gt;Z 修订号，表示做了&lt;strong&gt;向下兼容的问题修复&lt;/strong&gt;时递增。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="扩展阅读" scheme="http://example.com/categories/%E6%89%A9%E5%B1%95%E9%98%85%E8%AF%BB/"/>
+    
+    
+    <category term="版本号" scheme="http://example.com/tags/%E7%89%88%E6%9C%AC%E5%8F%B7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>npm常用命令</title>
+    <link href="http://example.com/2020/08/04/npm-command/"/>
+    <id>http://example.com/2020/08/04/npm-command/</id>
+    <published>2020-08-04T04:43:23.000Z</published>
+    <updated>2021-08-07T05:58:51.000Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;npm常见命令&quot;&gt;&lt;a href=&quot;#npm常见命令&quot; class=&quot;headerlink&quot; title=&quot;npm常见命令&quot;&gt;&lt;/a&gt;npm常见命令&lt;/h1&gt;&lt;h2 id=&quot;一-npm-amp-yarn介绍&quot;&gt;&lt;a href=&quot;#一-npm-amp-yarn介绍&quot; class=&quot;headerlink&quot; title=&quot;一.npm&amp;amp;yarn介绍&quot;&gt;&lt;/a&gt;一.npm&amp;amp;yarn介绍&lt;/h2&gt;&lt;p&gt;npm是一个基于Node.js的包管理工具。&lt;br&gt;yarn是Facebook、Google、Exponent 和 Tilde 联合推出了一个新的 包管理工具,与npm相比有些优势。&lt;br&gt;npm在安装Node.js时会被一并安装，yarn则需要额外安装。&lt;/p&gt;
+&lt;h2 id=&quot;二-npm-amp-cnpm的关系&quot;&gt;&lt;a href=&quot;#二-npm-amp-cnpm的关系&quot; class=&quot;headerlink&quot; title=&quot;二.npm&amp;amp;cnpm的关系&quot;&gt;&lt;/a&gt;二.npm&amp;amp;cnpm的关系&lt;/h2&gt;&lt;h3 id=&quot;1-介绍&quot;&gt;&lt;a href=&quot;#1-介绍&quot; class=&quot;headerlink&quot; title=&quot;1.介绍&quot;&gt;&lt;/a&gt;1.介绍&lt;/h3&gt;&lt;p&gt;由于npm服务器在国外，所以在国内安装速度不是很理想，于是淘宝团队开发了一个npmjs.org的镜像，可以有效解决下载过于缓慢的问题。这是淘宝团队对它的介绍。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;“这是一个完整 npmjs.org 镜像，你可以用此代替官方版本(只读)，同步频率目前为 10分钟 一次以保证尽量与官方服务同步。”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/blockquote&gt;</summary>
+    
+    
+    
+    <category term="技术笔记" scheme="http://example.com/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="npm" scheme="http://example.com/tags/npm/"/>
+    
+    <category term="yarn" scheme="http://example.com/tags/yarn/"/>
+    
+    <category term="cnpm" scheme="http://example.com/tags/cnpm/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java反射</title>
+    <link href="http://example.com/2020/06/15/java-reflection/"/>
+    <id>http://example.com/2020/06/15/java-reflection/</id>
+    <published>2020-06-15T04:43:23.000Z</published>
+    <updated>2021-08-07T05:58:51.000Z</updated>
+    
+    
+    <summary type="html">Java进阶学习之反射</summary>
+    
+    
+    
+    <category term="技术笔记" scheme="http://example.com/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="Java" scheme="http://example.com/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/Java/"/>
+    
+    
+    <category term="Java" scheme="http://example.com/tags/Java/"/>
+    
+    <category term="Java反射" scheme="http://example.com/tags/Java%E5%8F%8D%E5%B0%84/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Learning how to learn part1</title>
+    <link href="http://example.com/2020/06/15/Learning%20how%20to%20learn%20prat%201/"/>
+    <id>http://example.com/2020/06/15/Learning%20how%20to%20learn%20prat%201/</id>
+    <published>2020-06-15T04:32:33.000Z</published>
+    <updated>2021-08-07T05:58:51.000Z</updated>
+    
+    
+    <summary type="html">Coursera课程-Learning how to learn 章节1 总结~</summary>
+    
+    
+    
+    <category term="Coursera课程" scheme="http://example.com/categories/Coursera%E8%AF%BE%E7%A8%8B/"/>
+    
+    
+    <category term="Coursera" scheme="http://example.com/tags/Coursera/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java面向对象基础</title>
+    <link href="http://example.com/2020/06/14/java-object-oriented/"/>
+    <id>http://example.com/2020/06/14/java-object-oriented/</id>
+    <published>2020-06-14T04:43:23.000Z</published>
+    <updated>2021-08-07T05:58:51.000Z</updated>
+    
+    
+    <summary type="html">Java进阶学习之面向对象篇</summary>
+    
+    
+    
+    <category term="技术笔记" scheme="http://example.com/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="Java" scheme="http://example.com/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/Java/"/>
+    
+    
+    <category term="Java" scheme="http://example.com/tags/Java/"/>
+    
+    <category term="面向对象" scheme="http://example.com/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Learning how to learn part4</title>
+    <link href="http://example.com/2020/06/14/Learning%20how%20to%20learn%20part%204/"/>
+    <id>http://example.com/2020/06/14/Learning%20how%20to%20learn%20part%204/</id>
+    <published>2020-06-14T04:32:33.000Z</published>
+    <updated>2021-08-07T05:58:51.000Z</updated>
+    
+    
+    <summary type="html">Coursera课程-Learning how to learn 章节4 总结~</summary>
+    
+    
+    
+    <category term="Coursera课程" scheme="http://example.com/categories/Coursera%E8%AF%BE%E7%A8%8B/"/>
+    
+    
+    <category term="Coursera" scheme="http://example.com/tags/Coursera/"/>
+    
+  </entry>
+  
+</feed>

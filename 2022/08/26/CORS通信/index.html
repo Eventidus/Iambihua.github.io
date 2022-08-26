@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  <title>
+    
+    恍惚
+  </title>
+  <!-- Icon -->
+  
+    <link rel="shortcut icon" href="/images/hexo.svg">
+    
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<script src="/js/pace.min.js"></script>
+
+<meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="恍惚" type="application/atom+xml">
+</head>
+
+<body>
+  <main class="content">
+    <section class="outer">
+  <article id="post-CORS通信" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+
+    
+    <div class="article-meta">
+      <a href="/2022/08/26/CORS%E9%80%9A%E4%BF%A1/" class="article-date">
+  <time datetime="2022-08-26T11:51:48.577Z" itemprop="datePublished">2022-08-26</time>
+</a>
+      
+    </div>
+    
+
+    
+    
+<div class="tocbot"></div>
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+      
+        <h1 id="CORS通信"><a href="#CORS通信" class="headerlink" title="CORS通信"></a>CORS通信</h1><ol>
+<li>CORS（Cross-Origin-Resource-Sharing），中文名跨域资源共享。</li>
+<li>CORS的作用是允许浏览器向跨域服务器发送XMLHttpRequest（XHR）。</li>
+<li>实现CORS跨域通信，主要看服务器是否实现CORS接口，也就是说主要在服务器端配置</li>
+<li>服务器端配置CORS跨域的方法是设置Access-Control-Allow-Origin</li>
+<li>CORS可分为两种请求：<ol>
+<li>简答请求<ol>
+<li>简答请求需要请求方法和头信息字段都满足条件</li>
+<li>请求方法<ol>
+<li>HEAD</li>
+<li>POST</li>
+<li>GET</li>
+</ol>
+</li>
+<li>头信息字段<ol>
+<li>Accept</li>
+<li>Content-Language</li>
+<li>Accept-Language</li>
+<li>Last-Event-ID</li>
+<li>Content-Type：只限于三个值application&#x2F;x-www-form-urlencoded、multipart&#x2F;form-data、text&#x2F;plain</li>
+</ol>
+</li>
+<li>不满足上面两个条件的，称为非简单请求。</li>
+<li>CORS通信的基本流程：<ol>
+<li>浏览器发起CORS请求，并且在头信息增加origin字段，表示要发起跨域请求的域。</li>
+<li>服务器判断浏览器发过来的origin是否在许可范围内。</li>
+<li>如不在许可范围内，则发送正常的HTTP回应，但不会包含Access-Control-Allow-Origin字段。</li>
+<li>如在许可范围内，发送的HTTP回应会包含以下字段<ol>
+<li>Access-Control-Allow-Origin字段： 表示服务器可允许跨域的域名，如果是*，则表示可接受任意域名。</li>
+<li>Access-Control-Allow-Credentials：表示是否允许发送cookie。</li>
+<li>Access-Control-Expose-Headers：表示是否返回其他非基本字段。</li>
+</ol>
+</li>
+<li>要想发送cookie给服务器，开发者需要将xhr.withCredentials设置为true，注意有些浏览器的xhr.withCredentials默认为false。</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>非简单请求<ol>
+<li>非简单请求在发送CORS请求前，需要先发出预检请求。</li>
+<li>预检请求是浏览器询问是否接受当前网页的域名，以及可接受哪些HTTP方法和字段。</li>
+<li>预检请求的请求方法是OPTIONS。</li>
+<li>预检请求的头信息包含的部分字段如下<ol>
+<li>origin</li>
+<li>Access-Control-Request-Method，发送CORS请求用到的方法。</li>
+<li>Access-Control-Requset-Headers，发送CORS请求额外发送的头部信息</li>
+</ol>
+</li>
+<li>如通过预检请求，则每次的CORS请求就跟简单请求一样。</li>
+<li>CORS和JSONP的比较<ol>
+<li>JSONP只支持Get请求，而CORS支持所有类型的请求。</li>
+<li>JSONP可以在老式浏览器上运行，也可以向不支持CORS的网站上请求数据。</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/08/26/CORS%E9%80%9A%E4%BF%A1/" data-id="cl7ag45ye0000agv4aieh61g9" class="article-share-link">
+        Share
+      </a>
+      
+    </footer>
+
+  </div>
+
+  
+  
+<nav class="article-nav">
+  
+  <a href="/2022/08/26/Iterator%E9%81%8D%E5%8E%86%E5%99%A8/" class="article-nav-link">
+    <strong class="article-nav-caption">Newer</strong>
+    <div class="article-nav-title">
+      
+      (no title)
+      
+    </div>
+  </a>
+  
+  
+  <a href="/2022/08/26/VueRouter/" class="article-nav-link">
+    <strong class="article-nav-caption">Older</strong>
+    <div class="article-nav-title"></div>
+  </a>
+  
+</nav>
+
+  
+
+  
+  
+  
+  
+
+</article>
+</section>
+    <footer class="footer">
+  <div class="outer">
+    <ul class="list-inline">
+      <li>恍惚 &copy; 2022</li>
+      
+        <li>
+          
+            <a href="https://beian.miit.gov.cn/" target="_blank"></a>
+            
+        </li>
+      
+      <li>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></li>
+      <li>theme  <a target="_blank" rel="noopener" href="https://github.com/zhwangart/hexo-theme-ocean">Ocean</a></li>
+    </ul>
+    <p><ul class="list-inline">
+  
+  <li><i class="fe fe-smile-alt tooltip" data-tooltip="UV"></i> <span id="busuanzi_value_site_uv"></span></li>
+  
+  <li><i class="fe fe-bookmark tooltip" data-tooltip="PV"></i> <span id="busuanzi_value_page_pv"></span></li>
+  
+</ul></p>
+  </div>
+</footer>
+  </main>
+  <aside class="sidebar">
+    <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/hexo.svg" alt="恍惚"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">Home</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/about">About</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link nav-item-search" title="Search">
+        <i class="fe fe-search"></i>
+        Search
+      </a>
+    </li>
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      <div class="totop" id="totop">
+  <i class="fe fe-rocket"></i>
+</div>
+    </li>
+    <li class="nav-item">
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="fe fe-feed"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+  </aside>
+  
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/jquery.justifiedGallery.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+
+<script src="/js/tocbot.min.js"></script>
+
+
+<script>
+  // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
+  tocbot.init({
+    tocSelector: '.tocbot',
+    contentSelector: '.article-entry',
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    positionFixedSelector: '.tocbot',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto',
+  });
+</script>
+
+
+
+<script src="/js/ocean.js"></script>
+
+</body>
+
+</html>

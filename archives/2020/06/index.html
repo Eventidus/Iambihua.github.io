@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  <title>
+    Archives: 2020/6 |
+    
+    恍惚
+  </title>
+  <!-- Icon -->
+  
+    <link rel="shortcut icon" href="/images/hexo.svg">
+    
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<script src="/js/pace.min.js"></script>
+
+<meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="恍惚" type="application/atom+xml">
+</head>
+
+<body>
+  <main class="content">
+    <section class="outer">
+  <article class="articles">
+    
+    <h1 class="page-type-title">2020/6</h1>
+    
+  
+  
+  
+  
+  
+  
+  <div class="archives-wrap">
+    <div class="archive-year-wrap">
+      <a href="/archives/2020" class="archive-year">2020</a>
+    </div>
+    <div class="archives">
+      
+      <article class="archive-article archive-type-post">
+  
+  
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      
+  
+  <h2 class="archive-article-title" itemprop="name">
+    <a href="/2020/06/15/java-reflection/">Java反射</a>
+  </h2>
+  
+  
+
+      <a href="/2020/06/15/java-reflection/" class="archive-article-date">
+  <time datetime="2020-06-15T04:43:23.000Z" itemprop="datePublished">06/15</time>
+</a>
+    </header>
+    
+      <blockquote>
+<p>本文是Java反射篇，学习于<a target="_blank" rel="noopener" href="https://www.liaoxuefeng.com/wiki/1252599548343744">廖雪峰的Java教程</a></p>
+</blockquote>
+<h2 id="Java反射"><a href="#Java反射" class="headerlink" title="Java反射"></a>Java反射</h2><h3 id="1-Class类"><a href="#1-Class类" class="headerlink" title="1.Class类"></a>1.Class类</h3><ul>
+<li><p>反射：通过<code>Class</code>实例获取相关类信息的方法称为反射。</p>
+</li>
+<li><p><code>JVM</code>会在执行过程中动态加载类到内存，并为其创建一个<code>Class</code>类型的实例，并且该Class实例只能在JVM内部创建。</p>
+</li>
+<li><p>如何获取一个<code>Class</code>实例</p>
+<ul>
+<li>通过一个类的静态变量<code>class</code>获取，如<code>String.class</code>。</li>
+<li>通过实例变量调用<code>getClass()</code>方法。</li>
+<li>通过<code>Class</code>类的静态<code>Class.forName()</code>方法，例<code>Class.forName(String.lang.String)</code>,其中参数中的类名要为完整类名。</li>
+</ul>
+</li>
+<li><p><code>Class</code>实例的比较，可以用<code>==</code>比较，原因是<code>Class</code>实例在JVM中是唯一的。</p>
+</li>
+<li><p>准确判断两个类型是否为同一类型可用<code>==</code>比较。</p>
+</li>
+<li><p>数组例如<code>String[ ]</code>也可以创建<code>Class</code>实例，而且不同于<code>String.class</code>。</p>
+</li>
+<li><p>此外，<code>JVM</code>也为基本类型创建了<code>Class</code>实例,例如<code>int.class</code>。</p>
+</li>
+<li><p>可通过一个<code>Class</code>实例调用<code>newInstance()</code>方法创建一个对应类型的实例，但只能调用该类的无参数构造方法，例如:</p>
+    
+    
+    
+  </div>
+
+</article>
+      
+  
+  
+      <article class="archive-article archive-type-post">
+  
+  
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      
+  
+  <h2 class="archive-article-title" itemprop="name">
+    <a href="/2020/06/15/Learning%20how%20to%20learn%20prat%201/">Learning how to learn part1</a>
+  </h2>
+  
+  
+
+      <a href="/2020/06/15/Learning%20how%20to%20learn%20prat%201/" class="archive-article-date">
+  <time datetime="2020-06-15T04:32:33.000Z" itemprop="datePublished">06/15</time>
+</a>
+    </header>
+    
+      <h1 id="Learning-how-to-learn-prat-1"><a href="#Learning-how-to-learn-prat-1" class="headerlink" title="Learning how to learn -prat 1"></a>Learning how to learn -prat 1</h1><h2 id="一-两种思考模式"><a href="#一-两种思考模式" class="headerlink" title="一.两种思考模式"></a>一.两种思考模式</h2><h3 id="1-专注模式"><a href="#1-专注模式" class="headerlink" title="1.专注模式"></a>1.专注模式</h3><ul>
+<li>当我们大脑在专心思考某个问题时大脑所处的模式，是比较紧密的思考模式。</li>
+</ul>
+<h3 id="2-发散模式"><a href="#2-发散模式" class="headerlink" title="2.发散模式"></a>2.发散模式</h3><ul>
+<li>当我们大脑在多广度思考时大脑所处的模式，是一种概括性的思考模式。</li>
+</ul>
+<h3 id="3-思考模式切换"><a href="#3-思考模式切换" class="headerlink" title="3.思考模式切换"></a>3.思考模式切换</h3><ul>
+<li><p>在大脑中的某一时刻，专注模式和发散模式只能同时存在一种模式。</p>
+</li>
+<li><p>学习时，最好的利用大脑思考模式的方法是两种模式相互切换。</p>
+</li>
+<li><p>有时候发散模式有助于梳理知识，增强对相关知识的理解性。</p>
+    
+    
+    
+  </div>
+
+</article>
+      
+  
+  
+      <article class="archive-article archive-type-post">
+  
+  
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      
+  
+  <h2 class="archive-article-title" itemprop="name">
+    <a href="/2020/06/14/java-object-oriented/">Java面向对象基础</a>
+  </h2>
+  
+  
+
+      <a href="/2020/06/14/java-object-oriented/" class="archive-article-date">
+  <time datetime="2020-06-14T04:43:23.000Z" itemprop="datePublished">06/14</time>
+</a>
+    </header>
+    
+      <blockquote>
+<p>本文是Java的面向对象篇，学习于<a target="_blank" rel="noopener" href="https://www.liaoxuefeng.com/">廖雪峰的Java教程</a>.</p>
+</blockquote>
+<h2 id="面向对象基础"><a href="#面向对象基础" class="headerlink" title="面向对象基础"></a>面向对象基础</h2><h3 id="1-方法"><a href="#1-方法" class="headerlink" title="1.方法"></a>1.方法</h3><ul>
+<li><code>private</code>方法和<code>private</code>字段不能外部类访问。</li>
+<li><code>private</code>方法和<code>private</code>字段是用来方便自身类使用的，为了保证类的封装性。</li>
+<li><strong>this</strong> 变量指当前实例。</li>
+<li>局部变量的优先级高于字段，可变参数也是局部变量。</li>
+<li>可变参数的定义：<code>类型... 变量名</code>，相当于数组。</li>
+</ul>
+<h3 id="2-构造方法"><a href="#2-构造方法" class="headerlink" title="2.构造方法"></a>2.构造方法</h3><ul>
+<li>构造方法名与类名相同，构造方法无返回值，必须用<code>new</code>操作符调用。</li>
+<li>未自定义构造方法时，系统会默认创建一个无参数构造方法。</li>
+<li>如果已经自定义构造方法，系统将不再默认创建构造方法。</li>
+<li>引用类型的字段默认是<code>null</code>，数值类型的字段是默认值，<code>int</code>类型默认值是<code>0</code>，布尔类型默认值是<code>false</code>。</li>
+<li>字段的最终赋值结果由构造方法中的赋值语句决定。</li>
+<li>一个类中可以有多构造方法，只是参数列表不同。</li>
+</ul>
+<h3 id="3-重载方法"><a href="#3-重载方法" class="headerlink" title="3.重载方法"></a>3.重载方法</h3><ul>
+<li>方法名相同但参数列表不同的方法叫(overload)重载方法，返回类型<strong>通常</strong>是相同的。</li>
+<li>重载方法的目的是实现相似的功能但得出不同的结果。</li>
+<li>方法签名: 方法名和参数列表。
+    
+    
+    
+  </div>
+
+</article>
+      
+  
+  
+      <article class="archive-article archive-type-post">
+  
+  
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      
+  
+  <h2 class="archive-article-title" itemprop="name">
+    <a href="/2020/06/14/Learning%20how%20to%20learn%20part%204/">Learning how to learn part4</a>
+  </h2>
+  
+  
+
+      <a href="/2020/06/14/Learning%20how%20to%20learn%20part%204/" class="archive-article-date">
+  <time datetime="2020-06-14T04:32:33.000Z" itemprop="datePublished">06/14</time>
+</a>
+    </header>
+    
+      <h1 id="Learning-how-to-learn-part4"><a href="#Learning-how-to-learn-part4" class="headerlink" title="Learning how to learn part4"></a>Learning how to learn part4</h1><h2 id="一-学习技巧类"><a href="#一-学习技巧类" class="headerlink" title="一.学习技巧类"></a>一.学习技巧类</h2><h3 id="1-比喻和类比"><a href="#1-比喻和类比" class="headerlink" title="1.比喻和类比"></a>1.比喻和类比</h3><ul>
+<li>更好地理解当前概念</li>
+<li>摆脱思维定势
+    
+    
+    
+  </div>
+
+</article>
+      
+  
+  
+      <article class="archive-article archive-type-post">
+  
+  
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      
+  
+  <h2 class="archive-article-title" itemprop="name">
+    <a href="/2020/06/13/Learning%20how%20to%20learn%20part%203/">Learning how to learn part3</a>
+  </h2>
+  
+  
+
+      <a href="/2020/06/13/Learning%20how%20to%20learn%20part%203/" class="archive-article-date">
+  <time datetime="2020-06-13T12:46:25.000Z" itemprop="datePublished">06/13</time>
+</a>
+    </header>
+    
+      <h1 id="Learning-how-to-learn-part-3"><a href="#Learning-how-to-learn-part-3" class="headerlink" title="Learning how to learn part 3"></a>Learning how to learn part 3</h1><h2 id="一-拖延症"><a href="#一-拖延症" class="headerlink" title="一.拖延症"></a>一.拖延症</h2><h3 id="1-如何应对拖延症"><a href="#1-如何应对拖延症" class="headerlink" title="1.如何应对拖延症"></a>1.如何应对拖延症</h3><ul>
+<li>专注于学习过程而不是学习结果</li>
+<li>排除干扰，防止出现拖延行为</li>
+<li>制定任务计划
+    
+    
+    
+  </div>
+
+</article>
+      
+  
+  
+      <article class="archive-article archive-type-post">
+  
+  
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      
+  
+  <h2 class="archive-article-title" itemprop="name">
+    <a href="/2020/06/13/java-introduction/">Java入门</a>
+  </h2>
+  
+  
+
+      <a href="/2020/06/13/java-introduction/" class="archive-article-date">
+  <time datetime="2020-06-13T04:43:23.000Z" itemprop="datePublished">06/13</time>
+</a>
+    </header>
+    
+      
+    
+    
+    
+  </div>
+
+</article>
+      
+  
+  
+      <article class="archive-article archive-type-post">
+  
+  
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      
+  
+  <h2 class="archive-article-title" itemprop="name">
+    <a href="/2020/06/12/Hexo-upgrade/">Hexo版本升级指南</a>
+  </h2>
+  
+  
+
+      <a href="/2020/06/12/Hexo-upgrade/" class="archive-article-date">
+  <time datetime="2020-06-12T04:43:23.000Z" itemprop="datePublished">06/12</time>
+</a>
+    </header>
+    
+      <h1 id="Hexo版本升级指南"><a href="#Hexo版本升级指南" class="headerlink" title="Hexo版本升级指南"></a>Hexo版本升级指南</h1><h3 id="1-更新升级hexo"><a href="#1-更新升级hexo" class="headerlink" title="1.更新升级hexo"></a>1.更新升级hexo</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-查看可更新npm依赖包并升级"><a href="#2-查看可更新npm依赖包并升级" class="headerlink" title="2.查看可更新npm依赖包并升级"></a>2.查看可更新npm依赖包并升级</h3><h4 id="安装npm-check包"><a href="#安装npm-check包" class="headerlink" title="安装npm-check包"></a>安装npm-check包</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install npm-check -g</span><br></pre></td></tr></table></figure>
+<h4 id="检查可更新依赖包并升级"><a href="#检查可更新依赖包并升级" class="headerlink" title="检查可更新依赖包并升级"></a>检查可更新依赖包并升级</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm-check -u</span><br></pre></td></tr></table></figure>
+
+<p><strong>or</strong></p>
+<h4 id="安装npm-upgrade包"><a href="#安装npm-upgrade包" class="headerlink" title="安装npm-upgrade包"></a>安装npm-upgrade包</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g npm-upgrade</span><br></pre></td></tr></table></figure>
+<h4 id="检查可更新依赖包件并升级"><a href="#检查可更新依赖包件并升级" class="headerlink" title="检查可更新依赖包件并升级"></a>检查可更新依赖包件并升级</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm-upgrade</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-更新"><a href="#4-更新" class="headerlink" title="4.更新"></a>4.更新</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm update -g</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm update --save</span><br></pre></td></tr></table></figure>
+    
+    
+    
+  </div>
+
+</article>
+      
+  
+  
+      <article class="archive-article archive-type-post">
+  
+  
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      
+  
+  <h2 class="archive-article-title" itemprop="name">
+    <a href="/2020/06/12/java-exception/">Java异常</a>
+  </h2>
+  
+  
+
+      <a href="/2020/06/12/java-exception/" class="archive-article-date">
+  <time datetime="2020-06-12T04:43:23.000Z" itemprop="datePublished">06/12</time>
+</a>
+    </header>
+    
+      <blockquote>
+<p>本文是Java异常篇，学习于<a target="_blank" rel="noopener" href="https://www.liaoxuefeng.com/wiki/1252599548343744">廖雪峰的Java教程</a></p>
+</blockquote>
+<h2 id="Java异常"><a href="#Java异常" class="headerlink" title="Java异常"></a>Java异常</h2><h3 id="1-异常类型"><a href="#1-异常类型" class="headerlink" title="1.异常类型"></a>1.异常类型</h3><ul>
+<li>异常体系的根为<code>Throwable</code>，它继承自<code>Object</code>。</li>
+<li><code>Throwable</code>有两个体系<code>Error</code>和<code>Exception</code>。</li>
+<li><code>Error</code>类<ul>
+<li><code>OutOfMemoryError</code></li>
+<li><code>NoClassDefFounderError</code></li>
+<li><code>StackOverError</code></li>
+<li>等等</li>
+</ul>
+</li>
+<li><code>Exception</code>类<ul>
+<li><code>RuntimeException</code><ul>
+<li><code>IndexOutOfBoundsException</code></li>
+<li><code>NullPointerException</code></li>
+<li>等等</li>
+</ul>
+</li>
+<li><code>非RuntimeException</code>(也叫<code>Checked Exception</code>异常)<ul>
+<li><code>IOException</code></li>
+<li><code>ReflectiveOperationException</code></li>
+<li><code>NumberFormatException</code></li>
+<li><code>FileNotFoundException</code></li>
+<li><code>SocketException</code></li>
+<li>等等</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>非RuntimeException</code>异常必须被捕获，<code>RuntimeExcept</code>异常不强制被捕获。</li>
+<li>异常捕获使用<code>try&#123;&#125;···catch&#123;&#125;</code>语句。</li>
+<li>其中<code>try</code>声明可能出现异常的方法，<code>catch</code>捕获异常Exception及其子类。</li>
+<li><code>thorws</code>语句声明可能出现的异常，凡是用throws声明异常的方法，最终必须被捕获，如若不捕获，可在最高调用层<code>throws</code>异常，代价是发送异常的话程序会闪退。</li>
+<li><code>printStackTrace()</code>方法可以打印异常栈。
+    
+    
+    
+  </div>
+
+</article>
+      
+  
+  
+      <article class="archive-article archive-type-post">
+  
+  
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      
+  
+  <h2 class="archive-article-title" itemprop="name">
+    <a href="/2020/06/12/Learning%20how%20to%20learn%20part%202/">Learning how to learn part2</a>
+  </h2>
+  
+  
+
+      <a href="/2020/06/12/Learning%20how%20to%20learn%20part%202/" class="archive-article-date">
+  <time datetime="2020-06-12T04:32:33.000Z" itemprop="datePublished">06/12</time>
+</a>
+    </header>
+    
+      <h1 id="Learning-how-to-learn-part2"><a href="#Learning-how-to-learn-part2" class="headerlink" title="Learning how to learn -part2"></a>Learning how to learn -part2</h1><h2 id="一-组块"><a href="#一-组块" class="headerlink" title="一.组块"></a>一.组块</h2><h3 id="1-什么是组块"><a href="#1-什么是组块" class="headerlink" title="1. 什么是组块"></a>1. 什么是组块</h3><p>组块是大脑中的一种神经信息片段。</p>
+<h3 id="2-组块化"><a href="#2-组块化" class="headerlink" title="2. 组块化"></a>2. 组块化</h3><ul>
+<li>组块整体化可以让更多信息联系起来。</li>
+</ul>
+<h3 id="3-组块化的优点"><a href="#3-组块化的优点" class="headerlink" title="3. 组块化的优点"></a>3. 组块化的优点</h3><ul>
+<li>解决问题更全局。</li>
+<li>更易于记忆
+    
+    
+    
+  </div>
+
+</article>
+      
+  
+  
+      <article class="archive-article archive-type-post">
+  
+  
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      
+  
+  <h2 class="archive-article-title" itemprop="name">
+    <a href="/2020/06/11/java-core-classes/">Java核心类</a>
+  </h2>
+  
+  
+
+      <a href="/2020/06/11/java-core-classes/" class="archive-article-date">
+  <time datetime="2020-06-11T04:43:23.000Z" itemprop="datePublished">06/11</time>
+</a>
+    </header>
+    
+      <blockquote>
+<p>本文是Java的面向对象篇，学习于<a target="_blank" rel="noopener" href="https://www.liaoxuefeng.com/">廖雪峰的Java教程</a>.</p>
+</blockquote>
+<h2 id="Java核心类"><a href="#Java核心类" class="headerlink" title="Java核心类"></a>Java核心类</h2><h3 id="1-String"><a href="#1-String" class="headerlink" title="1.String"></a>1.String</h3><ul>
+<li><p>String字符串内部是通过一个<code>char[]</code>表示的。</p>
+</li>
+<li><p>String字符串不可变性的实现：通过内部的<code>private final char[]</code>实现。</p>
+</li>
+<li><p>字符串的比较</p>
+<ul>
+<li>用<code>equals()</code>方法来比较，而不用<code>==</code>。</li>
+<li>Java编译器在编译期间，会把拥有相同字符串的对象视为同一个对象并且放入常量池，所以用<code>==</code>比较字符串得出的结果会有巧合性。</li>
+<li>忽略大小写比较字符串用<code>equalsIgnoreCase()</code>方法。</li>
+</ul>
+</li>
+<li><p>判断是否包含子串用<code>contains()</code>方法，参数为<code>CharSequence</code>类，为String的子类。</p>
+</li>
+<li><p>搜索字串</p>
+<ul>
+<li><code>indexOf()</code>方法返回字串第一次出现在前半部分的索引。</li>
+<li><code>lastIndexOf()</code>方法返回子串第一次出现在后半部分的索引。</li>
+</ul>
+</li>
+<li><p>判断是否以子串开头或结尾</p>
+<ul>
+<li><code>startsWith()</code>判断是否以子串开头。</li>
+<li><code>endsWith()</code>判断是否以字串结尾。</li>
+</ul>
+</li>
+<li><p>提取字串</p>
+<ul>
+<li><code>substring(2)</code>从索引为2处开始提取字串。</li>
+<li><code>substring(2,4)</code>从索引为2处开始提取，到索引为4处结束，但不包括索引为4的值。</li>
+</ul>
+</li>
+<li><p>去除首尾空白字符</p>
+<ul>
+<li><code>trim()</code>方法，空白字符包括<code>\t</code>、<code>\r</code>、<code>\n</code>。</li>
+<li><code>strip()</code>方法，与<code>trim</code>方法的区别就是可以去除中文空格字符<code>\u3000</code>。</li>
+</ul>
+</li>
+<li><p>判断是否为空</p>
+<ul>
+<li><code>isBlank()</code>方法可以判断是否包含空白字符。</li>
+<li><code>isEmpty</code>方法可以判断是否字符串的长度是否为0，<em>空白字符也可作为一个字符串长度。</em></li>
+</ul>
+</li>
+<li><p>替换子串用<code>replace(s1,s2)</code>方法，其中第一个参数s1表示被替换的子串，第二个参数s2为替换的子串。</p>
+</li>
+<li><p><code>spilt()</code>方法可以分割字符串。</p>
+</li>
+<li><p>格式化字符串</p>
+<ul>
+<li><code>formatted()</code></li>
+<li><code>format()</code>静态方法</li>
+<li>示例代码
+    
+    
+    
+  </div>
+
+</article>
+      
+      
+    </div>
+  </div>
+  
+  
+
+  
+  <nav class="page-nav">
+    <span class="page-number current">1</span><a class="page-number" href="/archives/2020/06/page/2/">2</a><a class="extend next" rel="next" href="/archives/2020/06/page/2/">Next</a>
+  </nav>
+  
+</section>
+    <footer class="footer">
+  <div class="outer">
+    <ul class="list-inline">
+      <li>恍惚 &copy; 2022</li>
+      
+        <li>
+          
+            <a href="https://beian.miit.gov.cn/" target="_blank"></a>
+            
+        </li>
+      
+      <li>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></li>
+      <li>theme  <a target="_blank" rel="noopener" href="https://github.com/zhwangart/hexo-theme-ocean">Ocean</a></li>
+    </ul>
+    <p><ul class="list-inline">
+  
+  <li><i class="fe fe-smile-alt tooltip" data-tooltip="UV"></i> <span id="busuanzi_value_site_uv"></span></li>
+  
+</ul></p>
+  </div>
+</footer>
+  </main>
+  <aside class="sidebar">
+    <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/hexo.svg" alt="恍惚"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">Home</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/about">About</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link nav-item-search" title="Search">
+        <i class="fe fe-search"></i>
+        Search
+      </a>
+    </li>
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      <div class="totop" id="totop">
+  <i class="fe fe-rocket"></i>
+</div>
+    </li>
+    <li class="nav-item">
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="fe fe-feed"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+  </aside>
+  
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/jquery.justifiedGallery.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+
+
+<script src="/js/ocean.js"></script>
+
+</body>
+
+</html>

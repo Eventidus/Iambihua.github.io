@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  <meta name="description" content="Git进阶学习之基础篇">
+  
+  <title>
+    Git基础 |
+    
+    恍惚
+  </title>
+  <!-- Icon -->
+  
+    <link rel="shortcut icon" href="/images/hexo.svg">
+    
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<script src="/js/pace.min.js"></script>
+
+<meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="恍惚" type="application/atom+xml">
+</head>
+
+<body>
+  <main class="content">
+    <section class="outer">
+  <article id="post-basic" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+      
+  
+  <h1 class="article-title" itemprop="name">
+    Git基础
+  </h1>
+  
+  
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      <a href="/2020/06/05/basic/" class="article-date">
+  <time datetime="2020-06-05T04:43:23.000Z" itemprop="datePublished">2020-06-05</time>
+</a>
+      
+<div class="article-category">
+  <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/">技术笔记</a> / <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/Git/">Git</a> / <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/Git/Git%E8%BF%9B%E9%98%B6/">Git进阶</a>
+</div>
+
+    </div>
+    
+
+    
+    
+<div class="tocbot"></div>
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+      
+        <h1 id="Git进阶学习"><a href="#Git进阶学习" class="headerlink" title="Git进阶学习"></a>Git进阶学习</h1><blockquote>
+<p>本文是Git的进阶学习篇，来源于<a target="_blank" rel="noopener" href="https://git-scm.com/book/zh/v2">Git官方网站</a>.<br>入门篇可点击<a target="_blank" rel="noopener" href="https://www.lbihua.cn/StudyNotes/Git.html">Git入门学习篇</a>阅读.<br>进阶学习之起步篇可点击<a target="_blank" rel="noopener" href="https://www.lbihua.cn/AdvancedGit/Start.html">起步</a>.<br>进阶学习之分支篇可点击<a target="_blank" rel="noopener" href="https://www.lbihua.cn/AdvancedGit/Branch.html">分支</a>.</p>
+</blockquote>
+<span id="more"></span>
+
+<h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><ol>
+<li><h5 id="获取Git仓库"><a href="#获取Git仓库" class="headerlink" title="获取Git仓库"></a>获取Git仓库</h5><ul>
+<li><code>git init </code> 本地初始化一个仓库</li>
+<li><code>git clone &lt;url&gt; </code> 从远程克隆一个git仓库到本地</li>
+<li><code>git clone &lt;url&gt;  &lt;dir-name&gt; </code>从远程克隆一个git仓库到本地并指定仓库名</li>
+<li><code>git clone -o &lt;originname&gt;</code>从远程克隆的时候同时指定远程仓库的名称</li>
+</ul>
+</li>
+<li><h5 id="Git文件"><a href="#Git文件" class="headerlink" title="Git文件"></a>Git文件</h5><ul>
+<li>查看文件状态<ul>
+<li><code>git status</code> </li>
+<li><code>git status -s</code>以简约的形式输出状态<ul>
+<li>M (modified)表示修改</li>
+<li>A (added)表示新添加到暂存区的文件</li>
+<li>?? 表示未跟踪的文件</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>git忽略文件<ul>
+<li><code>cat .gitignore</code> 查看.gitignore文件</li>
+<li><code>vim .gitignore</code>编写.gitignore文件</li>
+<li>.gitignore文件编写规范<ul>
+<li><strong>#</strong> 开头的内容会被系统忽略</li>
+<li>使用glob匹配模式编写文件</li>
+<li>以 <strong>&#x2F;</strong> 开头表示只忽略当前目录下的文件,非递归删除</li>
+<li>目录以 &#x2F; 结尾，如build&#x2F;表示忽略所有名为build的文件夹</li>
+<li><strong>!</strong> 表示已忽略某一类型的文件但不忽略同一类型的某一文件</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>查看文件差异<ul>
+<li><p><code>git diff </code> 查看工作区和暂存区文件的差异</p>
+</li>
+<li><p><code>git diff --staged</code> 查看暂存区尚未提交的文件与最后一次提交文件的差异</p>
+<ul>
+<li><code>git diff --cached</code> 同上</li>
+</ul>
+</li>
+<li><p>跟踪文件&amp;添加进暂存区</p>
+<ul>
+<li><code>git add </code></li>
+</ul>
+</li>
+<li><p>提交更新</p>
+<ul>
+<li><code>git commit </code></li>
+<li><code>git commit -m &quot; &quot;</code> 提交时同时指定提交说明</li>
+<li><code>git commit -a -m&quot; &quot;</code> 非add直接提交所有工作区的文件并指定提交说明</li>
+</ul>
+</li>
+<li><p>移除文件</p>
+<ul>
+<li><code>git rm </code>移除暂存区的文件同时也从工作目录删除</li>
+<li><code>git rm -f</code>强制移除暂存区的文件，针对文件已经修改或者已经添加进暂存区的情况</li>
+<li><code>git rm --cache</code>仅仅删除暂存区的文件，而不会删除工作目录的文件</li>
+</ul>
+</li>
+<li><p>重命名文件</p>
+<ul>
+<li><code>git mv &lt;oldfile&gt; &lt;newfile&gt;</code></li>
+</ul>
+</li>
+<li><p>查看提交历史</p>
+<ul>
+<li><code>git log</code>查看提交历史</li>
+<li><code>git log -p</code>或<code>git log --patch</code>查看提交历史的同时显示文件的变化内容</li>
+<li><code>git log --stat</code> 查看提交历史并且显示被修改的文件数量，被修改的文件以及增加&#x2F;删除的行数</li>
+<li><code>git log  --pretty=oneline</code>只输出哈希值和提交说明</li>
+</ul>
+</li>
+<li><p>修改提交信息</p>
+<ul>
+<li><code>git commit --amend</code>重新提交，以修改上一次的提交说明</li>
+</ul>
+</li>
+<li><p>撤销暂存区文件的修改</p>
+<ul>
+<li><code>git reset HEAD &lt;filename&gt;</code></li>
+</ul>
+</li>
+<li><p>撤销工作区文件的修改</p>
+<ul>
+<li><code>git checkout --&lt;filename&gt;</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h5 id="Git远程仓库"><a href="#Git远程仓库" class="headerlink" title="Git远程仓库"></a>Git远程仓库</h5><ul>
+<li>查看远程仓库<ul>
+<li><code>git  remote</code>输出当前目录所有远程名</li>
+<li><code>git remote -v</code>输出远程仓库名以及对应的url地址</li>
+<li><code>git remote show &lt;shortname&gt;</code>显示更详细的远程仓库信息</li>
+</ul>
+</li>
+<li>添加远程仓库<ul>
+<li><code>git remote add &lt;shortname&gt; &lt;url&gt;</code></li>
+</ul>
+</li>
+<li>拉取远程仓库数据(非合并)<ul>
+<li><code>git fetch &lt;shortname&gt;</code>shortname是<strong>远程仓库简称</strong>，可以代替远程url地址</li>
+</ul>
+</li>
+<li>拉取远程仓库数据(合并)<ul>
+<li><code>git pull</code></li>
+</ul>
+</li>
+<li>推送到远程仓库<ul>
+<li><code>git push &lt;origin&gt; &lt;branch&gt;</code>推送到远程仓库的某一分支</li>
+<li><code>git push &lt;origin&gt; A:B</code>将本地的A分支推送到远程的B分支</li>
+</ul>
+</li>
+<li>重命名远程仓库<ul>
+<li><code>git remote rename</code></li>
+</ul>
+</li>
+<li>移除远程仓库<ul>
+<li><code>git remote remove</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h5 id="Git标签"><a href="#Git标签" class="headerlink" title="Git标签"></a>Git标签</h5><ul>
+<li>列出标签<ul>
+<li><code>git tag</code>列出所有标签</li>
+<li><code>git tag -l</code>或<code>git tag --list</code>同上</li>
+</ul>
+</li>
+<li>创建附注标签<ul>
+<li><code>git tag -a &lt;tag&gt; -m &quot; &quot;</code>创建附注标签，其中-m表示输入关于附注标签的信息</li>
+</ul>
+</li>
+<li>输出标签信息<ul>
+<li><code>git tag show &lt;tag&gt;</code>输出关于某标签的信息</li>
+</ul>
+</li>
+<li>创建轻量标签<ul>
+<li><code>git tag &lt;tag&gt;</code></li>
+</ul>
+</li>
+<li>后期打标签<ul>
+<li><code>git tag -a &lt;tag&gt; &lt;commitID&gt;</code>后期打标签，给某次提交打标签</li>
+</ul>
+</li>
+<li>推送标签到远程仓库<ul>
+<li><code>git push &lt;origin&gt; &lt;tag&gt;</code>推送标签到远程仓库</li>
+<li><code>git push &lt;origin&gt; --tags</code>将所有标签推送到远程分支</li>
+</ul>
+</li>
+<li>删除标签<ul>
+<li><code>git tag -d &lt;tag&gt;</code>删除本地分支的标签</li>
+<li><code>git push &lt;origin&gt; :refs/tags/&lt;tag&gt;</code>删除远程仓库的标签</li>
+<li><code>git push &lt;origin&gt; --delete &lt;tag&gt;</code>同上</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h5 id="Git别名"><a href="#Git别名" class="headerlink" title="Git别名"></a>Git别名</h5><ul>
+<li><code>git config --global alias.br branch</code>给branch别名为br</li>
+</ul>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/06/05/basic/" data-id="cl7ag46120019agv45lj58pji" class="article-share-link">
+        Share
+      </a>
+      
+<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/" rel="tag">Git</a></li></ul>
+
+    </footer>
+
+  </div>
+
+  
+  
+<nav class="article-nav">
+  
+  <a href="/2020/06/06/branch/" class="article-nav-link">
+    <strong class="article-nav-caption">Newer</strong>
+    <div class="article-nav-title">
+      
+      Git分支
+      
+    </div>
+  </a>
+  
+  
+  <a href="/2020/06/04/Git/" class="article-nav-link">
+    <strong class="article-nav-caption">Older</strong>
+    <div class="article-nav-title">Git入门学习</div>
+  </a>
+  
+</nav>
+
+  
+
+  
+  
+  
+  
+
+</article>
+</section>
+    <footer class="footer">
+  <div class="outer">
+    <ul class="list-inline">
+      <li>恍惚 &copy; 2022</li>
+      
+        <li>
+          
+            <a href="https://beian.miit.gov.cn/" target="_blank"></a>
+            
+        </li>
+      
+      <li>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></li>
+      <li>theme  <a target="_blank" rel="noopener" href="https://github.com/zhwangart/hexo-theme-ocean">Ocean</a></li>
+    </ul>
+    <p><ul class="list-inline">
+  
+  <li><i class="fe fe-smile-alt tooltip" data-tooltip="UV"></i> <span id="busuanzi_value_site_uv"></span></li>
+  
+  <li><i class="fe fe-bookmark tooltip" data-tooltip="PV"></i> <span id="busuanzi_value_page_pv"></span></li>
+  
+</ul></p>
+  </div>
+</footer>
+  </main>
+  <aside class="sidebar">
+    <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/hexo.svg" alt="恍惚"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">Home</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/about">About</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link nav-item-search" title="Search">
+        <i class="fe fe-search"></i>
+        Search
+      </a>
+    </li>
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      <div class="totop" id="totop">
+  <i class="fe fe-rocket"></i>
+</div>
+    </li>
+    <li class="nav-item">
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="fe fe-feed"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+  </aside>
+  
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/jquery.justifiedGallery.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+
+<script src="/js/tocbot.min.js"></script>
+
+
+<script>
+  // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
+  tocbot.init({
+    tocSelector: '.tocbot',
+    contentSelector: '.article-entry',
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    positionFixedSelector: '.tocbot',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto',
+  });
+</script>
+
+
+
+<script src="/js/ocean.js"></script>
+
+</body>
+
+</html>

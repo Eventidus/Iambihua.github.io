@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  <title>
+    
+    恍惚
+  </title>
+  <!-- Icon -->
+  
+    <link rel="shortcut icon" href="/images/hexo.svg">
+    
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<script src="/js/pace.min.js"></script>
+
+<meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="恍惚" type="application/atom+xml">
+</head>
+
+<body>
+  <main class="content">
+    <section class="jumbotron">
+  <div class="video">
+    
+    <div class="video-frame">
+      <img src="/images/ocean/overlay-hero.png" alt="Decorative image frame">
+    </div>
+    
+    <div class="video-media">
+      <video playsinline="" autoplay="" loop="" muted="" data-autoplay="" poster="/images/ocean/ocean.png"
+        x5-video-player-type="h5">
+        <source src="/images/ocean/ocean.mp4" type="video/mp4">
+        <source src="/images/ocean/ocean.ogv" type="video/ogg">
+        <source src="/images/ocean/ocean.webm" type="video/webm">
+        <p>Your user agent does not support the HTML5 Video element.</p>
+      </video>
+      <div class="video-overlay"></div>
+    </div>
+    <div class="video-inner text-center text-white">
+      <h1><a href="/">恍惚</a></h1>
+      <p>人必须坚持不懈地生成和创造才能臻于完满</p>
+      <div><img src="/images/hexo.svg" class="brand" alt="恍惚"></div>
+    </div>
+    <div class="video-learn-more">
+      <a class="anchor" href="#landingpage"><i class="fe fe-mouse"></i></a>
+    </div>
+  </div>
+</section>
+<div id="landingpage">
+  <section class="outer">
+  <article class="articles">
+    
+    <h1 class="page-type-title"></h1>
+    
+    
+    <article id="post-异步操作" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+
+    
+    <div class="article-meta">
+      <a href="/2022/08/26/%E5%BC%82%E6%AD%A5%E6%93%8D%E4%BD%9C/" class="article-date">
+  <time datetime="2022-08-26T11:55:34.489Z" itemprop="datePublished">2022-08-26</time>
+</a>
+      
+    </div>
+    
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+        
+      
+      
+        <h1 id="异步操作"><a href="#异步操作" class="headerlink" title="异步操作"></a>异步操作</h1><ol>
+<li>JavaScript是单线程模型，JavaScript脚本只在一个线程上运行，这个线程叫主线程。</li>
+<li>Web Worker标准，允许JavaScript脚本创建多个线程，但是子线程只受主线程影响，且不得操作DOM。</li>
+<li>同步任务<ol>
+<li>在主线程上排队，只有上一个任务执行完成，才会执行下一个任务。</li>
+</ol>
+</li>
+<li>异步任务<ol>
+<li>在任务队列排队，不用管当前任务是否执行完毕，可以直接执行下一个任务。</li>
+</ol>
+</li>
+<li>任务队列：存放需要执行的所有异步任务。</li>
+<li>异步操作的流程控制<ol>
+<li>串行执行，耗时</li>
+<li>并行执行，省时但耗资源</li>
+<li>串行并行结合，省时同时也比较节约资源。</li>
+</ol>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/08/26/%E5%BC%82%E6%AD%A5%E6%93%8D%E4%BD%9C/" data-id="cl7ag4622002jagv43eva71go" class="article-share-link">
+        Share
+      </a>
+      
+    </footer>
+
+  </div>
+
+  
+
+  
+
+</article>
+    
+    <article id="post-this关键字" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+
+    
+    <div class="article-meta">
+      <a href="/2022/08/26/this%E5%85%B3%E9%94%AE%E5%AD%97/" class="article-date">
+  <time datetime="2022-08-26T11:55:15.407Z" itemprop="datePublished">2022-08-26</time>
+</a>
+      
+    </div>
+    
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+        
+      
+      
+        <h1 id="this关键字"><a href="#this关键字" class="headerlink" title="this关键字"></a>this关键字</h1><ol>
+<li>this总是返回一个对象。</li>
+<li>this的值为属性或方法当前所在的对象(环境)。</li>
+<li>使用场合<ol>
+<li>在全局环境下，this的值为顶层环境window。</li>
+<li>在构造函数中，this指向实例对象。</li>
+<li>在对象的方法中，this指向当前方法所在的对象，但如果对一个对象进行赋值时，this的指向就会改变了。</li>
+</ol>
+</li>
+<li>多层this的情况下，可以考虑使用一个变量指向外层this。</li>
+<li>回调函数中的this指向当前环境中的全局对象。</li>
+<li>Function.prototype.call()<ol>
+<li>用来指定this的指向。</li>
+<li>call方法的参数如果为空,null,或者underfined，则默认指向window对象。</li>
+<li>如果只有一个参数，并且参数为对象，则this指向这个参数对象。</li>
+<li>如果只有一个参数，并且参数为原始值，则this指向这个原始值的包装对象。</li>
+<li>如果有多个参数，则第一个参数为this指向的对象，后面的参数为函数调用时需要的参数。</li>
+</ol>
+</li>
+<li>Function.prototype.apply()<ol>
+<li>跟call方法类似，也是用来指定this的指向。</li>
+<li>如果只有一个参数，并且参数为对象，则this指向这个参数对象。</li>
+<li>如果有多个参数，则第一个参数为this要指向的对象，第二个参数为参数数组。</li>
+</ol>
+</li>
+<li>Function.prototype.bind()<ol>
+<li>bind方法用于将函数中的this绑定到某个对象，并且返回一个新函数。</li>
+<li>bind方法也可以用于绑定参数。</li>
+<li>如果只有一个参数，并且参数为对象，则this指向这个参数对象。</li>
+<li>如果有多个参数，则第一个参数为this指向的对象，后面的参数为函数调用时需要的参数。</li>
+<li>注意事项：<ol>
+<li>每次调用会返回一个全新的函数</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/08/26/this%E5%85%B3%E9%94%AE%E5%AD%97/" data-id="cl7ag461o002bagv4f8af2z11" class="article-share-link">
+        Share
+      </a>
+      
+    </footer>
+
+  </div>
+
+  
+
+  
+
+</article>
+    
+    <article id="post-Promise对象" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+
+    
+    <div class="article-meta">
+      <a href="/2022/08/26/Promise%E5%AF%B9%E8%B1%A1/" class="article-date">
+  <time datetime="2022-08-26T11:54:56.482Z" itemprop="datePublished">2022-08-26</time>
+</a>
+      
+    </div>
+    
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+        
+      
+      
+        <h1 id="Promise对象"><a href="#Promise对象" class="headerlink" title="Promise对象"></a>Promise对象</h1><ol>
+<li>Promise是一种异步编程的解决方案，简单来说就像一种容器，里面保存着某个只有未来才会结束的事件的结果。</li>
+<li>Promise的三种状态，pending(进行中),fulfilled(已完成),rejected(已失败)。</li>
+<li>Promise的最终状态由异步操作之后的结果决定，并且状态改变之后不会再变。</li>
+<li>Promise 内部的错误不会影响到 Promise 外部的代码</li>
+<li>Promise的两种状态变更<ol>
+<li>由pending到fulfilled。</li>
+<li>由pending到rejected。</li>
+</ol>
+</li>
+<li>创建Promise实例<ol>
+<li>通过构造函数new Promise()来创建一个Promise实例。</li>
+<li>这个构造函数接受一个函数形式的参数，并且这参数接受两个参数resolve和reject。</li>
+<li>resolve方法用于把异步操作成功之后的结果作为参数传递过去。</li>
+<li>resolve方法的参数也可以是另一个Promise实例，这时候当前的Promise状态由作为resolve参数的Promise实例状态决定。</li>
+<li>reject方法用于把异步操作失败之后的报错作为参数传递过去。</li>
+</ol>
+</li>
+<li>then方法<ol>
+<li>then方法在当前脚本的所有同步任务完成之后才会执行。</li>
+<li>一般用于指示下一步流程</li>
+<li>then方法接受两个参数，并且都是可选的，第一个表示状态为resolve时调用，第二个表示状态为reject时调用。</li>
+<li>如果只有一个参数时，就表示状态为resolve时调用。</li>
+<li>then方法返回一个promise实例，意味着可以进行链式调用。</li>
+</ol>
+</li>
+<li>catch方法<ol>
+<li>它其实相当于只有一个参数，并且状态为reject时的then方法。</li>
+<li>主要是用来捕获错误的。</li>
+<li>catch方法返回的也是一个Promise实例。</li>
+</ol>
+</li>
+<li>finally方法<ol>
+<li>finally方法表示不管状态如何，最后都会执行的方法。</li>
+</ol>
+</li>
+<li>all方法<ol>
+<li>将多个Promise实例组合成一个新的Promise实例。</li>
+<li>适用于并行执行多个Promise实例。</li>
+<li>参数为一个数组，并且数组元素都是Promise实例。</li>
+<li>如果数组元素不是Promise实例，会调用resolve()方法转换成Promise实例。</li>
+<li>整合的Promise实例的状态由组合成它的多个Promise实例状态决定<ol>
+<li>当所有Promise实例状态都为fulfilled时，这个整合的Promise实例状态为fulfilled，它的结果为一个新数组，并且数组元素为每个promise实例返回的结果。</li>
+<li>当任意一个Promise实例状态为reject时，这个整合的Promise实例状态为fulfilled，会返回碰到的第一个reject实例的返回值。</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>race方法<ol>
+<li>将多个Promise实例组合成一个新的Promise实例P。</li>
+<li>如果数组中的任意一个实例状态率先改变状态，就会将首先改变的实例的返回值传递给实例P的回调函数。</li>
+</ol>
+</li>
+<li>allSettled方法<ol>
+<li>当一组异步操作完成后，不管每一个操作是成功还是失败，都进行下一步操作。</li>
+<li>它的参数为原先的数组，数组的元素都是Promise对象。</li>
+<li>它返回一个新的Promise实例对象，有status和value属性。</li>
+<li>只有等到参数数组里的Promise对象都发生状态变更，这个新的Promise实例对象才会发生状态变更，并且状态只能为fulfilled。</li>
+</ol>
+</li>
+<li>any方法<ol>
+<li>将多个Promise实例组合成一个新的Promise实例。</li>
+<li>只要有一个Promise实例状态为fulfilled状态，那么这个新的Promise实例的状态为fulfilled</li>
+<li>只有每一个Promise实例都为rejected状态，这个新的Promise实例的状态才为rejected</li>
+</ol>
+</li>
+<li>resolve<ol>
+<li>用来将一个对象转换为Promise对象</li>
+<li>参数的四种情况<ol>
+<li>如果参数是Promise实例，则原封不动地不做任何修改</li>
+<li>参数是thenable对象(指有then方法的对象)，则将thenable对象转为Promise对象后，再立马执行thenanle对象中的then方法</li>
+<li>如果参数是原始值，则返回一个状态为resolve的Promise实例</li>
+<li>如果不带任何参数，也是直接返回一个resolve状态的Promise实例，需要注意的是这个Promise对象要在本轮循环结束后才会执行</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>reject()<ol>
+<li>返回一个状态为rejected的Promise实例。</li>
+</ol>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/08/26/Promise%E5%AF%B9%E8%B1%A1/" data-id="cl7ag460s000xagv47w8ub04d" class="article-share-link">
+        Share
+      </a>
+      
+    </footer>
+
+  </div>
+
+  
+
+  
+
+</article>
+    
+    <article id="post-package.json介绍" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+
+    
+    <div class="article-meta">
+      <a href="/2022/08/26/package.json%E4%BB%8B%E7%BB%8D/" class="article-date">
+  <time datetime="2022-08-26T11:54:37.309Z" itemprop="datePublished">2022-08-26</time>
+</a>
+      
+    </div>
+    
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+        
+      
+      
+        <h1 id="package-json介绍"><a href="#package-json介绍" class="headerlink" title="package.json介绍"></a>package.json介绍</h1><ol>
+<li>package.json作用<ol>
+<li>包管理配置文件，管理项目中所依赖的包的配置</li>
+</ol>
+</li>
+<li>package-lock作用<ol>
+<li>本质是锁定(lock)包的版本</li>
+</ol>
+</li>
+<li>常见属性<ol>
+<li>script<ol>
+<li>定义脚本命令</li>
+<li>每次运行npm run xxx命令时，会创建一个shell脚本，这个脚本会把当前项目的node-modules&#x2F;.bin子目录写入到系统的Path环境变量中</li>
+</ol>
+</li>
+<li>bin<ol>
+<li>将一个包的可执行文件加载到全局环境中</li>
+<li>如果要在全局环境中直接使用，前提是包要安装在全局环境下</li>
+</ol>
+</li>
+<li>type<ol>
+<li>用来说明包使用的模块化规范</li>
+<li>如果采用ESM模块规范，则type的值为module</li>
+<li>如果采用CommonJS模块规范，则type的值为commonjs</li>
+<li>如果不想修改type，可以修改文件后缀名<ol>
+<li>ESModel模块规范后缀名为.mjs</li>
+<li>CommonJs模块规范后缀名为.cjs</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>main&amp;module&amp;browser<ol>
+<li>都是用来指定入口文件</li>
+<li>main：定义了包的入口文件,支持node和browser环境</li>
+<li>module定义了包在ESM规范下的入口文件，支持node和browdeer环境</li>
+<li>browser定义了browser环境下的入口文件</li>
+<li>这三个入口文件的加载顺序，一般是ESM规范的文件先行<ol>
+<li>browser+mjs&gt;module&gt;browser+cjs&gt;main</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>exports<ol>
+<li>定义npm包的所有导出</li>
+<li>条件引用<ol>
+<li>引用方式以及模块化文件类型会影响入口文件的引入</li>
+<li>require引入.cjs文件</li>
+<li>import引入.mjs文件</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>dependencies&amp;devDependencies<ol>
+<li>dependencies:项目所需要的依赖</li>
+<li>devDependencies:项目所需要的模块，用来提高开发效率</li>
+</ol>
+</li>
+<li>engines<ol>
+<li>指定项目能够运行的node以及npm版本</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>npm扁平化<ol>
+<li>npm扁平化的原因是npm2过多重复依赖导致的磁盘浪费问题以及window系统下路径过长问题</li>
+<li>缺点<ol>
+<li>幽灵依赖问题（引入没有在package.json中声明的依赖）</li>
+<li>存在一个包的多个版本下，只能实现一个版本的扁平化</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/08/26/package.json%E4%BB%8B%E7%BB%8D/" data-id="cl7ag461k0022agv43s2dfe70" class="article-share-link">
+        Share
+      </a>
+      
+    </footer>
+
+  </div>
+
+  
+
+  
+
+</article>
+    
+    <article id="post-Module语法" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+
+    
+    <div class="article-meta">
+      <a href="/2022/08/26/Module%E8%AF%AD%E6%B3%95/" class="article-date">
+  <time datetime="2022-08-26T11:54:18.568Z" itemprop="datePublished">2022-08-26</time>
+</a>
+      
+    </div>
+    
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+        
+      
+      
+        <h1 id="Module语法"><a href="#Module语法" class="headerlink" title="Module语法"></a>Module语法</h1><ol>
+<li>ES6模块可在编译时(即静态阶段)确定模块的编译关系，而CommonJS只能在运行时确定模块的依赖关系，所以ES6模块可实现静态优化。</li>
+<li>ES6模块支持按需加载需要的模块方法，但CommonJS只能加载所有的模块方法。</li>
+<li>ES6模块自动采用严格模式。</li>
+<li>export命令规定模块的对外接口，import命令用于从模块中导入需要的功能。</li>
+<li>export命令可以输出变量，函数和类。</li>
+<li>通过import命令导入的模块，可在模块导入语句的头部提前执行。</li>
+<li>按需导入的变量名应与按需导出的名字一致，</li>
+<li>如果有多个导入相同模块的语句，那么只会执行一次。</li>
+<li>模块的整体加载即import * as x from ‘xxx’，将模块全部加载进对象x中。</li>
+<li>export default命令与export命令的区别<ol>
+<li>前者的import不需要大括号，而后者需要。</li>
+<li>前者在模块中只能使用一次，而后者可以使用多次。</li>
+<li>前者的import可以直接起别名，而后者只能使用as关键词。</li>
+<li>前者可以同时默认导入和按需导入。</li>
+</ol>
+</li>
+<li>export default的本周是将后面的值赋给一个叫default的对象。</li>
+<li>export { x,y } from ‘my_module’相当于如下两行语句<ol>
+<li>import {x,y} from ‘my_module’;</li>
+<li>export {x,y};</li>
+</ol>
+</li>
+<li>支持const声明的常量跨模块共享。</li>
+<li>import()函数用来动态加载模块，并且返回一个 Promise 对象。</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/08/26/Module%E8%AF%AD%E6%B3%95/" data-id="cl7ag460r000tagv48x0khthh" class="article-share-link">
+        Share
+      </a>
+      
+    </footer>
+
+  </div>
+
+  
+
+  
+
+</article>
+    
+    <article id="post-Module的加载实现" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+
+    
+    <div class="article-meta">
+      <a href="/2022/08/26/Module%E7%9A%84%E5%8A%A0%E8%BD%BD%E5%AE%9E%E7%8E%B0/" class="article-date">
+  <time datetime="2022-08-26T11:53:49.957Z" itemprop="datePublished">2022-08-26</time>
+</a>
+      
+    </div>
+    
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+        
+      
+      
+        <h1 id="Module的加载实现"><a href="#Module的加载实现" class="headerlink" title="Module的加载实现"></a>Module的加载实现</h1><ol>
+<li>在浏览器中加载ES6模块<ol>
+<li>&lt;javascript&gt;标签的两种属性async与defer的相同点是都是异步加载。</li>
+<li>&lt;javascript&gt;标签的两种属性async与defer区别<ol>
+<li>defer：页面渲染完后执行。</li>
+<li>async：脚本下载完成后执行，同时中断当前的渲染。</li>
+<li>多个defer脚本按顺序执行，多个async脚本执行顺序不能保证。</li>
+</ol>
+</li>
+<li>模块顶层的this指向undefined。</li>
+<li>在浏览器中加载ES6模块时，需要在&lt;javascript&gt;标签中指定type&#x3D;”module”属性。</li>
+<li>浏览器中的ES6模块，默认是defer属性的异步加载。</li>
+</ol>
+</li>
+<li>CommonJs模块和ES6模块的区别<ol>
+<li>CommonJs模块输出的值的拷贝，ES6模块输出的是值的引用。</li>
+<li>CommonJs是运行时加载，而ES6模块是编译输出接口。</li>
+<li>commonJS是同步加载，而ES6模块是异步加载。</li>
+</ol>
+</li>
+<li>在Node中加载ES6模块<ol>
+<li>在package.json中在type改为’module’。</li>
+<li>或者将文件名的后缀改为.mjs。</li>
+<li>如果type已经改为’module’,但又想用require命令加载模块，可将当前文件后缀改为.cjs。</li>
+<li>ES6模块可以import命令加载CommonJs模块，但CommonJs不能加载ES6模块。</li>
+</ol>
+</li>
+<li>CommonJs模块加载的原理是加载时执行，并且会缓存下来，以后后面再加载时不会再执行。</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/08/26/Module%E7%9A%84%E5%8A%A0%E8%BD%BD%E5%AE%9E%E7%8E%B0/" data-id="cl7ag460p000sagv4g8wb4cbu" class="article-share-link">
+        Share
+      </a>
+      
+    </footer>
+
+  </div>
+
+  
+
+  
+
+</article>
+    
+    <article id="post-Generator函数语法" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+
+    
+    <div class="article-meta">
+      <a href="/2022/08/26/Generator%E5%87%BD%E6%95%B0%E8%AF%AD%E6%B3%95/" class="article-date">
+  <time datetime="2022-08-26T11:53:29.539Z" itemprop="datePublished">2022-08-26</time>
+</a>
+      
+    </div>
+    
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+        
+      
+      
+        <h1 id="Generator函数语法"><a href="#Generator函数语法" class="headerlink" title="Generator函数语法"></a>Generator函数语法</h1><ol>
+<li>Generator相当于一个状态机，里面封装了多种内部状态</li>
+<li>创建Generator函数时，Function关键字跟函数名之间要有*星号</li>
+<li>调用Generator函数后，不会执行里面的代码，而是生成一个迭代器对象</li>
+<li>返回的迭代器对象可以反复使用next()方法迭代内部状态</li>
+<li>使用next方法会返回一个对象，这个对象有两个属性<ol>
+<li>value：当前状态的值，即yield表达式的值</li>
+<li>done：迭代是否结束</li>
+</ol>
+</li>
+<li>每次遇到yield语句并执行完成，函数会暂停执行</li>
+<li>函数可以有多个yield语句，但只能有一个yield语句</li>
+<li>next方法带参数时，代表上一个yield返回值的结果为该参数的值</li>
+<li>可以用for-of循环迭代Generator函数返回的迭代器对象，如果对象done属性为true，不会输出该对象</li>
+<li>yield表达式如果用在另一个表达式中，必须放在圆括号里</li>
+<li>Generator.prototype.throw()<ol>
+<li>throw方法是用来在函数外部抛出错误</li>
+<li>注意只能用throw方法抛出，而不能用throw命令关键字抛出，否则Generator函数内部不会捕获错误</li>
+</ol>
+</li>
+<li>Generator.prototype.return()<ol>
+<li>return语句可以返回一个值，并且终止此后的迭代操作</li>
+<li>yield参数为要返回的值，如果为空，则返回underfined</li>
+<li>如果Generator函数内有try-finally语句块，则会直接执行finally语句内的值，再返回return指定的返回值</li>
+</ol>
+</li>
+<li>yield*表达式<ol>
+<li>用来在一个Generator函数里执行另一个Generator函数</li>
+<li>任何实现Iterator接口的数据结构也可以用yield表达式迭代</li>
+</ol>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/08/26/Generator%E5%87%BD%E6%95%B0%E8%AF%AD%E6%B3%95/" data-id="cl7ag45zi0005agv4adbf6lmb" class="article-share-link">
+        Share
+      </a>
+      
+    </footer>
+
+  </div>
+
+  
+
+  
+
+</article>
+    
+    <article id="post-ECMAScript6" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+
+    
+    <div class="article-meta">
+      <a href="/2022/08/26/ECMAScript6/" class="article-date">
+  <time datetime="2022-08-26T11:53:07.043Z" itemprop="datePublished">2022-08-26</time>
+</a>
+      
+    </div>
+    
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+        
+      
+      
+        <h1 id="ECMAScript6"><a href="#ECMAScript6" class="headerlink" title="ECMAScript6"></a>ECMAScript6</h1><ol>
+<li>JavaScript为动态类型语言。</li>
+<li>静态语言：在编译阶段便检查数据类型。动态语言：在执行期间才检查语言的数据类型。</li>
+<li>扩展运算符<ol>
+<li>取出参数对象的所有可遍历属性，拷贝到当前对象中。</li>
+</ol>
+</li>
+<li>常用方法<ol>
+<li>filter()<ol>
+<li>语法:array.filter(function(currentValue,index,arr), thisValue)</li>
+<li>功能：返回一个过滤符合要求的元素并且组成新数组</li>
+</ol>
+</li>
+<li>map()<ol>
+<li>功能：返回回调函数对每个原数组元素进行操作(比如加1)之后组成的新数组，原数组不变。</li>
+</ol>
+</li>
+<li>foreach()<ol>
+<li>遍历数组并且对中的每个元素进行操作。</li>
+</ol>
+</li>
+<li>shift()<ol>
+<li>删除数组的第一个元素，并且返回该元素的值。</li>
+<li>可改变数组的长度。</li>
+</ol>
+</li>
+<li>splice()<ol>
+<li>删除或增加或替换元素</li>
+<li>第一个参数为修改开始的位置</li>
+<li>第二个参数为删除元素个数</li>
+<li>第三个参数为要增加或者替换的元素</li>
+</ol>
+</li>
+<li>split()<ol>
+<li>将字符串分割成字符串数组，字符串的每一个字母都可以是一个数组元素</li>
+<li>参数是一种分隔符</li>
+</ol>
+</li>
+<li>join()<ol>
+<li>将数组组合成一个字符串</li>
+<li>参数是一种分隔符，让生成的字符串根据这个分隔符分隔</li>
+</ol>
+</li>
+<li>indexOf()<ol>
+<li>数组<ol>
+<li>返回某个在数组中的索引，如果没有找到则返回-1</li>
+</ol>
+</li>
+<li>字符串<ol>
+<li>返回第一个子串在字符串出现的索引，如果没有则返回-1</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>计算属性概念<ol>
+<li>一个对象的属性名从一个变量中获取，并且这个变量用[]表示。</li>
+</ol>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/08/26/ECMAScript6/" data-id="cl7ag45za0002agv45ciycx16" class="article-share-link">
+        Share
+      </a>
+      
+    </footer>
+
+  </div>
+
+  
+
+  
+
+</article>
+    
+    <article id="post-async函数" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+
+    
+    <div class="article-meta">
+      <a href="/2022/08/26/async%E5%87%BD%E6%95%B0/" class="article-date">
+  <time datetime="2022-08-26T11:52:43.605Z" itemprop="datePublished">2022-08-26</time>
+</a>
+      
+    </div>
+    
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+        
+      
+      
+        <h1 id="async函数"><a href="#async函数" class="headerlink" title="async函数"></a>async函数</h1><ol>
+<li>async函数的执行原理就是将Generator函数与自动执行器包装在一个函数里</li>
+<li>async相当于Generator的语法糖</li>
+<li>async自带执行器</li>
+<li>async返回一个Promise对象</li>
+<li>async函数调用then方法时，如果asyn函数有return返回值，那么这个返回值会成为then方法的回调函数的参数</li>
+<li>async函数内部抛出的错误，会使返回的Promise对象变为rejected状态</li>
+<li>await命令后面通常是promise对象</li>
+<li>async函数返回的Promise对象只有等所有await命令执行完成之后才会发生状态变更</li>
+<li>只要有一个await命令的Promise对象变为reject状态，后面的await命令 不会执行</li>
+<li>给当前await命令语句写进try-catch结构，或者调用catch()方法，这样如果当前await命令出现错误，不会影响后面的await命令继续执行</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/08/26/async%E5%87%BD%E6%95%B0/" data-id="cl7ag460w0016agv411ie8kzu" class="article-share-link">
+        Share
+      </a>
+      
+    </footer>
+
+  </div>
+
+  
+
+  
+
+</article>
+    
+    <article id="post-Iterator遍历器" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+
+    
+    <div class="article-meta">
+      <a href="/2022/08/26/Iterator%E9%81%8D%E5%8E%86%E5%99%A8/" class="article-date">
+  <time datetime="2022-08-26T11:52:15.049Z" itemprop="datePublished">2022-08-26</time>
+</a>
+      
+    </div>
+    
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+        
+      
+      
+        <h1 id="async函数"><a href="#async函数" class="headerlink" title="async函数"></a>async函数</h1><ol>
+<li>async函数的执行原理就是将Generator函数与自动执行器包装在一个函数里</li>
+<li>async相当于Generator的语法糖</li>
+<li>async自带执行器</li>
+<li>async返回一个Promise对象</li>
+<li>async函数调用then方法时，如果asyn函数有return返回值，那么这个返回值会成为then方法的回调函数的参数</li>
+<li>async函数内部抛出的错误，会使返回的Promise对象变为rejected状态</li>
+<li>await命令后面通常是promise对象</li>
+<li>async函数返回的Promise对象只有等所有await命令执行完成之后才会发生状态变更</li>
+<li>只要有一个await命令的Promise对象变为reject状态，后面的await命令 不会执行</li>
+<li>给当前await命令语句写进try-catch结构，或者调用catch()方法，这样如果当前await命令出现错误，不会影响后面的await命令继续执行</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/08/26/Iterator%E9%81%8D%E5%8E%86%E5%99%A8/" data-id="cl7ag45zx000cagv49svz5t62" class="article-share-link">
+        Share
+      </a>
+      
+    </footer>
+
+  </div>
+
+  
+
+  
+
+</article>
+    
+  </article>
+  
+
+  
+  <nav class="page-nav">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next</a>
+  </nav>
+  
+</section>
+</div>
+    <footer class="footer">
+  <div class="outer">
+    <ul class="list-inline">
+      <li>恍惚 &copy; 2022</li>
+      
+        <li>
+          
+            <a href="https://beian.miit.gov.cn/" target="_blank"></a>
+            
+        </li>
+      
+      <li>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></li>
+      <li>theme  <a target="_blank" rel="noopener" href="https://github.com/zhwangart/hexo-theme-ocean">Ocean</a></li>
+    </ul>
+    <p><ul class="list-inline">
+  
+  <li><i class="fe fe-bar-chart tooltip" data-tooltip="PV"></i> <span id="busuanzi_value_site_pv"></span></li>
+  
+  <li><i class="fe fe-smile-alt tooltip" data-tooltip="UV"></i> <span id="busuanzi_value_site_uv"></span></li>
+  
+</ul></p>
+  </div>
+</footer>
+  </main>
+  <aside class="sidebar">
+    <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/hexo.svg" alt="恍惚"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">Home</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/about">About</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link nav-item-search" title="Search">
+        <i class="fe fe-search"></i>
+        Search
+      </a>
+    </li>
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      <div class="totop" id="totop">
+  <i class="fe fe-rocket"></i>
+</div>
+    </li>
+    <li class="nav-item">
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="fe fe-feed"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+  </aside>
+  
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/jquery.justifiedGallery.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+
+
+<script src="/js/ocean.js"></script>
+
+</body>
+
+</html>

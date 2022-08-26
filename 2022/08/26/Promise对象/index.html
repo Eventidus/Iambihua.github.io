@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  <title>
+    
+    恍惚
+  </title>
+  <!-- Icon -->
+  
+    <link rel="shortcut icon" href="/images/hexo.svg">
+    
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<script src="/js/pace.min.js"></script>
+
+<meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="恍惚" type="application/atom+xml">
+</head>
+
+<body>
+  <main class="content">
+    <section class="outer">
+  <article id="post-Promise对象" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+
+    
+    <div class="article-meta">
+      <a href="/2022/08/26/Promise%E5%AF%B9%E8%B1%A1/" class="article-date">
+  <time datetime="2022-08-26T11:54:56.482Z" itemprop="datePublished">2022-08-26</time>
+</a>
+      
+    </div>
+    
+
+    
+    
+<div class="tocbot"></div>
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+      
+        <h1 id="Promise对象"><a href="#Promise对象" class="headerlink" title="Promise对象"></a>Promise对象</h1><ol>
+<li>Promise是一种异步编程的解决方案，简单来说就像一种容器，里面保存着某个只有未来才会结束的事件的结果。</li>
+<li>Promise的三种状态，pending(进行中),fulfilled(已完成),rejected(已失败)。</li>
+<li>Promise的最终状态由异步操作之后的结果决定，并且状态改变之后不会再变。</li>
+<li>Promise 内部的错误不会影响到 Promise 外部的代码</li>
+<li>Promise的两种状态变更<ol>
+<li>由pending到fulfilled。</li>
+<li>由pending到rejected。</li>
+</ol>
+</li>
+<li>创建Promise实例<ol>
+<li>通过构造函数new Promise()来创建一个Promise实例。</li>
+<li>这个构造函数接受一个函数形式的参数，并且这参数接受两个参数resolve和reject。</li>
+<li>resolve方法用于把异步操作成功之后的结果作为参数传递过去。</li>
+<li>resolve方法的参数也可以是另一个Promise实例，这时候当前的Promise状态由作为resolve参数的Promise实例状态决定。</li>
+<li>reject方法用于把异步操作失败之后的报错作为参数传递过去。</li>
+</ol>
+</li>
+<li>then方法<ol>
+<li>then方法在当前脚本的所有同步任务完成之后才会执行。</li>
+<li>一般用于指示下一步流程</li>
+<li>then方法接受两个参数，并且都是可选的，第一个表示状态为resolve时调用，第二个表示状态为reject时调用。</li>
+<li>如果只有一个参数时，就表示状态为resolve时调用。</li>
+<li>then方法返回一个promise实例，意味着可以进行链式调用。</li>
+</ol>
+</li>
+<li>catch方法<ol>
+<li>它其实相当于只有一个参数，并且状态为reject时的then方法。</li>
+<li>主要是用来捕获错误的。</li>
+<li>catch方法返回的也是一个Promise实例。</li>
+</ol>
+</li>
+<li>finally方法<ol>
+<li>finally方法表示不管状态如何，最后都会执行的方法。</li>
+</ol>
+</li>
+<li>all方法<ol>
+<li>将多个Promise实例组合成一个新的Promise实例。</li>
+<li>适用于并行执行多个Promise实例。</li>
+<li>参数为一个数组，并且数组元素都是Promise实例。</li>
+<li>如果数组元素不是Promise实例，会调用resolve()方法转换成Promise实例。</li>
+<li>整合的Promise实例的状态由组合成它的多个Promise实例状态决定<ol>
+<li>当所有Promise实例状态都为fulfilled时，这个整合的Promise实例状态为fulfilled，它的结果为一个新数组，并且数组元素为每个promise实例返回的结果。</li>
+<li>当任意一个Promise实例状态为reject时，这个整合的Promise实例状态为fulfilled，会返回碰到的第一个reject实例的返回值。</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>race方法<ol>
+<li>将多个Promise实例组合成一个新的Promise实例P。</li>
+<li>如果数组中的任意一个实例状态率先改变状态，就会将首先改变的实例的返回值传递给实例P的回调函数。</li>
+</ol>
+</li>
+<li>allSettled方法<ol>
+<li>当一组异步操作完成后，不管每一个操作是成功还是失败，都进行下一步操作。</li>
+<li>它的参数为原先的数组，数组的元素都是Promise对象。</li>
+<li>它返回一个新的Promise实例对象，有status和value属性。</li>
+<li>只有等到参数数组里的Promise对象都发生状态变更，这个新的Promise实例对象才会发生状态变更，并且状态只能为fulfilled。</li>
+</ol>
+</li>
+<li>any方法<ol>
+<li>将多个Promise实例组合成一个新的Promise实例。</li>
+<li>只要有一个Promise实例状态为fulfilled状态，那么这个新的Promise实例的状态为fulfilled</li>
+<li>只有每一个Promise实例都为rejected状态，这个新的Promise实例的状态才为rejected</li>
+</ol>
+</li>
+<li>resolve<ol>
+<li>用来将一个对象转换为Promise对象</li>
+<li>参数的四种情况<ol>
+<li>如果参数是Promise实例，则原封不动地不做任何修改</li>
+<li>参数是thenable对象(指有then方法的对象)，则将thenable对象转为Promise对象后，再立马执行thenanle对象中的then方法</li>
+<li>如果参数是原始值，则返回一个状态为resolve的Promise实例</li>
+<li>如果不带任何参数，也是直接返回一个resolve状态的Promise实例，需要注意的是这个Promise对象要在本轮循环结束后才会执行</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>reject()<ol>
+<li>返回一个状态为rejected的Promise实例。</li>
+</ol>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/08/26/Promise%E5%AF%B9%E8%B1%A1/" data-id="cl7ag460s000xagv47w8ub04d" class="article-share-link">
+        Share
+      </a>
+      
+    </footer>
+
+  </div>
+
+  
+  
+<nav class="article-nav">
+  
+  <a href="/2022/08/26/this%E5%85%B3%E9%94%AE%E5%AD%97/" class="article-nav-link">
+    <strong class="article-nav-caption">Newer</strong>
+    <div class="article-nav-title">
+      
+      (no title)
+      
+    </div>
+  </a>
+  
+  
+  <a href="/2022/08/26/package.json%E4%BB%8B%E7%BB%8D/" class="article-nav-link">
+    <strong class="article-nav-caption">Older</strong>
+    <div class="article-nav-title"></div>
+  </a>
+  
+</nav>
+
+  
+
+  
+  
+  
+  
+
+</article>
+</section>
+    <footer class="footer">
+  <div class="outer">
+    <ul class="list-inline">
+      <li>恍惚 &copy; 2022</li>
+      
+        <li>
+          
+            <a href="https://beian.miit.gov.cn/" target="_blank"></a>
+            
+        </li>
+      
+      <li>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></li>
+      <li>theme  <a target="_blank" rel="noopener" href="https://github.com/zhwangart/hexo-theme-ocean">Ocean</a></li>
+    </ul>
+    <p><ul class="list-inline">
+  
+  <li><i class="fe fe-smile-alt tooltip" data-tooltip="UV"></i> <span id="busuanzi_value_site_uv"></span></li>
+  
+  <li><i class="fe fe-bookmark tooltip" data-tooltip="PV"></i> <span id="busuanzi_value_page_pv"></span></li>
+  
+</ul></p>
+  </div>
+</footer>
+  </main>
+  <aside class="sidebar">
+    <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/hexo.svg" alt="恍惚"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">Home</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/about">About</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link nav-item-search" title="Search">
+        <i class="fe fe-search"></i>
+        Search
+      </a>
+    </li>
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      <div class="totop" id="totop">
+  <i class="fe fe-rocket"></i>
+</div>
+    </li>
+    <li class="nav-item">
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="fe fe-feed"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+  </aside>
+  
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/jquery.justifiedGallery.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+
+<script src="/js/tocbot.min.js"></script>
+
+
+<script>
+  // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
+  tocbot.init({
+    tocSelector: '.tocbot',
+    contentSelector: '.article-entry',
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    positionFixedSelector: '.tocbot',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto',
+  });
+</script>
+
+
+
+<script src="/js/ocean.js"></script>
+
+</body>
+
+</html>
