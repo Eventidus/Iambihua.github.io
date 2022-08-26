@@ -32,7 +32,7 @@
 <body>
   <main class="content">
     <section class="outer">
-  <article id="post-this关键字" class="article article-type-post" itemscope
+  <article id="post-Vuex" class="article article-type-post" itemscope
   itemprop="blogPost" data-scroll-reveal>
 
   <div class="article-inner">
@@ -40,8 +40,8 @@
 
     
     <div class="article-meta">
-      <a href="/2022/08/26/this%E5%85%B3%E9%94%AE%E5%AD%97/" class="article-date">
-  <time datetime="2022-08-26T11:55:15.407Z" itemprop="datePublished">2022-08-26</time>
+      <a href="/2022/08/26/Vuex/" class="article-date">
+  <time datetime="2022-08-26T11:45:49.861Z" itemprop="datePublished">2022-08-26</time>
 </a>
       
     </div>
@@ -57,52 +57,75 @@
       
       
       
-        <h1 id="this-关键字"><a href="#this-关键字" class="headerlink" title="this 关键字"></a>this 关键字</h1><ol>
-<li><p>this 总是返回一个对象。</p>
+        <h1 id="Vuex"><a href="#Vuex" class="headerlink" title="Vuex"></a>Vuex</h1><ol>
+<li><p>作用：集中管理项目中组件公用的数据</p>
 </li>
-<li><p>this 的值为属性或方法当前所在的对象(环境)。</p>
+<li><p>使用场景：项目过大，组件多，并且数据量多的情况下可以使用 vuex</p>
 </li>
-<li><p>使用场合 1. 在全局环境下，this 的值为顶层环境 window。 2. 在构造函数中，this 指向实例对象。 3. 在对象的方法中，this 指向当前方法所在的对象，但如果对一个对象进行赋值时，this 的指向就会改变了。</p>
+<li><p>vuex 的状态是响应式的</p>
+</li>
+<li><p>mutations 不能直接更改状态</p>
+</li>
+<li><p>Vuex 使用步骤： 1. 创建 store 目录，在这个目录下创建 index.js 文件 2. 导入 Vue 及 Vuex 库 3. 安装 Vuex 库，即 Vue.use(Vuex) 4. 创建 vuex 实例，通过 new Vuex.Store({})方法 5. 向外导出 Vuex 实例 6. 在入口文件中导入 vuex 实例 7. 注册 vuex 实例</p>
 <span id="more"></span>
 </li>
-<li><p>多层 this 的情况下，可以考虑使用一个变量指向外层 this。</p>
-</li>
-<li><p>回调函数中的 this 指向当前环境中的全局对象。</p>
-</li>
-<li><p>Function.prototype.call()</p>
+<li><p>vuex 的几个核心概念</p>
 <ol>
-<li>用来指定 this 的指向。</li>
-<li>call 方法的参数如果为空,null,或者 underfined，则默认指向 window 对象。</li>
-<li>如果只有一个参数，并且参数为对象，则 this 指向这个参数对象。</li>
-<li>如果只有一个参数，并且参数为原始值，则 this 指向这个原始值的包装对象。</li>
-<li>如果有多个参数，则第一个参数为 this 指向的对象，后面的参数为函数调用时需要的参数。</li>
+<li>state<ol>
+<li>类似于 vue 的 data 属性，存储数据源</li>
 </ol>
 </li>
-<li><p>Function.prototype.apply()</p>
-<ol>
-<li>跟 call 方法类似，也是用来指定 this 的指向。</li>
-<li>如果只有一个参数，并且参数为对象，则 this 指向这个参数对象。</li>
-<li>如果有多个参数，则第一个参数为 this 要指向的对象，第二个参数为参数数组。</li>
+<li>mutations<ol>
+<li>mutation 是同步事务</li>
+<li>类似于 vue 实例的 methods 属性，修改数据源状态，但不能处理异步方法</li>
+<li>不能直接修改 state 的值，可在子组件中通过调用 this.$store.commit(‘xxx’)来更改 store 中 state 的值</li>
+<li>mutation 相当于注册事件，而 commit 相当于触发事件</li>
+<li>mutation 载荷：在 commit 方法中提交额外的参数</li>
+<li>在 commit 方法中，也可以提交一个对象形式的参数，并且这个对象包含一个叫做 type 的属性,它的值为 mutation 中的某个方法名</li>
+<li>有载荷和对象风格这两种提交 commit 的方式</li>
+<li>在 mutation 中使用异步可能会导致程序很难被调试</li>
 </ol>
 </li>
-<li><p>Function.prototype.bind()</p>
-<ol>
-<li>bind 方法用于将函数中的 this 绑定到某个对象，并且返回一个新函数。</li>
-<li>bind 方法也可以用于绑定参数。</li>
-<li>如果只有一个参数，并且参数为对象，则 this 指向这个参数对象。</li>
-<li>如果有多个参数，则第一个参数为 this 指向的对象，后面的参数为函数调用时需要的参数。</li>
-<li>注意事项：<ol>
-<li>每次调用会返回一个全新的函数</li>
+<li>getters<ol>
+<li>可以理解为 vuex 的计算 computed 属性</li>
+<li>默认 state 作为第一个参数，第二个参数可以为其他 getter</li>
+<li>可以通过属性的方式访问（会缓存结果），也可以通过方法访问（不会缓存结果），相同点是可通过 store.getters 对象进行访问</li>
+</ol>
+</li>
+<li>actions<ol>
+<li>相当于能处理异步操作的 mutation</li>
+<li>actions 提交的是 mutation</li>
+<li>类似于 vue 实例的 methods 属性，可以书写自己的业务逻辑，或者处理异步方法</li>
+<li>Action 函数接收一个与 store 实例具有相同方法和属性的 context 对象参数</li>
+<li>为了简化代码 context 对象可通过解构赋值为{commit}方法来提交 mutation，相当于 const {commit}&#x3D;context</li>
+<li>store.dispatch()方法可以触发 action，它的优点是可以破除异步限制，一般在根组件发出请求</li>
+<li>有载荷和对象风格这两种分发方式</li>
+<li>只有当所有触发函数完成后，返回的 Promise 才会执行</li>
+</ol>
+</li>
+<li>modules<ol>
+<li>将 store 分割成模块，每个模块都有自己的 state,mutations,getters,actions 属性</li>
+<li>解决可能的 store 对象臃肿问题</li>
+<li>对于模块内部的 mutation 及 getter 函数，第一个参数为模块的局部状态对象</li>
+<li>对于模块内部的 action，局部状态通过 context.state 暴露出来，而根节点为 context.rootState</li>
+<li>可使用 store.registerModule()方法动态注册模块</li>
+<li>可使用 store.hashModule(modulename)检查模块是否被注册</li>
 </ol>
 </li>
 </ol>
+</li>
+<li><p>可以通过 vue 实例的$store 属性对象进行访问</p>
+</li>
+<li><p>使用映射函数的好处是可以减少代码重复书写良，和扩展运算符结合使用</p>
+</li>
+<li><p>mapState 函数可以帮忙生成 computed 属性，但是它返回的是一个对象，所以还需用对象展开运算符去除里面的所有对象。</p>
 </li>
 </ol>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/08/26/this%E5%85%B3%E9%94%AE%E5%AD%97/" data-id="cl7b4pq2u003r70v4go1xhfq8" class="article-share-link">
+      <a data-url="http://example.com/2022/08/26/Vuex/" data-id="cl7b4pptw001470v40skueu06" class="article-share-link">
         Share
       </a>
       
@@ -114,7 +137,7 @@
   
 <nav class="article-nav">
   
-  <a href="/2022/08/26/%E5%BC%82%E6%AD%A5%E6%93%8D%E4%BD%9C/" class="article-nav-link">
+  <a href="/2022/08/26/VueRouter/" class="article-nav-link">
     <strong class="article-nav-caption">Newer</strong>
     <div class="article-nav-title">
       
@@ -124,9 +147,9 @@
   </a>
   
   
-  <a href="/2022/08/26/Promise%E5%AF%B9%E8%B1%A1/" class="article-nav-link">
+  <a href="/2021/06/19/DeepL/" class="article-nav-link">
     <strong class="article-nav-caption">Older</strong>
-    <div class="article-nav-title"></div>
+    <div class="article-nav-title">DeepL</div>
   </a>
   
 </nav>
