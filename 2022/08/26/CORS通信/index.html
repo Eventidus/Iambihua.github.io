@@ -57,12 +57,12 @@
       
       
       
-        <h1 id="CORS通信"><a href="#CORS通信" class="headerlink" title="CORS通信"></a>CORS通信</h1><ol>
+        <h1 id="CORS-通信"><a href="#CORS-通信" class="headerlink" title="CORS 通信"></a>CORS 通信</h1><ol>
 <li>CORS（Cross-Origin-Resource-Sharing），中文名跨域资源共享。</li>
-<li>CORS的作用是允许浏览器向跨域服务器发送XMLHttpRequest（XHR）。</li>
-<li>实现CORS跨域通信，主要看服务器是否实现CORS接口，也就是说主要在服务器端配置</li>
-<li>服务器端配置CORS跨域的方法是设置Access-Control-Allow-Origin</li>
-<li>CORS可分为两种请求：<ol>
+<li>CORS 的作用是允许浏览器向跨域服务器发送 XMLHttpRequest（XHR）。</li>
+<li>实现 CORS 跨域通信，主要看服务器是否实现 CORS 接口，也就是说主要在服务器端配置</li>
+<li>服务器端配置 CORS 跨域的方法是设置 Access-Control-Allow-Origin<span id="more"></span></li>
+<li>CORS 可分为两种请求：<ol>
 <li>简答请求<ol>
 <li>简答请求需要请求方法和头信息字段都满足条件</li>
 <li>请求方法<ol>
@@ -76,39 +76,39 @@
 <li>Content-Language</li>
 <li>Accept-Language</li>
 <li>Last-Event-ID</li>
-<li>Content-Type：只限于三个值application&#x2F;x-www-form-urlencoded、multipart&#x2F;form-data、text&#x2F;plain</li>
+<li>Content-Type：只限于三个值 application&#x2F;x-www-form-urlencoded、multipart&#x2F;form-data、text&#x2F;plain</li>
 </ol>
 </li>
 <li>不满足上面两个条件的，称为非简单请求。</li>
-<li>CORS通信的基本流程：<ol>
-<li>浏览器发起CORS请求，并且在头信息增加origin字段，表示要发起跨域请求的域。</li>
-<li>服务器判断浏览器发过来的origin是否在许可范围内。</li>
-<li>如不在许可范围内，则发送正常的HTTP回应，但不会包含Access-Control-Allow-Origin字段。</li>
-<li>如在许可范围内，发送的HTTP回应会包含以下字段<ol>
-<li>Access-Control-Allow-Origin字段： 表示服务器可允许跨域的域名，如果是*，则表示可接受任意域名。</li>
-<li>Access-Control-Allow-Credentials：表示是否允许发送cookie。</li>
+<li>CORS 通信的基本流程：<ol>
+<li>浏览器发起 CORS 请求，并且在头信息增加 origin 字段，表示要发起跨域请求的域。</li>
+<li>服务器判断浏览器发过来的 origin 是否在许可范围内。</li>
+<li>如不在许可范围内，则发送正常的 HTTP 回应，但不会包含 Access-Control-Allow-Origin 字段。</li>
+<li>如在许可范围内，发送的 HTTP 回应会包含以下字段<ol>
+<li>Access-Control-Allow-Origin 字段： 表示服务器可允许跨域的域名，如果是*，则表示可接受任意域名。</li>
+<li>Access-Control-Allow-Credentials：表示是否允许发送 cookie。</li>
 <li>Access-Control-Expose-Headers：表示是否返回其他非基本字段。</li>
 </ol>
 </li>
-<li>要想发送cookie给服务器，开发者需要将xhr.withCredentials设置为true，注意有些浏览器的xhr.withCredentials默认为false。</li>
+<li>要想发送 cookie 给服务器，开发者需要将 xhr.withCredentials 设置为 true，注意有些浏览器的 xhr.withCredentials 默认为 false。</li>
 </ol>
 </li>
 </ol>
 </li>
 <li>非简单请求<ol>
-<li>非简单请求在发送CORS请求前，需要先发出预检请求。</li>
-<li>预检请求是浏览器询问是否接受当前网页的域名，以及可接受哪些HTTP方法和字段。</li>
-<li>预检请求的请求方法是OPTIONS。</li>
+<li>非简单请求在发送 CORS 请求前，需要先发出预检请求。</li>
+<li>预检请求是浏览器询问是否接受当前网页的域名，以及可接受哪些 HTTP 方法和字段。</li>
+<li>预检请求的请求方法是 OPTIONS。</li>
 <li>预检请求的头信息包含的部分字段如下<ol>
 <li>origin</li>
-<li>Access-Control-Request-Method，发送CORS请求用到的方法。</li>
-<li>Access-Control-Requset-Headers，发送CORS请求额外发送的头部信息</li>
+<li>Access-Control-Request-Method，发送 CORS 请求用到的方法。</li>
+<li>Access-Control-Requset-Headers，发送 CORS 请求额外发送的头部信息</li>
 </ol>
 </li>
-<li>如通过预检请求，则每次的CORS请求就跟简单请求一样。</li>
-<li>CORS和JSONP的比较<ol>
-<li>JSONP只支持Get请求，而CORS支持所有类型的请求。</li>
-<li>JSONP可以在老式浏览器上运行，也可以向不支持CORS的网站上请求数据。</li>
+<li>如通过预检请求，则每次的 CORS 请求就跟简单请求一样。</li>
+<li>CORS 和 JSONP 的比较<ol>
+<li>JSONP 只支持 Get 请求，而 CORS 支持所有类型的请求。</li>
+<li>JSONP 可以在老式浏览器上运行，也可以向不支持 CORS 的网站上请求数据。</li>
 </ol>
 </li>
 </ol>
@@ -120,7 +120,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/08/26/CORS%E9%80%9A%E4%BF%A1/" data-id="cl7ahrkzq0000tov4czt2dxrw" class="article-share-link">
+      <a data-url="http://example.com/2022/08/26/CORS%E9%80%9A%E4%BF%A1/" data-id="cl7b4i3ov0000x0v4f2fuhzzh" class="article-share-link">
         Share
       </a>
       

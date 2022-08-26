@@ -55,27 +55,6 @@
   <div class="archive-article-inner">
     <header class="archive-article-header">
       
-      <a href="/2022/08/26/async%E5%87%BD%E6%95%B0/" class="archive-article-date">
-  <time datetime="2022-08-26T11:52:43.605Z" itemprop="datePublished">08/26</time>
-</a>
-    </header>
-    
-      
-    
-    
-    
-  </div>
-
-</article>
-      
-  
-  
-      <article class="archive-article archive-type-post">
-  
-  
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      
       <a href="/2022/08/26/Iterator%E9%81%8D%E5%8E%86%E5%99%A8/" class="archive-article-date">
   <time datetime="2022-08-26T11:52:15.049Z" itemprop="datePublished">08/26</time>
 </a>
@@ -102,7 +81,11 @@
 </a>
     </header>
     
-      
+      <h1 id="CORS-通信"><a href="#CORS-通信" class="headerlink" title="CORS 通信"></a>CORS 通信</h1><ol>
+<li>CORS（Cross-Origin-Resource-Sharing），中文名跨域资源共享。</li>
+<li>CORS 的作用是允许浏览器向跨域服务器发送 XMLHttpRequest（XHR）。</li>
+<li>实现 CORS 跨域通信，主要看服务器是否实现 CORS 接口，也就是说主要在服务器端配置</li>
+<li>服务器端配置 CORS 跨域的方法是设置 Access-Control-Allow-Origin
     
     
     
@@ -123,7 +106,14 @@
 </a>
     </header>
     
-      
+      <h1 id="VueRouter"><a href="#VueRouter" class="headerlink" title="VueRouter"></a>VueRouter</h1><ol>
+<li><p>导入 vue 及 vue-router 库</p>
+</li>
+<li><p>安装 vue-router 插件</p>
+</li>
+<li><p>导入路由组件</p>
+</li>
+<li><p>创建路由数组即 routes 数组，数组一般有 1. path 属性定义访问路径 2. component 属性指定组件名 3. redirect 属性用于路由重定向 4. meta 属性是一个对象，为路由记录添加其他额外信息，通过这个信息以实现控制路由的访问等功能</p>
     
     
     
@@ -144,7 +134,16 @@
 </a>
     </header>
     
-      
+      <h1 id="Vuex"><a href="#Vuex" class="headerlink" title="Vuex"></a>Vuex</h1><ol>
+<li><p>作用：集中管理项目中组件公用的数据</p>
+</li>
+<li><p>使用场景：项目过大，组件多，并且数据量多的情况下可以使用 vuex</p>
+</li>
+<li><p>vuex 的状态是响应式的</p>
+</li>
+<li><p>mutations 不能直接更改状态</p>
+</li>
+<li><p>Vuex 使用步骤： 1. 创建 store 目录，在这个目录下创建 index.js 文件 2. 导入 Vue 及 Vuex 库 3. 安装 Vuex 库，即 Vue.use(Vuex) 4. 创建 vuex 实例，通过 new Vuex.Store({})方法 5. 向外导出 Vuex 实例 6. 在入口文件中导入 vuex 实例 7. 注册 vuex 实例</p>
     
     
     

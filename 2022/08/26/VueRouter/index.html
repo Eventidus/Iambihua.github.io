@@ -58,48 +58,58 @@
       
       
         <h1 id="VueRouter"><a href="#VueRouter" class="headerlink" title="VueRouter"></a>VueRouter</h1><ol>
-<li>导入vue及vue-router库</li>
-<li>安装vue-router插件</li>
-<li>导入路由组件</li>
-<li>创建路由数组即routes数组，数组一般有<ol>
-<li>path属性定义访问路径</li>
-<li>component属性指定组件名</li>
-<li>redirect属性用于路由重定向</li>
-<li>meta属性是一个对象，为路由记录添加其他额外信息，通过这个信息以实现控制路由的访问等功能</li>
+<li><p>导入 vue 及 vue-router 库</p>
+</li>
+<li><p>安装 vue-router 插件</p>
+</li>
+<li><p>导入路由组件</p>
+</li>
+<li><p>创建路由数组即 routes 数组，数组一般有 1. path 属性定义访问路径 2. component 属性指定组件名 3. redirect 属性用于路由重定向 4. meta 属性是一个对象，为路由记录添加其他额外信息，通过这个信息以实现控制路由的访问等功能</p>
+<span id="more"></span>
+</li>
+<li><p>创建路由器对象即通过 new VueRouter()构造函数,将 routes 数组传入构造函数参数里,其他参数：mode:指定 url 地址是否带有 # 号</p>
+</li>
+<li><p>导出路由配置文件</p>
+</li>
+<li><p>在 main.js 主入口文件中引入路由规则文件，并且注册路由</p>
+</li>
+<li><p>vue 路由是一种键值对，它表示的是路径与路由组件之间的映射</p>
+</li>
+<li><p>路由的$route 属性用于获取路由相关信息如 query,params，fullPath(可用于组件的隐藏或显示)等</p>
+<ol>
+<li>query 查询参数，也就是 url 地址?后面的参数,不需要预先占位。</li>
+<li>params 路径参数相当于 url 地址的一部分，用于动态指定 url 地址，需要预先占位。</li>
 </ol>
 </li>
-<li>创建路由器对象即通过new VueRouter()构造函数,将routes数组传入构造函数参数里,其他参数：mode:指定url地址是否带有 # 号</li>
-<li>导出路由配置文件</li>
-<li>在main.js主入口文件中引入路由规则文件，并且注册路由</li>
-<li>vue路由是一种键值对，它表示的是路径与路由组件之间的映射</li>
-<li>路由的$route属性用于获取路由相关信息如query,params，fullPath(可用于组件的隐藏或显示)等<ol>
-<li>query查询参数，也就是url地址?后面的参数,不需要预先占位。</li>
-<li>params路径参数相当于url地址的一部分，用于动态指定url地址，需要预先占位。</li>
-</ol>
-</li>
-<li>路由传参的时候，如何指定params参数可传也可不传<ol>
+<li><p>路由传参的时候，如何指定 params 参数可传也可不传</p>
+<ol>
 <li>在配置路由规则的时候，在路由占位的后面加上一个问号。</li>
-<li>如果同时提供了path和params，那么params会被省略，但是query不会。</li>
-<li>如果同时提供了name和params，那么params可以正常工作。</li>
+<li>如果同时提供了 path 和 params，那么 params 会被省略，但是 query 不会。</li>
+<li>如果同时提供了 name 和 params，那么 params 可以正常工作。</li>
 </ol>
 </li>
-<li>路由的$router属性用于编程式导航进行路由跳转(Push|replace)等</li>
-<li>路由有声明式导航(router-link)和编程式导航，其中声明式导航必须有to属性</li>
-<li>三种路由跳转方法<ol>
+<li><p>路由的$router 属性用于编程式导航进行路由跳转(Push|replace)等</p>
+</li>
+<li><p>路由有声明式导航(router-link)和编程式导航，其中声明式导航必须有 to 属性</p>
+</li>
+<li><p>三种路由跳转方法</p>
+<ol>
 <li>push()方法会在路由历史栈中添加一条新的记录</li>
 <li>replace()方法只是替换，而不会向历史栈中添加一条新的记录</li>
 <li>go()表示在历史栈中前进或后退多步</li>
 </ol>
 </li>
-<li>路由的前进或者后退<ol>
+<li><p>路由的前进或者后退</p>
+<ol>
 <li>router.forward()前进一步</li>
 <li>router.back()后退一步</li>
 </ol>
 </li>
-<li>三种使用props传参的方式<ol>
-<li>布尔模式：props&#x3D;true,这时props的值为params</li>
-<li>对象模式：props的值为一个对象</li>
-<li>函数模式：返回一个props对，route &#x3D;&gt; ({ })</li>
+<li><p>三种使用 props 传参的方式</p>
+<ol>
+<li>布尔模式：props&#x3D;true,这时 props 的值为 params</li>
+<li>对象模式：props 的值为一个对象</li>
+<li>函数模式：返回一个 props 对，route &#x3D;&gt; ({ })</li>
 </ol>
 </li>
 </ol>
@@ -107,7 +117,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/08/26/VueRouter/" data-id="cl7ahrl0y0011tov48ddxb24d" class="article-share-link">
+      <a data-url="http://example.com/2022/08/26/VueRouter/" data-id="cl7b4i3rq0012x0v4e71jej67" class="article-share-link">
         Share
       </a>
       

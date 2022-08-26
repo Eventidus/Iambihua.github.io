@@ -75,12 +75,12 @@
       
       
       
-        <h1 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h1><h2 id="git介绍"><a href="#git介绍" class="headerlink" title="git介绍"></a>git介绍</h2><ol>
-<li><p>由Linus用C语言编写.</p>
+        <h1 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h1><h2 id="git-介绍"><a href="#git-介绍" class="headerlink" title="git 介绍"></a>git 介绍</h2><ol>
+<li><p>由 Linus 用 C 语言编写.</p>
 </li>
 <li><p>分布式版本控制系统</p>
 </li>
-<li><p>集中式版本控制系统 CVS，SVN缺点：</p>
+<li><p>集中式版本控制系统 CVS，SVN 缺点：</p>
 <ul>
 <li>缺点：更新速度慢，必须联网.</li>
 </ul>
@@ -88,7 +88,7 @@
 <li><p>集中式版本控制系统工作原理：</p>
 <ul>
 <li>版本库放在中央处理器.</li>
-<li>处理数据时：先从中央处理器获取数据，个人处理完数据后，再传送到中央处理器.</li>
+<li>处理数据时：先从中央处理器获取数据，个人处理完数据后，再传送到中央处理器.<span id="more"></span></li>
 </ul>
 </li>
 <li><p>分布式版本控制系统工作原理：</p>
@@ -99,9 +99,7 @@
 </ul>
 </li>
 </ol>
-<span id="more"></span>
-
-<h2 id="git常用命令"><a href="#git常用命令" class="headerlink" title="git常用命令"></a>git常用命令</h2><ol>
+<h2 id="git-常用命令"><a href="#git-常用命令" class="headerlink" title="git 常用命令"></a>git 常用命令</h2><ol>
 <li><p>git config 用来获取并设置存储库或者全局选择.</p>
 <ul>
 <li><p>查看用户名和邮箱.</p>
@@ -120,7 +118,7 @@
 </li>
 <li><p>git init 文件名</p>
 <ul>
-<li>把当前文件夹或目录设置为git可以管理的仓库.</li>
+<li>把当前文件夹或目录设置为 git 可以管理的仓库.</li>
 <li>.git 文件用来管理跟踪版本库.</li>
 </ul>
 </li>
@@ -132,8 +130,8 @@
 <li><p>将当前在暂存区的所有文件提交到版本库</p>
 <ul>
 <li>git commit 文件名.</li>
-<li>-m参数:：对要提交的文件进行说明.</li>
-<li>多次上传add，一次提交commit.</li>
+<li>-m 参数:：对要提交的文件进行说明.</li>
+<li>多次上传 add，一次提交 commit.</li>
 </ul>
 </li>
 <li><p>查看工作区和暂存区的文件状态</p>
@@ -151,10 +149,10 @@
 <li>git diff 文件名</li>
 </ul>
 </li>
-<li><p>查看commit历史</p>
+<li><p>查看 commit 历史</p>
 <ul>
 <li>git log.</li>
-<li>–pretty&#x3D;oneline 简化commit历史记录.</li>
+<li>–pretty&#x3D;oneline 简化 commit 历史记录.</li>
 </ul>
 </li>
 <li><p>回退到某个版本</p>
@@ -177,7 +175,7 @@
 <ol start="12">
 <li><p>撤销工作区文件的修改</p>
 <ul>
-<li>git checkout  - -文件名.</li>
+<li>git checkout - -文件名.</li>
 </ul>
 </li>
 <li><p>撤销暂存区文件的修改</p>
@@ -188,34 +186,34 @@
 <li><p>删除版本库文件</p>
 <ul>
 <li>git rm 文件名</li>
-<li>rm 删除工作区的文件，前面不带git.</li>
-<li>删除版本库里的文件后需要commit.</li>
+<li>rm 删除工作区的文件，前面不带 git.</li>
+<li>删除版本库里的文件后需要 commit.</li>
 </ul>
 </li>
 </ol>
-<h2 id="git远程仓库"><a href="#git远程仓库" class="headerlink" title="git远程仓库"></a>git远程仓库</h2><ol>
-<li><p>生成SSHKey</p>
+<h2 id="git-远程仓库"><a href="#git-远程仓库" class="headerlink" title="git 远程仓库"></a>git 远程仓库</h2><ol>
+<li><p>生成 SSHKey</p>
 <ul>
-<li>ssh-keygen -t rsa -C  “<a href="mailto:&#x75;&#x73;&#101;&#114;&#x40;&#x65;&#x78;&#97;&#x6d;&#112;&#108;&#101;&#x2e;&#99;&#111;&#x6d;">&#x75;&#x73;&#101;&#114;&#x40;&#x65;&#x78;&#97;&#x6d;&#112;&#108;&#101;&#x2e;&#99;&#111;&#x6d;</a>“.</li>
-<li>id_rsa 私钥，id_ras.pub公钥.</li>
+<li>ssh-keygen -t rsa -C “<a href="mailto:&#117;&#115;&#x65;&#x72;&#x40;&#101;&#x78;&#97;&#109;&#112;&#108;&#x65;&#x2e;&#99;&#x6f;&#109;">&#117;&#115;&#x65;&#x72;&#x40;&#101;&#x78;&#97;&#109;&#112;&#108;&#x65;&#x2e;&#99;&#x6f;&#109;</a>“.</li>
+<li>id_rsa 私钥，id_ras.pub 公钥.</li>
 </ul>
 </li>
-<li><p>为GitHub设置SSHKey的原因</p>
+<li><p>为 GitHub 设置 SSHKey 的原因</p>
 <ul>
 <li>确保仓库内容的推送是本人推送.</li>
 </ul>
 </li>
-<li><p>GitHub作为远程仓库的两个好处</p>
+<li><p>GitHub 作为远程仓库的两个好处</p>
 <ul>
 <li>作为远程同步仓库，备份本地仓库.</li>
-<li>通过GitHub方便多人协同工作.</li>
+<li>通过 GitHub 方便多人协同工作.</li>
 </ul>
 </li>
-<li><p>关联本地仓库和远程GitHub仓库</p>
+<li><p>关联本地仓库和远程 GitHub 仓库</p>
 <ul>
 <li><p>两种关联方式：</p>
 <ul>
-<li>git remote add origin <a href="mailto:&#103;&#x69;&#116;&#x40;&#103;&#105;&#116;&#x68;&#117;&#x62;&#46;&#99;&#x6f;&#x6d;">&#103;&#x69;&#116;&#x40;&#103;&#105;&#116;&#x68;&#117;&#x62;&#46;&#99;&#x6f;&#x6d;</a>:用户名&#x2F; 仓库名.git.</li>
+<li>git remote add origin <a href="mailto:&#x67;&#x69;&#x74;&#64;&#103;&#105;&#x74;&#x68;&#117;&#x62;&#46;&#99;&#x6f;&#109;">&#x67;&#x69;&#x74;&#64;&#103;&#105;&#x74;&#x68;&#117;&#x62;&#46;&#99;&#x6f;&#109;</a>:用户名&#x2F; 仓库名.git.</li>
 <li>git remote add origin <a target="_blank" rel="noopener" href="https://github.com/%E7%94%A8%E6%88%B7%E5%90%8D/%E4%BB%93%E5%BA%93%E5%90%8D.git">https://github.com/用户名/仓库名.git</a></li>
 </ul>
 </li>
@@ -228,9 +226,9 @@
 <li>git push -u orign master.</li>
 </ul>
 </li>
-<li><p>加-u 参数 是为了把本地仓库master分支与远程仓库master分支关联起来，此后再次推送不再需要加-u参数,简化命令.</p>
+<li><p>加-u 参数 是为了把本地仓库 master 分支与远程仓库 master 分支关联起来，此后再次推送不再需要加-u 参数,简化命令.</p>
 </li>
-<li><p>把本地未push分叉提交历史整理成直线</p>
+<li><p>把本地未 push 分叉提交历史整理成直线</p>
 <ul>
 <li>git rebase</li>
 </ul>
@@ -241,7 +239,7 @@
 <ul>
 <li><p>两种克隆方式：</p>
 <ul>
-<li>git clone <a href="mailto:&#x67;&#105;&#116;&#64;&#103;&#105;&#116;&#104;&#x75;&#x62;&#x2e;&#x63;&#x6f;&#x6d;">&#x67;&#105;&#116;&#64;&#103;&#105;&#116;&#104;&#x75;&#x62;&#x2e;&#x63;&#x6f;&#x6d;</a>:用户名&#x2F;仓库名.git.</li>
+<li>git clone <a href="mailto:&#103;&#x69;&#x74;&#64;&#103;&#x69;&#x74;&#x68;&#117;&#98;&#x2e;&#99;&#x6f;&#109;">&#103;&#x69;&#x74;&#64;&#103;&#x69;&#x74;&#x68;&#117;&#98;&#x2e;&#99;&#x6f;&#109;</a>:用户名&#x2F;仓库名.git.</li>
 <li>git clone <a target="_blank" rel="noopener" href="https://github/%E7%94%A8%E6%88%B7%E5%90%8D/%E4%BB%93%E5%BA%93%E5%90%8D.git">https://github/用户名/仓库名.git</a>.</li>
 </ul>
 </li>
@@ -256,24 +254,24 @@
 <li>git remote rm 远程仓库名</li>
 </ul>
 </li>
-<li><p>git支持多种协议，但相比于https,git协议最快.</p>
+<li><p>git 支持多种协议，但相比于 https,git 协议最快.</p>
 </li>
 </ul>
 </li>
 </ol>
-<h2 id="git分支管理"><a href="#git分支管理" class="headerlink" title="git分支管理"></a>git分支管理</h2><ol>
-<li><p>HEAD只指向分支，而且仅指向当前分支，master是主分支，指向提交点.</p>
+<h2 id="git-分支管理"><a href="#git-分支管理" class="headerlink" title="git 分支管理"></a>git 分支管理</h2><ol>
+<li><p>HEAD 只指向分支，而且仅指向当前分支，master 是主分支，指向提交点.</p>
 </li>
 <li><p>分支合并的原理</p>
 <ul>
-<li>让master分支指向与已修改提交分支相同的提交点.</li>
+<li>让 master 分支指向与已修改提交分支相同的提交点.</li>
 </ul>
 </li>
 <li><p>创建分支</p>
 <ul>
 <li><p>创建分支并切换</p>
 <ul>
-<li>git checkout -b分支名称.</li>
+<li>git checkout -b 分支名称.</li>
 <li>git switch -c 分支名称.</li>
 </ul>
 </li>
@@ -297,7 +295,7 @@
 </li>
 <li><p>分支删除</p>
 <ul>
-<li>git branch -d 分支名称  .</li>
+<li>git branch -d 分支名称 .</li>
 <li>git branch -D 分支名称 （强制删除分支）.</li>
 </ul>
 </li>
@@ -306,14 +304,14 @@
 <li>git log - -graph - -pretty&#x3D;oneline - -abbrev-commit.</li>
 </ul>
 </li>
-<li><p>fast forward模式</p>
+<li><p>fast forward 模式</p>
 <ul>
-<li><p>分支的默认模式为fast-forward模式，删除分支后不保留分支信息.</p>
+<li><p>分支的默认模式为 fast-forward 模式，删除分支后不保留分支信息.</p>
 </li>
 <li><p>如想保留分支信息，可使用如下命令</p>
 <ul>
-<li>git merge - -no-ff -m “分支合并说明  “  分支名称.</li>
-<li>–no-ff 表示禁用fast-forward模式，-m 表示对被合并分支进行说明.</li>
+<li>git merge - -no-ff -m “分支合并说明 “ 分支名称.</li>
+<li>–no-ff 表示禁用 fast-forward 模式，-m 表示对被合并分支进行说明.</li>
 </ul>
 </li>
 </ul>
@@ -345,9 +343,9 @@
 <li>git brash pop.</li>
 </ul>
 </li>
-<li><p>把修复的分支bug合并到当前分支</p>
+<li><p>把修复的分支 bug 合并到当前分支</p>
 <ul>
-<li>git cherry-pick  &lt; commit id &gt;</li>
+<li>git cherry-pick &lt; commit id &gt;</li>
 </ul>
 </li>
 </ul>
@@ -359,8 +357,8 @@
 </ul>
 </li>
 </ol>
-<h2 id="git标签管理"><a href="#git标签管理" class="headerlink" title="git标签管理"></a>git标签管理</h2><ol>
-<li><p>在git中打标签是为了管理各个历史版本，便于寻找</p>
+<h2 id="git-标签管理"><a href="#git-标签管理" class="headerlink" title="git 标签管理"></a>git 标签管理</h2><ol>
+<li><p>在 git 中打标签是为了管理各个历史版本，便于寻找</p>
 </li>
 <li><p>创建标签(默认打在最新提交上)</p>
 <ul>
@@ -374,8 +372,8 @@
 </li>
 <li><p>给历史某个版本打标签</p>
 <ul>
-<li>git tag -a 标签名 -m” 说明”  提交commitid</li>
-<li>-a 指定标签名 -m指定标签说明</li>
+<li>git tag -a 标签名 -m” 说明” 提交 commitid</li>
+<li>-a 指定标签名 -m 指定标签说明</li>
 </ul>
 </li>
 <li><p>查看标签信息</p>
@@ -402,7 +400,7 @@
 </li>
 <li><p>从本地删除标签</p>
 <ul>
-<li>git tag -d  标签名</li>
+<li>git tag -d 标签名</li>
 </ul>
 </li>
 <li><p>从远程删除标签</p>
@@ -413,25 +411,25 @@
 </ul>
 </li>
 </ol>
-<h2 id="git自定义"><a href="#git自定义" class="headerlink" title="git自定义"></a>git自定义</h2><ol>
-<li><p>创建 .gitignore文件</p>
+<h2 id="git-自定义"><a href="#git-自定义" class="headerlink" title="git 自定义"></a>git 自定义</h2><ol>
+<li><p>创建 .gitignore 文件</p>
 <ul>
-<li>在window中通过文本编辑器创建</li>
+<li>在 window 中通过文本编辑器创建</li>
 </ul>
 </li>
-<li><p>查看.gitignore文件的过滤规则</p>
+<li><p>查看.gitignore 文件的过滤规则</p>
 <ul>
-<li>git check-ignore  -v  文件名</li>
+<li>git check-ignore -v 文件名</li>
 </ul>
 </li>
-<li><p>为git命令配置别名</p>
+<li><p>为 git 命令配置别名</p>
 <ul>
-<li>git config - -global alias.别名  原名</li>
+<li>git config - -global alias.别名 原名</li>
 </ul>
 </li>
 <li><p>删除别名</p>
 <ul>
-<li><p>查看.gitconfig配置文件并删除相对应的行</p>
+<li><p>查看.gitconfig 配置文件并删除相对应的行</p>
 <ul>
 <li>cat .gitconfig.</li>
 </ul>
@@ -443,7 +441,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2020/06/04/Git/" data-id="cl7ahrl090007tov4d1qdgrh3" class="article-share-link">
+      <a data-url="http://example.com/2020/06/04/Git/" data-id="cl7b4i3pz0007x0v4d9wuggsk" class="article-share-link">
         Share
       </a>
       

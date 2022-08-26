@@ -57,37 +57,37 @@
       
       
       
-        <h1 id="Module语法"><a href="#Module语法" class="headerlink" title="Module语法"></a>Module语法</h1><ol>
-<li>ES6模块可在编译时(即静态阶段)确定模块的编译关系，而CommonJS只能在运行时确定模块的依赖关系，所以ES6模块可实现静态优化。</li>
-<li>ES6模块支持按需加载需要的模块方法，但CommonJS只能加载所有的模块方法。</li>
-<li>ES6模块自动采用严格模式。</li>
-<li>export命令规定模块的对外接口，import命令用于从模块中导入需要的功能。</li>
-<li>export命令可以输出变量，函数和类。</li>
-<li>通过import命令导入的模块，可在模块导入语句的头部提前执行。</li>
+        <h1 id="Module-语法"><a href="#Module-语法" class="headerlink" title="Module 语法"></a>Module 语法</h1><ol>
+<li>ES6 模块可在编译时(即静态阶段)确定模块的编译关系，而 CommonJS 只能在运行时确定模块的依赖关系，所以 ES6 模块可实现静态优化。</li>
+<li>ES6 模块支持按需加载需要的模块方法，但 CommonJS 只能加载所有的模块方法。</li>
+<li>ES6 模块自动采用严格模式。</li>
+<li>export 命令规定模块的对外接口，import 命令用于从模块中导入需要的功能。</li>
+<li>export 命令可以输出变量，函数和类。</li>
+<li>通过 import 命令导入的模块，可在模块导入语句的头部提前执行。<span id="more"></span></li>
 <li>按需导入的变量名应与按需导出的名字一致，</li>
 <li>如果有多个导入相同模块的语句，那么只会执行一次。</li>
-<li>模块的整体加载即import * as x from ‘xxx’，将模块全部加载进对象x中。</li>
-<li>export default命令与export命令的区别<ol>
-<li>前者的import不需要大括号，而后者需要。</li>
+<li>模块的整体加载即 import * as x from ‘xxx’，将模块全部加载进对象 x 中。</li>
+<li>export default 命令与 export 命令的区别<ol>
+<li>前者的 import 不需要大括号，而后者需要。</li>
 <li>前者在模块中只能使用一次，而后者可以使用多次。</li>
-<li>前者的import可以直接起别名，而后者只能使用as关键词。</li>
+<li>前者的 import 可以直接起别名，而后者只能使用 as 关键词。</li>
 <li>前者可以同时默认导入和按需导入。</li>
 </ol>
 </li>
-<li>export default的本周是将后面的值赋给一个叫default的对象。</li>
+<li>export default 的本周是将后面的值赋给一个叫 default 的对象。</li>
 <li>export { x,y } from ‘my_module’相当于如下两行语句<ol>
 <li>import {x,y} from ‘my_module’;</li>
 <li>export {x,y};</li>
 </ol>
 </li>
-<li>支持const声明的常量跨模块共享。</li>
+<li>支持 const 声明的常量跨模块共享。</li>
 <li>import()函数用来动态加载模块，并且返回一个 Promise 对象。</li>
 </ol>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/08/26/Module%E8%AF%AD%E6%B3%95/" data-id="cl7ahrl0v000utov4gxrv0gmi" class="article-share-link">
+      <a data-url="http://example.com/2022/08/26/Module%E8%AF%AD%E6%B3%95/" data-id="cl7b4i3rh000sx0v4glne271o" class="article-share-link">
         Share
       </a>
       

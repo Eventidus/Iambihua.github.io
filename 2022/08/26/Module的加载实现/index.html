@@ -57,40 +57,40 @@
       
       
       
-        <h1 id="Module的加载实现"><a href="#Module的加载实现" class="headerlink" title="Module的加载实现"></a>Module的加载实现</h1><ol>
-<li>在浏览器中加载ES6模块<ol>
-<li>&lt;javascript&gt;标签的两种属性async与defer的相同点是都是异步加载。</li>
-<li>&lt;javascript&gt;标签的两种属性async与defer区别<ol>
+        <h1 id="Module-的加载实现"><a href="#Module-的加载实现" class="headerlink" title="Module 的加载实现"></a>Module 的加载实现</h1><ol>
+<li>在浏览器中加载 ES6 模块<ol>
+<li>&lt;javascript&gt;标签的两种属性 async 与 defer 的相同点是都是异步加载。</li>
+<li>&lt;javascript&gt;标签的两种属性 async 与 defer 区别<ol>
 <li>defer：页面渲染完后执行。</li>
 <li>async：脚本下载完成后执行，同时中断当前的渲染。</li>
-<li>多个defer脚本按顺序执行，多个async脚本执行顺序不能保证。</li>
+<li>多个 defer 脚本按顺序执行，多个 async 脚本执行顺序不能保证。</li>
 </ol>
 </li>
-<li>模块顶层的this指向undefined。</li>
-<li>在浏览器中加载ES6模块时，需要在&lt;javascript&gt;标签中指定type&#x3D;”module”属性。</li>
-<li>浏览器中的ES6模块，默认是defer属性的异步加载。</li>
+<li>模块顶层的 this 指向 undefined。</li>
+<li>在浏览器中加载 ES6 模块时，需要在&lt;javascript&gt;标签中指定 type&#x3D;”module”属性。</li>
+<li>浏览器中的 ES6 模块，默认是 defer 属性的异步加载。<span id="more"></span></li>
 </ol>
 </li>
-<li>CommonJs模块和ES6模块的区别<ol>
-<li>CommonJs模块输出的值的拷贝，ES6模块输出的是值的引用。</li>
-<li>CommonJs是运行时加载，而ES6模块是编译输出接口。</li>
-<li>commonJS是同步加载，而ES6模块是异步加载。</li>
+<li>CommonJs 模块和 ES6 模块的区别<ol>
+<li>CommonJs 模块输出的值的拷贝，ES6 模块输出的是值的引用。</li>
+<li>CommonJs 是运行时加载，而 ES6 模块是编译输出接口。</li>
+<li>commonJS 是同步加载，而 ES6 模块是异步加载。</li>
 </ol>
 </li>
-<li>在Node中加载ES6模块<ol>
-<li>在package.json中在type改为’module’。</li>
+<li>在 Node 中加载 ES6 模块<ol>
+<li>在 package.json 中在 type 改为’module’。</li>
 <li>或者将文件名的后缀改为.mjs。</li>
-<li>如果type已经改为’module’,但又想用require命令加载模块，可将当前文件后缀改为.cjs。</li>
-<li>ES6模块可以import命令加载CommonJs模块，但CommonJs不能加载ES6模块。</li>
+<li>如果 type 已经改为’module’,但又想用 require 命令加载模块，可将当前文件后缀改为.cjs。</li>
+<li>ES6 模块可以 import 命令加载 CommonJs 模块，但 CommonJs 不能加载 ES6 模块。</li>
 </ol>
 </li>
-<li>CommonJs模块加载的原理是加载时执行，并且会缓存下来，以后后面再加载时不会再执行。</li>
+<li>CommonJs 模块加载的原理是加载时执行，并且会缓存下来，以后后面再加载时不会再执行。</li>
 </ol>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/08/26/Module%E7%9A%84%E5%8A%A0%E8%BD%BD%E5%AE%9E%E7%8E%B0/" data-id="cl7ahrl0u000ttov40n9h42p2" class="article-share-link">
+      <a data-url="http://example.com/2022/08/26/Module%E7%9A%84%E5%8A%A0%E8%BD%BD%E5%AE%9E%E7%8E%B0/" data-id="cl7b4i3rk000ux0v4ex0cgu8j" class="article-share-link">
         Share
       </a>
       

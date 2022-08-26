@@ -57,35 +57,45 @@
       
       
       
-        <h1 id="Generator函数语法"><a href="#Generator函数语法" class="headerlink" title="Generator函数语法"></a>Generator函数语法</h1><ol>
-<li>Generator相当于一个状态机，里面封装了多种内部状态</li>
-<li>创建Generator函数时，Function关键字跟函数名之间要有*星号</li>
-<li>调用Generator函数后，不会执行里面的代码，而是生成一个迭代器对象</li>
-<li>返回的迭代器对象可以反复使用next()方法迭代内部状态</li>
-<li>使用next方法会返回一个对象，这个对象有两个属性<ol>
-<li>value：当前状态的值，即yield表达式的值</li>
-<li>done：迭代是否结束</li>
+        <h1 id="Generator-函数语法"><a href="#Generator-函数语法" class="headerlink" title="Generator 函数语法"></a>Generator 函数语法</h1><ol>
+<li><p>Generator 相当于一个状态机，里面封装了多种内部状态</p>
+</li>
+<li><p>创建 Generator 函数时，Function 关键字跟函数名之间要有*星号</p>
+</li>
+<li><p>调用 Generator 函数后，不会执行里面的代码，而是生成一个迭代器对象</p>
+</li>
+<li><p>返回的迭代器对象可以反复使用 next()方法迭代内部状态</p>
+</li>
+<li><p>使用 next 方法会返回一个对象，这个对象有两个属性 1. value：当前状态的值，即 yield 表达式的值 2. done：迭代是否结束</p>
+<span id="more"></span>
+</li>
+<li><p>每次遇到 yield 语句并执行完成，函数会暂停执行</p>
+</li>
+<li><p>函数可以有多个 yield 语句，但只能有一个 yield 语句</p>
+</li>
+<li><p>next 方法带参数时，代表上一个 yield 返回值的结果为该参数的值</p>
+</li>
+<li><p>可以用 for-of 循环迭代 Generator 函数返回的迭代器对象，如果对象 done 属性为 true，不会输出该对象</p>
+</li>
+<li><p>yield 表达式如果用在另一个表达式中，必须放在圆括号里</p>
+</li>
+<li><p>Generator.prototype.throw()</p>
+<ol>
+<li>throw 方法是用来在函数外部抛出错误</li>
+<li>注意只能用 throw 方法抛出，而不能用 throw 命令关键字抛出，否则 Generator 函数内部不会捕获错误</li>
 </ol>
 </li>
-<li>每次遇到yield语句并执行完成，函数会暂停执行</li>
-<li>函数可以有多个yield语句，但只能有一个yield语句</li>
-<li>next方法带参数时，代表上一个yield返回值的结果为该参数的值</li>
-<li>可以用for-of循环迭代Generator函数返回的迭代器对象，如果对象done属性为true，不会输出该对象</li>
-<li>yield表达式如果用在另一个表达式中，必须放在圆括号里</li>
-<li>Generator.prototype.throw()<ol>
-<li>throw方法是用来在函数外部抛出错误</li>
-<li>注意只能用throw方法抛出，而不能用throw命令关键字抛出，否则Generator函数内部不会捕获错误</li>
+<li><p>Generator.prototype.return()</p>
+<ol>
+<li>return 语句可以返回一个值，并且终止此后的迭代操作</li>
+<li>yield 参数为要返回的值，如果为空，则返回 underfined</li>
+<li>如果 Generator 函数内有 try-finally 语句块，则会直接执行 finally 语句内的值，再返回 return 指定的返回值</li>
 </ol>
 </li>
-<li>Generator.prototype.return()<ol>
-<li>return语句可以返回一个值，并且终止此后的迭代操作</li>
-<li>yield参数为要返回的值，如果为空，则返回underfined</li>
-<li>如果Generator函数内有try-finally语句块，则会直接执行finally语句内的值，再返回return指定的返回值</li>
-</ol>
-</li>
-<li>yield*表达式<ol>
-<li>用来在一个Generator函数里执行另一个Generator函数</li>
-<li>任何实现Iterator接口的数据结构也可以用yield表达式迭代</li>
+<li><p>yield*表达式</p>
+<ol>
+<li>用来在一个 Generator 函数里执行另一个 Generator 函数</li>
+<li>任何实现 Iterator 接口的数据结构也可以用 yield 表达式迭代</li>
 </ol>
 </li>
 </ol>
@@ -93,7 +103,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/08/26/Generator%E5%87%BD%E6%95%B0%E8%AF%AD%E6%B3%95/" data-id="cl7ahrl080006tov49xfa0tws" class="article-share-link">
+      <a data-url="http://example.com/2022/08/26/Generator%E5%87%BD%E6%95%B0%E8%AF%AD%E6%B3%95/" data-id="cl7b4i3ps0006x0v4caz1gyvc" class="article-share-link">
         Share
       </a>
       

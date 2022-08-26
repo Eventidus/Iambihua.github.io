@@ -68,61 +68,21 @@
     </header>
     
       <blockquote>
-<p>本文是Java的面向对象篇，学习于<a target="_blank" rel="noopener" href="https://www.liaoxuefeng.com/">廖雪峰的Java教程</a>.</p>
+<p>本文是 Java 的面向对象篇，学习于<a target="_blank" rel="noopener" href="https://www.liaoxuefeng.com/">廖雪峰的 Java 教程</a>.</p>
 </blockquote>
-<h2 id="Java核心类"><a href="#Java核心类" class="headerlink" title="Java核心类"></a>Java核心类</h2><h3 id="1-String"><a href="#1-String" class="headerlink" title="1.String"></a>1.String</h3><ul>
-<li><p>String字符串内部是通过一个<code>char[]</code>表示的。</p>
-</li>
-<li><p>String字符串不可变性的实现：通过内部的<code>private final char[]</code>实现。</p>
-</li>
-<li><p>字符串的比较</p>
-<ul>
+<h2 id="Java-核心类"><a href="#Java-核心类" class="headerlink" title="Java 核心类"></a>Java 核心类</h2><h3 id="1-String"><a href="#1-String" class="headerlink" title="1.String"></a>1.String</h3><ul>
+<li>String 字符串内部是通过一个<code>char[]</code>表示的。</li>
+<li>String 字符串不可变性的实现：通过内部的<code>private final char[]</code>实现。</li>
+<li>字符串的比较<ul>
 <li>用<code>equals()</code>方法来比较，而不用<code>==</code>。</li>
-<li>Java编译器在编译期间，会把拥有相同字符串的对象视为同一个对象并且放入常量池，所以用<code>==</code>比较字符串得出的结果会有巧合性。</li>
+<li>Java 编译器在编译期间，会把拥有相同字符串的对象视为同一个对象并且放入常量池，所以用<code>==</code>比较字符串得出的结果会有巧合性。</li>
 <li>忽略大小写比较字符串用<code>equalsIgnoreCase()</code>方法。</li>
 </ul>
 </li>
-<li><p>判断是否包含子串用<code>contains()</code>方法，参数为<code>CharSequence</code>类，为String的子类。</p>
-</li>
-<li><p>搜索字串</p>
-<ul>
+<li>判断是否包含子串用<code>contains()</code>方法，参数为<code>CharSequence</code>类，为 String 的子类。</li>
+<li>搜索字串<ul>
 <li><code>indexOf()</code>方法返回字串第一次出现在前半部分的索引。</li>
-<li><code>lastIndexOf()</code>方法返回子串第一次出现在后半部分的索引。</li>
-</ul>
-</li>
-<li><p>判断是否以子串开头或结尾</p>
-<ul>
-<li><code>startsWith()</code>判断是否以子串开头。</li>
-<li><code>endsWith()</code>判断是否以字串结尾。</li>
-</ul>
-</li>
-<li><p>提取字串</p>
-<ul>
-<li><code>substring(2)</code>从索引为2处开始提取字串。</li>
-<li><code>substring(2,4)</code>从索引为2处开始提取，到索引为4处结束，但不包括索引为4的值。</li>
-</ul>
-</li>
-<li><p>去除首尾空白字符</p>
-<ul>
-<li><code>trim()</code>方法，空白字符包括<code>\t</code>、<code>\r</code>、<code>\n</code>。</li>
-<li><code>strip()</code>方法，与<code>trim</code>方法的区别就是可以去除中文空格字符<code>\u3000</code>。</li>
-</ul>
-</li>
-<li><p>判断是否为空</p>
-<ul>
-<li><code>isBlank()</code>方法可以判断是否包含空白字符。</li>
-<li><code>isEmpty</code>方法可以判断是否字符串的长度是否为0，<em>空白字符也可作为一个字符串长度。</em></li>
-</ul>
-</li>
-<li><p>替换子串用<code>replace(s1,s2)</code>方法，其中第一个参数s1表示被替换的子串，第二个参数s2为替换的子串。</p>
-</li>
-<li><p><code>spilt()</code>方法可以分割字符串。</p>
-</li>
-<li><p>格式化字符串</p>
-<ul>
-<li><code>formatted()</code></li>
-<li><code>format()</code>静态方法</li>
-<li>示例代码
+<li><code>lastIndexOf()</code>方法返回子串第一次出现在后半部分的索引。
     
     
     
@@ -257,12 +217,12 @@
 </a>
     </header>
     
-      <h1 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h1><h2 id="git介绍"><a href="#git介绍" class="headerlink" title="git介绍"></a>git介绍</h2><ol>
-<li><p>由Linus用C语言编写.</p>
+      <h1 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h1><h2 id="git-介绍"><a href="#git-介绍" class="headerlink" title="git 介绍"></a>git 介绍</h2><ol>
+<li><p>由 Linus 用 C 语言编写.</p>
 </li>
 <li><p>分布式版本控制系统</p>
 </li>
-<li><p>集中式版本控制系统 CVS，SVN缺点：</p>
+<li><p>集中式版本控制系统 CVS，SVN 缺点：</p>
 <ul>
 <li>缺点：更新速度慢，必须联网.</li>
 </ul>
@@ -270,17 +230,7 @@
 <li><p>集中式版本控制系统工作原理：</p>
 <ul>
 <li>版本库放在中央处理器.</li>
-<li>处理数据时：先从中央处理器获取数据，个人处理完数据后，再传送到中央处理器.</li>
-</ul>
-</li>
-<li><p>分布式版本控制系统工作原理：</p>
-<ul>
-<li>去中心化.</li>
-<li>每一个主机都是一个版本库.</li>
-<li>无需联网，除非主机之间需要相互传送文件.</li>
-</ul>
-</li>
-</ol>
+<li>处理数据时：先从中央处理器获取数据，个人处理完数据后，再传送到中央处理器.
     
     
     
@@ -308,10 +258,9 @@
 </a>
     </header>
     
-      <h1 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h1><p>1.一种描述网页的文本标记语言.<br>2.通过HTML标签来表述网页.</p>
-<h2 id="一-HTML元素"><a href="#一-HTML元素" class="headerlink" title="一.HTML元素"></a>一.HTML元素</h2><p>1.HTML元素是开始标签到束标签之间的文本内容.<br>2.空元素在开始标签中结束。（在开始标签后尖括号加斜杠&#x2F;).</p>
-<h2 id="二-HTML文档"><a href="#二-HTML文档" class="headerlink" title="二.HTML文档"></a>二.HTML文档</h2><p>1.HTML文档&#x3D;网页&#x3D;HTML标签+纯文本.<br>2.以. htm 或 .html 为后缀名.<br>3.<DOCTYPE>声明HTML版本.</p>
-<h2 id="三-基本HTML标签以及对应的属性"><a href="#三-基本HTML标签以及对应的属性" class="headerlink" title="三.基本HTML标签以及对应的属性"></a>三.基本HTML标签以及对应的属性</h2><p>1.用来描述网页.<br>2.以尖括号成对出现.<br>3.属性值由双引号括起来，如果属性值本身有双引号，就用单引号.</p>
+      <h1 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h1><p>1.一种描述网页的文本标记语言. 2.通过 HTML 标签来表述网页.</p>
+<h2 id="一-HTML-元素"><a href="#一-HTML-元素" class="headerlink" title="一.HTML 元素"></a>一.HTML 元素</h2><p>1.HTML 元素是开始标签到束标签之间的文本内容. 2.空元素在开始标签中结束。（在开始标签后尖括号加斜杠&#x2F;).</p>
+<h2 id="二-HTML-文档"><a href="#二-HTML-文档" class="headerlink" title="二.HTML 文档"></a>二.HTML 文档</h2><p>1.HTML 文档&#x3D;网页&#x3D;HTML 标签+纯文本. 2.以. htm 或 .html 为后缀名. 3.<DOCTYPE>声明 HTML 版本.</p>
     
     
     
@@ -514,17 +463,12 @@
 </a>
     </header>
     
-      <h1 id="Markdown介绍"><a href="#Markdown介绍" class="headerlink" title="Markdown介绍"></a>Markdown介绍</h1><p>什么是Markdown?它是一种轻量级的文本标记语言，使用它可以更方便地编辑文档。</p>
+      <h1 id="Markdown-介绍"><a href="#Markdown-介绍" class="headerlink" title="Markdown 介绍"></a>Markdown 介绍</h1><p>什么是 Markdown?它是一种轻量级的文本标记语言，使用它可以更方便地编辑文档。</p>
 <p>很多网站都利用它来撰写文档或用于在论坛发消息等等。</p>
-<p>说到这大家可能就像在听天书一样，因为搞不懂专业用语。  </p>
-<p> 事实上这并不是什么计算机编程语言，而是通用的普通人都可以学的标记语言，贱简单呐。</p>
-<p>在讲解常见的Markdown语法之前，我先向大家介绍一下富文本编辑器。</p>
-<p>富文本编辑器其实很常见的，比如Word，WPS的编辑页面就是一种富文本文本编辑器。</p>
-<p>那么它与支持Markdown语法的编辑器有何不同？</p>
-<p>最大的区别在于：富文本编辑器对文本内容的编辑，大多是通过键盘快捷键或者点击编辑按钮比如加粗，斜体，标题设置等来编辑的。</p>
-<p>Markdown编辑器就不一样了，在这里举个例子，如果要设置一级标题，应该怎么处理呢？</p>
-<p>很简单 ，在开头打一个#号就可以了，比如 # 这是一级标题(注意#号留有一个空格)，那么二级标题呢？so easy，在开头打两个#号就可以了。</p>
-<p>是不是很简单？所以学习Markdown语法，并不需要太费脑费劲，只需要记住大部分常用的语法格式即可。</p>
+<p>说到这大家可能就像在听天书一样，因为搞不懂专业用语。</p>
+<p>事实上这并不是什么计算机编程语言，而是通用的普通人都可以学的标记语言，贱简单呐。</p>
+<p>在讲解常见的 Markdown 语法之前，我先向大家介绍一下富文本编辑器。</p>
+<p>富文本编辑器其实很常见的，比如 Word，WPS 的编辑页面就是一种富文本文本编辑器。</p>
     
     
     

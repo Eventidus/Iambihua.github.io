@@ -68,61 +68,21 @@
     </header>
     
       <blockquote>
-<p>本文是Java的面向对象篇，学习于<a target="_blank" rel="noopener" href="https://www.liaoxuefeng.com/">廖雪峰的Java教程</a>.</p>
+<p>本文是 Java 的面向对象篇，学习于<a target="_blank" rel="noopener" href="https://www.liaoxuefeng.com/">廖雪峰的 Java 教程</a>.</p>
 </blockquote>
-<h2 id="Java核心类"><a href="#Java核心类" class="headerlink" title="Java核心类"></a>Java核心类</h2><h3 id="1-String"><a href="#1-String" class="headerlink" title="1.String"></a>1.String</h3><ul>
-<li><p>String字符串内部是通过一个<code>char[]</code>表示的。</p>
-</li>
-<li><p>String字符串不可变性的实现：通过内部的<code>private final char[]</code>实现。</p>
-</li>
-<li><p>字符串的比较</p>
-<ul>
+<h2 id="Java-核心类"><a href="#Java-核心类" class="headerlink" title="Java 核心类"></a>Java 核心类</h2><h3 id="1-String"><a href="#1-String" class="headerlink" title="1.String"></a>1.String</h3><ul>
+<li>String 字符串内部是通过一个<code>char[]</code>表示的。</li>
+<li>String 字符串不可变性的实现：通过内部的<code>private final char[]</code>实现。</li>
+<li>字符串的比较<ul>
 <li>用<code>equals()</code>方法来比较，而不用<code>==</code>。</li>
-<li>Java编译器在编译期间，会把拥有相同字符串的对象视为同一个对象并且放入常量池，所以用<code>==</code>比较字符串得出的结果会有巧合性。</li>
+<li>Java 编译器在编译期间，会把拥有相同字符串的对象视为同一个对象并且放入常量池，所以用<code>==</code>比较字符串得出的结果会有巧合性。</li>
 <li>忽略大小写比较字符串用<code>equalsIgnoreCase()</code>方法。</li>
 </ul>
 </li>
-<li><p>判断是否包含子串用<code>contains()</code>方法，参数为<code>CharSequence</code>类，为String的子类。</p>
-</li>
-<li><p>搜索字串</p>
-<ul>
+<li>判断是否包含子串用<code>contains()</code>方法，参数为<code>CharSequence</code>类，为 String 的子类。</li>
+<li>搜索字串<ul>
 <li><code>indexOf()</code>方法返回字串第一次出现在前半部分的索引。</li>
-<li><code>lastIndexOf()</code>方法返回子串第一次出现在后半部分的索引。</li>
-</ul>
-</li>
-<li><p>判断是否以子串开头或结尾</p>
-<ul>
-<li><code>startsWith()</code>判断是否以子串开头。</li>
-<li><code>endsWith()</code>判断是否以字串结尾。</li>
-</ul>
-</li>
-<li><p>提取字串</p>
-<ul>
-<li><code>substring(2)</code>从索引为2处开始提取字串。</li>
-<li><code>substring(2,4)</code>从索引为2处开始提取，到索引为4处结束，但不包括索引为4的值。</li>
-</ul>
-</li>
-<li><p>去除首尾空白字符</p>
-<ul>
-<li><code>trim()</code>方法，空白字符包括<code>\t</code>、<code>\r</code>、<code>\n</code>。</li>
-<li><code>strip()</code>方法，与<code>trim</code>方法的区别就是可以去除中文空格字符<code>\u3000</code>。</li>
-</ul>
-</li>
-<li><p>判断是否为空</p>
-<ul>
-<li><code>isBlank()</code>方法可以判断是否包含空白字符。</li>
-<li><code>isEmpty</code>方法可以判断是否字符串的长度是否为0，<em>空白字符也可作为一个字符串长度。</em></li>
-</ul>
-</li>
-<li><p>替换子串用<code>replace(s1,s2)</code>方法，其中第一个参数s1表示被替换的子串，第二个参数s2为替换的子串。</p>
-</li>
-<li><p><code>spilt()</code>方法可以分割字符串。</p>
-</li>
-<li><p>格式化字符串</p>
-<ul>
-<li><code>formatted()</code></li>
-<li><code>format()</code>静态方法</li>
-<li>示例代码
+<li><code>lastIndexOf()</code>方法返回子串第一次出现在后半部分的索引。
     
     
     

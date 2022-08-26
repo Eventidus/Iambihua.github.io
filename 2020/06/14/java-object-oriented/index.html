@@ -76,14 +76,14 @@
       
       
         <blockquote>
-<p>本文是Java的面向对象篇，学习于<a target="_blank" rel="noopener" href="https://www.liaoxuefeng.com/">廖雪峰的Java教程</a>.</p>
+<p>本文是 Java 的面向对象篇，学习于<a target="_blank" rel="noopener" href="https://www.liaoxuefeng.com/">廖雪峰的 Java 教程</a>.</p>
 </blockquote>
 <h2 id="面向对象基础"><a href="#面向对象基础" class="headerlink" title="面向对象基础"></a>面向对象基础</h2><h3 id="1-方法"><a href="#1-方法" class="headerlink" title="1.方法"></a>1.方法</h3><ul>
 <li><code>private</code>方法和<code>private</code>字段不能外部类访问。</li>
 <li><code>private</code>方法和<code>private</code>字段是用来方便自身类使用的，为了保证类的封装性。</li>
 <li><strong>this</strong> 变量指当前实例。</li>
 <li>局部变量的优先级高于字段，可变参数也是局部变量。</li>
-<li>可变参数的定义：<code>类型... 变量名</code>，相当于数组。</li>
+<li>可变参数的定义：<code>类型... 变量名</code>，相当于数组。<span id="more"></span></li>
 </ul>
 <h3 id="2-构造方法"><a href="#2-构造方法" class="headerlink" title="2.构造方法"></a>2.构造方法</h3><ul>
 <li>构造方法名与类名相同，构造方法无返回值，必须用<code>new</code>操作符调用。</li>
@@ -96,7 +96,7 @@
 <h3 id="3-重载方法"><a href="#3-重载方法" class="headerlink" title="3.重载方法"></a>3.重载方法</h3><ul>
 <li>方法名相同但参数列表不同的方法叫(overload)重载方法，返回类型<strong>通常</strong>是相同的。</li>
 <li>重载方法的目的是实现相似的功能但得出不同的结果。</li>
-<li>方法签名: 方法名和参数列表。<span id="more"></span></li>
+<li>方法签名: 方法名和参数列表。</li>
 </ul>
 <h3 id="4-继承"><a href="#4-继承" class="headerlink" title="4.继承"></a>4.继承</h3><ul>
 <li>继承是面向对象编程中的一种强大机制，它明显的功能就是实现代码复用。</li>
@@ -147,7 +147,7 @@
 </tr>
 </tbody></table>
 <ul>
-<li>覆写方法前加上@Override可以让编译器帮助检查是否进行了正确的方法覆写。</li>
+<li>覆写方法前加上@Override 可以让编译器帮助检查是否进行了正确的方法覆写。</li>
 </ul>
 <h3 id="6-多态"><a href="#6-多态" class="headerlink" title="6.多态"></a>6.多态</h3><ul>
 <li>多态: 某个方法的调用，是由实现调用方法的实例的实际类型决定的。</li>
@@ -173,9 +173,9 @@
 <li>接口支持多继承，即一个类可以实现多个接口。</li>
 <li>接口定义的方法默认是<code>public abstract</code>类型,所以在定义接口方法时可忽略不写。</li>
 <li>一个接口可以继承自另一个接口，使用关键字<code>extends</code>实现继承。</li>
-<li>在子类中增加default方法实现单独功能，可以不用修改父类方法，实现代码的灵活性。</li>
+<li>在子类中增加 default 方法实现单独功能，可以不用修改父类方法，实现代码的灵活性。</li>
 </ul>
-<h3 id="10-接口vs抽象类"><a href="#10-接口vs抽象类" class="headerlink" title="10.接口vs抽象类"></a>10.接口vs抽象类</h3><table>
+<h3 id="10-接口-vs-抽象类"><a href="#10-接口-vs-抽象类" class="headerlink" title="10.接口 vs 抽象类"></a>10.接口 vs 抽象类</h3><table>
 <thead>
 <tr>
 <th align="left">比较</th>
@@ -200,7 +200,7 @@
 </tr>
 <tr>
 <td align="left">非抽象方法</td>
-<td align="center">不能定义非抽象方法，但可有final方法</td>
+<td align="center">不能定义非抽象方法，但可有 final 方法</td>
 <td align="center">可定义非抽象方法</td>
 </tr>
 </tbody></table>
@@ -214,7 +214,7 @@
 <li>静态方法<ul>
 <li>用<code>static</code>修饰的方法为静态方法。</li>
 <li>静态方法内部不能访问实例字段，只能访问静态字段，因为静态方法只属于类而不属于实例。</li>
-<li>接口可以有静态字段，并且静态字段必须用final修饰，编译器会自动加上这些修饰符。</li>
+<li>接口可以有静态字段，并且静态字段必须用 final 修饰，编译器会自动加上这些修饰符。</li>
 <li>普遍通过<code>类名.方法</code>的方式调用静态方法。</li>
 </ul>
 </li>
@@ -222,13 +222,13 @@
 <h3 id="12-包"><a href="#12-包" class="headerlink" title="12.包"></a>12.包</h3><ul>
 <li>设置包(package)机制是为了解决同名类冲突的问题。</li>
 <li>真实完整的类名为<code>包名.类名</code>。</li>
-<li>Java文件和Class文件的存放目录层次与包名结构一致。</li>
-<li>Java文件放在<code>src</code>目录下，class文件放在<code>bin</code>目录下。</li>
+<li>Java 文件和 Class 文件的存放目录层次与包名结构一致。</li>
+<li>Java 文件放在<code>src</code>目录下，class 文件放在<code>bin</code>目录下。</li>
 <li>包作用域:未被<code>public</code>,<code>private</code>,<code>protected</code>修饰的字段和方法为包的作用域。</li>
 <li>在一个类中使用另一个包中的类<ul>
 <li>通过写出完整类名。</li>
 <li>通过<code>import</code>语句导入其他包中的类。</li>
-<li>通过<code>import static </code>语句导入其他类的静态字段和静态方法。</li>
+<li>通过<code>import static </code>语句导入其他类的静态字段和静态方法。</li>
 </ul>
 </li>
 <li>如果有两个类名称相同，那么只能<code>import</code>其中一个类，另一个写完整类名。</li>
@@ -237,20 +237,20 @@
 <h3 id="13-classpath-amp-jar"><a href="#13-classpath-amp-jar" class="headerlink" title="13.classpath&amp;jar"></a>13.classpath&amp;jar</h3><ul>
 <li>classpath<ul>
 <li><code>classpath</code>是一种环境变量，用来指示<code>jvm</code>搜索<code>.class</code>文件。</li>
-<li>classpath的设定<ul>
+<li>classpath 的设定<ul>
 <li>在系统环境变量中设置</li>
-<li>在启动JVM时设置。<ul>
+<li>在启动 JVM 时设置。<ul>
 <li><code>java -cp /&lt;环境变量&gt; /&lt;文件&gt;</code></li>
 </ul>
 </li>
-<li><code>rt.jar</code>是Java核心库的压缩包。</li>
+<li><code>rt.jar</code>是 Java 核心库的压缩包。</li>
 </ul>
 </li>
 </ul>
 </li>
-<li>jar包<ul>
-<li>jar包是一种zip格式的压缩文件。</li>
-<li>&#x2F;META-INF&#x2F;MANIFEST.MF是jar包中特殊的文件，可以指定main-class及其它信息。</li>
+<li>jar 包<ul>
+<li>jar 包是一种 zip 格式的压缩文件。</li>
+<li>&#x2F;META-INF&#x2F;MANIFEST.MF 是 jar 包中特殊的文件，可以指定 main-class 及其它信息。</li>
 </ul>
 </li>
 </ul>
@@ -260,7 +260,7 @@
 <li><p><code>java.base</code>是”根模块”，所有模块直接或间接依赖<code>java.base</code>模块。</p>
 </li>
 <li><p><code>module-info.java</code>是模块的描述文件。</p>
-  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">module</span> hello.world &#123;</span><br><span class="line">	<span class="keyword">requires</span> java.base; <span class="comment">// 可不写，任何模块都会自动引入java.base</span></span><br><span class="line">	<span class="keyword">requires</span> java.xml;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">module</span> hello.world &#123;</span><br><span class="line">	<span class="keyword">requires</span> java.base; <span class="comment">// 可不写，任何模块都会自动引入java.base</span></span><br><span class="line">	<span class="keyword">requires</span> java.xml;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>以上，其中<code>module</code>是关键字，<code>hello.world</code>是模块的名称，<code>requires</code>表示引用其他模块。</p>
 </li>
@@ -269,7 +269,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2020/06/14/java-object-oriented/" data-id="cl7ahrl1a001utov40yodanat" class="article-share-link">
+      <a data-url="http://example.com/2020/06/14/java-object-oriented/" data-id="cl7b4i3s9001ox0v41tahdog0" class="article-share-link">
         Share
       </a>
       

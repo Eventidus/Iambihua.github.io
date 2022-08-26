@@ -67,13 +67,14 @@
 </a>
     </header>
     
-      <h1 id="npm常见命令"><a href="#npm常见命令" class="headerlink" title="npm常见命令"></a>npm常见命令</h1><h2 id="一-npm-amp-yarn介绍"><a href="#一-npm-amp-yarn介绍" class="headerlink" title="一.npm&amp;yarn介绍"></a>一.npm&amp;yarn介绍</h2><p>npm是一个基于Node.js的包管理工具。<br>yarn是Facebook、Google、Exponent 和 Tilde 联合推出了一个新的 包管理工具,与npm相比有些优势。<br>npm在安装Node.js时会被一并安装，yarn则需要额外安装。</p>
-<h2 id="二-npm-amp-cnpm的关系"><a href="#二-npm-amp-cnpm的关系" class="headerlink" title="二.npm&amp;cnpm的关系"></a>二.npm&amp;cnpm的关系</h2><h3 id="1-介绍"><a href="#1-介绍" class="headerlink" title="1.介绍"></a>1.介绍</h3><p>由于npm服务器在国外，所以在国内安装速度不是很理想，于是淘宝团队开发了一个npmjs.org的镜像，可以有效解决下载过于缓慢的问题。这是淘宝团队对它的介绍。</p>
+      <h1 id="npm-常见命令"><a href="#npm-常见命令" class="headerlink" title="npm 常见命令"></a>npm 常见命令</h1><h2 id="一-npm-amp-yarn-介绍"><a href="#一-npm-amp-yarn-介绍" class="headerlink" title="一.npm&amp;yarn 介绍"></a>一.npm&amp;yarn 介绍</h2><p>npm 是一个基于 Node.js 的包管理工具。<br>yarn 是 Facebook、Google、Exponent 和 Tilde 联合推出了一个新的 包管理工具,与 npm 相比有些优势。<br>npm 在安装 Node.js 时会被一并安装，yarn 则需要额外安装。</p>
+<h2 id="二-npm-amp-cnpm-的关系"><a href="#二-npm-amp-cnpm-的关系" class="headerlink" title="二.npm&amp;cnpm 的关系"></a>二.npm&amp;cnpm 的关系</h2><h3 id="1-介绍"><a href="#1-介绍" class="headerlink" title="1.介绍"></a>1.介绍</h3><p>由于 npm 服务器在国外，所以在国内安装速度不是很理想，于是淘宝团队开发了一个 npmjs.org 的镜像，可以有效解决下载过于缓慢的问题。这是淘宝团队对它的介绍。</p>
 <blockquote>
 <blockquote>
-<p>“这是一个完整 npmjs.org 镜像，你可以用此代替官方版本(只读)，同步频率目前为 10分钟 一次以保证尽量与官方服务同步。”</p>
+<p>“这是一个完整 npmjs.org 镜像，你可以用此代替官方版本(只读)，同步频率目前为 10 分钟 一次以保证尽量与官方服务同步。”</p>
 </blockquote>
 </blockquote>
+<h3 id="2-安装"><a href="#2-安装" class="headerlink" title="2.安装"></a>2.安装</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g cnpm --registry=https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
     
     
     
@@ -192,27 +193,14 @@
     </header>
     
       <blockquote>
-<p>本文是Java的面向对象篇，学习于<a target="_blank" rel="noopener" href="https://www.liaoxuefeng.com/">廖雪峰的Java教程</a>.</p>
+<p>本文是 Java 的面向对象篇，学习于<a target="_blank" rel="noopener" href="https://www.liaoxuefeng.com/">廖雪峰的 Java 教程</a>.</p>
 </blockquote>
 <h2 id="面向对象基础"><a href="#面向对象基础" class="headerlink" title="面向对象基础"></a>面向对象基础</h2><h3 id="1-方法"><a href="#1-方法" class="headerlink" title="1.方法"></a>1.方法</h3><ul>
 <li><code>private</code>方法和<code>private</code>字段不能外部类访问。</li>
 <li><code>private</code>方法和<code>private</code>字段是用来方便自身类使用的，为了保证类的封装性。</li>
 <li><strong>this</strong> 变量指当前实例。</li>
 <li>局部变量的优先级高于字段，可变参数也是局部变量。</li>
-<li>可变参数的定义：<code>类型... 变量名</code>，相当于数组。</li>
-</ul>
-<h3 id="2-构造方法"><a href="#2-构造方法" class="headerlink" title="2.构造方法"></a>2.构造方法</h3><ul>
-<li>构造方法名与类名相同，构造方法无返回值，必须用<code>new</code>操作符调用。</li>
-<li>未自定义构造方法时，系统会默认创建一个无参数构造方法。</li>
-<li>如果已经自定义构造方法，系统将不再默认创建构造方法。</li>
-<li>引用类型的字段默认是<code>null</code>，数值类型的字段是默认值，<code>int</code>类型默认值是<code>0</code>，布尔类型默认值是<code>false</code>。</li>
-<li>字段的最终赋值结果由构造方法中的赋值语句决定。</li>
-<li>一个类中可以有多构造方法，只是参数列表不同。</li>
-</ul>
-<h3 id="3-重载方法"><a href="#3-重载方法" class="headerlink" title="3.重载方法"></a>3.重载方法</h3><ul>
-<li>方法名相同但参数列表不同的方法叫(overload)重载方法，返回类型<strong>通常</strong>是相同的。</li>
-<li>重载方法的目的是实现相似的功能但得出不同的结果。</li>
-<li>方法签名: 方法名和参数列表。
+<li>可变参数的定义：<code>类型... 变量名</code>，相当于数组。
     
     
     
@@ -242,7 +230,10 @@
     
       <h1 id="Learning-how-to-learn-part4"><a href="#Learning-how-to-learn-part4" class="headerlink" title="Learning how to learn part4"></a>Learning how to learn part4</h1><h2 id="一-学习技巧类"><a href="#一-学习技巧类" class="headerlink" title="一.学习技巧类"></a>一.学习技巧类</h2><h3 id="1-比喻和类比"><a href="#1-比喻和类比" class="headerlink" title="1.比喻和类比"></a>1.比喻和类比</h3><ul>
 <li>更好地理解当前概念</li>
-<li>摆脱思维定势
+<li>摆脱思维定势</li>
+</ul>
+<h2 id="二-左右脑分析"><a href="#二-左右脑分析" class="headerlink" title="二.左右脑分析"></a>二.左右脑分析</h2><h3 id="1-左脑"><a href="#1-左脑" class="headerlink" title="1.左脑"></a>1.左脑</h3><ul>
+<li>左脑帮助我们认识世界，并保持那些认知长久不变
     
     
     
@@ -301,7 +292,20 @@
 </a>
     </header>
     
-      
+      <blockquote>
+<p>本文是 Java 的入门学习篇，学习于<a target="_blank" rel="noopener" href="https://www.liaoxuefeng.com/wiki/1252599548343744">廖雪峰的 Java 教程</a>。</p>
+</blockquote>
+<h2 id="1-Java-介绍"><a href="#1-Java-介绍" class="headerlink" title="1.Java 介绍"></a>1.Java 介绍</h2><p>最早由 James golis 开发，起初叫 OAK.</p>
+<p>JDK:Java Development Kit</p>
+<ul>
+<li>Java 开发工具箱。</li>
+<li>包含了编译器，调试器，虚拟机等一系列开发工具。</li>
+</ul>
+<p>JRE：Java Runtime Rnvironment</p>
+<ul>
+<li><p>Java 虚拟机。</p>
+</li>
+<li><p>运行字节码文件，JRE 是 JDK 的一部分。</p>
     
     
     
@@ -369,41 +373,19 @@
     </header>
     
       <blockquote>
-<p>本文是Java异常篇，学习于<a target="_blank" rel="noopener" href="https://www.liaoxuefeng.com/wiki/1252599548343744">廖雪峰的Java教程</a></p>
+<p>本文是 Java 异常篇，学习于<a target="_blank" rel="noopener" href="https://www.liaoxuefeng.com/wiki/1252599548343744">廖雪峰的 Java 教程</a></p>
 </blockquote>
-<h2 id="Java异常"><a href="#Java异常" class="headerlink" title="Java异常"></a>Java异常</h2><h3 id="1-异常类型"><a href="#1-异常类型" class="headerlink" title="1.异常类型"></a>1.异常类型</h3><ul>
-<li>异常体系的根为<code>Throwable</code>，它继承自<code>Object</code>。</li>
-<li><code>Throwable</code>有两个体系<code>Error</code>和<code>Exception</code>。</li>
-<li><code>Error</code>类<ul>
+<h2 id="Java-异常"><a href="#Java-异常" class="headerlink" title="Java 异常"></a>Java 异常</h2><h3 id="1-异常类型"><a href="#1-异常类型" class="headerlink" title="1.异常类型"></a>1.异常类型</h3><ul>
+<li><p>异常体系的根为<code>Throwable</code>，它继承自<code>Object</code>。</p>
+</li>
+<li><p><code>Throwable</code>有两个体系<code>Error</code>和<code>Exception</code>。</p>
+</li>
+<li><p><code>Error</code>类</p>
+<ul>
 <li><code>OutOfMemoryError</code></li>
 <li><code>NoClassDefFounderError</code></li>
 <li><code>StackOverError</code></li>
-<li>等等</li>
-</ul>
-</li>
-<li><code>Exception</code>类<ul>
-<li><code>RuntimeException</code><ul>
-<li><code>IndexOutOfBoundsException</code></li>
-<li><code>NullPointerException</code></li>
-<li>等等</li>
-</ul>
-</li>
-<li><code>非RuntimeException</code>(也叫<code>Checked Exception</code>异常)<ul>
-<li><code>IOException</code></li>
-<li><code>ReflectiveOperationException</code></li>
-<li><code>NumberFormatException</code></li>
-<li><code>FileNotFoundException</code></li>
-<li><code>SocketException</code></li>
-<li>等等</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><code>非RuntimeException</code>异常必须被捕获，<code>RuntimeExcept</code>异常不强制被捕获。</li>
-<li>异常捕获使用<code>try&#123;&#125;···catch&#123;&#125;</code>语句。</li>
-<li>其中<code>try</code>声明可能出现异常的方法，<code>catch</code>捕获异常Exception及其子类。</li>
-<li><code>thorws</code>语句声明可能出现的异常，凡是用throws声明异常的方法，最终必须被捕获，如若不捕获，可在最高调用层<code>throws</code>异常，代价是发送异常的话程序会闪退。</li>
-<li><code>printStackTrace()</code>方法可以打印异常栈。
+<li>等等
     
     
     

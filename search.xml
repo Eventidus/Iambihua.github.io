@@ -3,12 +3,12 @@
   <entry>
     <title></title>
     <url>/2022/08/26/CORS%E9%80%9A%E4%BF%A1/</url>
-    <content><![CDATA[<h1 id="CORS通信"><a href="#CORS通信" class="headerlink" title="CORS通信"></a>CORS通信</h1><ol>
+    <content><![CDATA[<h1 id="CORS-通信"><a href="#CORS-通信" class="headerlink" title="CORS 通信"></a>CORS 通信</h1><ol>
 <li>CORS（Cross-Origin-Resource-Sharing），中文名跨域资源共享。</li>
-<li>CORS的作用是允许浏览器向跨域服务器发送XMLHttpRequest（XHR）。</li>
-<li>实现CORS跨域通信，主要看服务器是否实现CORS接口，也就是说主要在服务器端配置</li>
-<li>服务器端配置CORS跨域的方法是设置Access-Control-Allow-Origin</li>
-<li>CORS可分为两种请求：<ol>
+<li>CORS 的作用是允许浏览器向跨域服务器发送 XMLHttpRequest（XHR）。</li>
+<li>实现 CORS 跨域通信，主要看服务器是否实现 CORS 接口，也就是说主要在服务器端配置</li>
+<li>服务器端配置 CORS 跨域的方法是设置 Access-Control-Allow-Origin<span id="more"></span></li>
+<li>CORS 可分为两种请求：<ol>
 <li>简答请求<ol>
 <li>简答请求需要请求方法和头信息字段都满足条件</li>
 <li>请求方法<ol>
@@ -22,39 +22,39 @@
 <li>Content-Language</li>
 <li>Accept-Language</li>
 <li>Last-Event-ID</li>
-<li>Content-Type：只限于三个值application&#x2F;x-www-form-urlencoded、multipart&#x2F;form-data、text&#x2F;plain</li>
+<li>Content-Type：只限于三个值 application&#x2F;x-www-form-urlencoded、multipart&#x2F;form-data、text&#x2F;plain</li>
 </ol>
 </li>
 <li>不满足上面两个条件的，称为非简单请求。</li>
-<li>CORS通信的基本流程：<ol>
-<li>浏览器发起CORS请求，并且在头信息增加origin字段，表示要发起跨域请求的域。</li>
-<li>服务器判断浏览器发过来的origin是否在许可范围内。</li>
-<li>如不在许可范围内，则发送正常的HTTP回应，但不会包含Access-Control-Allow-Origin字段。</li>
-<li>如在许可范围内，发送的HTTP回应会包含以下字段<ol>
-<li>Access-Control-Allow-Origin字段： 表示服务器可允许跨域的域名，如果是*，则表示可接受任意域名。</li>
-<li>Access-Control-Allow-Credentials：表示是否允许发送cookie。</li>
+<li>CORS 通信的基本流程：<ol>
+<li>浏览器发起 CORS 请求，并且在头信息增加 origin 字段，表示要发起跨域请求的域。</li>
+<li>服务器判断浏览器发过来的 origin 是否在许可范围内。</li>
+<li>如不在许可范围内，则发送正常的 HTTP 回应，但不会包含 Access-Control-Allow-Origin 字段。</li>
+<li>如在许可范围内，发送的 HTTP 回应会包含以下字段<ol>
+<li>Access-Control-Allow-Origin 字段： 表示服务器可允许跨域的域名，如果是*，则表示可接受任意域名。</li>
+<li>Access-Control-Allow-Credentials：表示是否允许发送 cookie。</li>
 <li>Access-Control-Expose-Headers：表示是否返回其他非基本字段。</li>
 </ol>
 </li>
-<li>要想发送cookie给服务器，开发者需要将xhr.withCredentials设置为true，注意有些浏览器的xhr.withCredentials默认为false。</li>
+<li>要想发送 cookie 给服务器，开发者需要将 xhr.withCredentials 设置为 true，注意有些浏览器的 xhr.withCredentials 默认为 false。</li>
 </ol>
 </li>
 </ol>
 </li>
 <li>非简单请求<ol>
-<li>非简单请求在发送CORS请求前，需要先发出预检请求。</li>
-<li>预检请求是浏览器询问是否接受当前网页的域名，以及可接受哪些HTTP方法和字段。</li>
-<li>预检请求的请求方法是OPTIONS。</li>
+<li>非简单请求在发送 CORS 请求前，需要先发出预检请求。</li>
+<li>预检请求是浏览器询问是否接受当前网页的域名，以及可接受哪些 HTTP 方法和字段。</li>
+<li>预检请求的请求方法是 OPTIONS。</li>
 <li>预检请求的头信息包含的部分字段如下<ol>
 <li>origin</li>
-<li>Access-Control-Request-Method，发送CORS请求用到的方法。</li>
-<li>Access-Control-Requset-Headers，发送CORS请求额外发送的头部信息</li>
+<li>Access-Control-Request-Method，发送 CORS 请求用到的方法。</li>
+<li>Access-Control-Requset-Headers，发送 CORS 请求额外发送的头部信息</li>
 </ol>
 </li>
-<li>如通过预检请求，则每次的CORS请求就跟简单请求一样。</li>
-<li>CORS和JSONP的比较<ol>
-<li>JSONP只支持Get请求，而CORS支持所有类型的请求。</li>
-<li>JSONP可以在老式浏览器上运行，也可以向不支持CORS的网站上请求数据。</li>
+<li>如通过预检请求，则每次的 CORS 请求就跟简单请求一样。</li>
+<li>CORS 和 JSONP 的比较<ol>
+<li>JSONP 只支持 Get 请求，而 CORS 支持所有类型的请求。</li>
+<li>JSONP 可以在老式浏览器上运行，也可以向不支持 CORS 的网站上请求数据。</li>
 </ol>
 </li>
 </ol>
@@ -107,7 +107,7 @@
   </entry>
   <entry>
     <title></title>
-    <url>/2022/08/26/Docker/</url>
+    <url>/2022/08/27/Docker%E4%BB%8B%E7%BB%8D/</url>
     <content><![CDATA[<h1 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h1><ol>
 <li>虚拟化技术与容器技术<ol>
 <li>虚拟化技术的理解<ol>
@@ -126,10 +126,14 @@
 </li>
 </ol>
 </li>
-<li>Docker介绍<ol>
-<li>Docker属于操作系统层面的虚拟化技术</li>
-<li>Docker与传统的虚拟化技术的不同之处<ol>
-<li>Docker没有虚拟出硬件，并且它的容器直接运行于宿主内核，容器内并没有自己的内核</li>
+</ol>
+<span id="more"></span>
+
+<ol start="2">
+<li>Docker 介绍<ol>
+<li>Docker 属于操作系统层面的虚拟化技术</li>
+<li>Docker 与传统的虚拟化技术的不同之处<ol>
+<li>Docker 没有虚拟出硬件，并且它的容器直接运行于宿主内核，容器内并没有自己的内核</li>
 <li>传统的虚拟化技术需要虚拟出硬件，在其上运行一个操作系统，并且在这个操作系统里面运行应用程序</li>
 </ol>
 </li>
@@ -139,37 +143,37 @@
 </li>
 </ol>
 </li>
-<li>Docker镜像<ol>
+<li>Docker 镜像<ol>
 <li>是一种特殊的文件系统，提供了 容器运行需要的库，配置文件，等等，还包含了容器运行需要的配置参数，它的核心精髓是保证了环境的一致性</li>
-<li>Docker镜像技术是一套统一的接口技术，它适配了不同的开发语言</li>
-<li>Docker镜像采用分层存储结构</li>
+<li>Docker 镜像技术是一套统一的接口技术，它适配了不同的开发语言</li>
+<li>Docker 镜像采用分层存储结构</li>
 <li>中间层镜像:<ol>
 <li>是其他镜像依赖需要的镜像</li>
 <li>用于提高镜像复用性，加速镜像构建</li>
 </ol>
 </li>
 <li>删除镜像<ol>
-<li>两类删除行为：Untagged和Deleted</li>
-<li>有时候删除镜像，可能仅仅是取消了镜像的标签，也就是Untagged的意义，真正影响镜像删除的，要考虑其他镜像是否依赖当前要删除镜像的某一层，或者有容器依赖当前要删除镜像的某一层，或者有 别个标签指向了当前要删除的镜像，这种情况下就不会触发镜像删除行为，也就是Delected行为</li>
+<li>两类删除行为：Untagged 和 Deleted</li>
+<li>有时候删除镜像，可能仅仅是取消了镜像的标签，也就是 Untagged 的意义，真正影响镜像删除的，要考虑其他镜像是否依赖当前要删除镜像的某一层，或者有容器依赖当前要删除镜像的某一层，或者有 别个标签指向了当前要删除的镜像，这种情况下就不会触发镜像删除行为，也就是 Delected 行为</li>
 </ol>
 </li>
 </ol>
 </li>
-<li>Docker容器<ol>
+<li>Docker 容器<ol>
 <li>容器是基于镜像构建，是独立运行的一个或一组应用</li>
-<li>启动容器时，如果需要的镜像不存在，会自动pull下载</li>
-<li>容器里只会存在必须的资源，多余的资源不会存在，所以Docker对资源的利用率很高</li>
-<li>一个容器只有在执行任务时才会处于running状态，不管是否启动</li>
-<li>启动容器的命令为docker run &lt;image&gt;，如果要指定容器在后台运行可以指定-d参数</li>
-<li>启动处于exited状态的容器 docker container start [container-id]</li>
-<li>列出正在执行任务也即running状态的容器 docker container ls</li>
+<li>启动容器时，如果需要的镜像不存在，会自动 pull 下载</li>
+<li>容器里只会存在必须的资源，多余的资源不会存在，所以 Docker 对资源的利用率很高</li>
+<li>一个容器只有在执行任务时才会处于 running 状态，不管是否启动</li>
+<li>启动容器的命令为 docker run &lt;image&gt;，如果要指定容器在后台运行可以指定-d 参数</li>
+<li>启动处于 exited 状态的容器 docker container start [container-id]</li>
+<li>列出正在执行任务也即 running 状态的容器 docker container ls</li>
 <li>列出容器运行结果 docker container logs [containerId]</li>
-<li>对处于后台运行的容器进行操作可以使用docker exec或者attach命令，但推荐使用exec命令，因为exit容器后，不会终止容器</li>
-<li>docker container rm只能删除处于exited的容器，如果要删除处于running状态的容器,可以加-f参数</li>
-<li>删除所有处于exited状态的容器 docker container prune</li>
+<li>对处于后台运行的容器进行操作可以使用 docker exec 或者 attach 命令，但推荐使用 exec 命令，因为 exit 容器后，不会终止容器</li>
+<li>docker container rm 只能删除处于 exited 的容器，如果要删除处于 running 状态的容器,可以加-f 参数</li>
+<li>删除所有处于 exited 状态的容器 docker container prune</li>
 </ol>
 </li>
-<li>Docker数据卷<ol>
+<li>Docker 数据卷<ol>
 <li>数据卷是容器用于管理数据的场所</li>
 <li>数据卷的特性<ol>
 <li>在多个容器之间共享</li>
@@ -179,26 +183,26 @@
 </ol>
 </li>
 <li>创建数据卷 docker volume create [volume-name]</li>
-<li>查看某个数据卷的具体信息docker volume inspect [volume-name]</li>
-<li>删除数据卷docker volume rm，如果要在删除容器的同时删除数据卷可以加上-v参数</li>
-<li>删除未挂载到容器的数据卷docker volume prune</li>
+<li>查看某个数据卷的具体信息 docker volume inspect [volume-name]</li>
+<li>删除数据卷 docker volume rm，如果要在删除容器的同时删除数据卷可以加上-v 参数</li>
+<li>删除未挂载到容器的数据卷 docker volume prune</li>
 </ol>
 </li>
-<li>Docker网络配置<ol>
-<li>-p -P都能指定端口<ol>
-<li>-P随机指定一个主机端口映射到容器开放的端口</li>
-<li>-p主动指定端口映射<ol>
+<li>Docker 网络配置<ol>
+<li>-p -P 都能指定端口<ol>
+<li>-P 随机指定一个主机端口映射到容器开放的端口</li>
+<li>-p 主动指定端口映射<ol>
 <li>几种格式的端口映射<ol>
 <li>hostPort:containerPort<ol>
-<li>这种情况下，不管本地的ip地址是啥，只要主机端口相同，他们指向同一个地址，也就是映射所有接口地址</li>
+<li>这种情况下，不管本地的 ip 地址是啥，只要主机端口相同，他们指向同一个地址，也就是映射所有接口地址</li>
 </ol>
 </li>
 <li>ip:hostPort:containerPort<ol>
-<li>映射指定地址的映射端口，只能通过指定的ip地址加端口访问</li>
+<li>映射指定地址的映射端口，只能通过指定的 ip 地址加端口访问</li>
 </ol>
 </li>
 <li>ip::containerPort<ol>
-<li>映射到指定地址的任意端口，也就是说对于指定的ip地址，随机指定一个主机端口</li>
+<li>映射到指定地址的任意端口，也就是说对于指定的 ip 地址，随机指定一个主机端口</li>
 </ol>
 </li>
 </ol>
@@ -209,8 +213,8 @@
 </li>
 <li>Docker 容器互联<ol>
 <li>用自定义网络来互联容器<ol>
-<li>docker network create -d bridge my-net 其中-d参数指定网络类型</li>
-<li>docker run –network my-net busybox 使用–network参数 指定busybox容器链接到mynet网络</li>
+<li>docker network create -d bridge my-net 其中-d 参数指定网络类型</li>
+<li>docker run –network my-net busybox 使用–network 参数 指定 busybox 容器链接到 mynet 网络</li>
 </ol>
 </li>
 </ol>
@@ -224,20 +228,22 @@
     <title></title>
     <url>/2022/08/26/ECMAScript6/</url>
     <content><![CDATA[<h1 id="ECMAScript6"><a href="#ECMAScript6" class="headerlink" title="ECMAScript6"></a>ECMAScript6</h1><ol>
-<li>JavaScript为动态类型语言。</li>
-<li>静态语言：在编译阶段便检查数据类型。动态语言：在执行期间才检查语言的数据类型。</li>
-<li>扩展运算符<ol>
-<li>取出参数对象的所有可遍历属性，拷贝到当前对象中。</li>
-</ol>
+<li><p>JavaScript 为动态类型语言。</p>
 </li>
-<li>常用方法<ol>
+<li><p>静态语言：在编译阶段便检查数据类型。动态语言：在执行期间才检查语言的数据类型。</p>
+</li>
+<li><p>扩展运算符 1. 取出参数对象的所有可遍历属性，拷贝到当前对象中。</p>
+<span id="more"></span>
+</li>
+<li><p>常用方法</p>
+<ol>
 <li>filter()<ol>
 <li>语法:array.filter(function(currentValue,index,arr), thisValue)</li>
 <li>功能：返回一个过滤符合要求的元素并且组成新数组</li>
 </ol>
 </li>
 <li>map()<ol>
-<li>功能：返回回调函数对每个原数组元素进行操作(比如加1)之后组成的新数组，原数组不变。</li>
+<li>功能：返回回调函数对每个原数组元素进行操作(比如加 1)之后组成的新数组，原数组不变。</li>
 </ol>
 </li>
 <li>foreach()<ol>
@@ -279,7 +285,8 @@
 </li>
 </ol>
 </li>
-<li>计算属性概念<ol>
+<li><p>计算属性概念</p>
+<ol>
 <li>一个对象的属性名从一个变量中获取，并且这个变量用[]表示。</li>
 </ol>
 </li>
@@ -289,35 +296,45 @@
   <entry>
     <title></title>
     <url>/2022/08/26/Generator%E5%87%BD%E6%95%B0%E8%AF%AD%E6%B3%95/</url>
-    <content><![CDATA[<h1 id="Generator函数语法"><a href="#Generator函数语法" class="headerlink" title="Generator函数语法"></a>Generator函数语法</h1><ol>
-<li>Generator相当于一个状态机，里面封装了多种内部状态</li>
-<li>创建Generator函数时，Function关键字跟函数名之间要有*星号</li>
-<li>调用Generator函数后，不会执行里面的代码，而是生成一个迭代器对象</li>
-<li>返回的迭代器对象可以反复使用next()方法迭代内部状态</li>
-<li>使用next方法会返回一个对象，这个对象有两个属性<ol>
-<li>value：当前状态的值，即yield表达式的值</li>
-<li>done：迭代是否结束</li>
+    <content><![CDATA[<h1 id="Generator-函数语法"><a href="#Generator-函数语法" class="headerlink" title="Generator 函数语法"></a>Generator 函数语法</h1><ol>
+<li><p>Generator 相当于一个状态机，里面封装了多种内部状态</p>
+</li>
+<li><p>创建 Generator 函数时，Function 关键字跟函数名之间要有*星号</p>
+</li>
+<li><p>调用 Generator 函数后，不会执行里面的代码，而是生成一个迭代器对象</p>
+</li>
+<li><p>返回的迭代器对象可以反复使用 next()方法迭代内部状态</p>
+</li>
+<li><p>使用 next 方法会返回一个对象，这个对象有两个属性 1. value：当前状态的值，即 yield 表达式的值 2. done：迭代是否结束</p>
+<span id="more"></span>
+</li>
+<li><p>每次遇到 yield 语句并执行完成，函数会暂停执行</p>
+</li>
+<li><p>函数可以有多个 yield 语句，但只能有一个 yield 语句</p>
+</li>
+<li><p>next 方法带参数时，代表上一个 yield 返回值的结果为该参数的值</p>
+</li>
+<li><p>可以用 for-of 循环迭代 Generator 函数返回的迭代器对象，如果对象 done 属性为 true，不会输出该对象</p>
+</li>
+<li><p>yield 表达式如果用在另一个表达式中，必须放在圆括号里</p>
+</li>
+<li><p>Generator.prototype.throw()</p>
+<ol>
+<li>throw 方法是用来在函数外部抛出错误</li>
+<li>注意只能用 throw 方法抛出，而不能用 throw 命令关键字抛出，否则 Generator 函数内部不会捕获错误</li>
 </ol>
 </li>
-<li>每次遇到yield语句并执行完成，函数会暂停执行</li>
-<li>函数可以有多个yield语句，但只能有一个yield语句</li>
-<li>next方法带参数时，代表上一个yield返回值的结果为该参数的值</li>
-<li>可以用for-of循环迭代Generator函数返回的迭代器对象，如果对象done属性为true，不会输出该对象</li>
-<li>yield表达式如果用在另一个表达式中，必须放在圆括号里</li>
-<li>Generator.prototype.throw()<ol>
-<li>throw方法是用来在函数外部抛出错误</li>
-<li>注意只能用throw方法抛出，而不能用throw命令关键字抛出，否则Generator函数内部不会捕获错误</li>
+<li><p>Generator.prototype.return()</p>
+<ol>
+<li>return 语句可以返回一个值，并且终止此后的迭代操作</li>
+<li>yield 参数为要返回的值，如果为空，则返回 underfined</li>
+<li>如果 Generator 函数内有 try-finally 语句块，则会直接执行 finally 语句内的值，再返回 return 指定的返回值</li>
 </ol>
 </li>
-<li>Generator.prototype.return()<ol>
-<li>return语句可以返回一个值，并且终止此后的迭代操作</li>
-<li>yield参数为要返回的值，如果为空，则返回underfined</li>
-<li>如果Generator函数内有try-finally语句块，则会直接执行finally语句内的值，再返回return指定的返回值</li>
-</ol>
-</li>
-<li>yield*表达式<ol>
-<li>用来在一个Generator函数里执行另一个Generator函数</li>
-<li>任何实现Iterator接口的数据结构也可以用yield表达式迭代</li>
+<li><p>yield*表达式</p>
+<ol>
+<li>用来在一个 Generator 函数里执行另一个 Generator 函数</li>
+<li>任何实现 Iterator 接口的数据结构也可以用 yield 表达式迭代</li>
 </ol>
 </li>
 </ol>
@@ -326,12 +343,12 @@
   <entry>
     <title>Git入门学习</title>
     <url>/2020/06/04/Git/</url>
-    <content><![CDATA[<h1 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h1><h2 id="git介绍"><a href="#git介绍" class="headerlink" title="git介绍"></a>git介绍</h2><ol>
-<li><p>由Linus用C语言编写.</p>
+    <content><![CDATA[<h1 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h1><h2 id="git-介绍"><a href="#git-介绍" class="headerlink" title="git 介绍"></a>git 介绍</h2><ol>
+<li><p>由 Linus 用 C 语言编写.</p>
 </li>
 <li><p>分布式版本控制系统</p>
 </li>
-<li><p>集中式版本控制系统 CVS，SVN缺点：</p>
+<li><p>集中式版本控制系统 CVS，SVN 缺点：</p>
 <ul>
 <li>缺点：更新速度慢，必须联网.</li>
 </ul>
@@ -339,7 +356,7 @@
 <li><p>集中式版本控制系统工作原理：</p>
 <ul>
 <li>版本库放在中央处理器.</li>
-<li>处理数据时：先从中央处理器获取数据，个人处理完数据后，再传送到中央处理器.</li>
+<li>处理数据时：先从中央处理器获取数据，个人处理完数据后，再传送到中央处理器.<span id="more"></span></li>
 </ul>
 </li>
 <li><p>分布式版本控制系统工作原理：</p>
@@ -350,9 +367,7 @@
 </ul>
 </li>
 </ol>
-<span id="more"></span>
-
-<h2 id="git常用命令"><a href="#git常用命令" class="headerlink" title="git常用命令"></a>git常用命令</h2><ol>
+<h2 id="git-常用命令"><a href="#git-常用命令" class="headerlink" title="git 常用命令"></a>git 常用命令</h2><ol>
 <li><p>git config 用来获取并设置存储库或者全局选择.</p>
 <ul>
 <li><p>查看用户名和邮箱.</p>
@@ -371,7 +386,7 @@
 </li>
 <li><p>git init 文件名</p>
 <ul>
-<li>把当前文件夹或目录设置为git可以管理的仓库.</li>
+<li>把当前文件夹或目录设置为 git 可以管理的仓库.</li>
 <li>.git 文件用来管理跟踪版本库.</li>
 </ul>
 </li>
@@ -383,8 +398,8 @@
 <li><p>将当前在暂存区的所有文件提交到版本库</p>
 <ul>
 <li>git commit 文件名.</li>
-<li>-m参数:：对要提交的文件进行说明.</li>
-<li>多次上传add，一次提交commit.</li>
+<li>-m 参数:：对要提交的文件进行说明.</li>
+<li>多次上传 add，一次提交 commit.</li>
 </ul>
 </li>
 <li><p>查看工作区和暂存区的文件状态</p>
@@ -402,10 +417,10 @@
 <li>git diff 文件名</li>
 </ul>
 </li>
-<li><p>查看commit历史</p>
+<li><p>查看 commit 历史</p>
 <ul>
 <li>git log.</li>
-<li>–pretty&#x3D;oneline 简化commit历史记录.</li>
+<li>–pretty&#x3D;oneline 简化 commit 历史记录.</li>
 </ul>
 </li>
 <li><p>回退到某个版本</p>
@@ -428,7 +443,7 @@
 <ol start="12">
 <li><p>撤销工作区文件的修改</p>
 <ul>
-<li>git checkout  - -文件名.</li>
+<li>git checkout - -文件名.</li>
 </ul>
 </li>
 <li><p>撤销暂存区文件的修改</p>
@@ -439,34 +454,34 @@
 <li><p>删除版本库文件</p>
 <ul>
 <li>git rm 文件名</li>
-<li>rm 删除工作区的文件，前面不带git.</li>
-<li>删除版本库里的文件后需要commit.</li>
+<li>rm 删除工作区的文件，前面不带 git.</li>
+<li>删除版本库里的文件后需要 commit.</li>
 </ul>
 </li>
 </ol>
-<h2 id="git远程仓库"><a href="#git远程仓库" class="headerlink" title="git远程仓库"></a>git远程仓库</h2><ol>
-<li><p>生成SSHKey</p>
+<h2 id="git-远程仓库"><a href="#git-远程仓库" class="headerlink" title="git 远程仓库"></a>git 远程仓库</h2><ol>
+<li><p>生成 SSHKey</p>
 <ul>
-<li>ssh-keygen -t rsa -C  “<a href="mailto:&#x75;&#x73;&#101;&#114;&#x40;&#x65;&#x78;&#97;&#x6d;&#112;&#108;&#101;&#x2e;&#99;&#111;&#x6d;">&#x75;&#x73;&#101;&#114;&#x40;&#x65;&#x78;&#97;&#x6d;&#112;&#108;&#101;&#x2e;&#99;&#111;&#x6d;</a>“.</li>
-<li>id_rsa 私钥，id_ras.pub公钥.</li>
+<li>ssh-keygen -t rsa -C “<a href="mailto:&#117;&#115;&#x65;&#x72;&#x40;&#101;&#x78;&#97;&#109;&#112;&#108;&#x65;&#x2e;&#99;&#x6f;&#109;">&#117;&#115;&#x65;&#x72;&#x40;&#101;&#x78;&#97;&#109;&#112;&#108;&#x65;&#x2e;&#99;&#x6f;&#109;</a>“.</li>
+<li>id_rsa 私钥，id_ras.pub 公钥.</li>
 </ul>
 </li>
-<li><p>为GitHub设置SSHKey的原因</p>
+<li><p>为 GitHub 设置 SSHKey 的原因</p>
 <ul>
 <li>确保仓库内容的推送是本人推送.</li>
 </ul>
 </li>
-<li><p>GitHub作为远程仓库的两个好处</p>
+<li><p>GitHub 作为远程仓库的两个好处</p>
 <ul>
 <li>作为远程同步仓库，备份本地仓库.</li>
-<li>通过GitHub方便多人协同工作.</li>
+<li>通过 GitHub 方便多人协同工作.</li>
 </ul>
 </li>
-<li><p>关联本地仓库和远程GitHub仓库</p>
+<li><p>关联本地仓库和远程 GitHub 仓库</p>
 <ul>
 <li><p>两种关联方式：</p>
 <ul>
-<li>git remote add origin <a href="mailto:&#103;&#x69;&#116;&#x40;&#103;&#105;&#116;&#x68;&#117;&#x62;&#46;&#99;&#x6f;&#x6d;">&#103;&#x69;&#116;&#x40;&#103;&#105;&#116;&#x68;&#117;&#x62;&#46;&#99;&#x6f;&#x6d;</a>:用户名&#x2F; 仓库名.git.</li>
+<li>git remote add origin <a href="mailto:&#x67;&#x69;&#x74;&#64;&#103;&#105;&#x74;&#x68;&#117;&#x62;&#46;&#99;&#x6f;&#109;">&#x67;&#x69;&#x74;&#64;&#103;&#105;&#x74;&#x68;&#117;&#x62;&#46;&#99;&#x6f;&#109;</a>:用户名&#x2F; 仓库名.git.</li>
 <li>git remote add origin <a href="https://github.com/%E7%94%A8%E6%88%B7%E5%90%8D/%E4%BB%93%E5%BA%93%E5%90%8D.git">https://github.com/用户名/仓库名.git</a></li>
 </ul>
 </li>
@@ -479,9 +494,9 @@
 <li>git push -u orign master.</li>
 </ul>
 </li>
-<li><p>加-u 参数 是为了把本地仓库master分支与远程仓库master分支关联起来，此后再次推送不再需要加-u参数,简化命令.</p>
+<li><p>加-u 参数 是为了把本地仓库 master 分支与远程仓库 master 分支关联起来，此后再次推送不再需要加-u 参数,简化命令.</p>
 </li>
-<li><p>把本地未push分叉提交历史整理成直线</p>
+<li><p>把本地未 push 分叉提交历史整理成直线</p>
 <ul>
 <li>git rebase</li>
 </ul>
@@ -492,7 +507,7 @@
 <ul>
 <li><p>两种克隆方式：</p>
 <ul>
-<li>git clone <a href="mailto:&#x67;&#105;&#116;&#64;&#103;&#105;&#116;&#104;&#x75;&#x62;&#x2e;&#x63;&#x6f;&#x6d;">&#x67;&#105;&#116;&#64;&#103;&#105;&#116;&#104;&#x75;&#x62;&#x2e;&#x63;&#x6f;&#x6d;</a>:用户名&#x2F;仓库名.git.</li>
+<li>git clone <a href="mailto:&#103;&#x69;&#x74;&#64;&#103;&#x69;&#x74;&#x68;&#117;&#98;&#x2e;&#99;&#x6f;&#109;">&#103;&#x69;&#x74;&#64;&#103;&#x69;&#x74;&#x68;&#117;&#98;&#x2e;&#99;&#x6f;&#109;</a>:用户名&#x2F;仓库名.git.</li>
 <li>git clone <a href="https://github/%E7%94%A8%E6%88%B7%E5%90%8D/%E4%BB%93%E5%BA%93%E5%90%8D.git">https://github/用户名/仓库名.git</a>.</li>
 </ul>
 </li>
@@ -507,24 +522,24 @@
 <li>git remote rm 远程仓库名</li>
 </ul>
 </li>
-<li><p>git支持多种协议，但相比于https,git协议最快.</p>
+<li><p>git 支持多种协议，但相比于 https,git 协议最快.</p>
 </li>
 </ul>
 </li>
 </ol>
-<h2 id="git分支管理"><a href="#git分支管理" class="headerlink" title="git分支管理"></a>git分支管理</h2><ol>
-<li><p>HEAD只指向分支，而且仅指向当前分支，master是主分支，指向提交点.</p>
+<h2 id="git-分支管理"><a href="#git-分支管理" class="headerlink" title="git 分支管理"></a>git 分支管理</h2><ol>
+<li><p>HEAD 只指向分支，而且仅指向当前分支，master 是主分支，指向提交点.</p>
 </li>
 <li><p>分支合并的原理</p>
 <ul>
-<li>让master分支指向与已修改提交分支相同的提交点.</li>
+<li>让 master 分支指向与已修改提交分支相同的提交点.</li>
 </ul>
 </li>
 <li><p>创建分支</p>
 <ul>
 <li><p>创建分支并切换</p>
 <ul>
-<li>git checkout -b分支名称.</li>
+<li>git checkout -b 分支名称.</li>
 <li>git switch -c 分支名称.</li>
 </ul>
 </li>
@@ -548,7 +563,7 @@
 </li>
 <li><p>分支删除</p>
 <ul>
-<li>git branch -d 分支名称  .</li>
+<li>git branch -d 分支名称 .</li>
 <li>git branch -D 分支名称 （强制删除分支）.</li>
 </ul>
 </li>
@@ -557,14 +572,14 @@
 <li>git log - -graph - -pretty&#x3D;oneline - -abbrev-commit.</li>
 </ul>
 </li>
-<li><p>fast forward模式</p>
+<li><p>fast forward 模式</p>
 <ul>
-<li><p>分支的默认模式为fast-forward模式，删除分支后不保留分支信息.</p>
+<li><p>分支的默认模式为 fast-forward 模式，删除分支后不保留分支信息.</p>
 </li>
 <li><p>如想保留分支信息，可使用如下命令</p>
 <ul>
-<li>git merge - -no-ff -m “分支合并说明  “  分支名称.</li>
-<li>–no-ff 表示禁用fast-forward模式，-m 表示对被合并分支进行说明.</li>
+<li>git merge - -no-ff -m “分支合并说明 “ 分支名称.</li>
+<li>–no-ff 表示禁用 fast-forward 模式，-m 表示对被合并分支进行说明.</li>
 </ul>
 </li>
 </ul>
@@ -596,9 +611,9 @@
 <li>git brash pop.</li>
 </ul>
 </li>
-<li><p>把修复的分支bug合并到当前分支</p>
+<li><p>把修复的分支 bug 合并到当前分支</p>
 <ul>
-<li>git cherry-pick  &lt; commit id &gt;</li>
+<li>git cherry-pick &lt; commit id &gt;</li>
 </ul>
 </li>
 </ul>
@@ -610,8 +625,8 @@
 </ul>
 </li>
 </ol>
-<h2 id="git标签管理"><a href="#git标签管理" class="headerlink" title="git标签管理"></a>git标签管理</h2><ol>
-<li><p>在git中打标签是为了管理各个历史版本，便于寻找</p>
+<h2 id="git-标签管理"><a href="#git-标签管理" class="headerlink" title="git 标签管理"></a>git 标签管理</h2><ol>
+<li><p>在 git 中打标签是为了管理各个历史版本，便于寻找</p>
 </li>
 <li><p>创建标签(默认打在最新提交上)</p>
 <ul>
@@ -625,8 +640,8 @@
 </li>
 <li><p>给历史某个版本打标签</p>
 <ul>
-<li>git tag -a 标签名 -m” 说明”  提交commitid</li>
-<li>-a 指定标签名 -m指定标签说明</li>
+<li>git tag -a 标签名 -m” 说明” 提交 commitid</li>
+<li>-a 指定标签名 -m 指定标签说明</li>
 </ul>
 </li>
 <li><p>查看标签信息</p>
@@ -653,7 +668,7 @@
 </li>
 <li><p>从本地删除标签</p>
 <ul>
-<li>git tag -d  标签名</li>
+<li>git tag -d 标签名</li>
 </ul>
 </li>
 <li><p>从远程删除标签</p>
@@ -664,25 +679,25 @@
 </ul>
 </li>
 </ol>
-<h2 id="git自定义"><a href="#git自定义" class="headerlink" title="git自定义"></a>git自定义</h2><ol>
-<li><p>创建 .gitignore文件</p>
+<h2 id="git-自定义"><a href="#git-自定义" class="headerlink" title="git 自定义"></a>git 自定义</h2><ol>
+<li><p>创建 .gitignore 文件</p>
 <ul>
-<li>在window中通过文本编辑器创建</li>
+<li>在 window 中通过文本编辑器创建</li>
 </ul>
 </li>
-<li><p>查看.gitignore文件的过滤规则</p>
+<li><p>查看.gitignore 文件的过滤规则</p>
 <ul>
-<li>git check-ignore  -v  文件名</li>
+<li>git check-ignore -v 文件名</li>
 </ul>
 </li>
-<li><p>为git命令配置别名</p>
+<li><p>为 git 命令配置别名</p>
 <ul>
-<li>git config - -global alias.别名  原名</li>
+<li>git config - -global alias.别名 原名</li>
 </ul>
 </li>
 <li><p>删除别名</p>
 <ul>
-<li><p>查看.gitconfig配置文件并删除相对应的行</p>
+<li><p>查看.gitconfig 配置文件并删除相对应的行</p>
 <ul>
 <li>cat .gitconfig.</li>
 </ul>
@@ -701,14 +716,39 @@
       </tags>
   </entry>
   <entry>
+    <title>Hexo版本升级指南</title>
+    <url>/2020/06/12/Hexo-upgrade/</url>
+    <content><![CDATA[<h1 id="Hexo版本升级指南"><a href="#Hexo版本升级指南" class="headerlink" title="Hexo版本升级指南"></a>Hexo版本升级指南</h1><h3 id="1-更新升级hexo"><a href="#1-更新升级hexo" class="headerlink" title="1.更新升级hexo"></a>1.更新升级hexo</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-查看可更新npm依赖包并升级"><a href="#2-查看可更新npm依赖包并升级" class="headerlink" title="2.查看可更新npm依赖包并升级"></a>2.查看可更新npm依赖包并升级</h3><h4 id="安装npm-check包"><a href="#安装npm-check包" class="headerlink" title="安装npm-check包"></a>安装npm-check包</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install npm-check -g</span><br></pre></td></tr></table></figure>
+<h4 id="检查可更新依赖包并升级"><a href="#检查可更新依赖包并升级" class="headerlink" title="检查可更新依赖包并升级"></a>检查可更新依赖包并升级</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm-check -u</span><br></pre></td></tr></table></figure>
+
+<p><strong>or</strong></p>
+<h4 id="安装npm-upgrade包"><a href="#安装npm-upgrade包" class="headerlink" title="安装npm-upgrade包"></a>安装npm-upgrade包</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install -g npm-upgrade</span><br></pre></td></tr></table></figure>
+<h4 id="检查可更新依赖包件并升级"><a href="#检查可更新依赖包件并升级" class="headerlink" title="检查可更新依赖包件并升级"></a>检查可更新依赖包件并升级</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm-upgrade</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-更新"><a href="#4-更新" class="headerlink" title="4.更新"></a>4.更新</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm update -g</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm update --save</span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+]]></content>
+      <categories>
+        <category>技术笔记</category>
+      </categories>
+      <tags>
+        <tag>npm</tag>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>HTML</title>
     <url>/2020/06/04/HTML/</url>
-    <content><![CDATA[<h1 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h1><p>1.一种描述网页的文本标记语言.<br>2.通过HTML标签来表述网页.</p>
-<h2 id="一-HTML元素"><a href="#一-HTML元素" class="headerlink" title="一.HTML元素"></a>一.HTML元素</h2><p>1.HTML元素是开始标签到束标签之间的文本内容.<br>2.空元素在开始标签中结束。（在开始标签后尖括号加斜杠&#x2F;).</p>
-<h2 id="二-HTML文档"><a href="#二-HTML文档" class="headerlink" title="二.HTML文档"></a>二.HTML文档</h2><p>1.HTML文档&#x3D;网页&#x3D;HTML标签+纯文本.<br>2.以. htm 或 .html 为后缀名.<br>3.<DOCTYPE>声明HTML版本.</p>
-<h2 id="三-基本HTML标签以及对应的属性"><a href="#三-基本HTML标签以及对应的属性" class="headerlink" title="三.基本HTML标签以及对应的属性"></a>三.基本HTML标签以及对应的属性</h2><p>1.用来描述网页.<br>2.以尖括号成对出现.<br>3.属性值由双引号括起来，如果属性值本身有双引号，就用单引号.</p>
+    <content><![CDATA[<h1 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h1><p>1.一种描述网页的文本标记语言. 2.通过 HTML 标签来表述网页.</p>
+<h2 id="一-HTML-元素"><a href="#一-HTML-元素" class="headerlink" title="一.HTML 元素"></a>一.HTML 元素</h2><p>1.HTML 元素是开始标签到束标签之间的文本内容. 2.空元素在开始标签中结束。（在开始标签后尖括号加斜杠&#x2F;).</p>
+<h2 id="二-HTML-文档"><a href="#二-HTML-文档" class="headerlink" title="二.HTML 文档"></a>二.HTML 文档</h2><p>1.HTML 文档&#x3D;网页&#x3D;HTML 标签+纯文本. 2.以. htm 或 .html 为后缀名. 3.<DOCTYPE>声明 HTML 版本.</p>
 <span id="more"></span>
 
+<h2 id="三-基本-HTML-标签以及对应的属性"><a href="#三-基本-HTML-标签以及对应的属性" class="headerlink" title="三.基本 HTML 标签以及对应的属性"></a>三.基本 HTML 标签以及对应的属性</h2><p>1.用来描述网页. 2.以尖括号成对出现. 3.属性值由双引号括起来，如果属性值本身有双引号，就用单引号.</p>
 <h3 id="1-lt-html-gt"><a href="#1-lt-html-gt" class="headerlink" title="1.&lt; html &gt;"></a>1.&lt; html &gt;</h3><p>描述网页内容.</p>
 <h3 id="2-lt-body-gt"><a href="#2-lt-body-gt" class="headerlink" title="2.&lt; body &gt;"></a>2.&lt; body &gt;</h3><p>描述网页内容的主题.</p>
 <ul>
@@ -724,7 +764,7 @@
 </li>
 </ul>
 <h3 id="3-lt-h1-h6-gt"><a href="#3-lt-h1-h6-gt" class="headerlink" title="3.&lt; h1-h6 &gt;"></a>3.&lt; h1-h6 &gt;</h3><p>将文本设置为标题文本.</p>
-<h3 id="4-lt-p-gt"><a href="#4-lt-p-gt" class="headerlink" title="4.&lt; p &gt;"></a>4.&lt; p &gt;</h3><p>1.将为本设置为段落.<br>2.自动添加前后行.<br>3.浏览器会省去多余的空格和换行，统一以一个空格表示.</p>
+<h3 id="4-lt-p-gt"><a href="#4-lt-p-gt" class="headerlink" title="4.&lt; p &gt;"></a>4.&lt; p &gt;</h3><p>1.将为本设置为段落. 2.自动添加前后行. 3.浏览器会省去多余的空格和换行，统一以一个空格表示.</p>
 <ul>
 <li><p>align</p>
 <ul>
@@ -739,8 +779,8 @@
 </ul>
 <h3 id="6-lt-br-x2F-gt"><a href="#6-lt-br-x2F-gt" class="headerlink" title="6.&lt; br &#x2F; &gt;"></a>6.&lt; br &#x2F; &gt;</h3><p>插入一个空行来进行换行。</p>
 <h3 id="8-lt-hr-x2F-gt"><a href="#8-lt-hr-x2F-gt" class="headerlink" title="8.&lt; hr &#x2F; &gt;"></a>8.&lt; hr &#x2F; &gt;</h3><p>创建水平线.</p>
-<h3 id="9-lt-–-gt"><a href="#9-lt-–-gt" class="headerlink" title="9.&lt; !– &gt;"></a>9.&lt; !– &gt;</h3><p>1.注释作用，不会在浏览器中显示.<br>2.给计算机源代码注释.</p>
-<h3 id="lt-link-gt"><a href="#lt-link-gt" class="headerlink" title="&lt; link &gt;"></a>&lt; link &gt;</h3><p>1.定义文档与被链接资源的关系.<br>2.最常见的用途事链接样式表.</p>
+<h3 id="9-lt-–-gt"><a href="#9-lt-–-gt" class="headerlink" title="9.&lt; !– &gt;"></a>9.&lt; !– &gt;</h3><p>1.注释作用，不会在浏览器中显示. 2.给计算机源代码注释.</p>
+<h3 id="lt-link-gt"><a href="#lt-link-gt" class="headerlink" title="&lt; link &gt;"></a>&lt; link &gt;</h3><p>1.定义文档与被链接资源的关系. 2.最常见的用途事链接样式表.</p>
 <ul>
 <li><p>href</p>
 <ul>
@@ -759,16 +799,16 @@
 </li>
 <li><p>type</p>
 <ul>
-<li>定义被链接文档的MIME类型.</li>
+<li>定义被链接文档的 MIME 类型.</li>
 </ul>
 </li>
 <li><p>sizes</p>
 <ul>
-<li>定义被链接资源的尺寸，仅适用于rel&#x3D;”icon”.</li>
+<li>定义被链接资源的尺寸，仅适用于 rel&#x3D;”icon”.</li>
 </ul>
 </li>
 </ul>
-<h3 id="10-style属性"><a href="#10-style属性" class="headerlink" title="10.style属性"></a>10.style属性</h3><p>1.一个HTML标签的多个属性以空格分隔.<br>2.style是一种通用属性，用于定义文本样式.<br>style&#x3D;“ background-color：red”背景颜色.<br>3.多个属性值要以分号分隔开来.<br>style&#x3D;”font-family:arial;color:red;font-size:20px;</p>
+<h3 id="10-style-属性"><a href="#10-style-属性" class="headerlink" title="10.style 属性"></a>10.style 属性</h3><p>1.一个 HTML 标签的多个属性以空格分隔.<br>2.style 是一种通用属性，用于定义文本样式.<br>style&#x3D;“ background-color：red”背景颜色. 3.多个属性值要以分号分隔开来.<br>style&#x3D;”font-family:arial;color:red;font-size:20px;</p>
 <ul>
 <li><p>background-color</p>
 <ul>
@@ -791,7 +831,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="四-HTML图像"><a href="#四-HTML图像" class="headerlink" title="四.HTML图像"></a>四.HTML图像</h2><h3 id="7-lt-img-gt"><a href="#7-lt-img-gt" class="headerlink" title="7.&lt; img &gt;"></a>7.&lt; img &gt;</h3><p>1.描述图片.<br>2.设置图片链接的方式，将<img>标签作为<a>标签的元素.</p>
+<h2 id="四-HTML-图像"><a href="#四-HTML-图像" class="headerlink" title="四.HTML 图像"></a>四.HTML 图像</h2><h3 id="7-lt-img-gt"><a href="#7-lt-img-gt" class="headerlink" title="7.&lt; img &gt;"></a>7.&lt; img &gt;</h3><p>1.描述图片. 2.设置图片链接的方式，将<img>标签作为<a>标签的元素.</p>
 <ul>
 <li><p>height</p>
 <ul>
@@ -819,7 +859,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="五-HTML链接"><a href="#五-HTML链接" class="headerlink" title="五.HTML链接"></a>五.HTML链接</h2><h3 id="5-lt-a-gt"><a href="#5-lt-a-gt" class="headerlink" title="5.&lt; a  &gt;"></a>5.&lt; a  &gt;</h3><p>1.描述链接地址。<br>2.单击文本元素可跳转。</p>
+<h2 id="五-HTML-链接"><a href="#五-HTML-链接" class="headerlink" title="五.HTML 链接"></a>五.HTML 链接</h2><h3 id="5-lt-a-gt"><a href="#5-lt-a-gt" class="headerlink" title="5.&lt; a &gt;"></a>5.&lt; a &gt;</h3><p>1.描述链接地址。 2.单击文本元素可跳转。</p>
 <ul>
 <li><p>href</p>
 <ul>
@@ -837,7 +877,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="六-HTML标签之文本格式化"><a href="#六-HTML标签之文本格式化" class="headerlink" title="六.HTML标签之文本格式化"></a>六.HTML标签之文本格式化</h2><h3 id="lt-b-gt"><a href="#lt-b-gt" class="headerlink" title="&lt;\b&gt;"></a>&lt;\b&gt;</h3><ul>
+<h2 id="六-HTML-标签之文本格式化"><a href="#六-HTML-标签之文本格式化" class="headerlink" title="六.HTML 标签之文本格式化"></a>六.HTML 标签之文本格式化</h2><h3 id="lt-b-gt"><a href="#lt-b-gt" class="headerlink" title="&lt;\b&gt;"></a>&lt;\b&gt;</h3><ul>
 <li>定义粗体文本</li>
 </ul>
 <h3 id="lt-big-gt"><a href="#lt-big-gt" class="headerlink" title="&lt; big &gt;"></a>&lt; big &gt;</h3><ul>
@@ -879,7 +919,7 @@
 <h3 id="lt-var-gt"><a href="#lt-var-gt" class="headerlink" title="&lt; var&gt;"></a>&lt; var&gt;</h3><ul>
 <li>定义计算机变量</li>
 </ul>
-<h3 id="lt-tt-gt"><a href="#lt-tt-gt" class="headerlink" title="&lt;  tt&gt;"></a>&lt;  tt&gt;</h3><ul>
+<h3 id="lt-tt-gt"><a href="#lt-tt-gt" class="headerlink" title="&lt; tt&gt;"></a>&lt; tt&gt;</h3><ul>
 <li>打字机代码</li>
 </ul>
 <h3 id="lt-pre-gt"><a href="#lt-pre-gt" class="headerlink" title="&lt; pre &gt;"></a>&lt; pre &gt;</h3><p>保留空格和拆行。</p>
@@ -907,7 +947,7 @@
 <h3 id="lt-cite-gt"><a href="#lt-cite-gt" class="headerlink" title="&lt; cite &gt;"></a>&lt; cite &gt;</h3><ul>
 <li>定义著作的标题</li>
 </ul>
-<h2 id="七-HTML表格"><a href="#七-HTML表格" class="headerlink" title="七.HTML表格"></a>七.HTML表格</h2><h3 id="lt-table-gt"><a href="#lt-table-gt" class="headerlink" title="&lt; table&gt;"></a>&lt; table&gt;</h3><ul>
+<h2 id="七-HTML-表格"><a href="#七-HTML-表格" class="headerlink" title="七.HTML 表格"></a>七.HTML 表格</h2><h3 id="lt-table-gt"><a href="#lt-table-gt" class="headerlink" title="&lt; table&gt;"></a>&lt; table&gt;</h3><ul>
 <li><p>border</p>
 <ul>
 <li>设置表格边框</li>
@@ -923,7 +963,7 @@
 <h3 id="lt-th-gt"><a href="#lt-th-gt" class="headerlink" title="&lt; th &gt;"></a>&lt; th &gt;</h3><ul>
 <li>定义表格表头</li>
 </ul>
-<h3 id="lt-thead-gt"><a href="#lt-thead-gt" class="headerlink" title="&lt; thead &gt;"></a>&lt; thead &gt;</h3><p>1.thead.tbody应该与tfoot元素组合实用。<br>2.可与css组合，改变表格外观。</p>
+<h3 id="lt-thead-gt"><a href="#lt-thead-gt" class="headerlink" title="&lt; thead &gt;"></a>&lt; thead &gt;</h3><p>1.thead.tbody 应该与 tfoot 元素组合实用。 2.可与 css 组合，改变表格外观。</p>
 <ul>
 <li>对表格表头进行处理</li>
 </ul>
@@ -933,7 +973,7 @@
 <h3 id="lt-tfoot-gt"><a href="#lt-tfoot-gt" class="headerlink" title="&lt; tfoot &gt;"></a>&lt; tfoot &gt;</h3><ul>
 <li>对表格页脚进行处理</li>
 </ul>
-<h2 id="八-HTML列表"><a href="#八-HTML列表" class="headerlink" title="八.HTML列表"></a>八.HTML列表</h2><h3 id="lt-ol-gt"><a href="#lt-ol-gt" class="headerlink" title="&lt; ol &gt;"></a>&lt; ol &gt;</h3><ul>
+<h2 id="八-HTML-列表"><a href="#八-HTML-列表" class="headerlink" title="八.HTML 列表"></a>八.HTML 列表</h2><h3 id="lt-ol-gt"><a href="#lt-ol-gt" class="headerlink" title="&lt; ol &gt;"></a>&lt; ol &gt;</h3><ul>
 <li>定义有序列表</li>
 </ul>
 <h3 id="lt-ul-gt"><a href="#lt-ul-gt" class="headerlink" title="&lt; ul &gt;"></a>&lt; ul &gt;</h3><ul>
@@ -951,14 +991,14 @@
 <h3 id="lt-dd-gt"><a href="#lt-dd-gt" class="headerlink" title="&lt; dd &gt;"></a>&lt; dd &gt;</h3><ul>
 <li>定义自定义列表项的内容</li>
 </ul>
-<h2 id="九-HTML类"><a href="#九-HTML类" class="headerlink" title="九.HTML类"></a>九.HTML类</h2><p>为HTML设置类，使用不同的css样式。</p>
+<h2 id="九-HTML-类"><a href="#九-HTML-类" class="headerlink" title="九.HTML 类"></a>九.HTML 类</h2><p>为 HTML 设置类，使用不同的 css 样式。</p>
 <h3 id="lt-div-gt"><a href="#lt-div-gt" class="headerlink" title="&lt; div &gt;"></a>&lt; div &gt;</h3><ul>
-<li>块级元素，可作为HTML元素的容器</li>
+<li>块级元素，可作为 HTML 元素的容器</li>
 </ul>
 <h3 id="lt-span-gt"><a href="#lt-span-gt" class="headerlink" title="&lt; span &gt;"></a>&lt; span &gt;</h3><ul>
 <li>行内元素，可作为文本的容器</li>
 </ul>
-<h2 id="十-HTML布局"><a href="#十-HTML布局" class="headerlink" title="十.HTML布局"></a>十.HTML布局</h2><h3 id="lt-header-gt"><a href="#lt-header-gt" class="headerlink" title="&lt; header &gt;"></a>&lt; header &gt;</h3><ul>
+<h2 id="十-HTML-布局"><a href="#十-HTML-布局" class="headerlink" title="十.HTML 布局"></a>十.HTML 布局</h2><h3 id="lt-header-gt"><a href="#lt-header-gt" class="headerlink" title="&lt; header &gt;"></a>&lt; header &gt;</h3><ul>
 <li>用于定义文档或节的页眉</li>
 </ul>
 <h3 id="lt-nav-gt"><a href="#lt-nav-gt" class="headerlink" title="&lt; nav &gt;"></a>&lt; nav &gt;</h3><ul>
@@ -970,7 +1010,7 @@
 <h3 id="lt-footer-gt"><a href="#lt-footer-gt" class="headerlink" title="&lt; footer &gt;"></a>&lt; footer &gt;</h3><ul>
 <li>用于定义文章中的页脚</li>
 </ul>
-<h2 id="十一-HTML框架"><a href="#十一-HTML框架" class="headerlink" title="十一.HTML框架"></a>十一.HTML框架</h2><h3 id="lt-frameset-gt"><a href="#lt-frameset-gt" class="headerlink" title="&lt; frameset &gt;"></a>&lt; frameset &gt;</h3><p>定义如何将窗口分割成框架。</p>
+<h2 id="十一-HTML-框架"><a href="#十一-HTML-框架" class="headerlink" title="十一.HTML 框架"></a>十一.HTML 框架</h2><h3 id="lt-frameset-gt"><a href="#lt-frameset-gt" class="headerlink" title="&lt; frameset &gt;"></a>&lt; frameset &gt;</h3><p>定义如何将窗口分割成框架。</p>
 <ul>
 <li><p>cows</p>
 <ul>
@@ -984,7 +1024,7 @@
 </li>
 </ul>
 <h3 id="lt-frame-gt"><a href="#lt-frame-gt" class="headerlink" title="&lt; frame &gt;"></a>&lt; frame &gt;</h3><ul>
-<li>定义框架的HTML文档</li>
+<li>定义框架的 HTML 文档</li>
 </ul>
 <h3 id="lt-iframe-gt"><a href="#lt-iframe-gt" class="headerlink" title="&lt; iframe &gt;"></a>&lt; iframe &gt;</h3><p>1.定义内联框架（在网页内显示网页）</p>
 <ul>
@@ -1005,17 +1045,17 @@
 </li>
 <li><p>name</p>
 <ul>
-<li>规定iframe的名称</li>
+<li>规定 iframe 的名称</li>
 </ul>
 </li>
 </ul>
-<h2 id="十二-HTML脚本"><a href="#十二-HTML脚本" class="headerlink" title="十二.HTML脚本"></a>十二.HTML脚本</h2><h3 id="lt-script-gt"><a href="#lt-script-gt" class="headerlink" title="&lt; script &gt;"></a>&lt; script &gt;</h3><ul>
+<h2 id="十二-HTML-脚本"><a href="#十二-HTML-脚本" class="headerlink" title="十二.HTML 脚本"></a>十二.HTML 脚本</h2><h3 id="lt-script-gt"><a href="#lt-script-gt" class="headerlink" title="&lt; script &gt;"></a>&lt; script &gt;</h3><ul>
 <li>元素可以是脚本</li>
-<li>也可以通过src属性指向脚本文件</li>
+<li>也可以通过 src 属性指向脚本文件</li>
 </ul>
-<h2 id="十三-HTML头部元素"><a href="#十三-HTML头部元素" class="headerlink" title="十三.HTML头部元素"></a>十三.HTML头部元素</h2><h3 id="lt-head-gt"><a href="#lt-head-gt" class="headerlink" title="&lt; head &gt;"></a>&lt; head &gt;</h3><ul>
-<li>定义HTML头部元素，是HTML所有头部元素的容器。</li>
-<li>2.是HTML，xHTML文档必有的元素。</li>
+<h2 id="十三-HTML-头部元素"><a href="#十三-HTML-头部元素" class="headerlink" title="十三.HTML 头部元素"></a>十三.HTML 头部元素</h2><h3 id="lt-head-gt"><a href="#lt-head-gt" class="headerlink" title="&lt; head &gt;"></a>&lt; head &gt;</h3><ul>
+<li>定义 HTML 头部元素，是 HTML 所有头部元素的容器。</li>
+<li>2.是 HTML，xHTML 文档必有的元素。</li>
 </ul>
 <h3 id="lt-base-gt"><a href="#lt-base-gt" class="headerlink" title="&lt; base &gt;"></a>&lt; base &gt;</h3><ul>
 <li><p>href</p>
@@ -1029,7 +1069,7 @@
 </ul>
 </li>
 </ul>
-<h3 id="lt-link-gt-1"><a href="#lt-link-gt-1" class="headerlink" title="&lt; link &gt;"></a>&lt; link &gt;</h3><p>1.定义当前文档与外部资源的关系。<br>2.只能作为head的元素。</p>
+<h3 id="lt-link-gt-1"><a href="#lt-link-gt-1" class="headerlink" title="&lt; link &gt;"></a>&lt; link &gt;</h3><p>1.定义当前文档与外部资源的关系。 2.只能作为 head 的元素。</p>
 <ul>
 <li><p>href</p>
 <ul>
@@ -1047,7 +1087,7 @@
 </ul>
 </li>
 </ul>
-<h3 id="lt-title-gt"><a href="#lt-title-gt" class="headerlink" title="&lt; title &gt;"></a>&lt; title &gt;</h3><p>1.定义文档的标题。<br>2.是HTML xHTML文档必需的。</p>
+<h3 id="lt-title-gt"><a href="#lt-title-gt" class="headerlink" title="&lt; title &gt;"></a>&lt; title &gt;</h3><p>1.定义文档的标题。 2.是 HTML xHTML 文档必需的。</p>
 <ul>
 <li><p>常见用途</p>
 <ul>
@@ -1057,11 +1097,11 @@
 </ul>
 </li>
 </ul>
-<h3 id="lt-meta-gt"><a href="#lt-meta-gt" class="headerlink" title="&lt; meta &gt;"></a>&lt; meta &gt;</h3><p>1.提供元数据，不会显示在页面上。<br>2.为搜索引擎定义关键词。<br>3.为网页定义描述内容。<br>4.定义网页作者。<br>5.刷新当前页面</p>
+<h3 id="lt-meta-gt"><a href="#lt-meta-gt" class="headerlink" title="&lt; meta &gt;"></a>&lt; meta &gt;</h3><p>1.提供元数据，不会显示在页面上。 2.为搜索引擎定义关键词。 3.为网页定义描述内容。 4.定义网页作者。 5.刷新当前页面</p>
 <ul>
 <li><p>name</p>
 <ul>
-<li>定义context属性的名称</li>
+<li>定义 context 属性的名称</li>
 </ul>
 </li>
 <li><p>context</p>
@@ -1071,69 +1111,27 @@
 </li>
 <li><p>http-equiv</p>
 <ul>
-<li>把context内容关联到HTTP头部</li>
+<li>把 context 内容关联到 HTTP 头部</li>
 </ul>
 </li>
 </ul>
-<h2 id="十四-HTML字符实体"><a href="#十四-HTML字符实体" class="headerlink" title="十四.HTML字符实体"></a>十四.HTML字符实体</h2><h3 id="HTML中的预留字符要用字符实体表示"><a href="#HTML中的预留字符要用字符实体表示" class="headerlink" title="HTML中的预留字符要用字符实体表示"></a>HTML中的预留字符要用字符实体表示</h3><h3 id="字符实体的两种表示方法："><a href="#字符实体的两种表示方法：" class="headerlink" title="字符实体的两种表示方法："></a>字符实体的两种表示方法：</h3><ul>
+<h2 id="十四-HTML-字符实体"><a href="#十四-HTML-字符实体" class="headerlink" title="十四.HTML 字符实体"></a>十四.HTML 字符实体</h2><h3 id="HTML-中的预留字符要用字符实体表示"><a href="#HTML-中的预留字符要用字符实体表示" class="headerlink" title="HTML 中的预留字符要用字符实体表示"></a>HTML 中的预留字符要用字符实体表示</h3><h3 id="字符实体的两种表示方法："><a href="#字符实体的两种表示方法：" class="headerlink" title="字符实体的两种表示方法："></a>字符实体的两种表示方法：</h3><ul>
 <li>&amp;字符实体名</li>
 <li>&amp;#字符实体数字</li>
 </ul>
-<h2 id="十五-HTML字符编码"><a href="#十五-HTML字符编码" class="headerlink" title="十五.HTML字符编码"></a>十五.HTML字符编码</h2><h3 id="使用url编码的原因："><a href="#使用url编码的原因：" class="headerlink" title="使用url编码的原因："></a>使用url编码的原因：</h3><ul>
-<li>url通常会包含非Ascll编码以外的字符，需要转化为有效的Ascll格式</li>
+<h2 id="十五-HTML-字符编码"><a href="#十五-HTML-字符编码" class="headerlink" title="十五.HTML 字符编码"></a>十五.HTML 字符编码</h2><h3 id="使用-url-编码的原因："><a href="#使用-url-编码的原因：" class="headerlink" title="使用 url 编码的原因："></a>使用 url 编码的原因：</h3><ul>
+<li>url 通常会包含非 Ascll 编码以外的字符，需要转化为有效的 Ascll 格式</li>
 </ul>
 <h3 id="编码方式："><a href="#编码方式：" class="headerlink" title="编码方式："></a>编码方式：</h3><ul>
-<li>%后加两位的16进制数</li>
+<li>%后加两位的 16 进制数</li>
 </ul>
-<h2 id="十六-HTML媒体"><a href="#十六-HTML媒体" class="headerlink" title="十六.HTML媒体"></a>十六.HTML媒体</h2><h3 id="HTML插件也叫辅助应用程序，用于扩展浏览器的功能"><a href="#HTML插件也叫辅助应用程序，用于扩展浏览器的功能" class="headerlink" title="HTML插件也叫辅助应用程序，用于扩展浏览器的功能."></a>HTML插件也叫辅助应用程序，用于扩展浏览器的功能.</h3><h3 id="插件可用标签或者标签加载"><a href="#插件可用标签或者标签加载" class="headerlink" title="插件可用标签或者标签加载."></a>插件可用<object>标签或者<embed>标签加载.</h3><h3 id="可使用或标签显示音频或视频"><a href="#可使用或标签显示音频或视频" class="headerlink" title="可使用或标签显示音频或视频."></a>可使用<audio>或<video>标签显示音频或视频.</h3>]]></content>
+<h2 id="十六-HTML-媒体"><a href="#十六-HTML-媒体" class="headerlink" title="十六.HTML 媒体"></a>十六.HTML 媒体</h2><h3 id="HTML-插件也叫辅助应用程序，用于扩展浏览器的功能"><a href="#HTML-插件也叫辅助应用程序，用于扩展浏览器的功能" class="headerlink" title="HTML 插件也叫辅助应用程序，用于扩展浏览器的功能."></a>HTML 插件也叫辅助应用程序，用于扩展浏览器的功能.</h3><h3 id="插件可用标签或者标签加载"><a href="#插件可用标签或者标签加载" class="headerlink" title="插件可用标签或者标签加载."></a>插件可用<object>标签或者<embed>标签加载.</h3><h3 id="可使用或标签显示音频或视频"><a href="#可使用或标签显示音频或视频" class="headerlink" title="可使用或标签显示音频或视频."></a>可使用<audio>或<video>标签显示音频或视频.</h3>]]></content>
       <categories>
         <category>技术笔记</category>
       </categories>
       <tags>
         <tag>HTML</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Hexo版本升级指南</title>
-    <url>/2020/06/12/Hexo-upgrade/</url>
-    <content><![CDATA[<h1 id="Hexo版本升级指南"><a href="#Hexo版本升级指南" class="headerlink" title="Hexo版本升级指南"></a>Hexo版本升级指南</h1><h3 id="1-更新升级hexo"><a href="#1-更新升级hexo" class="headerlink" title="1.更新升级hexo"></a>1.更新升级hexo</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
-
-<h3 id="2-查看可更新npm依赖包并升级"><a href="#2-查看可更新npm依赖包并升级" class="headerlink" title="2.查看可更新npm依赖包并升级"></a>2.查看可更新npm依赖包并升级</h3><h4 id="安装npm-check包"><a href="#安装npm-check包" class="headerlink" title="安装npm-check包"></a>安装npm-check包</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install npm-check -g</span><br></pre></td></tr></table></figure>
-<h4 id="检查可更新依赖包并升级"><a href="#检查可更新依赖包并升级" class="headerlink" title="检查可更新依赖包并升级"></a>检查可更新依赖包并升级</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm-check -u</span><br></pre></td></tr></table></figure>
-
-<p><strong>or</strong></p>
-<h4 id="安装npm-upgrade包"><a href="#安装npm-upgrade包" class="headerlink" title="安装npm-upgrade包"></a>安装npm-upgrade包</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install -g npm-upgrade</span><br></pre></td></tr></table></figure>
-<h4 id="检查可更新依赖包件并升级"><a href="#检查可更新依赖包件并升级" class="headerlink" title="检查可更新依赖包件并升级"></a>检查可更新依赖包件并升级</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm-upgrade</span><br></pre></td></tr></table></figure>
-
-<h3 id="4-更新"><a href="#4-更新" class="headerlink" title="4.更新"></a>4.更新</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm update -g</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm update --save</span><br></pre></td></tr></table></figure>
-<span id="more"></span>
-]]></content>
-      <categories>
-        <category>技术笔记</category>
-      </categories>
-      <tags>
-        <tag>npm</tag>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title></title>
-    <url>/2022/08/26/Iterator%E9%81%8D%E5%8E%86%E5%99%A8/</url>
-    <content><![CDATA[<h1 id="async函数"><a href="#async函数" class="headerlink" title="async函数"></a>async函数</h1><ol>
-<li>async函数的执行原理就是将Generator函数与自动执行器包装在一个函数里</li>
-<li>async相当于Generator的语法糖</li>
-<li>async自带执行器</li>
-<li>async返回一个Promise对象</li>
-<li>async函数调用then方法时，如果asyn函数有return返回值，那么这个返回值会成为then方法的回调函数的参数</li>
-<li>async函数内部抛出的错误，会使返回的Promise对象变为rejected状态</li>
-<li>await命令后面通常是promise对象</li>
-<li>async函数返回的Promise对象只有等所有await命令执行完成之后才会发生状态变更</li>
-<li>只要有一个await命令的Promise对象变为reject状态，后面的await命令 不会执行</li>
-<li>给当前await命令语句写进try-catch结构，或者调用catch()方法，这样如果当前await命令出现错误，不会影响后面的await命令继续执行</li>
-</ol>
-]]></content>
   </entry>
   <entry>
     <title>Learning how to learn part2</title>
@@ -1198,6 +1196,60 @@
       </tags>
   </entry>
   <entry>
+    <title></title>
+    <url>/2022/08/26/Iterator%E9%81%8D%E5%8E%86%E5%99%A8/</url>
+    <content><![CDATA[<h1 id="async函数"><a href="#async函数" class="headerlink" title="async函数"></a>async函数</h1><ol>
+<li>async函数的执行原理就是将Generator函数与自动执行器包装在一个函数里</li>
+<li>async相当于Generator的语法糖</li>
+<li>async自带执行器</li>
+<li>async返回一个Promise对象</li>
+<li>async函数调用then方法时，如果asyn函数有return返回值，那么这个返回值会成为then方法的回调函数的参数</li>
+<li>async函数内部抛出的错误，会使返回的Promise对象变为rejected状态</li>
+<li>await命令后面通常是promise对象</li>
+<li>async函数返回的Promise对象只有等所有await命令执行完成之后才会发生状态变更</li>
+<li>只要有一个await命令的Promise对象变为reject状态，后面的await命令 不会执行</li>
+<li>给当前await命令语句写进try-catch结构，或者调用catch()方法，这样如果当前await命令出现错误，不会影响后面的await命令继续执行</li>
+</ol>
+]]></content>
+  </entry>
+  <entry>
+    <title>Learning how to learn part4</title>
+    <url>/2020/06/14/Learning%20how%20to%20learn%20part%204/</url>
+    <content><![CDATA[<h1 id="Learning-how-to-learn-part4"><a href="#Learning-how-to-learn-part4" class="headerlink" title="Learning how to learn part4"></a>Learning how to learn part4</h1><h2 id="一-学习技巧类"><a href="#一-学习技巧类" class="headerlink" title="一.学习技巧类"></a>一.学习技巧类</h2><h3 id="1-比喻和类比"><a href="#1-比喻和类比" class="headerlink" title="1.比喻和类比"></a>1.比喻和类比</h3><ul>
+<li>更好地理解当前概念</li>
+<li>摆脱思维定势</li>
+</ul>
+<h2 id="二-左右脑分析"><a href="#二-左右脑分析" class="headerlink" title="二.左右脑分析"></a>二.左右脑分析</h2><h3 id="1-左脑"><a href="#1-左脑" class="headerlink" title="1.左脑"></a>1.左脑</h3><ul>
+<li>左脑帮助我们认识世界，并保持那些认知长久不变<span id="more"></span></li>
+</ul>
+<h3 id="2-右脑"><a href="#2-右脑" class="headerlink" title="2.右脑"></a>2.右脑</h3><ul>
+<li>右脑有利于我们从全局思考问题</li>
+</ul>
+<h3 id="3-总结"><a href="#3-总结" class="headerlink" title="3.总结"></a>3.总结</h3><ul>
+<li>多回顾复习，从全局思考问题</li>
+<li>加入学习小组，有利于发现盲点，集思广益</li>
+</ul>
+<h2 id="三-如何准备考试"><a href="#三-如何准备考试" class="headerlink" title="三.如何准备考试"></a>三.如何准备考试</h2><h3 id="1-做题"><a href="#1-做题" class="headerlink" title="1.做题"></a>1.做题</h3><ul>
+<li>重新做一遍之前的题，但不需要写出全部细节，写出大概步骤即可</li>
+</ul>
+<h3 id="2-学习小组"><a href="#2-学习小组" class="headerlink" title="2.学习小组"></a>2.学习小组</h3><ul>
+<li>加入一个学习小组，一起复习</li>
+</ul>
+<h3 id="3-做题"><a href="#3-做题" class="headerlink" title="3.做题"></a>3.做题</h3><ul>
+<li>先从难题做起，2 分钟内如果没完成，快速换一个相对简单的题，这时候难题会在发散模式中继续思考</li>
+</ul>
+<h3 id="4-应对困难的表现"><a href="#4-应对困难的表现" class="headerlink" title="4.应对困难的表现"></a>4.应对困难的表现</h3><ul>
+<li>如若无法解决，可先放下处理其他事或者休息，回头再来解决</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Coursera课程</category>
+      </categories>
+      <tags>
+        <tag>Coursera</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Learning how to learn part3</title>
     <url>/2020/06/13/Learning%20how%20to%20learn%20part%203/</url>
     <content><![CDATA[<h1 id="Learning-how-to-learn-part-3"><a href="#Learning-how-to-learn-part-3" class="headerlink" title="Learning how to learn part 3"></a>Learning how to learn part 3</h1><h2 id="一-拖延症"><a href="#一-拖延症" class="headerlink" title="一.拖延症"></a>一.拖延症</h2><h3 id="1-如何应对拖延症"><a href="#1-如何应对拖延症" class="headerlink" title="1.如何应对拖延症"></a>1.如何应对拖延症</h3><ul>
@@ -1233,43 +1285,6 @@
 <li>与难忘的事关联起来</li>
 <li>记忆宫殿技巧</li>
 <li>……</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Coursera课程</category>
-      </categories>
-      <tags>
-        <tag>Coursera</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Learning how to learn part4</title>
-    <url>/2020/06/14/Learning%20how%20to%20learn%20part%204/</url>
-    <content><![CDATA[<h1 id="Learning-how-to-learn-part4"><a href="#Learning-how-to-learn-part4" class="headerlink" title="Learning how to learn part4"></a>Learning how to learn part4</h1><h2 id="一-学习技巧类"><a href="#一-学习技巧类" class="headerlink" title="一.学习技巧类"></a>一.学习技巧类</h2><h3 id="1-比喻和类比"><a href="#1-比喻和类比" class="headerlink" title="1.比喻和类比"></a>1.比喻和类比</h3><ul>
-<li>更好地理解当前概念</li>
-<li>摆脱思维定势<span id="more"></span></li>
-</ul>
-<h2 id="二-左右脑分析"><a href="#二-左右脑分析" class="headerlink" title="二.左右脑分析"></a>二.左右脑分析</h2><h3 id="1-左脑"><a href="#1-左脑" class="headerlink" title="1.左脑"></a>1.左脑</h3><ul>
-<li>左脑帮助我们认识世界，并保持那些认知长久不变</li>
-</ul>
-<h3 id="2-右脑"><a href="#2-右脑" class="headerlink" title="2.右脑"></a>2.右脑</h3><ul>
-<li>右脑有利于我们从全局思考问题</li>
-</ul>
-<h3 id="3-总结"><a href="#3-总结" class="headerlink" title="3.总结"></a>3.总结</h3><ul>
-<li>多回顾复习，从全局思考问题</li>
-<li>加入学习小组，有利于发现盲点，集思广益</li>
-</ul>
-<h2 id="三-如何准备考试"><a href="#三-如何准备考试" class="headerlink" title="三.如何准备考试"></a>三.如何准备考试</h2><h3 id="1-做题"><a href="#1-做题" class="headerlink" title="1.做题"></a>1.做题</h3><ul>
-<li>重新做一遍之前的题，但不需要写出全部细节，写出大概步骤即可</li>
-</ul>
-<h3 id="2-学习小组"><a href="#2-学习小组" class="headerlink" title="2.学习小组"></a>2.学习小组</h3><ul>
-<li>加入一个学习小组，一起复习</li>
-</ul>
-<h3 id="3-做题"><a href="#3-做题" class="headerlink" title="3.做题"></a>3.做题</h3><ul>
-<li>先从难题做起，2分钟内如果没完成，快速换一个相对简单的题，这时候难题会在发散模式中继续思考</li>
-</ul>
-<h3 id="4-应对困难的表现"><a href="#4-应对困难的表现" class="headerlink" title="4.应对困难的表现"></a>4.应对困难的表现</h3><ul>
-<li>如若无法解决，可先放下处理其他事或者休息，回头再来解决</li>
 </ul>
 ]]></content>
       <categories>
@@ -1357,47 +1372,47 @@
   <entry>
     <title>Markdown</title>
     <url>/2020/05/04/Markdown%E8%AF%AD%E6%B3%95/</url>
-    <content><![CDATA[<h1 id="Markdown介绍"><a href="#Markdown介绍" class="headerlink" title="Markdown介绍"></a>Markdown介绍</h1><p>什么是Markdown?它是一种轻量级的文本标记语言，使用它可以更方便地编辑文档。</p>
+    <content><![CDATA[<h1 id="Markdown-介绍"><a href="#Markdown-介绍" class="headerlink" title="Markdown 介绍"></a>Markdown 介绍</h1><p>什么是 Markdown?它是一种轻量级的文本标记语言，使用它可以更方便地编辑文档。</p>
 <p>很多网站都利用它来撰写文档或用于在论坛发消息等等。</p>
-<p>说到这大家可能就像在听天书一样，因为搞不懂专业用语。  </p>
-<p> 事实上这并不是什么计算机编程语言，而是通用的普通人都可以学的标记语言，贱简单呐。</p>
-<p>在讲解常见的Markdown语法之前，我先向大家介绍一下富文本编辑器。</p>
-<p>富文本编辑器其实很常见的，比如Word，WPS的编辑页面就是一种富文本文本编辑器。</p>
-<p>那么它与支持Markdown语法的编辑器有何不同？</p>
-<p>最大的区别在于：富文本编辑器对文本内容的编辑，大多是通过键盘快捷键或者点击编辑按钮比如加粗，斜体，标题设置等来编辑的。</p>
-<p>Markdown编辑器就不一样了，在这里举个例子，如果要设置一级标题，应该怎么处理呢？</p>
-<p>很简单 ，在开头打一个#号就可以了，比如 # 这是一级标题(注意#号留有一个空格)，那么二级标题呢？so easy，在开头打两个#号就可以了。</p>
-<p>是不是很简单？所以学习Markdown语法，并不需要太费脑费劲，只需要记住大部分常用的语法格式即可。</p>
+<p>说到这大家可能就像在听天书一样，因为搞不懂专业用语。</p>
+<p>事实上这并不是什么计算机编程语言，而是通用的普通人都可以学的标记语言，贱简单呐。</p>
+<p>在讲解常见的 Markdown 语法之前，我先向大家介绍一下富文本编辑器。</p>
+<p>富文本编辑器其实很常见的，比如 Word，WPS 的编辑页面就是一种富文本文本编辑器。</p>
 <span id="more"></span>
-<p>下面是我总结的使用Markdown语法编写文章的好处：</p>
+
+<p>那么它与支持 Markdown 语法的编辑器有何不同？</p>
+<p>最大的区别在于：富文本编辑器对文本内容的编辑，大多是通过键盘快捷键或者点击编辑按钮比如加粗，斜体，标题设置等来编辑的。</p>
+<p>Markdown 编辑器就不一样了，在这里举个例子，如果要设置一级标题，应该怎么处理呢？</p>
+<p>很简单 ，在开头打一个#号就可以了，比如 # 这是一级标题(注意#号留有一个空格)，那么二级标题呢？so easy，在开头打两个#号就可以了。</p>
+<p>是不是很简单？所以学习 Markdown 语法，并不需要太费脑费劲，只需要记住大部分常用的语法格式即可。<br>下面是我总结的使用 Markdown 语法编写文章的好处：</p>
 <blockquote>
 <ul>
-<li>沉浸式写作，完全不会太分心，不用再点击鼠标或者敲键盘编辑文章了。  </li>
+<li>沉浸式写作，完全不会太分心，不用再点击鼠标或者敲键盘编辑文章了。</li>
 <li>方便快捷，只需掌握常用语法，即可应付常见格式要求。</li>
-<li>支持多类型文章的导入导出，比如Markdown 编写的文档可以导出 HTML 、Word、图像、PDF、Epub 等多种格式的文档。</li>
+<li>支持多类型文章的导入导出，比如 Markdown 编写的文档可以导出 HTML 、Word、图像、PDF、Epub 等多种格式的文档。</li>
 </ul>
 </blockquote>
-<p>平时写文章或者论文什么的，可以用markdown语法.让你全神贯注一心一意扑在写文章大业上，何乐而不为？</p>
-<p>如果你问我有什么好的Markdown编辑器，那我绝对强烈推荐你用Tlianjie ypora。</p>
+<p>平时写文章或者论文什么的，可以用 markdown 语法.让你全神贯注一心一意扑在写文章大业上，何乐而不为？</p>
+<p>如果你问我有什么好的 Markdown 编辑器，那我绝对强烈推荐你用 Tlianjie ypora。</p>
 <p>为什么呢，你可以点击这篇文章详细了解。接下来不多说，开始迎接主角。</p>
-<h1 id="常用markdown语法"><a href="#常用markdown语法" class="headerlink" title="常用markdown语法"></a>常用markdown语法</h1><h3 id="1-标题"><a href="#1-标题" class="headerlink" title="1.标题"></a>1.标题</h3><blockquote>
-<p>使用 # 可标记标题，其中#号的个数表示标题级别，最高级别是一级标题，最多支持6级标题。</p>
+<h1 id="常用-markdown-语法"><a href="#常用-markdown-语法" class="headerlink" title="常用 markdown 语法"></a>常用 markdown 语法</h1><h3 id="1-标题"><a href="#1-标题" class="headerlink" title="1.标题"></a>1.标题</h3><blockquote>
+<p>使用 # 可标记标题，其中#号的个数表示标题级别，最高级别是一级标题，最多支持 6 级标题。</p>
 </blockquote>
 <p><img src="https://gitee.com/liubeep/blogimage/raw/master/img/20200618220309.gif" alt="img"></p>
 <h3 id="2-字体"><a href="#2-字体" class="headerlink" title="2.字体"></a>2.字体</h3><blockquote>
 <ol>
-<li><p>斜体文字可用 *   * 表示。</p>
+<li><p>斜体文字可用 * * 表示。</p>
 </li>
-<li><p>粗体文字可用 **   **表示。</p>
+<li><p>粗体文字可用 ** **表示。</p>
 </li>
-<li><p>粗斜体文字可用 ***   ***   表示</p>
-<p>其中*号也可用  _代替。</p>
+<li><p>粗斜体文字可用 <strong>* *</strong> 表示</p>
+<p>其中*号也可用 _代替。</p>
 </li>
 </ol>
 </blockquote>
 <p><img src="https://gitee.com/liubeep/blogimage/raw/master/img/20200618221239.gif" alt="img"></p>
 <h3 id="3-分割线"><a href="#3-分割线" class="headerlink" title="3.分割线"></a>3.分割线</h3><blockquote>
-<p>你可以在一行中用三个以上的星号、减号、底线来建立一个分隔线。  </p>
+<p>你可以在一行中用三个以上的星号、减号、底线来建立一个分隔线。</p>
 </blockquote>
 <p><img src="https://gitee.com/liubeep/blogimage/raw/master/img/20200618222113.png" alt="image-20200618222113712"></p>
 <p><img src="https://gitee.com/liubeep/blogimage/raw/master/img/20200618222130.png" alt="image-20200618222130364"></p>
@@ -1405,7 +1420,7 @@
 <p>文字的两端加上两个波浪线 <strong>~~</strong> ,可为文字添加删除线。</p>
 </blockquote>
 <h3 id="5-下划线"><a href="#5-下划线" class="headerlink" title="5.下划线"></a>5.下划线</h3><blockquote>
-<p>文字的左端添加 <u>  ,右端添加 </u> ,可为文字添加下划线</p>
+<p>文字的左端添加 <u> ,右端添加 </u> ,可为文字添加下划线</p>
 </blockquote>
 <h3 id="6-脚注"><a href="#6-脚注" class="headerlink" title="6.脚注"></a>6.脚注</h3><blockquote>
 <p>脚注是对文本的补充说明,它的格式为[^ ]</p>
@@ -1421,7 +1436,7 @@
 <p>有序列表使用数字并加上 . 号来表示.</p>
 </blockquote>
 <h3 id="9-链接"><a href="#9-链接" class="headerlink" title="9.链接"></a>9.链接</h3><blockquote>
-<p>Markdown表示链接有两种方式：</p>
+<p>Markdown 表示链接有两种方式：</p>
 <ol>
 <li>[链接名称] (链接地址)</li>
 <li>&lt;链接地址&gt;</li>
@@ -1444,9 +1459,9 @@
 <p><img src="https://gitee.com/liubeep/blogimage/raw/master/img/20200618230343.png" alt="image-20200618230343812"></p>
 <h3 id="11-表格"><a href="#11-表格" class="headerlink" title="11.表格"></a>11.表格</h3><blockquote>
 <ul>
-<li>Markdown使用 | 来分隔单元格，使用 - - - 来分隔表头和其他行。</li>
+<li>Markdown 使用 | 来分隔单元格，使用 - - - 来分隔表头和其他行。</li>
 <li>-：设置内容和标题居右对齐。</li>
-<li>:-  设置内容和标题居左对齐。</li>
+<li>:- 设置内容和标题居左对齐。</li>
 <li>:-: 设置内容和标题居中对齐。</li>
 </ul>
 </blockquote>
@@ -1454,7 +1469,7 @@
 <p><img src="https://gitee.com/liubeep/blogimage/raw/master/img/20200619071549.png" alt="image-20200619071549100"></p>
 <p>结果：</p>
 <p><img src="https://gitee.com/liubeep/blogimage/raw/master/img/20200619071637.png" alt="image-20200619071637459"></p>
-<p>另外，数学公式也可以用Markdown语法编写，但是有些复杂复杂，而且我们平时也不会经常用到，所以就不介绍了。</p>
+<p>另外，数学公式也可以用 Markdown 语法编写，但是有些复杂复杂，而且我们平时也不会经常用到，所以就不介绍了。</p>
 ]]></content>
       <categories>
         <category>技术笔记</category>
@@ -1465,151 +1480,151 @@
   </entry>
   <entry>
     <title></title>
-    <url>/2022/08/26/Module%E7%9A%84%E5%8A%A0%E8%BD%BD%E5%AE%9E%E7%8E%B0/</url>
-    <content><![CDATA[<h1 id="Module的加载实现"><a href="#Module的加载实现" class="headerlink" title="Module的加载实现"></a>Module的加载实现</h1><ol>
-<li>在浏览器中加载ES6模块<ol>
-<li>&lt;javascript&gt;标签的两种属性async与defer的相同点是都是异步加载。</li>
-<li>&lt;javascript&gt;标签的两种属性async与defer区别<ol>
-<li>defer：页面渲染完后执行。</li>
-<li>async：脚本下载完成后执行，同时中断当前的渲染。</li>
-<li>多个defer脚本按顺序执行，多个async脚本执行顺序不能保证。</li>
-</ol>
-</li>
-<li>模块顶层的this指向undefined。</li>
-<li>在浏览器中加载ES6模块时，需要在&lt;javascript&gt;标签中指定type&#x3D;”module”属性。</li>
-<li>浏览器中的ES6模块，默认是defer属性的异步加载。</li>
-</ol>
-</li>
-<li>CommonJs模块和ES6模块的区别<ol>
-<li>CommonJs模块输出的值的拷贝，ES6模块输出的是值的引用。</li>
-<li>CommonJs是运行时加载，而ES6模块是编译输出接口。</li>
-<li>commonJS是同步加载，而ES6模块是异步加载。</li>
-</ol>
-</li>
-<li>在Node中加载ES6模块<ol>
-<li>在package.json中在type改为’module’。</li>
-<li>或者将文件名的后缀改为.mjs。</li>
-<li>如果type已经改为’module’,但又想用require命令加载模块，可将当前文件后缀改为.cjs。</li>
-<li>ES6模块可以import命令加载CommonJs模块，但CommonJs不能加载ES6模块。</li>
-</ol>
-</li>
-<li>CommonJs模块加载的原理是加载时执行，并且会缓存下来，以后后面再加载时不会再执行。</li>
-</ol>
-]]></content>
-  </entry>
-  <entry>
-    <title></title>
     <url>/2022/08/26/Module%E8%AF%AD%E6%B3%95/</url>
-    <content><![CDATA[<h1 id="Module语法"><a href="#Module语法" class="headerlink" title="Module语法"></a>Module语法</h1><ol>
-<li>ES6模块可在编译时(即静态阶段)确定模块的编译关系，而CommonJS只能在运行时确定模块的依赖关系，所以ES6模块可实现静态优化。</li>
-<li>ES6模块支持按需加载需要的模块方法，但CommonJS只能加载所有的模块方法。</li>
-<li>ES6模块自动采用严格模式。</li>
-<li>export命令规定模块的对外接口，import命令用于从模块中导入需要的功能。</li>
-<li>export命令可以输出变量，函数和类。</li>
-<li>通过import命令导入的模块，可在模块导入语句的头部提前执行。</li>
+    <content><![CDATA[<h1 id="Module-语法"><a href="#Module-语法" class="headerlink" title="Module 语法"></a>Module 语法</h1><ol>
+<li>ES6 模块可在编译时(即静态阶段)确定模块的编译关系，而 CommonJS 只能在运行时确定模块的依赖关系，所以 ES6 模块可实现静态优化。</li>
+<li>ES6 模块支持按需加载需要的模块方法，但 CommonJS 只能加载所有的模块方法。</li>
+<li>ES6 模块自动采用严格模式。</li>
+<li>export 命令规定模块的对外接口，import 命令用于从模块中导入需要的功能。</li>
+<li>export 命令可以输出变量，函数和类。</li>
+<li>通过 import 命令导入的模块，可在模块导入语句的头部提前执行。<span id="more"></span></li>
 <li>按需导入的变量名应与按需导出的名字一致，</li>
 <li>如果有多个导入相同模块的语句，那么只会执行一次。</li>
-<li>模块的整体加载即import * as x from ‘xxx’，将模块全部加载进对象x中。</li>
-<li>export default命令与export命令的区别<ol>
-<li>前者的import不需要大括号，而后者需要。</li>
+<li>模块的整体加载即 import * as x from ‘xxx’，将模块全部加载进对象 x 中。</li>
+<li>export default 命令与 export 命令的区别<ol>
+<li>前者的 import 不需要大括号，而后者需要。</li>
 <li>前者在模块中只能使用一次，而后者可以使用多次。</li>
-<li>前者的import可以直接起别名，而后者只能使用as关键词。</li>
+<li>前者的 import 可以直接起别名，而后者只能使用 as 关键词。</li>
 <li>前者可以同时默认导入和按需导入。</li>
 </ol>
 </li>
-<li>export default的本周是将后面的值赋给一个叫default的对象。</li>
+<li>export default 的本周是将后面的值赋给一个叫 default 的对象。</li>
 <li>export { x,y } from ‘my_module’相当于如下两行语句<ol>
 <li>import {x,y} from ‘my_module’;</li>
 <li>export {x,y};</li>
 </ol>
 </li>
-<li>支持const声明的常量跨模块共享。</li>
+<li>支持 const 声明的常量跨模块共享。</li>
 <li>import()函数用来动态加载模块，并且返回一个 Promise 对象。</li>
 </ol>
 ]]></content>
   </entry>
   <entry>
     <title></title>
+    <url>/2022/08/26/Module%E7%9A%84%E5%8A%A0%E8%BD%BD%E5%AE%9E%E7%8E%B0/</url>
+    <content><![CDATA[<h1 id="Module-的加载实现"><a href="#Module-的加载实现" class="headerlink" title="Module 的加载实现"></a>Module 的加载实现</h1><ol>
+<li>在浏览器中加载 ES6 模块<ol>
+<li>&lt;javascript&gt;标签的两种属性 async 与 defer 的相同点是都是异步加载。</li>
+<li>&lt;javascript&gt;标签的两种属性 async 与 defer 区别<ol>
+<li>defer：页面渲染完后执行。</li>
+<li>async：脚本下载完成后执行，同时中断当前的渲染。</li>
+<li>多个 defer 脚本按顺序执行，多个 async 脚本执行顺序不能保证。</li>
+</ol>
+</li>
+<li>模块顶层的 this 指向 undefined。</li>
+<li>在浏览器中加载 ES6 模块时，需要在&lt;javascript&gt;标签中指定 type&#x3D;”module”属性。</li>
+<li>浏览器中的 ES6 模块，默认是 defer 属性的异步加载。<span id="more"></span></li>
+</ol>
+</li>
+<li>CommonJs 模块和 ES6 模块的区别<ol>
+<li>CommonJs 模块输出的值的拷贝，ES6 模块输出的是值的引用。</li>
+<li>CommonJs 是运行时加载，而 ES6 模块是编译输出接口。</li>
+<li>commonJS 是同步加载，而 ES6 模块是异步加载。</li>
+</ol>
+</li>
+<li>在 Node 中加载 ES6 模块<ol>
+<li>在 package.json 中在 type 改为’module’。</li>
+<li>或者将文件名的后缀改为.mjs。</li>
+<li>如果 type 已经改为’module’,但又想用 require 命令加载模块，可将当前文件后缀改为.cjs。</li>
+<li>ES6 模块可以 import 命令加载 CommonJs 模块，但 CommonJs 不能加载 ES6 模块。</li>
+</ol>
+</li>
+<li>CommonJs 模块加载的原理是加载时执行，并且会缓存下来，以后后面再加载时不会再执行。</li>
+</ol>
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
     <url>/2022/08/26/Promise%E5%AF%B9%E8%B1%A1/</url>
-    <content><![CDATA[<h1 id="Promise对象"><a href="#Promise对象" class="headerlink" title="Promise对象"></a>Promise对象</h1><ol>
-<li>Promise是一种异步编程的解决方案，简单来说就像一种容器，里面保存着某个只有未来才会结束的事件的结果。</li>
-<li>Promise的三种状态，pending(进行中),fulfilled(已完成),rejected(已失败)。</li>
-<li>Promise的最终状态由异步操作之后的结果决定，并且状态改变之后不会再变。</li>
-<li>Promise 内部的错误不会影响到 Promise 外部的代码</li>
-<li>Promise的两种状态变更<ol>
-<li>由pending到fulfilled。</li>
-<li>由pending到rejected。</li>
+    <content><![CDATA[<h1 id="Promise-对象"><a href="#Promise-对象" class="headerlink" title="Promise 对象"></a>Promise 对象</h1><ol>
+<li>Promise 是一种异步编程的解决方案，简单来说就像一种容器，里面保存着某个只有未来才会结束的事件的结果。</li>
+<li>Promise 的三种状态，pending(进行中),fulfilled(已完成),rejected(已失败)。</li>
+<li>Promise 的最终状态由异步操作之后的结果决定，并且状态改变之后不会再变。</li>
+<li>Promise 内部的错误不会影响到 Promise 外部的代码<span id="more"></span></li>
+<li>Promise 的两种状态变更<ol>
+<li>由 pending 到 fulfilled。</li>
+<li>由 pending 到 rejected。</li>
 </ol>
 </li>
-<li>创建Promise实例<ol>
-<li>通过构造函数new Promise()来创建一个Promise实例。</li>
-<li>这个构造函数接受一个函数形式的参数，并且这参数接受两个参数resolve和reject。</li>
-<li>resolve方法用于把异步操作成功之后的结果作为参数传递过去。</li>
-<li>resolve方法的参数也可以是另一个Promise实例，这时候当前的Promise状态由作为resolve参数的Promise实例状态决定。</li>
-<li>reject方法用于把异步操作失败之后的报错作为参数传递过去。</li>
+<li>创建 Promise 实例<ol>
+<li>通过构造函数 new Promise()来创建一个 Promise 实例。</li>
+<li>这个构造函数接受一个函数形式的参数，并且这参数接受两个参数 resolve 和 reject。</li>
+<li>resolve 方法用于把异步操作成功之后的结果作为参数传递过去。</li>
+<li>resolve 方法的参数也可以是另一个 Promise 实例，这时候当前的 Promise 状态由作为 resolve 参数的 Promise 实例状态决定。</li>
+<li>reject 方法用于把异步操作失败之后的报错作为参数传递过去。</li>
 </ol>
 </li>
-<li>then方法<ol>
-<li>then方法在当前脚本的所有同步任务完成之后才会执行。</li>
+<li>then 方法<ol>
+<li>then 方法在当前脚本的所有同步任务完成之后才会执行。</li>
 <li>一般用于指示下一步流程</li>
-<li>then方法接受两个参数，并且都是可选的，第一个表示状态为resolve时调用，第二个表示状态为reject时调用。</li>
-<li>如果只有一个参数时，就表示状态为resolve时调用。</li>
-<li>then方法返回一个promise实例，意味着可以进行链式调用。</li>
+<li>then 方法接受两个参数，并且都是可选的，第一个表示状态为 resolve 时调用，第二个表示状态为 reject 时调用。</li>
+<li>如果只有一个参数时，就表示状态为 resolve 时调用。</li>
+<li>then 方法返回一个 promise 实例，意味着可以进行链式调用。</li>
 </ol>
 </li>
-<li>catch方法<ol>
-<li>它其实相当于只有一个参数，并且状态为reject时的then方法。</li>
+<li>catch 方法<ol>
+<li>它其实相当于只有一个参数，并且状态为 reject 时的 then 方法。</li>
 <li>主要是用来捕获错误的。</li>
-<li>catch方法返回的也是一个Promise实例。</li>
+<li>catch 方法返回的也是一个 Promise 实例。</li>
 </ol>
 </li>
-<li>finally方法<ol>
-<li>finally方法表示不管状态如何，最后都会执行的方法。</li>
+<li>finally 方法<ol>
+<li>finally 方法表示不管状态如何，最后都会执行的方法。</li>
 </ol>
 </li>
-<li>all方法<ol>
-<li>将多个Promise实例组合成一个新的Promise实例。</li>
-<li>适用于并行执行多个Promise实例。</li>
-<li>参数为一个数组，并且数组元素都是Promise实例。</li>
-<li>如果数组元素不是Promise实例，会调用resolve()方法转换成Promise实例。</li>
-<li>整合的Promise实例的状态由组合成它的多个Promise实例状态决定<ol>
-<li>当所有Promise实例状态都为fulfilled时，这个整合的Promise实例状态为fulfilled，它的结果为一个新数组，并且数组元素为每个promise实例返回的结果。</li>
-<li>当任意一个Promise实例状态为reject时，这个整合的Promise实例状态为fulfilled，会返回碰到的第一个reject实例的返回值。</li>
+<li>all 方法<ol>
+<li>将多个 Promise 实例组合成一个新的 Promise 实例。</li>
+<li>适用于并行执行多个 Promise 实例。</li>
+<li>参数为一个数组，并且数组元素都是 Promise 实例。</li>
+<li>如果数组元素不是 Promise 实例，会调用 resolve()方法转换成 Promise 实例。</li>
+<li>整合的 Promise 实例的状态由组合成它的多个 Promise 实例状态决定<ol>
+<li>当所有 Promise 实例状态都为 fulfilled 时，这个整合的 Promise 实例状态为 fulfilled，它的结果为一个新数组，并且数组元素为每个 promise 实例返回的结果。</li>
+<li>当任意一个 Promise 实例状态为 reject 时，这个整合的 Promise 实例状态为 fulfilled，会返回碰到的第一个 reject 实例的返回值。</li>
 </ol>
 </li>
 </ol>
 </li>
-<li>race方法<ol>
-<li>将多个Promise实例组合成一个新的Promise实例P。</li>
-<li>如果数组中的任意一个实例状态率先改变状态，就会将首先改变的实例的返回值传递给实例P的回调函数。</li>
+<li>race 方法<ol>
+<li>将多个 Promise 实例组合成一个新的 Promise 实例 P。</li>
+<li>如果数组中的任意一个实例状态率先改变状态，就会将首先改变的实例的返回值传递给实例 P 的回调函数。</li>
 </ol>
 </li>
-<li>allSettled方法<ol>
+<li>allSettled 方法<ol>
 <li>当一组异步操作完成后，不管每一个操作是成功还是失败，都进行下一步操作。</li>
-<li>它的参数为原先的数组，数组的元素都是Promise对象。</li>
-<li>它返回一个新的Promise实例对象，有status和value属性。</li>
-<li>只有等到参数数组里的Promise对象都发生状态变更，这个新的Promise实例对象才会发生状态变更，并且状态只能为fulfilled。</li>
+<li>它的参数为原先的数组，数组的元素都是 Promise 对象。</li>
+<li>它返回一个新的 Promise 实例对象，有 status 和 value 属性。</li>
+<li>只有等到参数数组里的 Promise 对象都发生状态变更，这个新的 Promise 实例对象才会发生状态变更，并且状态只能为 fulfilled。</li>
 </ol>
 </li>
-<li>any方法<ol>
-<li>将多个Promise实例组合成一个新的Promise实例。</li>
-<li>只要有一个Promise实例状态为fulfilled状态，那么这个新的Promise实例的状态为fulfilled</li>
-<li>只有每一个Promise实例都为rejected状态，这个新的Promise实例的状态才为rejected</li>
+<li>any 方法<ol>
+<li>将多个 Promise 实例组合成一个新的 Promise 实例。</li>
+<li>只要有一个 Promise 实例状态为 fulfilled 状态，那么这个新的 Promise 实例的状态为 fulfilled</li>
+<li>只有每一个 Promise 实例都为 rejected 状态，这个新的 Promise 实例的状态才为 rejected</li>
 </ol>
 </li>
 <li>resolve<ol>
-<li>用来将一个对象转换为Promise对象</li>
+<li>用来将一个对象转换为 Promise 对象</li>
 <li>参数的四种情况<ol>
-<li>如果参数是Promise实例，则原封不动地不做任何修改</li>
-<li>参数是thenable对象(指有then方法的对象)，则将thenable对象转为Promise对象后，再立马执行thenanle对象中的then方法</li>
-<li>如果参数是原始值，则返回一个状态为resolve的Promise实例</li>
-<li>如果不带任何参数，也是直接返回一个resolve状态的Promise实例，需要注意的是这个Promise对象要在本轮循环结束后才会执行</li>
+<li>如果参数是 Promise 实例，则原封不动地不做任何修改</li>
+<li>参数是 thenable 对象(指有 then 方法的对象)，则将 thenable 对象转为 Promise 对象后，再立马执行 thenanle 对象中的 then 方法</li>
+<li>如果参数是原始值，则返回一个状态为 resolve 的 Promise 实例</li>
+<li>如果不带任何参数，也是直接返回一个 resolve 状态的 Promise 实例，需要注意的是这个 Promise 对象要在本轮循环结束后才会执行</li>
 </ol>
 </li>
 </ol>
 </li>
 <li>reject()<ol>
-<li>返回一个状态为rejected的Promise实例。</li>
+<li>返回一个状态为 rejected 的 Promise 实例。</li>
 </ol>
 </li>
 </ol>
@@ -1619,118 +1634,60 @@
     <title></title>
     <url>/2022/08/26/VueRouter/</url>
     <content><![CDATA[<h1 id="VueRouter"><a href="#VueRouter" class="headerlink" title="VueRouter"></a>VueRouter</h1><ol>
-<li>导入vue及vue-router库</li>
-<li>安装vue-router插件</li>
-<li>导入路由组件</li>
-<li>创建路由数组即routes数组，数组一般有<ol>
-<li>path属性定义访问路径</li>
-<li>component属性指定组件名</li>
-<li>redirect属性用于路由重定向</li>
-<li>meta属性是一个对象，为路由记录添加其他额外信息，通过这个信息以实现控制路由的访问等功能</li>
+<li><p>导入 vue 及 vue-router 库</p>
+</li>
+<li><p>安装 vue-router 插件</p>
+</li>
+<li><p>导入路由组件</p>
+</li>
+<li><p>创建路由数组即 routes 数组，数组一般有 1. path 属性定义访问路径 2. component 属性指定组件名 3. redirect 属性用于路由重定向 4. meta 属性是一个对象，为路由记录添加其他额外信息，通过这个信息以实现控制路由的访问等功能</p>
+<span id="more"></span>
+</li>
+<li><p>创建路由器对象即通过 new VueRouter()构造函数,将 routes 数组传入构造函数参数里,其他参数：mode:指定 url 地址是否带有 # 号</p>
+</li>
+<li><p>导出路由配置文件</p>
+</li>
+<li><p>在 main.js 主入口文件中引入路由规则文件，并且注册路由</p>
+</li>
+<li><p>vue 路由是一种键值对，它表示的是路径与路由组件之间的映射</p>
+</li>
+<li><p>路由的$route 属性用于获取路由相关信息如 query,params，fullPath(可用于组件的隐藏或显示)等</p>
+<ol>
+<li>query 查询参数，也就是 url 地址?后面的参数,不需要预先占位。</li>
+<li>params 路径参数相当于 url 地址的一部分，用于动态指定 url 地址，需要预先占位。</li>
 </ol>
 </li>
-<li>创建路由器对象即通过new VueRouter()构造函数,将routes数组传入构造函数参数里,其他参数：mode:指定url地址是否带有 # 号</li>
-<li>导出路由配置文件</li>
-<li>在main.js主入口文件中引入路由规则文件，并且注册路由</li>
-<li>vue路由是一种键值对，它表示的是路径与路由组件之间的映射</li>
-<li>路由的$route属性用于获取路由相关信息如query,params，fullPath(可用于组件的隐藏或显示)等<ol>
-<li>query查询参数，也就是url地址?后面的参数,不需要预先占位。</li>
-<li>params路径参数相当于url地址的一部分，用于动态指定url地址，需要预先占位。</li>
-</ol>
-</li>
-<li>路由传参的时候，如何指定params参数可传也可不传<ol>
+<li><p>路由传参的时候，如何指定 params 参数可传也可不传</p>
+<ol>
 <li>在配置路由规则的时候，在路由占位的后面加上一个问号。</li>
-<li>如果同时提供了path和params，那么params会被省略，但是query不会。</li>
-<li>如果同时提供了name和params，那么params可以正常工作。</li>
+<li>如果同时提供了 path 和 params，那么 params 会被省略，但是 query 不会。</li>
+<li>如果同时提供了 name 和 params，那么 params 可以正常工作。</li>
 </ol>
 </li>
-<li>路由的$router属性用于编程式导航进行路由跳转(Push|replace)等</li>
-<li>路由有声明式导航(router-link)和编程式导航，其中声明式导航必须有to属性</li>
-<li>三种路由跳转方法<ol>
+<li><p>路由的$router 属性用于编程式导航进行路由跳转(Push|replace)等</p>
+</li>
+<li><p>路由有声明式导航(router-link)和编程式导航，其中声明式导航必须有 to 属性</p>
+</li>
+<li><p>三种路由跳转方法</p>
+<ol>
 <li>push()方法会在路由历史栈中添加一条新的记录</li>
 <li>replace()方法只是替换，而不会向历史栈中添加一条新的记录</li>
 <li>go()表示在历史栈中前进或后退多步</li>
 </ol>
 </li>
-<li>路由的前进或者后退<ol>
+<li><p>路由的前进或者后退</p>
+<ol>
 <li>router.forward()前进一步</li>
 <li>router.back()后退一步</li>
 </ol>
 </li>
-<li>三种使用props传参的方式<ol>
-<li>布尔模式：props&#x3D;true,这时props的值为params</li>
-<li>对象模式：props的值为一个对象</li>
-<li>函数模式：返回一个props对，route &#x3D;&gt; ({ })</li>
+<li><p>三种使用 props 传参的方式</p>
+<ol>
+<li>布尔模式：props&#x3D;true,这时 props 的值为 params</li>
+<li>对象模式：props 的值为一个对象</li>
+<li>函数模式：返回一个 props 对，route &#x3D;&gt; ({ })</li>
 </ol>
 </li>
-</ol>
-]]></content>
-  </entry>
-  <entry>
-    <title></title>
-    <url>/2022/08/26/Vuex%20%20/</url>
-    <content><![CDATA[<h1 id="Vuex"><a href="#Vuex" class="headerlink" title="Vuex"></a>Vuex</h1><ol>
-<li>作用：集中管理项目中组件公用的数据</li>
-<li>使用场景：项目过大，组件多，并且数据量多的情况下可以使用vuex</li>
-<li>vuex的状态是响应式的</li>
-<li>mutations不能直接更改状态</li>
-<li>Vuex使用步骤：<ol>
-<li>创建store目录，在这个目录下创建index.js文件</li>
-<li>导入Vue及Vuex库</li>
-<li>安装Vuex库，即Vue.use(Vuex)</li>
-<li>创建vuex实例，通过new Vuex.Store({})方法</li>
-<li>向外导出Vuex实例</li>
-<li>在入口文件中导入vuex实例</li>
-<li>注册vuex实例</li>
-</ol>
-</li>
-<li>vuex的几个核心概念<ol>
-<li>state<ol>
-<li>类似于vue的data属性，存储数据源</li>
-</ol>
-</li>
-<li>mutations<ol>
-<li>mutation是同步事务</li>
-<li>类似于vue实例的methods属性，修改数据源状态，但不能处理异步方法</li>
-<li>不能直接修改state的值，可在子组件中通过调用this.$store.commit(‘xxx’)来更改store中state的值</li>
-<li>mutation相当于注册事件，而commit相当于触发事件</li>
-<li>mutation载荷：在commit方法中提交额外的参数</li>
-<li>在commit方法中，也可以提交一个对象形式的参数，并且这个对象包含一个叫做type的属性,它的值为mutation中的某个方法名</li>
-<li>有载荷和对象风格这两种提交commit的方式</li>
-<li>在mutation中使用异步可能会导致程序很难被调试</li>
-</ol>
-</li>
-<li>getters<ol>
-<li>可以理解为vuex的计算computed属性</li>
-<li>默认state作为第一个参数，第二个参数可以为其他getter</li>
-<li>可以通过属性的方式访问（会缓存结果），也可以通过方法访问（不会缓存结果），相同点是可通过store.getters对象进行访问</li>
-</ol>
-</li>
-<li>actions<ol>
-<li>相当于能处理异步操作的mutation</li>
-<li>actions提交的是mutation</li>
-<li>类似于vue实例的methods属性，可以书写自己的业务逻辑，或者处理异步方法</li>
-<li>Action函数接收一个与store实例具有相同方法和属性的context对象参数</li>
-<li>为了简化代码context对象可通过解构赋值为{commit}方法来提交mutation，相当于const {commit}&#x3D;context</li>
-<li>store.dispatch()方法可以触发action，它的优点是可以破除异步限制，一般在根组件发出请求</li>
-<li>有载荷和对象风格这两种分发方式</li>
-<li>只有当所有触发函数完成后，返回的Promise才会执行</li>
-</ol>
-</li>
-<li>modules<ol>
-<li>将store分割成模块，每个模块都有自己的state,mutations,getters,actions属性</li>
-<li>解决可能的store对象臃肿问题</li>
-<li>对于模块内部的mutation及getter函数，第一个参数为模块的局部状态对象</li>
-<li>对于模块内部的action，局部状态通过context.state暴露出来，而根节点为context.rootState</li>
-<li>可使用store.registerModule()方法动态注册模块</li>
-<li>可使用store.hashModule(modulename)检查模块是否被注册</li>
-</ol>
-</li>
-</ol>
-</li>
-<li>可以通过vue实例的$store属性对象进行访问</li>
-<li>使用映射函数的好处是可以减少代码重复书写良，和扩展运算符结合使用</li>
-<li>mapState函数可以帮忙生成computed属性，但是它返回的是一个对象，所以还需用对象展开运算符去除里面的所有对象。</li>
 </ol>
 ]]></content>
   </entry>
@@ -1750,6 +1707,167 @@
 <li>给当前await命令语句写进try-catch结构，或者调用catch()方法，这样如果当前await命令出现错误，不会影响后面的await命令继续执行</li>
 </ol>
 ]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2022/08/26/Vuex%20%20/</url>
+    <content><![CDATA[<h1 id="Vuex"><a href="#Vuex" class="headerlink" title="Vuex"></a>Vuex</h1><ol>
+<li><p>作用：集中管理项目中组件公用的数据</p>
+</li>
+<li><p>使用场景：项目过大，组件多，并且数据量多的情况下可以使用 vuex</p>
+</li>
+<li><p>vuex 的状态是响应式的</p>
+</li>
+<li><p>mutations 不能直接更改状态</p>
+</li>
+<li><p>Vuex 使用步骤： 1. 创建 store 目录，在这个目录下创建 index.js 文件 2. 导入 Vue 及 Vuex 库 3. 安装 Vuex 库，即 Vue.use(Vuex) 4. 创建 vuex 实例，通过 new Vuex.Store({})方法 5. 向外导出 Vuex 实例 6. 在入口文件中导入 vuex 实例 7. 注册 vuex 实例</p>
+<span id="more"></span>
+</li>
+<li><p>vuex 的几个核心概念</p>
+<ol>
+<li>state<ol>
+<li>类似于 vue 的 data 属性，存储数据源</li>
+</ol>
+</li>
+<li>mutations<ol>
+<li>mutation 是同步事务</li>
+<li>类似于 vue 实例的 methods 属性，修改数据源状态，但不能处理异步方法</li>
+<li>不能直接修改 state 的值，可在子组件中通过调用 this.$store.commit(‘xxx’)来更改 store 中 state 的值</li>
+<li>mutation 相当于注册事件，而 commit 相当于触发事件</li>
+<li>mutation 载荷：在 commit 方法中提交额外的参数</li>
+<li>在 commit 方法中，也可以提交一个对象形式的参数，并且这个对象包含一个叫做 type 的属性,它的值为 mutation 中的某个方法名</li>
+<li>有载荷和对象风格这两种提交 commit 的方式</li>
+<li>在 mutation 中使用异步可能会导致程序很难被调试</li>
+</ol>
+</li>
+<li>getters<ol>
+<li>可以理解为 vuex 的计算 computed 属性</li>
+<li>默认 state 作为第一个参数，第二个参数可以为其他 getter</li>
+<li>可以通过属性的方式访问（会缓存结果），也可以通过方法访问（不会缓存结果），相同点是可通过 store.getters 对象进行访问</li>
+</ol>
+</li>
+<li>actions<ol>
+<li>相当于能处理异步操作的 mutation</li>
+<li>actions 提交的是 mutation</li>
+<li>类似于 vue 实例的 methods 属性，可以书写自己的业务逻辑，或者处理异步方法</li>
+<li>Action 函数接收一个与 store 实例具有相同方法和属性的 context 对象参数</li>
+<li>为了简化代码 context 对象可通过解构赋值为{commit}方法来提交 mutation，相当于 const {commit}&#x3D;context</li>
+<li>store.dispatch()方法可以触发 action，它的优点是可以破除异步限制，一般在根组件发出请求</li>
+<li>有载荷和对象风格这两种分发方式</li>
+<li>只有当所有触发函数完成后，返回的 Promise 才会执行</li>
+</ol>
+</li>
+<li>modules<ol>
+<li>将 store 分割成模块，每个模块都有自己的 state,mutations,getters,actions 属性</li>
+<li>解决可能的 store 对象臃肿问题</li>
+<li>对于模块内部的 mutation 及 getter 函数，第一个参数为模块的局部状态对象</li>
+<li>对于模块内部的 action，局部状态通过 context.state 暴露出来，而根节点为 context.rootState</li>
+<li>可使用 store.registerModule()方法动态注册模块</li>
+<li>可使用 store.hashModule(modulename)检查模块是否被注册</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>可以通过 vue 实例的$store 属性对象进行访问</p>
+</li>
+<li><p>使用映射函数的好处是可以减少代码重复书写良，和扩展运算符结合使用</p>
+</li>
+<li><p>mapState 函数可以帮忙生成 computed 属性，但是它返回的是一个对象，所以还需用对象展开运算符去除里面的所有对象。</p>
+</li>
+</ol>
+]]></content>
+  </entry>
+  <entry>
+    <title>Git分支</title>
+    <url>/2020/06/06/branch/</url>
+    <content><![CDATA[<h1 id="Git进阶学习"><a href="#Git进阶学习" class="headerlink" title="Git进阶学习"></a>Git进阶学习</h1><blockquote>
+<p>本文是Git的进阶学习篇，来源于<a href="https://git-scm.com/book/zh/v2">Git官方网站</a>.<br>入门篇可点击<a href="https://www.lbihua.cn/2020/07/11/Git/">Git入门学习篇</a>阅读.<br>进阶学习之基础篇可点击<a href="https://www.lbihua.cn/AdvancedGit/Basic.html">基础</a>.<br>进阶学习之起步篇可点击<a href="https://www.lbihua.cn/AdvancedGit/Start.html">起步</a>.</p>
+</blockquote>
+<span id="more"></span>
+
+<h2 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h2><ol>
+<li><h5 id="Git仓库对象"><a href="#Git仓库对象" class="headerlink" title="Git仓库对象"></a>Git仓库对象</h5><ul>
+<li><strong>blob对象</strong>保存着文件快照</li>
+<li><strong>树对象</strong>记录着目录结构和<strong>blob对象索引</strong></li>
+<li><strong>提交对象</strong>保存着树对象索引和提交信息</li>
+</ul>
+</li>
+<li><h5 id="Git分支"><a href="#Git分支" class="headerlink" title="Git分支"></a>Git分支</h5><ul>
+<li>创建分支<ul>
+<li><code>git branch &lt;branch&gt;</code></li>
+<li><code>git checkout -b &lt;branch&gt;</code>创建分支并切换</li>
+</ul>
+</li>
+<li>查看分支的指向<ul>
+<li><code> git log --oneline --decorate</code>查看分支指向的提交点</li>
+</ul>
+</li>
+<li>切换分支<ul>
+<li><code>git checkout  &lt;branch&gt;</code>切换分支</li>
+</ul>
+</li>
+<li>分支合并<ul>
+<li><code>git merge &lt;branch&gt;</code></li>
+</ul>
+</li>
+<li>删除分支<ul>
+<li><code>git branch -d &lt;branch&gt;</code></li>
+</ul>
+</li>
+<li>查看分支<ul>
+<li><code>git branch</code>查看当前项目的所有分支</li>
+<li><code>git branch -v</code>查看当前项目的所有分支以及它们的前七位哈希值和提交说明</li>
+<li><code>git branch --merged</code>查看已经合并到当前分支的分支</li>
+<li><code>git branch --no-merged</code>查看未合并到当前分支的分支</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h5 id="Git远程分支"><a href="#Git远程分支" class="headerlink" title="Git远程分支"></a>Git远程分支</h5><ul>
+<li>创建跟踪分支<ul>
+<li>从一个远程分支检出的本地分支叫做跟踪分支，它跟踪的分支叫做上游分支</li>
+<li>设置跟踪分支的目的是在这个分支上进行工作。</li>
+<li>从远程仓库克隆时会自动创建一个跟踪分支 ，即master分支。</li>
+<li><code>git checkout -b &lt;branch&gt; &lt;origin&gt;/&lt;branch&gt;</code></li>
+<li><code>git branch --track &lt;origin&gt;/&lt;branch&gt;</code></li>
+<li><code>git checkout &lt;branch&gt;</code>如果检出的本地分支不存在而刚好存在一个与其名字匹配的远程分支，则在检出时会自动创建跟踪分支</li>
+</ul>
+</li>
+<li>重命名跟踪分支<ul>
+<li><code>git checkout -b &lt;branch&gt; &lt;origin&gt;/&lt;branch&gt;</code></li>
+</ul>
+</li>
+<li>修改被跟踪的上游分支<ul>
+<li><code> git branch -u &lt;origin&gt;/&lt;branch&gt;</code></li>
+</ul>
+</li>
+<li>查看跟踪分支<ul>
+<li><code>git branch -vv</code></li>
+</ul>
+</li>
+<li>删除远程分支<ul>
+<li><code>git push &lt;origin&gt; --delete &lt;branch&gt;</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h5 id="Git变基"><a href="#Git变基" class="headerlink" title="Git变基"></a>Git变基</h5><ul>
+<li>变基是对两个已修改提交的处理，不同于合并，变基是把修改和补丁应用到另一个分支上，而合并是对两个提交快照的内容合并。</li>
+<li>变基与合并有截然不同的的提交历史，变基是线性的，而合并是并行的。</li>
+<li><code>git rebase &lt;branch&gt;</code></li>
+<li>流程：先变基后合并。</li>
+</ul>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>技术笔记</category>
+        <category>Git</category>
+        <category>Git进阶</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+      </tags>
   </entry>
   <entry>
     <title>Git基础</title>
@@ -1935,98 +2053,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Git分支</title>
-    <url>/2020/06/06/branch/</url>
-    <content><![CDATA[<h1 id="Git进阶学习"><a href="#Git进阶学习" class="headerlink" title="Git进阶学习"></a>Git进阶学习</h1><blockquote>
-<p>本文是Git的进阶学习篇，来源于<a href="https://git-scm.com/book/zh/v2">Git官方网站</a>.<br>入门篇可点击<a href="https://www.lbihua.cn/2020/07/11/Git/">Git入门学习篇</a>阅读.<br>进阶学习之基础篇可点击<a href="https://www.lbihua.cn/AdvancedGit/Basic.html">基础</a>.<br>进阶学习之起步篇可点击<a href="https://www.lbihua.cn/AdvancedGit/Start.html">起步</a>.</p>
-</blockquote>
-<span id="more"></span>
-
-<h2 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h2><ol>
-<li><h5 id="Git仓库对象"><a href="#Git仓库对象" class="headerlink" title="Git仓库对象"></a>Git仓库对象</h5><ul>
-<li><strong>blob对象</strong>保存着文件快照</li>
-<li><strong>树对象</strong>记录着目录结构和<strong>blob对象索引</strong></li>
-<li><strong>提交对象</strong>保存着树对象索引和提交信息</li>
-</ul>
-</li>
-<li><h5 id="Git分支"><a href="#Git分支" class="headerlink" title="Git分支"></a>Git分支</h5><ul>
-<li>创建分支<ul>
-<li><code>git branch &lt;branch&gt;</code></li>
-<li><code>git checkout -b &lt;branch&gt;</code>创建分支并切换</li>
-</ul>
-</li>
-<li>查看分支的指向<ul>
-<li><code> git log --oneline --decorate</code>查看分支指向的提交点</li>
-</ul>
-</li>
-<li>切换分支<ul>
-<li><code>git checkout  &lt;branch&gt;</code>切换分支</li>
-</ul>
-</li>
-<li>分支合并<ul>
-<li><code>git merge &lt;branch&gt;</code></li>
-</ul>
-</li>
-<li>删除分支<ul>
-<li><code>git branch -d &lt;branch&gt;</code></li>
-</ul>
-</li>
-<li>查看分支<ul>
-<li><code>git branch</code>查看当前项目的所有分支</li>
-<li><code>git branch -v</code>查看当前项目的所有分支以及它们的前七位哈希值和提交说明</li>
-<li><code>git branch --merged</code>查看已经合并到当前分支的分支</li>
-<li><code>git branch --no-merged</code>查看未合并到当前分支的分支</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><h5 id="Git远程分支"><a href="#Git远程分支" class="headerlink" title="Git远程分支"></a>Git远程分支</h5><ul>
-<li>创建跟踪分支<ul>
-<li>从一个远程分支检出的本地分支叫做跟踪分支，它跟踪的分支叫做上游分支</li>
-<li>设置跟踪分支的目的是在这个分支上进行工作。</li>
-<li>从远程仓库克隆时会自动创建一个跟踪分支 ，即master分支。</li>
-<li><code>git checkout -b &lt;branch&gt; &lt;origin&gt;/&lt;branch&gt;</code></li>
-<li><code>git branch --track &lt;origin&gt;/&lt;branch&gt;</code></li>
-<li><code>git checkout &lt;branch&gt;</code>如果检出的本地分支不存在而刚好存在一个与其名字匹配的远程分支，则在检出时会自动创建跟踪分支</li>
-</ul>
-</li>
-<li>重命名跟踪分支<ul>
-<li><code>git checkout -b &lt;branch&gt; &lt;origin&gt;/&lt;branch&gt;</code></li>
-</ul>
-</li>
-<li>修改被跟踪的上游分支<ul>
-<li><code> git branch -u &lt;origin&gt;/&lt;branch&gt;</code></li>
-</ul>
-</li>
-<li>查看跟踪分支<ul>
-<li><code>git branch -vv</code></li>
-</ul>
-</li>
-<li>删除远程分支<ul>
-<li><code>git push &lt;origin&gt; --delete &lt;branch&gt;</code></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><h5 id="Git变基"><a href="#Git变基" class="headerlink" title="Git变基"></a>Git变基</h5><ul>
-<li>变基是对两个已修改提交的处理，不同于合并，变基是把修改和补丁应用到另一个分支上，而合并是对两个提交快照的内容合并。</li>
-<li>变基与合并有截然不同的的提交历史，变基是线性的，而合并是并行的。</li>
-<li><code>git rebase &lt;branch&gt;</code></li>
-<li>流程：先变基后合并。</li>
-</ul>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>技术笔记</category>
-        <category>Git</category>
-        <category>Git进阶</category>
-      </categories>
-      <tags>
-        <tag>Git</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Java注解</title>
     <url>/2020/06/10/java-annotation/</url>
     <content><![CDATA[<blockquote>
@@ -2132,88 +2158,77 @@
     <title>Java核心类</title>
     <url>/2020/06/11/java-core-classes/</url>
     <content><![CDATA[<blockquote>
-<p>本文是Java的面向对象篇，学习于<a href="https://www.liaoxuefeng.com/">廖雪峰的Java教程</a>.</p>
+<p>本文是 Java 的面向对象篇，学习于<a href="https://www.liaoxuefeng.com/">廖雪峰的 Java 教程</a>.</p>
 </blockquote>
-<h2 id="Java核心类"><a href="#Java核心类" class="headerlink" title="Java核心类"></a>Java核心类</h2><h3 id="1-String"><a href="#1-String" class="headerlink" title="1.String"></a>1.String</h3><ul>
-<li><p>String字符串内部是通过一个<code>char[]</code>表示的。</p>
-</li>
-<li><p>String字符串不可变性的实现：通过内部的<code>private final char[]</code>实现。</p>
-</li>
-<li><p>字符串的比较</p>
-<ul>
+<h2 id="Java-核心类"><a href="#Java-核心类" class="headerlink" title="Java 核心类"></a>Java 核心类</h2><h3 id="1-String"><a href="#1-String" class="headerlink" title="1.String"></a>1.String</h3><ul>
+<li>String 字符串内部是通过一个<code>char[]</code>表示的。</li>
+<li>String 字符串不可变性的实现：通过内部的<code>private final char[]</code>实现。</li>
+<li>字符串的比较<ul>
 <li>用<code>equals()</code>方法来比较，而不用<code>==</code>。</li>
-<li>Java编译器在编译期间，会把拥有相同字符串的对象视为同一个对象并且放入常量池，所以用<code>==</code>比较字符串得出的结果会有巧合性。</li>
+<li>Java 编译器在编译期间，会把拥有相同字符串的对象视为同一个对象并且放入常量池，所以用<code>==</code>比较字符串得出的结果会有巧合性。</li>
 <li>忽略大小写比较字符串用<code>equalsIgnoreCase()</code>方法。</li>
 </ul>
 </li>
-<li><p>判断是否包含子串用<code>contains()</code>方法，参数为<code>CharSequence</code>类，为String的子类。</p>
-</li>
-<li><p>搜索字串</p>
-<ul>
+<li>判断是否包含子串用<code>contains()</code>方法，参数为<code>CharSequence</code>类，为 String 的子类。</li>
+<li>搜索字串<ul>
 <li><code>indexOf()</code>方法返回字串第一次出现在前半部分的索引。</li>
-<li><code>lastIndexOf()</code>方法返回子串第一次出现在后半部分的索引。</li>
+<li><code>lastIndexOf()</code>方法返回子串第一次出现在后半部分的索引。<span id="more"></span></li>
 </ul>
 </li>
-<li><p>判断是否以子串开头或结尾</p>
-<ul>
+<li>判断是否以子串开头或结尾<ul>
 <li><code>startsWith()</code>判断是否以子串开头。</li>
 <li><code>endsWith()</code>判断是否以字串结尾。</li>
 </ul>
 </li>
-<li><p>提取字串</p>
-<ul>
-<li><code>substring(2)</code>从索引为2处开始提取字串。</li>
-<li><code>substring(2,4)</code>从索引为2处开始提取，到索引为4处结束，但不包括索引为4的值。</li>
+<li>提取字串<ul>
+<li><code>substring(2)</code>从索引为 2 处开始提取字串。</li>
+<li><code>substring(2,4)</code>从索引为 2 处开始提取，到索引为 4 处结束，但不包括索引为 4 的值。</li>
 </ul>
 </li>
-<li><p>去除首尾空白字符</p>
-<ul>
+<li>去除首尾空白字符<ul>
 <li><code>trim()</code>方法，空白字符包括<code>\t</code>、<code>\r</code>、<code>\n</code>。</li>
 <li><code>strip()</code>方法，与<code>trim</code>方法的区别就是可以去除中文空格字符<code>\u3000</code>。</li>
 </ul>
 </li>
-<li><p>判断是否为空</p>
-<ul>
+<li>判断是否为空<ul>
 <li><code>isBlank()</code>方法可以判断是否包含空白字符。</li>
-<li><code>isEmpty</code>方法可以判断是否字符串的长度是否为0，<em>空白字符也可作为一个字符串长度。</em></li>
+<li><code>isEmpty</code>方法可以判断是否字符串的长度是否为 0，<em>空白字符也可作为一个字符串长度。</em></li>
 </ul>
 </li>
-<li><p>替换子串用<code>replace(s1,s2)</code>方法，其中第一个参数s1表示被替换的子串，第二个参数s2为替换的子串。</p>
-</li>
-<li><p><code>spilt()</code>方法可以分割字符串。</p>
-</li>
-<li><p>格式化字符串</p>
-<ul>
+<li>替换子串用<code>replace(s1,s2)</code>方法，其中第一个参数 s1 表示被替换的子串，第二个参数 s2 为替换的子串。</li>
+<li><code>spilt()</code>方法可以分割字符串。</li>
+<li>格式化字符串<ul>
 <li><code>formatted()</code></li>
 <li><code>format()</code>静态方法</li>
-<li>示例代码<span id="more"></span>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Main</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="string">&quot;Hi %s, your score is %d!&quot;</span>;</span><br><span class="line">        System.out.println(s.formatted(<span class="string">&quot;Alice&quot;</span>, <span class="number">80</span>));</span><br><span class="line">        System.out.println(String.format(<span class="string">&quot;Hi %s, your score is %.2f!&quot;</span>, <span class="string">&quot;Bob&quot;</span>, <span class="number">59.5</span>));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<li>示例代码</li>
 </ul>
 </li>
-<li><p>类型转换</p>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Main</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="string">&quot;Hi %s, your score is %d!&quot;</span>;</span><br><span class="line">        System.out.println(s.formatted(<span class="string">&quot;Alice&quot;</span>, <span class="number">80</span>));</span><br><span class="line">        System.out.println(String.format(<span class="string">&quot;Hi %s, your score is %.2f!&quot;</span>, <span class="string">&quot;Bob&quot;</span>, <span class="number">59.5</span>));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
 <ul>
-<li>基本数据类型或引用类型转String类型。<ul>
+<li>类型转换<ul>
+<li>基本数据类型或引用类型转 String 类型。<ul>
 <li>使用<code>String.valueOf()</code>静态方法。</li>
 <li>使用<code>toString()</code>静态方法。</li>
 </ul>
 </li>
-<li>String类型转其他类型：<ul>
-<li>转int:<code>Integer.parseInt()</code>或<code>Integer.valueOf()</code>方法。</li>
-<li>转bolean:<code>Bolean.parseBolean()</code>或<code>Boolean.valueOf()</code>方法。</li>
+<li>String 类型转其他类型：<ul>
+<li>转 int:<code>Integer.parseInt()</code>或<code>Integer.valueOf()</code>方法。</li>
+<li>转 bolean:<code>Bolean.parseBolean()</code>或<code>Boolean.valueOf()</code>方法。</li>
 <li>···</li>
 </ul>
 </li>
 </ul>
 </li>
-<li><p>char[ ]和String的相互转换</p>
-<ul>
-<li>String转char[ ]：<code>char[] arr = s.toCharArray()</code>即<code>toCharArray()</code>方法。</li>
-<li>char[ ]转String：<code>String s =new String (arr)</code></li>
+<li>char[ ]和 String 的相互转换<ul>
+<li>String 转 char[ ]：<code>char[] arr = s.toCharArray()</code>即<code>toCharArray()</code>方法。</li>
+<li>char[ ]转 String：<code>String s =new String (arr)</code></li>
 </ul>
 </li>
 </ul>
 <h3 id="2-StringBuilder"><a href="#2-StringBuilder" class="headerlink" title="2.StringBuilder"></a>2.StringBuilder</h3><ul>
-<li>在循环中使用 <code>+</code> 拼接字符串会生成许多临时对象，这些会造成内存浪费，同时会影响GC效率，<code>StringBuilder</code>可以有效解决这个问题。</li>
+<li>在循环中使用 <code>+</code> 拼接字符串会生成许多临时对象，这些会造成内存浪费，同时会影响 GC 效率，<code>StringBuilder</code>可以有效解决这个问题。</li>
 <li><code>StringBuilder</code>是一种可变类，可以预分配缓冲区。</li>
 <li><code>StringBuilder</code>使用<code>append()</code>方法拼接子串。</li>
 <li><code>StringBuilder</code>使用<code>delete()</code>方法删除子串。</li>
@@ -2222,19 +2237,17 @@
 </ul>
 <h3 id="3-StringJoiner"><a href="#3-StringJoiner" class="headerlink" title="3.StringJoiner"></a>3.StringJoiner</h3><ul>
 <li><code>Stringjoiner</code>类最常用于用分隔符拼接数组，使用<code>add()</code>方法拼接。</li>
-<li>用法：<code>var sj = new StringJoiner(&quot;s1&quot;)</code>，其中参数s1为分隔符。</li>
+<li>用法：<code>var sj = new StringJoiner(&quot;s1&quot;)</code>，其中参数 s1 为分隔符。</li>
 </ul>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">String[] names = &#123;<span class="string">&quot;Bob&quot;</span>, <span class="string">&quot;Alice&quot;</span>, <span class="string">&quot;Grace&quot;</span>&#125;;</span><br><span class="line"><span class="type">var</span> <span class="variable">sj</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringJoiner</span>(<span class="string">&quot;, &quot;</span>);</span><br><span class="line"><span class="keyword">for</span> (String name : names) &#123;</span><br><span class="line">    sj.add(name);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-
-
 <ul>
-<li><p>如果要指定开头和结尾，<code>var sj = new StringJoiner(&quot;s1&quot;,&quot;s2&quot;,&quot;s3&quot;)</code>，其中参数s1为分隔符，s2为开头，s3为结尾。</p>
+<li><p>如果要指定开头和结尾，<code>var sj = new StringJoiner(&quot;s1&quot;,&quot;s2&quot;,&quot;s3&quot;)</code>，其中参数 s1 为分隔符，s2 为开头，s3 为结尾。</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">String[] names = &#123;<span class="string">&quot;Bob&quot;</span>, <span class="string">&quot;Alice&quot;</span>, <span class="string">&quot;Grace&quot;</span>&#125;;</span><br><span class="line"><span class="type">var</span> <span class="variable">sj</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringJoiner</span>(<span class="string">&quot;, &quot;</span>, <span class="string">&quot;Hello &quot;</span>, <span class="string">&quot;!&quot;</span>);</span><br><span class="line"><span class="keyword">for</span> (String name : names) &#123;</span><br><span class="line">    sj.add(name);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p><code>String.join()</code>为String类的静态方法，内部使用了<code>StringJonier</code>类的方法来拼接子串。</p>
+<li><p><code>String.join()</code>为 String 类的静态方法，内部使用了<code>StringJonier</code>类的方法来拼接子串。</p>
 </li>
-<li><p><code>String.join()</code>方法的使用:<code>s.join(&quot;s&quot;,arr)</code>，其中s为要拼接的子串，arr为字符串数组。</p>
+<li><p><code>String.join()</code>方法的使用:<code>s.join(&quot;s&quot;,arr)</code>，其中 s 为要拼接的子串，arr 为字符串数组。</p>
 </li>
 </ul>
 <h3 id="4-包装类型"><a href="#4-包装类型" class="headerlink" title="4.包装类型"></a>4.包装类型</h3><ul>
@@ -2257,7 +2270,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">Boolean</span> <span class="variable">t</span> <span class="operator">=</span> Boolean.TRUE;</span><br><span class="line"><span class="type">Boolean</span> <span class="variable">f</span> <span class="operator">=</span> Boolean.FALSE;</span><br><span class="line"><span class="comment">// int可表示的最大/最小值:</span></span><br><span class="line"><span class="type">int</span> <span class="variable">max</span> <span class="operator">=</span> Integer.MAX_VALUE; <span class="comment">// 2147483647</span></span><br><span class="line"><span class="type">int</span> <span class="variable">min</span> <span class="operator">=</span> Integer.MIN_VALUE; <span class="comment">// -2147483648</span></span><br><span class="line"><span class="comment">// long类型占用的bit和byte数量:</span></span><br><span class="line"><span class="type">int</span> <span class="variable">sizeOfLong</span> <span class="operator">=</span> Long.SIZE; <span class="comment">// 64 (bits)</span></span><br><span class="line"><span class="type">int</span> <span class="variable">bytesOfLong</span> <span class="operator">=</span> Long.BYTES; <span class="comment">// 8 (bytes)</span></span><br></pre></td></tr></table></figure>
 
 <h3 id="5-JavaBean"><a href="#5-JavaBean" class="headerlink" title="5.JavaBean"></a>5.JavaBean</h3><ul>
-<li><code>JavaBean</code>主要用来传递数据，即把一组数据组合成一个JavaBean便于传输。</li>
+<li><code>JavaBean</code>主要用来传递数据，即把一组数据组合成一个 JavaBean 便于传输。</li>
 <li>一组对应的读写方法称为属性。</li>
 <li>只有读方法的称为只读属性，只有写方法的称为只写属性。</li>
 </ul>
@@ -2270,20 +2283,20 @@
 </ul>
 </li>
 <li>枚举的比较<ul>
-<li><code>== </code>运算符，枚举类是一种特殊的class，可以用<code>==</code>运算符比较，因为每一个枚举常量在JVM内都是一个唯一的实例。</li>
+<li><code>== </code>运算符，枚举类是一种特殊的 class，可以用<code>==</code>运算符比较，因为每一个枚举常量在 JVM 内都是一个唯一的实例。</li>
 <li><code>equals()</code>方法，可编译通过，但更推荐用<code>==</code>运算符，可以写更少的代码。</li>
 </ul>
 </li>
 <li>枚举类的特点<ul>
 <li>继承自<code>java.lang.Enum</code>，且枚举类无法被继承，因为枚举类被<code>fintal</code>关键字修饰。</li>
-<li>只能定义enum的实例，不能用new操作符创建实例。</li>
+<li>只能定义 enum 的实例，不能用 new 操作符创建实例。</li>
 <li>可以用于<code>switch</code>语句。</li>
 <li>每一个枚举常量在内部都是一个唯一的实例。</li>
 </ul>
 </li>
 <li><code>name()</code>返回枚举常量名。</li>
-<li><code>ordinal()</code>返回枚举常量按顺序定义的序号，以0开始计数。</li>
-<li>enum的构造方法应该声明为<code>private类型</code>。</li>
+<li><code>ordinal()</code>返回枚举常量按顺序定义的序号，以 0 开始计数。</li>
+<li>enum 的构造方法应该声明为<code>private类型</code>。</li>
 <li>给枚举常量添加字段，字段强烈建议声明为<code>final</code>类型，并且在<code>pirvate</code>构造方法中初始化。</li>
 </ul>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">enum</span> <span class="title class_">Weekday</span> &#123;</span><br><span class="line">    MON(<span class="number">1</span>, <span class="string">&quot;星期一&quot;</span>), TUE(<span class="number">2</span>, <span class="string">&quot;星期二&quot;</span>), WED(<span class="number">3</span>, <span class="string">&quot;星期三&quot;</span>), THU(<span class="number">4</span>, <span class="string">&quot;星期四&quot;</span>), FRI(<span class="number">5</span>, <span class="string">&quot;星期五&quot;</span>), SAT(<span class="number">6</span>, <span class="string">&quot;星期六&quot;</span>), SUN(<span class="number">0</span>, <span class="string">&quot;星期日&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">final</span> <span class="type">int</span> dayValue;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> String chinese;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="title function_">Weekday</span><span class="params">(<span class="type">int</span> dayValue, String chinese)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.dayValue = dayValue;</span><br><span class="line">        <span class="built_in">this</span>.chinese = chinese;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
@@ -2308,16 +2321,16 @@
 <li>可以在记录类中用<code>of()</code>静态方法创建实例。</li>
 </ul>
 <h3 id="8-BigInteger"><a href="#8-BigInteger" class="headerlink" title="8.BigInteger"></a>8.BigInteger</h3><ul>
-<li>由CPU原生提供的long整型最大位数是64位，可直接通过CPU进行计算。</li>
+<li>由 CPU 原生提供的 long 整型最大位数是 64 位，可直接通过 CPU 进行计算。</li>
 <li><code>java.math.BigInteger</code>表示任意大小的整数，内部以<code>int[ ]</code>数组表示。</li>
-<li>使用BigInteger做运算的时候，要用实例方法。</li>
+<li>使用 BigInteger 做运算的时候，要用实例方法。</li>
 <li><code>BigInteger</code>转<code>long</code>时，如果超出<code>long</code>范围，用<code>longValneExact()</code>方法会报出<code>ArithmeticException</code>异常，用<code>longValne()</code>方法不会报出异常，但会丢失高位信息，即得出的结果不准确。</li>
 <li><code>BigInteger</code>类型也可转基本类型，因为<code>BigInteger</code>也继承自<code>Number</code>类。</li>
 </ul>
 <h3 id="9-BigDecimal"><a href="#9-BigDecimal" class="headerlink" title="9.BigDecimal"></a>9.BigDecimal</h3><ul>
 <li><code>BigDecimal</code>表示任意精度的浮点数。</li>
-<li>使用<code>scale()</code>方法可以返回小数位数，如果返回负数，表示这是整数，并且末尾有整数0。</li>
-<li>使用<code>stripTrailingZeros()</code>方法可以返回一个相等的，去除了末尾0的<code>BigDecimal</code>数。</li>
+<li>使用<code>scale()</code>方法可以返回小数位数，如果返回负数，表示这是整数，并且末尾有整数 0。</li>
+<li>使用<code>stripTrailingZeros()</code>方法可以返回一个相等的，去除了末尾 0 的<code>BigDecimal</code>数。</li>
 <li>使用<code>setScale()</code>方法可以设置精度，如果设置精度小与原始精度，就要考虑四舍五入或者直接截断。</li>
 <li><code>RoundingMode.HALF_UP</code>常量表示四舍五入。</li>
 <li><code>RoundingMode.Down</code>常量表示直接截断。</li>
@@ -2339,7 +2352,7 @@
 <li><code>Math.asin(x)</code>计算$asin x$。</li>
 <li><code>Math.acos(x)</code>计算$acos x$。</li>
 <li><code>Math.PI</code>数学常量，表示$\Pi$</li>
-<li><code>Math.E</code>数学常量，表示e。</li>
+<li><code>Math.E</code>数学常量，表示 e。</li>
 </ul>
 </li>
 <li><code>Math.random()</code>返回<code>[0,1</code>之间的随机数。</li>
@@ -2360,421 +2373,17 @@
       </tags>
   </entry>
   <entry>
-    <title>Java异常</title>
-    <url>/2020/06/12/java-exception/</url>
-    <content><![CDATA[<blockquote>
-<p>本文是Java异常篇，学习于<a href="https://www.liaoxuefeng.com/wiki/1252599548343744">廖雪峰的Java教程</a></p>
-</blockquote>
-<h2 id="Java异常"><a href="#Java异常" class="headerlink" title="Java异常"></a>Java异常</h2><h3 id="1-异常类型"><a href="#1-异常类型" class="headerlink" title="1.异常类型"></a>1.异常类型</h3><ul>
-<li>异常体系的根为<code>Throwable</code>，它继承自<code>Object</code>。</li>
-<li><code>Throwable</code>有两个体系<code>Error</code>和<code>Exception</code>。</li>
-<li><code>Error</code>类<ul>
-<li><code>OutOfMemoryError</code></li>
-<li><code>NoClassDefFounderError</code></li>
-<li><code>StackOverError</code></li>
-<li>等等</li>
-</ul>
-</li>
-<li><code>Exception</code>类<ul>
-<li><code>RuntimeException</code><ul>
-<li><code>IndexOutOfBoundsException</code></li>
-<li><code>NullPointerException</code></li>
-<li>等等</li>
-</ul>
-</li>
-<li><code>非RuntimeException</code>(也叫<code>Checked Exception</code>异常)<ul>
-<li><code>IOException</code></li>
-<li><code>ReflectiveOperationException</code></li>
-<li><code>NumberFormatException</code></li>
-<li><code>FileNotFoundException</code></li>
-<li><code>SocketException</code></li>
-<li>等等</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><code>非RuntimeException</code>异常必须被捕获，<code>RuntimeExcept</code>异常不强制被捕获。</li>
-<li>异常捕获使用<code>try&#123;&#125;···catch&#123;&#125;</code>语句。</li>
-<li>其中<code>try</code>声明可能出现异常的方法，<code>catch</code>捕获异常Exception及其子类。</li>
-<li><code>thorws</code>语句声明可能出现的异常，凡是用throws声明异常的方法，最终必须被捕获，如若不捕获，可在最高调用层<code>throws</code>异常，代价是发送异常的话程序会闪退。</li>
-<li><code>printStackTrace()</code>方法可以打印异常栈。<span id="more"></span></li>
-</ul>
-<h3 id="2-多catch语句与finally"><a href="#2-多catch语句与finally" class="headerlink" title="2.多catch语句与finally"></a>2.多catch语句与finally</h3><ul>
-<li>catch语句可以捕获多个异常，如果这些异常有继承关系，则需要分开捕获，例如如下代码：</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        process1();</span><br><span class="line">        process2();</span><br><span class="line">        process3();</span><br><span class="line">    &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">        System.out.println(e);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (NumberFormatException e) &#123;</span><br><span class="line">        System.out.println(e);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>注意子类要放在父类异常前面，否则如果匹配到父类异常，子类异常将不会被捕获到。</li>
-<li>如果无继承关系，则多个异常可以用<code>|</code>同时合并。</li>
-<li><code>finally</code>语句可以保证无论是否发生异常都会被执行。</li>
-<li>可以存在<code>try&#123;&#125;···finally&#123;&#125;</code>语句，前提是方法已经用<code>throws</code>语句声明异常。</li>
-</ul>
-<h3 id="3-抛出异常"><a href="#3-抛出异常" class="headerlink" title="3.抛出异常"></a>3.抛出异常</h3><ul>
-<li>异常的传播：当某个方法抛出了异常时，如果当前方法没有捕获异常，异常就会被抛到上层调用方法，直到遇到某个<code>try&#123;&#125;···catch&#123;&#125;</code>语句被捕获为止。</li>
-<li>如何抛出异常:创建某个异常实例，用<code>throws</code>语句抛出。</li>
-<li>异常类型转换，如果在<code>try</code>语句中抛出异常，又在<code>catch</code>语句抛出新的异常，就会把异常类型转换。</li>
-<li>获取原始异常的办法：<ul>
-<li>把<code>try</code>捕获的原始异常的实例传入<code>catch</code>语句中抛出的新类型异常的参数中。</li>
-<li>使用<code>getCause()</code>方法。</li>
-</ul>
-</li>
-<li>如果在try或者catch语句中抛出异常，JVM会先执行finally语句，然后抛出异常。</li>
-<li>异常屏蔽(Suppressed Exception)：如果在finally语句抛出异常，则catch语句的异常不会被抛出，由于JVM只能抛出一个异常。</li>
-<li>打印输出被屏蔽的异常<code>SuppressedException</code>的方法：创建一个<code>Exception </code>实例，保存被屏蔽的异常的信息，判断存在SuppressedException后，用<code>addSuppressed()</code>方法把刚才创建的<code>Exception</code>实例添加进来，最后抛出异常。</li>
-</ul>
-<h3 id="4-自定义异常类型-amp-NullPointerException"><a href="#4-自定义异常类型-amp-NullPointerException" class="headerlink" title="4.自定义异常类型&amp;NullPointerException"></a>4.自定义异常类型&amp;NullPointerException</h3><ul>
-<li><p>在一个大型项目中，通常的做法是自定义一个<code>BaseException</code>，并且建议继承自<code>RuntimeException</code>，最后由<code>BaseEduixception</code>派生出其他自定义异常类型。</p>
-</li>
-<li><p>对于<code>NullPointerException</code>异常，应当遵循早暴露早修复的原则。</p>
-</li>
-<li><p>为了防止出现<code>NullPointerException</code>异常，应有较好的编码习惯，比如用<code>&quot; &quot;</code>空字符串代替<code>null</code>。</p>
-</li>
-</ul>
-<h3 id="5-断言"><a href="#5-断言" class="headerlink" title="5.断言"></a>5.断言</h3><ul>
-<li>断言(Assertion)是一种调试程序的方式。</li>
-<li>作用处:断言通常用在不在可恢复程序中，因为断言失败会导致程序结束提出。</li>
-<li>断言的用法: 例如<code>assert  x&gt;=0</code>,如果x&lt;0，则断言失败，返回<code>AssertionError</code>；可以在断言的时候附带错误信息，例如<code>assert x&gt;=0 : &quot;x must &gt; 0&quot;</code>。</li>
-<li>开启方式: 断言默认是关闭的，可以在命令行开启<code>java -enableassertions Main.java</code>。</li>
-</ul>
-<h3 id="6-JDK-Logging"><a href="#6-JDK-Logging" class="headerlink" title="6.JDK Logging"></a>6.JDK Logging</h3><ul>
-<li><p><code>JDK Logging</code>可用于有针对性地调试代码。</p>
-</li>
-<li><p><code>JDK Logging</code>的使用：</p>
-</li>
-<li><p>位于<code>java.util.logging</code>包中。</p>
-</li>
-<li><p>有八种日志级别，默认级别为INFO，并且默认级别以下的日志不会被打印，但可设定默认级别。</p>
-<ul>
-<li>SEVERE<ul>
-<li>WARNING</li>
-<li>INFO</li>
-<li>CONFIG</li>
-<li>FINE</li>
-<li>FINER</li>
-<li>FINEST</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>示例代码</p>
-</li>
-</ul>
- <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.itranswarp.learnjava;</span><br><span class="line"><span class="keyword">import</span> java.util.logging.Logger;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Main</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">Logger</span> <span class="variable">logger</span> <span class="operator">=</span> Logger.getGlobal();</span><br><span class="line">        logger.info(<span class="string">&quot;start process...&quot;</span>);</span><br><span class="line">        logger.warning(<span class="string">&quot;memory is running out...&quot;</span>);</span><br><span class="line">        logger.fine(<span class="string">&quot;ignored.&quot;</span>);</span><br><span class="line">        logger.severe(<span class="string">&quot;process will be terminated...&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<pre><code>  ### 7.Commons Logging
-</code></pre>
-<ul>
-<li><code>Commons Logging</code>是一种第三方日志库，它由<code>Apache</code>创建，可作为日志接口来调用其他日志系统。</li>
-<li>特点：可以挂载不同的日志系统，默认情况下先搜索<code>Log4j</code>，如果没找到，再使用<code>JDK Logging</code>。</li>
-<li>使用<ul>
-<li>首先可通过静态工厂方法<code>LogFactory.getLog()</code>方法(方法内的参数可以为<code>getclass()</code>或<code>当前类名.class</code>,Main)创建一个<code>Log</code>实例，再使用<code>Log</code>的实例方法打印日志。</li>
-<li>如果在静态方法中引用<code>Log</code>示例，则需要定义静态<code>Log</code>实例，如果在实例方法中引用实例，则定义一个实例变量。</li>
-<li>示例代码</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> org.apache.commons.logging.Log;</span><br><span class="line"><span class="keyword">import</span> org.apache.commons.logging.LogFactory;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Main</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">Log</span> <span class="variable">log</span> <span class="operator">=</span> LogFactory.getLog(Main.class);</span><br><span class="line">        log.info(<span class="string">&quot;start...&quot;</span>);</span><br><span class="line">        log.warn(<span class="string">&quot;end.&quot;</span>);m</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-<ul>
-<li>六种日志级别，其中<code>INFO</code>为默认级别。<ul>
-<li>FATAL</li>
-<li>ERROR</li>
-<li>WARNING</li>
-<li>INFO</li>
-<li>DEBUG</li>
-<li>TRACE</li>
-</ul>
-</li>
-<li>注意：由于为第三方库，所以需要提前下载。</li>
-</ul>
-<h3 id="8-Log4j"><a href="#8-Log4j" class="headerlink" title="8.Log4j"></a>8.Log4j</h3><ul>
-<li><code>Log4j</code>是一种日志系统，就跟<code>JDK Logging</code>一样。</li>
-<li>Log4j的特点：可自动通过不同的Appender把同一条日志输出到不同的目的地。</li>
-<li>使用：可通过修改配置文件，最后通过<code>Common Logging</code>来实现调用。</li>
-</ul>
-<h3 id="9-SLF4J和Logback"><a href="#9-SLF4J和Logback" class="headerlink" title="9.SLF4J和Logback"></a>9.SLF4J和Logback</h3><ul>
-<li><code>SLF4J</code>相当于<code>Common Logging</code>。</li>
-<li><code>Logback</code>相当于<code>Log4j</code>。</li>
-<li>使用：<code>SLF4J</code>的接口实际上和<code>Commons Logging</code>几乎一模一样，不同之处就是<code>Log</code>变成了<code>Logger</code>，<code>LogFactory</code>变成了<code>LoggerFactory</code>。</li>
-</ul>
-]]></content>
-      <categories>
-        <category>技术笔记</category>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>Java异常</tag>
-        <tag>Java日志</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Java入门</title>
-    <url>/2020/06/13/java-introduction/</url>
-    <content><![CDATA[<blockquote>
-<p>本文是Java的入门学习篇，学习于<a href="https://www.liaoxuefeng.com/wiki/1252599548343744">廖雪峰的Java教程</a>。</p>
-</blockquote>
-<h2 id="1-Java介绍"><a href="#1-Java介绍" class="headerlink" title="1.Java介绍"></a>1.Java介绍</h2><p>最早由James golis开发，起初叫OAK.</p>
-<p>JDK:Java Development Kit</p>
-<ul>
-<li>Java开发工具箱。</li>
-<li>包含了编译器，调试器，虚拟机等一系列开发工具。</li>
-</ul>
-<p>JRE：Java Runtime Rnvironment</p>
-<ul>
-<li>Java虚拟机。</li>
-<li>运行字节码文件，JRE是JDK的一部分。</li>
-</ul>
-<p> JSR：Java Specification request</p>
-<ul>
-<li>Java规范要求。</li>
-<li>规范Java平台新增加的功能。</li>
-</ul>
-<p>JCP：Java Community process</p>
-<ul>
-<li>Java社区流程。</li>
-<li>审核JSR。</li>
-</ul>
-<h2 id="2-Java工具"><a href="#2-Java工具" class="headerlink" title="2.Java工具"></a>2.Java工具</h2><p> java</p>
-<ul>
-<li>其实就是虚拟机，执行字节码文件。</li>
-</ul>
-<p>javac</p>
-<ul>
-<li>全称Java Compiler,编译源文件为字节码文件。</li>
-</ul>
-<p>jar</p>
-<ul>
-<li>把字节码文件打包为jar压缩文件。</li>
-</ul>
-<p>javadoc</p>
-<ul>
-<li>生成注释文档。</li>
-</ul>
-<p>jdb</p>
-<ul>
-<li>全称Java Debugger,Java 调试器，用于开发时进行代码调试。</li>
-</ul>
-<h2 id="3-Java基础"><a href="#3-Java基础" class="headerlink" title="3.Java基础"></a>3.Java基础</h2><p>Java类名书写规范</p>
-<ul>
-<li>类名必须以英文字母开头，后接字母.数字或下划线。</li>
-<li>类名首字母习惯大写，此后后面的每个单词首字母都大写。</li>
-</ul>
-<p>Java程序的入口方法</p>
-<ul>
-<li>静态的main方法，Java程序总是从main方法开始执行的。</li>
-</ul>
-<p>方法名书写规范</p>
-<ul>
-<li>方法名必须以英文字母开头，后接字母，数字或下划线。</li>
-<li>方法名首字母习惯小写，此后后面的每个单词首字母大写。</li>
-</ul>
-<p>Java的文档注释</p>
-<ul>
-<li>标识在方法和类名的定义处，用于自动创建文档。</li>
-</ul>
-<p>Java变量</p>
-<ul>
-<li>分为基本类型变量和隐形类型变量。</li>
-<li>基本类型变量如未初始化，则默认值为0.</li>
-<li>引用类型变量如未初始化，则默认值为null.</li>
-</ul>
-<p>Java基本数据类型</p>
-<ul>
-<li><p>int</p>
-<ul>
-<li>占4个字节。</li>
-<li>范围：-2147483648-2147483647.</li>
-</ul>
-</li>
-<li><p>short</p>
-<ul>
-<li>占2个字节.</li>
-<li>范围：-32768-32767.</li>
-</ul>
-</li>
-<li><p>byte</p>
-<ul>
-<li>占1个字节.</li>
-<li>范围：-128-127.</li>
-</ul>
-</li>
-<li><p>long</p>
-<ul>
-<li>占8个字节.</li>
-<li>范围：-9223372036854775808 -9223372036854775807</li>
-</ul>
-</li>
-<li><p>double</p>
-<ul>
-<li>占8个字节.</li>
-</ul>
-</li>
-<li><p>float</p>
-<ul>
-<li>占4个字节.</li>
-</ul>
-</li>
-<li><p>char</p>
-<ul>
-<li>占2个字节.</li>
-</ul>
-</li>
-</ul>
-<p>java运算</p>
-<ul>
-<li><p>两个整数相除，结果忽略小数部分。</p>
-</li>
-<li><p>按位运算是对4字节的8位二进制数进行左移或者右移。</p>
-</li>
-<li><p>如果对负数进行按位右移，由于符号位为1不动，所以结果仍然是负数。</p>
-</li>
-<li><p>无符号位移运算用&gt;&gt;&gt;或&lt;&lt;&lt;,表示符号位也会跟着变动。</p>
-</li>
-<li><p>与运算</p>
-<ul>
-<li>两个数同时为1，结果才为1。</li>
-<li>与运算的常见用途：两个IP地址进行与运算，判断一个IP是否在给定的网段内。</li>
-</ul>
-</li>
-<li><p>或运算</p>
-<ul>
-<li>其中一个数为1，结果才为1.</li>
-</ul>
-</li>
-<li><p>非运算</p>
-<ul>
-<li></li>
-</ul>
-</li>
-</ul>
-<p>非0即1，非1即0.</p>
-<ul>
-<li><p>异或运算</p>
-<ul>
-<li>两个数不同，结果为1，否则为0.</li>
-</ul>
-</li>
-<li><p>浮点数四舍五入转换为整数</p>
-<ul>
-<li>浮点数+0.5后再进行转换。</li>
-</ul>
-</li>
-</ul>
-<p>Java字符的表示</p>
-<ul>
-<li>一是用单引号括起来的字符表示。</li>
-<li>二是用单引号括起来的转义字符表示。</li>
-<li>其中转义字符的表示：\u+四位十六进制数。</li>
-</ul>
-<p> Java字符串连接</p>
-<ul>
-<li>字符串变量可用+号连接其他字符串或者其他数据类型。</li>
-<li>如果用+号连接其他数据类型，则其他数据类型的会先自动转变为字符串。</li>
-<li>Java表示多行字符串可用符号 ”‘  “’ 。</li>
-<li>Java的不可变性指的是字符串内容不会变，只是指针指向了另一个字符串内容。</li>
-</ul>
-<p>null值</p>
-<ul>
-<li>表示变量未指向任何对象。</li>
-</ul>
-<p>Java数组</p>
-<ul>
-<li>是同一数据类型的集合。</li>
-<li>初始化时，如果是整数，默认值为0，如果是浮点数默认值为0.0，如果是布尔，默认值为false。</li>
-</ul>
-<p>判断两个浮点数是否相同</p>
-<ul>
-<li>两个浮点数之差的绝对值是否小于0.00001.</li>
-</ul>
-<p>Java特殊的三个数值</p>
-<ul>
-<li>NaN Not a Number.</li>
-<li>Infinity 无穷大。</li>
-<li>-Infinity 负无穷大。</li>
-</ul>
-<p>基本类型变量和引用型变量的值</p>
-<ul>
-<li><p>基本类型变量的值是数值。</p>
-</li>
-<li><p>引用型变量的值为引用，相当于指针。</p>
-</li>
-<li><p>比较方法：</p>
-<ul>
-<li>两个基本类型变量的比较用&#x3D;&#x3D;。</li>
-<li>两个引用类型变量的比较用equals方法。</li>
-</ul>
-</li>
-</ul>
-<p>Java类型转换</p>
-<ul>
-<li>低等级类型向高等级类型转换是自动转换。</li>
-<li>高等级类型向低等级类型转换是强制转换。</li>
-</ul>
-<p>java数组大小与引用</p>
-<ul>
-<li>数组大小不会变化，所谓变化只是指向了新的数组。</li>
-<li>Java数组变量指向一个新数组后，原数组不会消失，只是无法通过引用访问。</li>
-</ul>
-<p>for循环与for-each循环</p>
-<ul>
-<li>for循环执行流程：先初始化计时器，再判断循环条件，最后再更新计时器。</li>
-<li>for-each循环适用于数组.</li>
-</ul>
-<p>conuite与break</p>
-<ul>
-<li>continue结束本次循环。</li>
-<li>break结束当前所在的一层循环。</li>
-</ul>
-<p>数组相关</p>
-<ul>
-<li><p>打印数组变量时，输出的是数组首元素索引。</p>
-</li>
-<li><p>数组的排序</p>
-<ul>
-<li>常见排序方法</li>
-<li>Array.sort()方法，默认从小到大排序。</li>
-</ul>
-</li>
-<li><p>二维数组的长度</p>
-<ul>
-<li>二维数组的元素是数组，所以二维数组的长度为数组元素个数。</li>
-<li>二位数组元素的长度不要求相同。</li>
-</ul>
-</li>
-<li><p>数组元素的两种打印输出方法</p>
-<ul>
-<li>for循环</li>
-<li>Array.toString() 方法格式化输出。</li>
-<li>Array.deepToString()方法格式化输出，适用于多维数组。</li>
-</ul>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>技术笔记</category>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-        <tag>JDK</tag>
-        <tag>Java基础</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Java面向对象基础</title>
     <url>/2020/06/14/java-object-oriented/</url>
     <content><![CDATA[<blockquote>
-<p>本文是Java的面向对象篇，学习于<a href="https://www.liaoxuefeng.com/">廖雪峰的Java教程</a>.</p>
+<p>本文是 Java 的面向对象篇，学习于<a href="https://www.liaoxuefeng.com/">廖雪峰的 Java 教程</a>.</p>
 </blockquote>
 <h2 id="面向对象基础"><a href="#面向对象基础" class="headerlink" title="面向对象基础"></a>面向对象基础</h2><h3 id="1-方法"><a href="#1-方法" class="headerlink" title="1.方法"></a>1.方法</h3><ul>
 <li><code>private</code>方法和<code>private</code>字段不能外部类访问。</li>
 <li><code>private</code>方法和<code>private</code>字段是用来方便自身类使用的，为了保证类的封装性。</li>
 <li><strong>this</strong> 变量指当前实例。</li>
 <li>局部变量的优先级高于字段，可变参数也是局部变量。</li>
-<li>可变参数的定义：<code>类型... 变量名</code>，相当于数组。</li>
+<li>可变参数的定义：<code>类型... 变量名</code>，相当于数组。<span id="more"></span></li>
 </ul>
 <h3 id="2-构造方法"><a href="#2-构造方法" class="headerlink" title="2.构造方法"></a>2.构造方法</h3><ul>
 <li>构造方法名与类名相同，构造方法无返回值，必须用<code>new</code>操作符调用。</li>
@@ -2787,7 +2396,7 @@
 <h3 id="3-重载方法"><a href="#3-重载方法" class="headerlink" title="3.重载方法"></a>3.重载方法</h3><ul>
 <li>方法名相同但参数列表不同的方法叫(overload)重载方法，返回类型<strong>通常</strong>是相同的。</li>
 <li>重载方法的目的是实现相似的功能但得出不同的结果。</li>
-<li>方法签名: 方法名和参数列表。<span id="more"></span></li>
+<li>方法签名: 方法名和参数列表。</li>
 </ul>
 <h3 id="4-继承"><a href="#4-继承" class="headerlink" title="4.继承"></a>4.继承</h3><ul>
 <li>继承是面向对象编程中的一种强大机制，它明显的功能就是实现代码复用。</li>
@@ -2838,7 +2447,7 @@
 </tr>
 </tbody></table>
 <ul>
-<li>覆写方法前加上@Override可以让编译器帮助检查是否进行了正确的方法覆写。</li>
+<li>覆写方法前加上@Override 可以让编译器帮助检查是否进行了正确的方法覆写。</li>
 </ul>
 <h3 id="6-多态"><a href="#6-多态" class="headerlink" title="6.多态"></a>6.多态</h3><ul>
 <li>多态: 某个方法的调用，是由实现调用方法的实例的实际类型决定的。</li>
@@ -2864,9 +2473,9 @@
 <li>接口支持多继承，即一个类可以实现多个接口。</li>
 <li>接口定义的方法默认是<code>public abstract</code>类型,所以在定义接口方法时可忽略不写。</li>
 <li>一个接口可以继承自另一个接口，使用关键字<code>extends</code>实现继承。</li>
-<li>在子类中增加default方法实现单独功能，可以不用修改父类方法，实现代码的灵活性。</li>
+<li>在子类中增加 default 方法实现单独功能，可以不用修改父类方法，实现代码的灵活性。</li>
 </ul>
-<h3 id="10-接口vs抽象类"><a href="#10-接口vs抽象类" class="headerlink" title="10.接口vs抽象类"></a>10.接口vs抽象类</h3><table>
+<h3 id="10-接口-vs-抽象类"><a href="#10-接口-vs-抽象类" class="headerlink" title="10.接口 vs 抽象类"></a>10.接口 vs 抽象类</h3><table>
 <thead>
 <tr>
 <th align="left">比较</th>
@@ -2891,7 +2500,7 @@
 </tr>
 <tr>
 <td align="left">非抽象方法</td>
-<td align="center">不能定义非抽象方法，但可有final方法</td>
+<td align="center">不能定义非抽象方法，但可有 final 方法</td>
 <td align="center">可定义非抽象方法</td>
 </tr>
 </tbody></table>
@@ -2905,7 +2514,7 @@
 <li>静态方法<ul>
 <li>用<code>static</code>修饰的方法为静态方法。</li>
 <li>静态方法内部不能访问实例字段，只能访问静态字段，因为静态方法只属于类而不属于实例。</li>
-<li>接口可以有静态字段，并且静态字段必须用final修饰，编译器会自动加上这些修饰符。</li>
+<li>接口可以有静态字段，并且静态字段必须用 final 修饰，编译器会自动加上这些修饰符。</li>
 <li>普遍通过<code>类名.方法</code>的方式调用静态方法。</li>
 </ul>
 </li>
@@ -2913,13 +2522,13 @@
 <h3 id="12-包"><a href="#12-包" class="headerlink" title="12.包"></a>12.包</h3><ul>
 <li>设置包(package)机制是为了解决同名类冲突的问题。</li>
 <li>真实完整的类名为<code>包名.类名</code>。</li>
-<li>Java文件和Class文件的存放目录层次与包名结构一致。</li>
-<li>Java文件放在<code>src</code>目录下，class文件放在<code>bin</code>目录下。</li>
+<li>Java 文件和 Class 文件的存放目录层次与包名结构一致。</li>
+<li>Java 文件放在<code>src</code>目录下，class 文件放在<code>bin</code>目录下。</li>
 <li>包作用域:未被<code>public</code>,<code>private</code>,<code>protected</code>修饰的字段和方法为包的作用域。</li>
 <li>在一个类中使用另一个包中的类<ul>
 <li>通过写出完整类名。</li>
 <li>通过<code>import</code>语句导入其他包中的类。</li>
-<li>通过<code>import static </code>语句导入其他类的静态字段和静态方法。</li>
+<li>通过<code>import static </code>语句导入其他类的静态字段和静态方法。</li>
 </ul>
 </li>
 <li>如果有两个类名称相同，那么只能<code>import</code>其中一个类，另一个写完整类名。</li>
@@ -2928,20 +2537,20 @@
 <h3 id="13-classpath-amp-jar"><a href="#13-classpath-amp-jar" class="headerlink" title="13.classpath&amp;jar"></a>13.classpath&amp;jar</h3><ul>
 <li>classpath<ul>
 <li><code>classpath</code>是一种环境变量，用来指示<code>jvm</code>搜索<code>.class</code>文件。</li>
-<li>classpath的设定<ul>
+<li>classpath 的设定<ul>
 <li>在系统环境变量中设置</li>
-<li>在启动JVM时设置。<ul>
+<li>在启动 JVM 时设置。<ul>
 <li><code>java -cp /&lt;环境变量&gt; /&lt;文件&gt;</code></li>
 </ul>
 </li>
-<li><code>rt.jar</code>是Java核心库的压缩包。</li>
+<li><code>rt.jar</code>是 Java 核心库的压缩包。</li>
 </ul>
 </li>
 </ul>
 </li>
-<li>jar包<ul>
-<li>jar包是一种zip格式的压缩文件。</li>
-<li>&#x2F;META-INF&#x2F;MANIFEST.MF是jar包中特殊的文件，可以指定main-class及其它信息。</li>
+<li>jar 包<ul>
+<li>jar 包是一种 zip 格式的压缩文件。</li>
+<li>&#x2F;META-INF&#x2F;MANIFEST.MF 是 jar 包中特殊的文件，可以指定 main-class 及其它信息。</li>
 </ul>
 </li>
 </ul>
@@ -2951,7 +2560,7 @@
 <li><p><code>java.base</code>是”根模块”，所有模块直接或间接依赖<code>java.base</code>模块。</p>
 </li>
 <li><p><code>module-info.java</code>是模块的描述文件。</p>
-  <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">module</span> hello.world &#123;</span><br><span class="line">	<span class="keyword">requires</span> java.base; <span class="comment">// 可不写，任何模块都会自动引入java.base</span></span><br><span class="line">	<span class="keyword">requires</span> java.xml;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">module</span> hello.world &#123;</span><br><span class="line">	<span class="keyword">requires</span> java.base; <span class="comment">// 可不写，任何模块都会自动引入java.base</span></span><br><span class="line">	<span class="keyword">requires</span> java.xml;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>以上，其中<code>module</code>是关键字，<code>hello.world</code>是模块的名称，<code>requires</code>表示引用其他模块。</p>
 </li>
@@ -2964,6 +2573,164 @@
       <tags>
         <tag>Java</tag>
         <tag>面向对象</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Java异常</title>
+    <url>/2020/06/12/java-exception/</url>
+    <content><![CDATA[<blockquote>
+<p>本文是 Java 异常篇，学习于<a href="https://www.liaoxuefeng.com/wiki/1252599548343744">廖雪峰的 Java 教程</a></p>
+</blockquote>
+<h2 id="Java-异常"><a href="#Java-异常" class="headerlink" title="Java 异常"></a>Java 异常</h2><h3 id="1-异常类型"><a href="#1-异常类型" class="headerlink" title="1.异常类型"></a>1.异常类型</h3><ul>
+<li><p>异常体系的根为<code>Throwable</code>，它继承自<code>Object</code>。</p>
+</li>
+<li><p><code>Throwable</code>有两个体系<code>Error</code>和<code>Exception</code>。</p>
+</li>
+<li><p><code>Error</code>类</p>
+<ul>
+<li><code>OutOfMemoryError</code></li>
+<li><code>NoClassDefFounderError</code></li>
+<li><code>StackOverError</code></li>
+<li>等等<span id="more"></span></li>
+</ul>
+</li>
+<li><p><code>Exception</code>类</p>
+<ul>
+<li><code>RuntimeException</code><ul>
+<li><code>IndexOutOfBoundsException</code></li>
+<li><code>NullPointerException</code></li>
+<li>等等</li>
+</ul>
+</li>
+<li><code>非RuntimeException</code>(也叫<code>Checked Exception</code>异常)<ul>
+<li><code>IOException</code></li>
+<li><code>ReflectiveOperationException</code></li>
+<li><code>NumberFormatException</code></li>
+<li><code>FileNotFoundException</code></li>
+<li><code>SocketException</code></li>
+<li>等等</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><code>非RuntimeException</code>异常必须被捕获，<code>RuntimeExcept</code>异常不强制被捕获。</p>
+</li>
+<li><p>异常捕获使用<code>try&#123;&#125;···catch&#123;&#125;</code>语句。</p>
+</li>
+<li><p>其中<code>try</code>声明可能出现异常的方法，<code>catch</code>捕获异常 Exception 及其子类。</p>
+</li>
+<li><p><code>thorws</code>语句声明可能出现的异常，凡是用 throws 声明异常的方法，最终必须被捕获，如若不捕获，可在最高调用层<code>throws</code>异常，代价是发送异常的话程序会闪退。</p>
+</li>
+<li><p><code>printStackTrace()</code>方法可以打印异常栈。</p>
+<!-- more --></li>
+</ul>
+<h3 id="2-多-catch-语句与-finally"><a href="#2-多-catch-语句与-finally" class="headerlink" title="2.多 catch 语句与 finally"></a>2.多 catch 语句与 finally</h3><ul>
+<li>catch 语句可以捕获多个异常，如果这些异常有继承关系，则需要分开捕获，例如如下代码：</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        process1();</span><br><span class="line">        process2();</span><br><span class="line">        process3();</span><br><span class="line">    &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">        System.out.println(e);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (NumberFormatException e) &#123;</span><br><span class="line">        System.out.println(e);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>注意子类要放在父类异常前面，否则如果匹配到父类异常，子类异常将不会被捕获到。</li>
+<li>如果无继承关系，则多个异常可以用<code>|</code>同时合并。</li>
+<li><code>finally</code>语句可以保证无论是否发生异常都会被执行。</li>
+<li>可以存在<code>try&#123;&#125;···finally&#123;&#125;</code>语句，前提是方法已经用<code>throws</code>语句声明异常。</li>
+</ul>
+<h3 id="3-抛出异常"><a href="#3-抛出异常" class="headerlink" title="3.抛出异常"></a>3.抛出异常</h3><ul>
+<li>异常的传播：当某个方法抛出了异常时，如果当前方法没有捕获异常，异常就会被抛到上层调用方法，直到遇到某个<code>try&#123;&#125;···catch&#123;&#125;</code>语句被捕获为止。</li>
+<li>如何抛出异常:创建某个异常实例，用<code>throws</code>语句抛出。</li>
+<li>异常类型转换，如果在<code>try</code>语句中抛出异常，又在<code>catch</code>语句抛出新的异常，就会把异常类型转换。</li>
+<li>获取原始异常的办法：<ul>
+<li>把<code>try</code>捕获的原始异常的实例传入<code>catch</code>语句中抛出的新类型异常的参数中。</li>
+<li>使用<code>getCause()</code>方法。</li>
+</ul>
+</li>
+<li>如果在 try 或者 catch 语句中抛出异常，JVM 会先执行 finally 语句，然后抛出异常。</li>
+<li>异常屏蔽(Suppressed Exception)：如果在 finally 语句抛出异常，则 catch 语句的异常不会被抛出，由于 JVM 只能抛出一个异常。</li>
+<li>打印输出被屏蔽的异常<code>SuppressedException</code>的方法：创建一个<code>Exception </code>实例，保存被屏蔽的异常的信息，判断存在 SuppressedException 后，用<code>addSuppressed()</code>方法把刚才创建的<code>Exception</code>实例添加进来，最后抛出异常。</li>
+</ul>
+<h3 id="4-自定义异常类型-amp-NullPointerException"><a href="#4-自定义异常类型-amp-NullPointerException" class="headerlink" title="4.自定义异常类型&amp;NullPointerException"></a>4.自定义异常类型&amp;NullPointerException</h3><ul>
+<li><p>在一个大型项目中，通常的做法是自定义一个<code>BaseException</code>，并且建议继承自<code>RuntimeException</code>，最后由<code>BaseEduixception</code>派生出其他自定义异常类型。</p>
+</li>
+<li><p>对于<code>NullPointerException</code>异常，应当遵循早暴露早修复的原则。</p>
+</li>
+<li><p>为了防止出现<code>NullPointerException</code>异常，应有较好的编码习惯，比如用<code>&quot; &quot;</code>空字符串代替<code>null</code>。</p>
+</li>
+</ul>
+<h3 id="5-断言"><a href="#5-断言" class="headerlink" title="5.断言"></a>5.断言</h3><ul>
+<li>断言(Assertion)是一种调试程序的方式。</li>
+<li>作用处:断言通常用在不在可恢复程序中，因为断言失败会导致程序结束提出。</li>
+<li>断言的用法: 例如<code>assert x&gt;=0</code>,如果 x&lt;0，则断言失败，返回<code>AssertionError</code>；可以在断言的时候附带错误信息，例如<code>assert x&gt;=0 : &quot;x must &gt; 0&quot;</code>。</li>
+<li>开启方式: 断言默认是关闭的，可以在命令行开启<code>java -enableassertions Main.java</code>。</li>
+</ul>
+<h3 id="6-JDK-Logging"><a href="#6-JDK-Logging" class="headerlink" title="6.JDK Logging"></a>6.JDK Logging</h3><ul>
+<li><p><code>JDK Logging</code>可用于有针对性地调试代码。</p>
+</li>
+<li><p><code>JDK Logging</code>的使用：</p>
+</li>
+<li><p>位于<code>java.util.logging</code>包中。</p>
+</li>
+<li><p>有八种日志级别，默认级别为 INFO，并且默认级别以下的日志不会被打印，但可设定默认级别。</p>
+<ul>
+<li>SEVERE<ul>
+<li>WARNING</li>
+<li>INFO</li>
+<li>CONFIG</li>
+<li>FINE</li>
+<li>FINER</li>
+<li>FINEST</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>示例代码</p>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.itranswarp.learnjava;</span><br><span class="line"><span class="keyword">import</span> java.util.logging.Logger;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Main</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">Logger</span> <span class="variable">logger</span> <span class="operator">=</span> Logger.getGlobal();</span><br><span class="line">        logger.info(<span class="string">&quot;start process...&quot;</span>);</span><br><span class="line">        logger.warning(<span class="string">&quot;memory is running out...&quot;</span>);</span><br><span class="line">        logger.fine(<span class="string">&quot;ignored.&quot;</span>);</span><br><span class="line">        logger.severe(<span class="string">&quot;process will be terminated...&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<pre><code>  ### 7.Commons Logging
+</code></pre>
+<ul>
+<li><code>Commons Logging</code>是一种第三方日志库，它由<code>Apache</code>创建，可作为日志接口来调用其他日志系统。</li>
+<li>特点：可以挂载不同的日志系统，默认情况下先搜索<code>Log4j</code>，如果没找到，再使用<code>JDK Logging</code>。</li>
+<li>使用<ul>
+<li>首先可通过静态工厂方法<code>LogFactory.getLog()</code>方法(方法内的参数可以为<code>getclass()</code>或<code>当前类名.class</code>,Main)创建一个<code>Log</code>实例，再使用<code>Log</code>的实例方法打印日志。</li>
+<li>如果在静态方法中引用<code>Log</code>示例，则需要定义静态<code>Log</code>实例，如果在实例方法中引用实例，则定义一个实例变量。</li>
+<li>示例代码</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> org.apache.commons.logging.Log;</span><br><span class="line"><span class="keyword">import</span> org.apache.commons.logging.LogFactory;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Main</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">Log</span> <span class="variable">log</span> <span class="operator">=</span> LogFactory.getLog(Main.class);</span><br><span class="line">        log.info(<span class="string">&quot;start...&quot;</span>);</span><br><span class="line">        log.warn(<span class="string">&quot;end.&quot;</span>);m</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>六种日志级别，其中<code>INFO</code>为默认级别。<ul>
+<li>FATAL</li>
+<li>ERROR</li>
+<li>WARNING</li>
+<li>INFO</li>
+<li>DEBUG</li>
+<li>TRACE</li>
+</ul>
+</li>
+<li>注意：由于为第三方库，所以需要提前下载。</li>
+</ul>
+<h3 id="8-Log4j"><a href="#8-Log4j" class="headerlink" title="8.Log4j"></a>8.Log4j</h3><ul>
+<li><code>Log4j</code>是一种日志系统，就跟<code>JDK Logging</code>一样。</li>
+<li>Log4j 的特点：可自动通过不同的 Appender 把同一条日志输出到不同的目的地。</li>
+<li>使用：可通过修改配置文件，最后通过<code>Common Logging</code>来实现调用。</li>
+</ul>
+<h3 id="9-SLF4J-和-Logback"><a href="#9-SLF4J-和-Logback" class="headerlink" title="9.SLF4J 和 Logback"></a>9.SLF4J 和 Logback</h3><ul>
+<li><code>SLF4J</code>相当于<code>Common Logging</code>。</li>
+<li><code>Logback</code>相当于<code>Log4j</code>。</li>
+<li>使用：<code>SLF4J</code>的接口实际上和<code>Commons Logging</code>几乎一模一样，不同之处就是<code>Log</code>变成了<code>Logger</code>，<code>LogFactory</code>变成了<code>LoggerFactory</code>。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>技术笔记</category>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java异常</tag>
+        <tag>Java日志</tag>
       </tags>
   </entry>
   <entry>
@@ -3095,35 +2862,289 @@
       </tags>
   </entry>
   <entry>
+    <title>Java入门</title>
+    <url>/2020/06/13/java-introduction/</url>
+    <content><![CDATA[<blockquote>
+<p>本文是 Java 的入门学习篇，学习于<a href="https://www.liaoxuefeng.com/wiki/1252599548343744">廖雪峰的 Java 教程</a>。</p>
+</blockquote>
+<h2 id="1-Java-介绍"><a href="#1-Java-介绍" class="headerlink" title="1.Java 介绍"></a>1.Java 介绍</h2><p>最早由 James golis 开发，起初叫 OAK.</p>
+<p>JDK:Java Development Kit</p>
+<ul>
+<li>Java 开发工具箱。</li>
+<li>包含了编译器，调试器，虚拟机等一系列开发工具。</li>
+</ul>
+<p>JRE：Java Runtime Rnvironment</p>
+<ul>
+<li><p>Java 虚拟机。</p>
+</li>
+<li><p>运行字节码文件，JRE 是 JDK 的一部分。</p>
+<span id="more"></span>
+<p>JSR：Java Specification request</p>
+</li>
+<li><p>Java 规范要求。</p>
+</li>
+<li><p>规范 Java 平台新增加的功能。</p>
+</li>
+</ul>
+<p>JCP：Java Community process</p>
+<ul>
+<li>Java 社区流程。</li>
+<li>审核 JSR。</li>
+</ul>
+<h2 id="2-Java-工具"><a href="#2-Java-工具" class="headerlink" title="2.Java 工具"></a>2.Java 工具</h2><p>java</p>
+<ul>
+<li>其实就是虚拟机，执行字节码文件。</li>
+</ul>
+<p>javac</p>
+<ul>
+<li>全称 Java Compiler,编译源文件为字节码文件。</li>
+</ul>
+<p>jar</p>
+<ul>
+<li>把字节码文件打包为 jar 压缩文件。</li>
+</ul>
+<p>javadoc</p>
+<ul>
+<li>生成注释文档。</li>
+</ul>
+<p>jdb</p>
+<ul>
+<li>全称 Java Debugger,Java 调试器，用于开发时进行代码调试。</li>
+</ul>
+<h2 id="3-Java-基础"><a href="#3-Java-基础" class="headerlink" title="3.Java 基础"></a>3.Java 基础</h2><p>Java 类名书写规范</p>
+<ul>
+<li>类名必须以英文字母开头，后接字母.数字或下划线。</li>
+<li>类名首字母习惯大写，此后后面的每个单词首字母都大写。</li>
+</ul>
+<p>Java 程序的入口方法</p>
+<ul>
+<li>静态的 main 方法，Java 程序总是从 main 方法开始执行的。</li>
+</ul>
+<p>方法名书写规范</p>
+<ul>
+<li>方法名必须以英文字母开头，后接字母，数字或下划线。</li>
+<li>方法名首字母习惯小写，此后后面的每个单词首字母大写。</li>
+</ul>
+<p>Java 的文档注释</p>
+<ul>
+<li>标识在方法和类名的定义处，用于自动创建文档。</li>
+</ul>
+<p>Java 变量</p>
+<ul>
+<li>分为基本类型变量和隐形类型变量。</li>
+<li>基本类型变量如未初始化，则默认值为 0.</li>
+<li>引用类型变量如未初始化，则默认值为 null.</li>
+</ul>
+<p>Java 基本数据类型</p>
+<ul>
+<li><p>int</p>
+<ul>
+<li>占 4 个字节。</li>
+<li>范围：-2147483648-2147483647.</li>
+</ul>
+</li>
+<li><p>short</p>
+<ul>
+<li>占 2 个字节.</li>
+<li>范围：-32768-32767.</li>
+</ul>
+</li>
+<li><p>byte</p>
+<ul>
+<li>占 1 个字节.</li>
+<li>范围：-128-127.</li>
+</ul>
+</li>
+<li><p>long</p>
+<ul>
+<li>占 8 个字节.</li>
+<li>范围：-9223372036854775808 -9223372036854775807</li>
+</ul>
+</li>
+<li><p>double</p>
+<ul>
+<li>占 8 个字节.</li>
+</ul>
+</li>
+<li><p>float</p>
+<ul>
+<li>占 4 个字节.</li>
+</ul>
+</li>
+<li><p>char</p>
+<ul>
+<li>占 2 个字节.</li>
+</ul>
+</li>
+</ul>
+<p>java 运算</p>
+<ul>
+<li><p>两个整数相除，结果忽略小数部分。</p>
+</li>
+<li><p>按位运算是对 4 字节的 8 位二进制数进行左移或者右移。</p>
+</li>
+<li><p>如果对负数进行按位右移，由于符号位为 1 不动，所以结果仍然是负数。</p>
+</li>
+<li><p>无符号位移运算用&gt;&gt;&gt;或&lt;&lt;&lt;,表示符号位也会跟着变动。</p>
+</li>
+<li><p>与运算</p>
+<ul>
+<li>两个数同时为 1，结果才为 1。</li>
+<li>与运算的常见用途：两个 IP 地址进行与运算，判断一个 IP 是否在给定的网段内。</li>
+</ul>
+</li>
+<li><p>或运算</p>
+<ul>
+<li>其中一个数为 1，结果才为 1.</li>
+</ul>
+</li>
+<li><p>非运算</p>
+<pre><code>-
+</code></pre>
+<p>非 0 即 1，非 1 即 0.</p>
+</li>
+<li><p>异或运算</p>
+<ul>
+<li>两个数不同，结果为 1，否则为 0.</li>
+</ul>
+</li>
+<li><p>浮点数四舍五入转换为整数</p>
+<ul>
+<li>浮点数+0.5 后再进行转换。</li>
+</ul>
+</li>
+</ul>
+<p>Java 字符的表示</p>
+<ul>
+<li>一是用单引号括起来的字符表示。</li>
+<li>二是用单引号括起来的转义字符表示。</li>
+<li>其中转义字符的表示：\u+四位十六进制数。</li>
+</ul>
+<p>Java 字符串连接</p>
+<ul>
+<li>字符串变量可用+号连接其他字符串或者其他数据类型。</li>
+<li>如果用+号连接其他数据类型，则其他数据类型的会先自动转变为字符串。</li>
+<li>Java 表示多行字符串可用符号 ”‘ “’ 。</li>
+<li>Java 的不可变性指的是字符串内容不会变，只是指针指向了另一个字符串内容。</li>
+</ul>
+<p>null 值</p>
+<ul>
+<li>表示变量未指向任何对象。</li>
+</ul>
+<p>Java 数组</p>
+<ul>
+<li>是同一数据类型的集合。</li>
+<li>初始化时，如果是整数，默认值为 0，如果是浮点数默认值为 0.0，如果是布尔，默认值为 false。</li>
+</ul>
+<p>判断两个浮点数是否相同</p>
+<ul>
+<li>两个浮点数之差的绝对值是否小于 0.00001.</li>
+</ul>
+<p>Java 特殊的三个数值</p>
+<ul>
+<li>NaN Not a Number.</li>
+<li>Infinity 无穷大。</li>
+<li>-Infinity 负无穷大。</li>
+</ul>
+<p>基本类型变量和引用型变量的值</p>
+<ul>
+<li><p>基本类型变量的值是数值。</p>
+</li>
+<li><p>引用型变量的值为引用，相当于指针。</p>
+</li>
+<li><p>比较方法：</p>
+<ul>
+<li>两个基本类型变量的比较用&#x3D;&#x3D;。</li>
+<li>两个引用类型变量的比较用 equals 方法。</li>
+</ul>
+</li>
+</ul>
+<p>Java 类型转换</p>
+<ul>
+<li>低等级类型向高等级类型转换是自动转换。</li>
+<li>高等级类型向低等级类型转换是强制转换。</li>
+</ul>
+<p>java 数组大小与引用</p>
+<ul>
+<li>数组大小不会变化，所谓变化只是指向了新的数组。</li>
+<li>Java 数组变量指向一个新数组后，原数组不会消失，只是无法通过引用访问。</li>
+</ul>
+<p>for 循环与 for-each 循环</p>
+<ul>
+<li>for 循环执行流程：先初始化计时器，再判断循环条件，最后再更新计时器。</li>
+<li>for-each 循环适用于数组.</li>
+</ul>
+<p>conuite 与 break</p>
+<ul>
+<li>continue 结束本次循环。</li>
+<li>break 结束当前所在的一层循环。</li>
+</ul>
+<p>数组相关</p>
+<ul>
+<li><p>打印数组变量时，输出的是数组首元素索引。</p>
+</li>
+<li><p>数组的排序</p>
+<ul>
+<li>常见排序方法</li>
+<li>Array.sort()方法，默认从小到大排序。</li>
+</ul>
+</li>
+<li><p>二维数组的长度</p>
+<ul>
+<li>二维数组的元素是数组，所以二维数组的长度为数组元素个数。</li>
+<li>二位数组元素的长度不要求相同。</li>
+</ul>
+</li>
+<li><p>数组元素的两种打印输出方法</p>
+<ul>
+<li>for 循环</li>
+<li>Array.toString() 方法格式化输出。</li>
+<li>Array.deepToString()方法格式化输出，适用于多维数组。</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>技术笔记</category>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>JDK</tag>
+        <tag>Java基础</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>npm常用命令</title>
     <url>/2020/08/04/npm-command/</url>
-    <content><![CDATA[<h1 id="npm常见命令"><a href="#npm常见命令" class="headerlink" title="npm常见命令"></a>npm常见命令</h1><h2 id="一-npm-amp-yarn介绍"><a href="#一-npm-amp-yarn介绍" class="headerlink" title="一.npm&amp;yarn介绍"></a>一.npm&amp;yarn介绍</h2><p>npm是一个基于Node.js的包管理工具。<br>yarn是Facebook、Google、Exponent 和 Tilde 联合推出了一个新的 包管理工具,与npm相比有些优势。<br>npm在安装Node.js时会被一并安装，yarn则需要额外安装。</p>
-<h2 id="二-npm-amp-cnpm的关系"><a href="#二-npm-amp-cnpm的关系" class="headerlink" title="二.npm&amp;cnpm的关系"></a>二.npm&amp;cnpm的关系</h2><h3 id="1-介绍"><a href="#1-介绍" class="headerlink" title="1.介绍"></a>1.介绍</h3><p>由于npm服务器在国外，所以在国内安装速度不是很理想，于是淘宝团队开发了一个npmjs.org的镜像，可以有效解决下载过于缓慢的问题。这是淘宝团队对它的介绍。</p>
+    <content><![CDATA[<h1 id="npm-常见命令"><a href="#npm-常见命令" class="headerlink" title="npm 常见命令"></a>npm 常见命令</h1><h2 id="一-npm-amp-yarn-介绍"><a href="#一-npm-amp-yarn-介绍" class="headerlink" title="一.npm&amp;yarn 介绍"></a>一.npm&amp;yarn 介绍</h2><p>npm 是一个基于 Node.js 的包管理工具。<br>yarn 是 Facebook、Google、Exponent 和 Tilde 联合推出了一个新的 包管理工具,与 npm 相比有些优势。<br>npm 在安装 Node.js 时会被一并安装，yarn 则需要额外安装。</p>
+<h2 id="二-npm-amp-cnpm-的关系"><a href="#二-npm-amp-cnpm-的关系" class="headerlink" title="二.npm&amp;cnpm 的关系"></a>二.npm&amp;cnpm 的关系</h2><h3 id="1-介绍"><a href="#1-介绍" class="headerlink" title="1.介绍"></a>1.介绍</h3><p>由于 npm 服务器在国外，所以在国内安装速度不是很理想，于是淘宝团队开发了一个 npmjs.org 的镜像，可以有效解决下载过于缓慢的问题。这是淘宝团队对它的介绍。</p>
 <blockquote>
 <blockquote>
-<p>“这是一个完整 npmjs.org 镜像，你可以用此代替官方版本(只读)，同步频率目前为 10分钟 一次以保证尽量与官方服务同步。”</p>
+<p>“这是一个完整 npmjs.org 镜像，你可以用此代替官方版本(只读)，同步频率目前为 10 分钟 一次以保证尽量与官方服务同步。”</p>
 </blockquote>
 </blockquote>
-<span id="more"></span>
 <h3 id="2-安装"><a href="#2-安装" class="headerlink" title="2.安装"></a>2.安装</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install -g cnpm --registry=https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
 
-<h2 id="三-npm常见命令"><a href="#三-npm常见命令" class="headerlink" title="三.npm常见命令"></a>三.npm常见命令</h2><h3 id="1-npm-v"><a href="#1-npm-v" class="headerlink" title="1.npm -v"></a>1.npm -v</h3><p>查看npm版本信息。</p>
-<h3 id="2-npm-install-lt-Module-Name-gt-本地安装"><a href="#2-npm-install-lt-Module-Name-gt-本地安装" class="headerlink" title="2.npm install  &lt; Module Name &gt; 本地安装"></a>2.npm install  &lt; Module Name &gt; 本地安装</h3><p>在本地目录的node_modules下安装模块。</p>
-<h3 id="3-npm-install-lt-Module-Name-gt-g-全局安装"><a href="#3-npm-install-lt-Module-Name-gt-g-全局安装" class="headerlink" title="3.npm install &lt; Module Name &gt;  -g 全局安装"></a>3.npm install &lt; Module Name &gt;  -g 全局安装</h3><p>将模块安装在node所安装的目录。</p>
+<span id="more"></span>
+
+<h2 id="三-npm-常见命令"><a href="#三-npm-常见命令" class="headerlink" title="三.npm 常见命令"></a>三.npm 常见命令</h2><h3 id="1-npm-v"><a href="#1-npm-v" class="headerlink" title="1.npm -v"></a>1.npm -v</h3><p>查看 npm 版本信息。</p>
+<h3 id="2-npm-install-lt-Module-Name-gt-本地安装"><a href="#2-npm-install-lt-Module-Name-gt-本地安装" class="headerlink" title="2.npm install &lt; Module Name &gt; 本地安装"></a>2.npm install &lt; Module Name &gt; 本地安装</h3><p>在本地目录的 node_modules 下安装模块。</p>
+<h3 id="3-npm-install-lt-Module-Name-gt-g-全局安装"><a href="#3-npm-install-lt-Module-Name-gt-g-全局安装" class="headerlink" title="3.npm install &lt; Module Name &gt; -g 全局安装"></a>3.npm install &lt; Module Name &gt; -g 全局安装</h3><p>将模块安装在 node 所安装的目录。</p>
 <h3 id="4-npm-list-g"><a href="#4-npm-list-g" class="headerlink" title="4.npm list -g"></a>4.npm list -g</h3><p>查看全局安装的模块。</p>
 <h3 id="5-npm-list-lt-Module-Name-gt"><a href="#5-npm-list-lt-Module-Name-gt" class="headerlink" title="5.npm list &lt; Module Name &gt;"></a>5.npm list &lt; Module Name &gt;</h3><p>查看模块的版本信息。</p>
 <h3 id="6-npm-uninstall-lt-Module-Name-gt"><a href="#6-npm-uninstall-lt-Module-Name-gt" class="headerlink" title="6.npm uninstall &lt; Module Name &gt;"></a>6.npm uninstall &lt; Module Name &gt;</h3><p>卸载模块。</p>
-<h3 id="7-npm-update-lt-Module-Name-gt"><a href="#7-npm-update-lt-Module-Name-gt" class="headerlink" title="7.npm update  &lt; Module Name &gt;"></a>7.npm update  &lt; Module Name &gt;</h3><p>更新模块。</p>
-<h3 id="8-npm-search-lt-Module-Name-gt"><a href="#8-npm-search-lt-Module-Name-gt" class="headerlink" title="8.npm search  &lt; Module Name &gt;"></a>8.npm search  &lt; Module Name &gt;</h3><p>搜索模块。</p>
+<h3 id="7-npm-update-lt-Module-Name-gt"><a href="#7-npm-update-lt-Module-Name-gt" class="headerlink" title="7.npm update &lt; Module Name &gt;"></a>7.npm update &lt; Module Name &gt;</h3><p>更新模块。</p>
+<h3 id="8-npm-search-lt-Module-Name-gt"><a href="#8-npm-search-lt-Module-Name-gt" class="headerlink" title="8.npm search &lt; Module Name &gt;"></a>8.npm search &lt; Module Name &gt;</h3><p>搜索模块。</p>
 <h3 id="9-npm-init"><a href="#9-npm-init" class="headerlink" title="9.npm init"></a>9.npm init</h3><p>初始化创建模块</p>
 <h3 id="10-npm-adduser"><a href="#10-npm-adduser" class="headerlink" title="10.npm adduser"></a>10.npm adduser</h3><p>在某个资源库中注册账号。</p>
 <h3 id="11-npm-pulish"><a href="#11-npm-pulish" class="headerlink" title="11.npm pulish"></a>11.npm pulish</h3><p>推送模块到库。</p>
-<h2 id="四-nrm包介绍"><a href="#四-nrm包介绍" class="headerlink" title="四.nrm包介绍"></a>四.nrm包介绍</h2><h3 id="1-nrm是一个源管理工具，利用它可以切换下载源。"><a href="#1-nrm是一个源管理工具，利用它可以切换下载源。" class="headerlink" title="1.nrm是一个源管理工具，利用它可以切换下载源。"></a>1.nrm是一个源管理工具，利用它可以切换下载源。</h3><h3 id="2-安装-1"><a href="#2-安装-1" class="headerlink" title="2.安装"></a>2.安装</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install -g nrm</span><br></pre></td></tr></table></figure>
+<h2 id="四-nrm-包介绍"><a href="#四-nrm-包介绍" class="headerlink" title="四.nrm 包介绍"></a>四.nrm 包介绍</h2><h3 id="1-nrm-是一个源管理工具，利用它可以切换下载源。"><a href="#1-nrm-是一个源管理工具，利用它可以切换下载源。" class="headerlink" title="1.nrm 是一个源管理工具，利用它可以切换下载源。"></a>1.nrm 是一个源管理工具，利用它可以切换下载源。</h3><h3 id="2-安装-1"><a href="#2-安装-1" class="headerlink" title="2.安装"></a>2.安装</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install -g nrm</span><br></pre></td></tr></table></figure>
 
 <h3 id="3-使用"><a href="#3-使用" class="headerlink" title="3.使用"></a>3.使用</h3><h4 id="1-nrm-ls"><a href="#1-nrm-ls" class="headerlink" title="1.nrm ls"></a>1.nrm ls</h4><p>列出所有的源。</p>
 <h4 id="2-nrm-test"><a href="#2-nrm-test" class="headerlink" title="2.nrm test"></a>2.nrm test</h4><p>测试每个源的速度。</p>
-<h4 id="3-nrm-use-lt-registry-gt"><a href="#3-nrm-use-lt-registry-gt" class="headerlink" title="3.nrm use &lt; registry &gt;"></a>3.nrm use &lt; registry &gt;</h4><p>切换npm源。</p>
-<h4 id="4-nrm-add-lt-registry-gt-lt-url-gt"><a href="#4-nrm-add-lt-registry-gt-lt-url-gt" class="headerlink" title="4.nrm add &lt; registry &gt;  &lt; url &gt;"></a>4.nrm add &lt; registry &gt;  &lt; url &gt;</h4><p>增加npm源。</p>
+<h4 id="3-nrm-use-lt-registry-gt"><a href="#3-nrm-use-lt-registry-gt" class="headerlink" title="3.nrm use &lt; registry &gt;"></a>3.nrm use &lt; registry &gt;</h4><p>切换 npm 源。</p>
+<h4 id="4-nrm-add-lt-registry-gt-lt-url-gt"><a href="#4-nrm-add-lt-registry-gt-lt-url-gt" class="headerlink" title="4.nrm add &lt; registry &gt; &lt; url &gt;"></a>4.nrm add &lt; registry &gt; &lt; url &gt;</h4><p>增加 npm 源。</p>
 <h4 id="5-nrm-del-lt-registry-gt"><a href="#5-nrm-del-lt-registry-gt" class="headerlink" title="5.nrm del &lt; registry &gt;"></a>5.nrm del &lt; registry &gt;</h4><p>删除源。</p>
 ]]></content>
       <categories>
@@ -3138,19 +3159,19 @@
   <entry>
     <title></title>
     <url>/2022/08/26/package.json%E4%BB%8B%E7%BB%8D/</url>
-    <content><![CDATA[<h1 id="package-json介绍"><a href="#package-json介绍" class="headerlink" title="package.json介绍"></a>package.json介绍</h1><ol>
-<li>package.json作用<ol>
+    <content><![CDATA[<h1 id="package-json-介绍"><a href="#package-json-介绍" class="headerlink" title="package.json 介绍"></a>package.json 介绍</h1><ol>
+<li>package.json 作用<ol>
 <li>包管理配置文件，管理项目中所依赖的包的配置</li>
 </ol>
 </li>
-<li>package-lock作用<ol>
-<li>本质是锁定(lock)包的版本</li>
+<li>package-lock 作用<ol>
+<li>本质是锁定(lock)包的版本<span id="more"></span></li>
 </ol>
 </li>
 <li>常见属性<ol>
 <li>script<ol>
 <li>定义脚本命令</li>
-<li>每次运行npm run xxx命令时，会创建一个shell脚本，这个脚本会把当前项目的node-modules&#x2F;.bin子目录写入到系统的Path环境变量中</li>
+<li>每次运行 npm run xxx 命令时，会创建一个 shell 脚本，这个脚本会把当前项目的 node-modules&#x2F;.bin 子目录写入到系统的 Path 环境变量中</li>
 </ol>
 </li>
 <li>bin<ol>
@@ -3160,32 +3181,32 @@
 </li>
 <li>type<ol>
 <li>用来说明包使用的模块化规范</li>
-<li>如果采用ESM模块规范，则type的值为module</li>
-<li>如果采用CommonJS模块规范，则type的值为commonjs</li>
-<li>如果不想修改type，可以修改文件后缀名<ol>
-<li>ESModel模块规范后缀名为.mjs</li>
-<li>CommonJs模块规范后缀名为.cjs</li>
+<li>如果采用 ESM 模块规范，则 type 的值为 module</li>
+<li>如果采用 CommonJS 模块规范，则 type 的值为 commonjs</li>
+<li>如果不想修改 type，可以修改文件后缀名<ol>
+<li>ESModel 模块规范后缀名为.mjs</li>
+<li>CommonJs 模块规范后缀名为.cjs</li>
 </ol>
 </li>
 </ol>
 </li>
 <li>main&amp;module&amp;browser<ol>
 <li>都是用来指定入口文件</li>
-<li>main：定义了包的入口文件,支持node和browser环境</li>
-<li>module定义了包在ESM规范下的入口文件，支持node和browdeer环境</li>
-<li>browser定义了browser环境下的入口文件</li>
-<li>这三个入口文件的加载顺序，一般是ESM规范的文件先行<ol>
+<li>main：定义了包的入口文件,支持 node 和 browser 环境</li>
+<li>module 定义了包在 ESM 规范下的入口文件，支持 node 和 browdeer 环境</li>
+<li>browser 定义了 browser 环境下的入口文件</li>
+<li>这三个入口文件的加载顺序，一般是 ESM 规范的文件先行<ol>
 <li>browser+mjs&gt;module&gt;browser+cjs&gt;main</li>
 </ol>
 </li>
 </ol>
 </li>
 <li>exports<ol>
-<li>定义npm包的所有导出</li>
+<li>定义 npm 包的所有导出</li>
 <li>条件引用<ol>
 <li>引用方式以及模块化文件类型会影响入口文件的引入</li>
-<li>require引入.cjs文件</li>
-<li>import引入.mjs文件</li>
+<li>require 引入.cjs 文件</li>
+<li>import 引入.mjs 文件</li>
 </ol>
 </li>
 </ol>
@@ -3196,15 +3217,15 @@
 </ol>
 </li>
 <li>engines<ol>
-<li>指定项目能够运行的node以及npm版本</li>
+<li>指定项目能够运行的 node 以及 npm 版本</li>
 </ol>
 </li>
 </ol>
 </li>
-<li>npm扁平化<ol>
-<li>npm扁平化的原因是npm2过多重复依赖导致的磁盘浪费问题以及window系统下路径过长问题</li>
+<li>npm 扁平化<ol>
+<li>npm 扁平化的原因是 npm2 过多重复依赖导致的磁盘浪费问题以及 window 系统下路径过长问题</li>
 <li>缺点<ol>
-<li>幽灵依赖问题（引入没有在package.json中声明的依赖）</li>
+<li>幽灵依赖问题（引入没有在 package.json 中声明的依赖）</li>
 <li>存在一个包的多个版本下，只能实现一个版本的扁平化</li>
 </ol>
 </li>
@@ -3216,25 +3237,26 @@
   <entry>
     <title>语义化版本2.0.0介绍</title>
     <url>/2021/06/15/semver2.0.0/</url>
-    <content><![CDATA[<h1 id="语义化版本2-0-0介绍"><a href="#语义化版本2-0-0介绍" class="headerlink" title="语义化版本2.0.0介绍"></a>语义化版本2.0.0介绍</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>语义化版本是为了解决软件开发过程中依赖关系混乱或者依赖锁死的情况。</p>
+    <content><![CDATA[<h1 id="语义化版本-2-0-0-介绍"><a href="#语义化版本-2-0-0-介绍" class="headerlink" title="语义化版本 2.0.0 介绍"></a>语义化版本 2.0.0 介绍</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>语义化版本是为了解决软件开发过程中依赖关系混乱或者依赖锁死的情况。</p>
 <p>它的标准格式如下：</p>
 <blockquote>
 <p><strong>x.y.z</strong></p>
 </blockquote>
-<p>其中x表示主版本号，y表示次版本号，z表示修订号。</p>
+<p>其中 x 表示主版本号，y 表示次版本号，z 表示修订号。</p>
+<span id="more"></span>
+
 <p>对这几种版本号的解释如下：</p>
 <p>X 主版本号，表示做了<strong>不向下兼容的修改</strong>时递增。</p>
 <p>Y 次版本号，表示做了<strong>向下兼容的新增及修改</strong>时递增。</p>
 <p>Z 修订号，表示做了<strong>向下兼容的问题修复</strong>时递增。</p>
-<span id="more"></span>
 <h2 id="规范"><a href="#规范" class="headerlink" title="规范"></a>规范</h2><ol>
-<li><p>必须定义公共API，且公共API应该力求准确和完整。</p>
+<li><p>必须定义公共 API，且公共 API 应该力求准确和完整。</p>
 </li>
-<li><p>x,y,z必须都为非负整数，且禁止在数字前补零。</p>
+<li><p>x,y,z 必须都为非负整数，且禁止在数字前补零。</p>
 </li>
-<li><p>0.y.z表示软件处于初始开发阶段,y与z可以根据初始开发阶段的情况递增。</p>
+<li><p>0.y.z 表示软件处于初始开发阶段,y 与 z 可以根据初始开发阶段的情况递增。</p>
 </li>
-<li><p>1.0.0表示软件开发成功的第一个版本号，也是界定公共API成熟的标志。</p>
+<li><p>1.0.0 表示软件开发成功的第一个版本号，也是界定公共 API 成熟的标志。</p>
 </li>
 <li><p>次版本号递增的原则:</p>
 <ul>
@@ -3344,54 +3366,6 @@
       <tags>
         <tag>Git</tag>
       </tags>
-  </entry>
-  <entry>
-    <title></title>
-    <url>/2022/08/26/this%E5%85%B3%E9%94%AE%E5%AD%97/</url>
-    <content><![CDATA[<h1 id="this关键字"><a href="#this关键字" class="headerlink" title="this关键字"></a>this关键字</h1><ol>
-<li>this总是返回一个对象。</li>
-<li>this的值为属性或方法当前所在的对象(环境)。</li>
-<li>使用场合<ol>
-<li>在全局环境下，this的值为顶层环境window。</li>
-<li>在构造函数中，this指向实例对象。</li>
-<li>在对象的方法中，this指向当前方法所在的对象，但如果对一个对象进行赋值时，this的指向就会改变了。</li>
-</ol>
-</li>
-<li>多层this的情况下，可以考虑使用一个变量指向外层this。</li>
-<li>回调函数中的this指向当前环境中的全局对象。</li>
-<li>Function.prototype.call()<ol>
-<li>用来指定this的指向。</li>
-<li>call方法的参数如果为空,null,或者underfined，则默认指向window对象。</li>
-<li>如果只有一个参数，并且参数为对象，则this指向这个参数对象。</li>
-<li>如果只有一个参数，并且参数为原始值，则this指向这个原始值的包装对象。</li>
-<li>如果有多个参数，则第一个参数为this指向的对象，后面的参数为函数调用时需要的参数。</li>
-</ol>
-</li>
-<li>Function.prototype.apply()<ol>
-<li>跟call方法类似，也是用来指定this的指向。</li>
-<li>如果只有一个参数，并且参数为对象，则this指向这个参数对象。</li>
-<li>如果有多个参数，则第一个参数为this要指向的对象，第二个参数为参数数组。</li>
-</ol>
-</li>
-<li>Function.prototype.bind()<ol>
-<li>bind方法用于将函数中的this绑定到某个对象，并且返回一个新函数。</li>
-<li>bind方法也可以用于绑定参数。</li>
-<li>如果只有一个参数，并且参数为对象，则this指向这个参数对象。</li>
-<li>如果有多个参数，则第一个参数为this指向的对象，后面的参数为函数调用时需要的参数。</li>
-<li>注意事项：<ol>
-<li>每次调用会返回一个全新的函数</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-]]></content>
-  </entry>
-  <entry>
-    <title></title>
-    <url>/2022/08/26/~$Docker/</url>
-    <content><![CDATA[<p>zixiang liu                                           z i x i a n g   l i u         ��N�|   &lt;’��                  �N�|                  }����  ��N�|   @�N�</p>
-]]></content>
   </entry>
   <entry>
     <title>《习惯的力量》</title>
@@ -3556,6 +3530,52 @@
       <tags>
         <tag>书籍</tag>
       </tags>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2022/08/26/this%E5%85%B3%E9%94%AE%E5%AD%97/</url>
+    <content><![CDATA[<h1 id="this-关键字"><a href="#this-关键字" class="headerlink" title="this 关键字"></a>this 关键字</h1><ol>
+<li><p>this 总是返回一个对象。</p>
+</li>
+<li><p>this 的值为属性或方法当前所在的对象(环境)。</p>
+</li>
+<li><p>使用场合 1. 在全局环境下，this 的值为顶层环境 window。 2. 在构造函数中，this 指向实例对象。 3. 在对象的方法中，this 指向当前方法所在的对象，但如果对一个对象进行赋值时，this 的指向就会改变了。</p>
+<span id="more"></span>
+</li>
+<li><p>多层 this 的情况下，可以考虑使用一个变量指向外层 this。</p>
+</li>
+<li><p>回调函数中的 this 指向当前环境中的全局对象。</p>
+</li>
+<li><p>Function.prototype.call()</p>
+<ol>
+<li>用来指定 this 的指向。</li>
+<li>call 方法的参数如果为空,null,或者 underfined，则默认指向 window 对象。</li>
+<li>如果只有一个参数，并且参数为对象，则 this 指向这个参数对象。</li>
+<li>如果只有一个参数，并且参数为原始值，则 this 指向这个原始值的包装对象。</li>
+<li>如果有多个参数，则第一个参数为 this 指向的对象，后面的参数为函数调用时需要的参数。</li>
+</ol>
+</li>
+<li><p>Function.prototype.apply()</p>
+<ol>
+<li>跟 call 方法类似，也是用来指定 this 的指向。</li>
+<li>如果只有一个参数，并且参数为对象，则 this 指向这个参数对象。</li>
+<li>如果有多个参数，则第一个参数为 this 要指向的对象，第二个参数为参数数组。</li>
+</ol>
+</li>
+<li><p>Function.prototype.bind()</p>
+<ol>
+<li>bind 方法用于将函数中的 this 绑定到某个对象，并且返回一个新函数。</li>
+<li>bind 方法也可以用于绑定参数。</li>
+<li>如果只有一个参数，并且参数为对象，则 this 指向这个参数对象。</li>
+<li>如果有多个参数，则第一个参数为 this 指向的对象，后面的参数为函数调用时需要的参数。</li>
+<li>注意事项：<ol>
+<li>每次调用会返回一个全新的函数</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+]]></content>
   </entry>
   <entry>
     <title></title>

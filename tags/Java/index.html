@@ -123,27 +123,14 @@
     </header>
     
       <blockquote>
-<p>本文是Java的面向对象篇，学习于<a target="_blank" rel="noopener" href="https://www.liaoxuefeng.com/">廖雪峰的Java教程</a>.</p>
+<p>本文是 Java 的面向对象篇，学习于<a target="_blank" rel="noopener" href="https://www.liaoxuefeng.com/">廖雪峰的 Java 教程</a>.</p>
 </blockquote>
 <h2 id="面向对象基础"><a href="#面向对象基础" class="headerlink" title="面向对象基础"></a>面向对象基础</h2><h3 id="1-方法"><a href="#1-方法" class="headerlink" title="1.方法"></a>1.方法</h3><ul>
 <li><code>private</code>方法和<code>private</code>字段不能外部类访问。</li>
 <li><code>private</code>方法和<code>private</code>字段是用来方便自身类使用的，为了保证类的封装性。</li>
 <li><strong>this</strong> 变量指当前实例。</li>
 <li>局部变量的优先级高于字段，可变参数也是局部变量。</li>
-<li>可变参数的定义：<code>类型... 变量名</code>，相当于数组。</li>
-</ul>
-<h3 id="2-构造方法"><a href="#2-构造方法" class="headerlink" title="2.构造方法"></a>2.构造方法</h3><ul>
-<li>构造方法名与类名相同，构造方法无返回值，必须用<code>new</code>操作符调用。</li>
-<li>未自定义构造方法时，系统会默认创建一个无参数构造方法。</li>
-<li>如果已经自定义构造方法，系统将不再默认创建构造方法。</li>
-<li>引用类型的字段默认是<code>null</code>，数值类型的字段是默认值，<code>int</code>类型默认值是<code>0</code>，布尔类型默认值是<code>false</code>。</li>
-<li>字段的最终赋值结果由构造方法中的赋值语句决定。</li>
-<li>一个类中可以有多构造方法，只是参数列表不同。</li>
-</ul>
-<h3 id="3-重载方法"><a href="#3-重载方法" class="headerlink" title="3.重载方法"></a>3.重载方法</h3><ul>
-<li>方法名相同但参数列表不同的方法叫(overload)重载方法，返回类型<strong>通常</strong>是相同的。</li>
-<li>重载方法的目的是实现相似的功能但得出不同的结果。</li>
-<li>方法签名: 方法名和参数列表。
+<li>可变参数的定义：<code>类型... 变量名</code>，相当于数组。
     
     
     
@@ -175,7 +162,20 @@
 </a>
     </header>
     
-      
+      <blockquote>
+<p>本文是 Java 的入门学习篇，学习于<a target="_blank" rel="noopener" href="https://www.liaoxuefeng.com/wiki/1252599548343744">廖雪峰的 Java 教程</a>。</p>
+</blockquote>
+<h2 id="1-Java-介绍"><a href="#1-Java-介绍" class="headerlink" title="1.Java 介绍"></a>1.Java 介绍</h2><p>最早由 James golis 开发，起初叫 OAK.</p>
+<p>JDK:Java Development Kit</p>
+<ul>
+<li>Java 开发工具箱。</li>
+<li>包含了编译器，调试器，虚拟机等一系列开发工具。</li>
+</ul>
+<p>JRE：Java Runtime Rnvironment</p>
+<ul>
+<li><p>Java 虚拟机。</p>
+</li>
+<li><p>运行字节码文件，JRE 是 JDK 的一部分。</p>
     
     
     
@@ -208,61 +208,21 @@
     </header>
     
       <blockquote>
-<p>本文是Java的面向对象篇，学习于<a target="_blank" rel="noopener" href="https://www.liaoxuefeng.com/">廖雪峰的Java教程</a>.</p>
+<p>本文是 Java 的面向对象篇，学习于<a target="_blank" rel="noopener" href="https://www.liaoxuefeng.com/">廖雪峰的 Java 教程</a>.</p>
 </blockquote>
-<h2 id="Java核心类"><a href="#Java核心类" class="headerlink" title="Java核心类"></a>Java核心类</h2><h3 id="1-String"><a href="#1-String" class="headerlink" title="1.String"></a>1.String</h3><ul>
-<li><p>String字符串内部是通过一个<code>char[]</code>表示的。</p>
-</li>
-<li><p>String字符串不可变性的实现：通过内部的<code>private final char[]</code>实现。</p>
-</li>
-<li><p>字符串的比较</p>
-<ul>
+<h2 id="Java-核心类"><a href="#Java-核心类" class="headerlink" title="Java 核心类"></a>Java 核心类</h2><h3 id="1-String"><a href="#1-String" class="headerlink" title="1.String"></a>1.String</h3><ul>
+<li>String 字符串内部是通过一个<code>char[]</code>表示的。</li>
+<li>String 字符串不可变性的实现：通过内部的<code>private final char[]</code>实现。</li>
+<li>字符串的比较<ul>
 <li>用<code>equals()</code>方法来比较，而不用<code>==</code>。</li>
-<li>Java编译器在编译期间，会把拥有相同字符串的对象视为同一个对象并且放入常量池，所以用<code>==</code>比较字符串得出的结果会有巧合性。</li>
+<li>Java 编译器在编译期间，会把拥有相同字符串的对象视为同一个对象并且放入常量池，所以用<code>==</code>比较字符串得出的结果会有巧合性。</li>
 <li>忽略大小写比较字符串用<code>equalsIgnoreCase()</code>方法。</li>
 </ul>
 </li>
-<li><p>判断是否包含子串用<code>contains()</code>方法，参数为<code>CharSequence</code>类，为String的子类。</p>
-</li>
-<li><p>搜索字串</p>
-<ul>
+<li>判断是否包含子串用<code>contains()</code>方法，参数为<code>CharSequence</code>类，为 String 的子类。</li>
+<li>搜索字串<ul>
 <li><code>indexOf()</code>方法返回字串第一次出现在前半部分的索引。</li>
-<li><code>lastIndexOf()</code>方法返回子串第一次出现在后半部分的索引。</li>
-</ul>
-</li>
-<li><p>判断是否以子串开头或结尾</p>
-<ul>
-<li><code>startsWith()</code>判断是否以子串开头。</li>
-<li><code>endsWith()</code>判断是否以字串结尾。</li>
-</ul>
-</li>
-<li><p>提取字串</p>
-<ul>
-<li><code>substring(2)</code>从索引为2处开始提取字串。</li>
-<li><code>substring(2,4)</code>从索引为2处开始提取，到索引为4处结束，但不包括索引为4的值。</li>
-</ul>
-</li>
-<li><p>去除首尾空白字符</p>
-<ul>
-<li><code>trim()</code>方法，空白字符包括<code>\t</code>、<code>\r</code>、<code>\n</code>。</li>
-<li><code>strip()</code>方法，与<code>trim</code>方法的区别就是可以去除中文空格字符<code>\u3000</code>。</li>
-</ul>
-</li>
-<li><p>判断是否为空</p>
-<ul>
-<li><code>isBlank()</code>方法可以判断是否包含空白字符。</li>
-<li><code>isEmpty</code>方法可以判断是否字符串的长度是否为0，<em>空白字符也可作为一个字符串长度。</em></li>
-</ul>
-</li>
-<li><p>替换子串用<code>replace(s1,s2)</code>方法，其中第一个参数s1表示被替换的子串，第二个参数s2为替换的子串。</p>
-</li>
-<li><p><code>spilt()</code>方法可以分割字符串。</p>
-</li>
-<li><p>格式化字符串</p>
-<ul>
-<li><code>formatted()</code></li>
-<li><code>format()</code>静态方法</li>
-<li>示例代码
+<li><code>lastIndexOf()</code>方法返回子串第一次出现在后半部分的索引。
     
     
     

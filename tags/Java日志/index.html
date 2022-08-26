@@ -68,41 +68,19 @@
     </header>
     
       <blockquote>
-<p>本文是Java异常篇，学习于<a target="_blank" rel="noopener" href="https://www.liaoxuefeng.com/wiki/1252599548343744">廖雪峰的Java教程</a></p>
+<p>本文是 Java 异常篇，学习于<a target="_blank" rel="noopener" href="https://www.liaoxuefeng.com/wiki/1252599548343744">廖雪峰的 Java 教程</a></p>
 </blockquote>
-<h2 id="Java异常"><a href="#Java异常" class="headerlink" title="Java异常"></a>Java异常</h2><h3 id="1-异常类型"><a href="#1-异常类型" class="headerlink" title="1.异常类型"></a>1.异常类型</h3><ul>
-<li>异常体系的根为<code>Throwable</code>，它继承自<code>Object</code>。</li>
-<li><code>Throwable</code>有两个体系<code>Error</code>和<code>Exception</code>。</li>
-<li><code>Error</code>类<ul>
+<h2 id="Java-异常"><a href="#Java-异常" class="headerlink" title="Java 异常"></a>Java 异常</h2><h3 id="1-异常类型"><a href="#1-异常类型" class="headerlink" title="1.异常类型"></a>1.异常类型</h3><ul>
+<li><p>异常体系的根为<code>Throwable</code>，它继承自<code>Object</code>。</p>
+</li>
+<li><p><code>Throwable</code>有两个体系<code>Error</code>和<code>Exception</code>。</p>
+</li>
+<li><p><code>Error</code>类</p>
+<ul>
 <li><code>OutOfMemoryError</code></li>
 <li><code>NoClassDefFounderError</code></li>
 <li><code>StackOverError</code></li>
-<li>等等</li>
-</ul>
-</li>
-<li><code>Exception</code>类<ul>
-<li><code>RuntimeException</code><ul>
-<li><code>IndexOutOfBoundsException</code></li>
-<li><code>NullPointerException</code></li>
-<li>等等</li>
-</ul>
-</li>
-<li><code>非RuntimeException</code>(也叫<code>Checked Exception</code>异常)<ul>
-<li><code>IOException</code></li>
-<li><code>ReflectiveOperationException</code></li>
-<li><code>NumberFormatException</code></li>
-<li><code>FileNotFoundException</code></li>
-<li><code>SocketException</code></li>
-<li>等等</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><code>非RuntimeException</code>异常必须被捕获，<code>RuntimeExcept</code>异常不强制被捕获。</li>
-<li>异常捕获使用<code>try&#123;&#125;···catch&#123;&#125;</code>语句。</li>
-<li>其中<code>try</code>声明可能出现异常的方法，<code>catch</code>捕获异常Exception及其子类。</li>
-<li><code>thorws</code>语句声明可能出现的异常，凡是用throws声明异常的方法，最终必须被捕获，如若不捕获，可在最高调用层<code>throws</code>异常，代价是发送异常的话程序会闪退。</li>
-<li><code>printStackTrace()</code>方法可以打印异常栈。
+<li>等等
     
     
     

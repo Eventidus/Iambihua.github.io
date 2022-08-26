@@ -57,85 +57,85 @@
       
       
       
-        <h1 id="Promise对象"><a href="#Promise对象" class="headerlink" title="Promise对象"></a>Promise对象</h1><ol>
-<li>Promise是一种异步编程的解决方案，简单来说就像一种容器，里面保存着某个只有未来才会结束的事件的结果。</li>
-<li>Promise的三种状态，pending(进行中),fulfilled(已完成),rejected(已失败)。</li>
-<li>Promise的最终状态由异步操作之后的结果决定，并且状态改变之后不会再变。</li>
-<li>Promise 内部的错误不会影响到 Promise 外部的代码</li>
-<li>Promise的两种状态变更<ol>
-<li>由pending到fulfilled。</li>
-<li>由pending到rejected。</li>
+        <h1 id="Promise-对象"><a href="#Promise-对象" class="headerlink" title="Promise 对象"></a>Promise 对象</h1><ol>
+<li>Promise 是一种异步编程的解决方案，简单来说就像一种容器，里面保存着某个只有未来才会结束的事件的结果。</li>
+<li>Promise 的三种状态，pending(进行中),fulfilled(已完成),rejected(已失败)。</li>
+<li>Promise 的最终状态由异步操作之后的结果决定，并且状态改变之后不会再变。</li>
+<li>Promise 内部的错误不会影响到 Promise 外部的代码<span id="more"></span></li>
+<li>Promise 的两种状态变更<ol>
+<li>由 pending 到 fulfilled。</li>
+<li>由 pending 到 rejected。</li>
 </ol>
 </li>
-<li>创建Promise实例<ol>
-<li>通过构造函数new Promise()来创建一个Promise实例。</li>
-<li>这个构造函数接受一个函数形式的参数，并且这参数接受两个参数resolve和reject。</li>
-<li>resolve方法用于把异步操作成功之后的结果作为参数传递过去。</li>
-<li>resolve方法的参数也可以是另一个Promise实例，这时候当前的Promise状态由作为resolve参数的Promise实例状态决定。</li>
-<li>reject方法用于把异步操作失败之后的报错作为参数传递过去。</li>
+<li>创建 Promise 实例<ol>
+<li>通过构造函数 new Promise()来创建一个 Promise 实例。</li>
+<li>这个构造函数接受一个函数形式的参数，并且这参数接受两个参数 resolve 和 reject。</li>
+<li>resolve 方法用于把异步操作成功之后的结果作为参数传递过去。</li>
+<li>resolve 方法的参数也可以是另一个 Promise 实例，这时候当前的 Promise 状态由作为 resolve 参数的 Promise 实例状态决定。</li>
+<li>reject 方法用于把异步操作失败之后的报错作为参数传递过去。</li>
 </ol>
 </li>
-<li>then方法<ol>
-<li>then方法在当前脚本的所有同步任务完成之后才会执行。</li>
+<li>then 方法<ol>
+<li>then 方法在当前脚本的所有同步任务完成之后才会执行。</li>
 <li>一般用于指示下一步流程</li>
-<li>then方法接受两个参数，并且都是可选的，第一个表示状态为resolve时调用，第二个表示状态为reject时调用。</li>
-<li>如果只有一个参数时，就表示状态为resolve时调用。</li>
-<li>then方法返回一个promise实例，意味着可以进行链式调用。</li>
+<li>then 方法接受两个参数，并且都是可选的，第一个表示状态为 resolve 时调用，第二个表示状态为 reject 时调用。</li>
+<li>如果只有一个参数时，就表示状态为 resolve 时调用。</li>
+<li>then 方法返回一个 promise 实例，意味着可以进行链式调用。</li>
 </ol>
 </li>
-<li>catch方法<ol>
-<li>它其实相当于只有一个参数，并且状态为reject时的then方法。</li>
+<li>catch 方法<ol>
+<li>它其实相当于只有一个参数，并且状态为 reject 时的 then 方法。</li>
 <li>主要是用来捕获错误的。</li>
-<li>catch方法返回的也是一个Promise实例。</li>
+<li>catch 方法返回的也是一个 Promise 实例。</li>
 </ol>
 </li>
-<li>finally方法<ol>
-<li>finally方法表示不管状态如何，最后都会执行的方法。</li>
+<li>finally 方法<ol>
+<li>finally 方法表示不管状态如何，最后都会执行的方法。</li>
 </ol>
 </li>
-<li>all方法<ol>
-<li>将多个Promise实例组合成一个新的Promise实例。</li>
-<li>适用于并行执行多个Promise实例。</li>
-<li>参数为一个数组，并且数组元素都是Promise实例。</li>
-<li>如果数组元素不是Promise实例，会调用resolve()方法转换成Promise实例。</li>
-<li>整合的Promise实例的状态由组合成它的多个Promise实例状态决定<ol>
-<li>当所有Promise实例状态都为fulfilled时，这个整合的Promise实例状态为fulfilled，它的结果为一个新数组，并且数组元素为每个promise实例返回的结果。</li>
-<li>当任意一个Promise实例状态为reject时，这个整合的Promise实例状态为fulfilled，会返回碰到的第一个reject实例的返回值。</li>
+<li>all 方法<ol>
+<li>将多个 Promise 实例组合成一个新的 Promise 实例。</li>
+<li>适用于并行执行多个 Promise 实例。</li>
+<li>参数为一个数组，并且数组元素都是 Promise 实例。</li>
+<li>如果数组元素不是 Promise 实例，会调用 resolve()方法转换成 Promise 实例。</li>
+<li>整合的 Promise 实例的状态由组合成它的多个 Promise 实例状态决定<ol>
+<li>当所有 Promise 实例状态都为 fulfilled 时，这个整合的 Promise 实例状态为 fulfilled，它的结果为一个新数组，并且数组元素为每个 promise 实例返回的结果。</li>
+<li>当任意一个 Promise 实例状态为 reject 时，这个整合的 Promise 实例状态为 fulfilled，会返回碰到的第一个 reject 实例的返回值。</li>
 </ol>
 </li>
 </ol>
 </li>
-<li>race方法<ol>
-<li>将多个Promise实例组合成一个新的Promise实例P。</li>
-<li>如果数组中的任意一个实例状态率先改变状态，就会将首先改变的实例的返回值传递给实例P的回调函数。</li>
+<li>race 方法<ol>
+<li>将多个 Promise 实例组合成一个新的 Promise 实例 P。</li>
+<li>如果数组中的任意一个实例状态率先改变状态，就会将首先改变的实例的返回值传递给实例 P 的回调函数。</li>
 </ol>
 </li>
-<li>allSettled方法<ol>
+<li>allSettled 方法<ol>
 <li>当一组异步操作完成后，不管每一个操作是成功还是失败，都进行下一步操作。</li>
-<li>它的参数为原先的数组，数组的元素都是Promise对象。</li>
-<li>它返回一个新的Promise实例对象，有status和value属性。</li>
-<li>只有等到参数数组里的Promise对象都发生状态变更，这个新的Promise实例对象才会发生状态变更，并且状态只能为fulfilled。</li>
+<li>它的参数为原先的数组，数组的元素都是 Promise 对象。</li>
+<li>它返回一个新的 Promise 实例对象，有 status 和 value 属性。</li>
+<li>只有等到参数数组里的 Promise 对象都发生状态变更，这个新的 Promise 实例对象才会发生状态变更，并且状态只能为 fulfilled。</li>
 </ol>
 </li>
-<li>any方法<ol>
-<li>将多个Promise实例组合成一个新的Promise实例。</li>
-<li>只要有一个Promise实例状态为fulfilled状态，那么这个新的Promise实例的状态为fulfilled</li>
-<li>只有每一个Promise实例都为rejected状态，这个新的Promise实例的状态才为rejected</li>
+<li>any 方法<ol>
+<li>将多个 Promise 实例组合成一个新的 Promise 实例。</li>
+<li>只要有一个 Promise 实例状态为 fulfilled 状态，那么这个新的 Promise 实例的状态为 fulfilled</li>
+<li>只有每一个 Promise 实例都为 rejected 状态，这个新的 Promise 实例的状态才为 rejected</li>
 </ol>
 </li>
 <li>resolve<ol>
-<li>用来将一个对象转换为Promise对象</li>
+<li>用来将一个对象转换为 Promise 对象</li>
 <li>参数的四种情况<ol>
-<li>如果参数是Promise实例，则原封不动地不做任何修改</li>
-<li>参数是thenable对象(指有then方法的对象)，则将thenable对象转为Promise对象后，再立马执行thenanle对象中的then方法</li>
-<li>如果参数是原始值，则返回一个状态为resolve的Promise实例</li>
-<li>如果不带任何参数，也是直接返回一个resolve状态的Promise实例，需要注意的是这个Promise对象要在本轮循环结束后才会执行</li>
+<li>如果参数是 Promise 实例，则原封不动地不做任何修改</li>
+<li>参数是 thenable 对象(指有 then 方法的对象)，则将 thenable 对象转为 Promise 对象后，再立马执行 thenanle 对象中的 then 方法</li>
+<li>如果参数是原始值，则返回一个状态为 resolve 的 Promise 实例</li>
+<li>如果不带任何参数，也是直接返回一个 resolve 状态的 Promise 实例，需要注意的是这个 Promise 对象要在本轮循环结束后才会执行</li>
 </ol>
 </li>
 </ol>
 </li>
 <li>reject()<ol>
-<li>返回一个状态为rejected的Promise实例。</li>
+<li>返回一个状态为 rejected 的 Promise 实例。</li>
 </ol>
 </li>
 </ol>
@@ -143,7 +143,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/08/26/Promise%E5%AF%B9%E8%B1%A1/" data-id="cl7ahrl0x000ytov42dya11o1" class="article-share-link">
+      <a data-url="http://example.com/2022/08/26/Promise%E5%AF%B9%E8%B1%A1/" data-id="cl7b4i3ro000zx0v471j1al7l" class="article-share-link">
         Share
       </a>
       

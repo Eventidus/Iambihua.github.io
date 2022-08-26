@@ -57,36 +57,40 @@
       
       
       
-        <h1 id="this关键字"><a href="#this关键字" class="headerlink" title="this关键字"></a>this关键字</h1><ol>
-<li>this总是返回一个对象。</li>
-<li>this的值为属性或方法当前所在的对象(环境)。</li>
-<li>使用场合<ol>
-<li>在全局环境下，this的值为顶层环境window。</li>
-<li>在构造函数中，this指向实例对象。</li>
-<li>在对象的方法中，this指向当前方法所在的对象，但如果对一个对象进行赋值时，this的指向就会改变了。</li>
+        <h1 id="this-关键字"><a href="#this-关键字" class="headerlink" title="this 关键字"></a>this 关键字</h1><ol>
+<li><p>this 总是返回一个对象。</p>
+</li>
+<li><p>this 的值为属性或方法当前所在的对象(环境)。</p>
+</li>
+<li><p>使用场合 1. 在全局环境下，this 的值为顶层环境 window。 2. 在构造函数中，this 指向实例对象。 3. 在对象的方法中，this 指向当前方法所在的对象，但如果对一个对象进行赋值时，this 的指向就会改变了。</p>
+<span id="more"></span>
+</li>
+<li><p>多层 this 的情况下，可以考虑使用一个变量指向外层 this。</p>
+</li>
+<li><p>回调函数中的 this 指向当前环境中的全局对象。</p>
+</li>
+<li><p>Function.prototype.call()</p>
+<ol>
+<li>用来指定 this 的指向。</li>
+<li>call 方法的参数如果为空,null,或者 underfined，则默认指向 window 对象。</li>
+<li>如果只有一个参数，并且参数为对象，则 this 指向这个参数对象。</li>
+<li>如果只有一个参数，并且参数为原始值，则 this 指向这个原始值的包装对象。</li>
+<li>如果有多个参数，则第一个参数为 this 指向的对象，后面的参数为函数调用时需要的参数。</li>
 </ol>
 </li>
-<li>多层this的情况下，可以考虑使用一个变量指向外层this。</li>
-<li>回调函数中的this指向当前环境中的全局对象。</li>
-<li>Function.prototype.call()<ol>
-<li>用来指定this的指向。</li>
-<li>call方法的参数如果为空,null,或者underfined，则默认指向window对象。</li>
-<li>如果只有一个参数，并且参数为对象，则this指向这个参数对象。</li>
-<li>如果只有一个参数，并且参数为原始值，则this指向这个原始值的包装对象。</li>
-<li>如果有多个参数，则第一个参数为this指向的对象，后面的参数为函数调用时需要的参数。</li>
+<li><p>Function.prototype.apply()</p>
+<ol>
+<li>跟 call 方法类似，也是用来指定 this 的指向。</li>
+<li>如果只有一个参数，并且参数为对象，则 this 指向这个参数对象。</li>
+<li>如果有多个参数，则第一个参数为 this 要指向的对象，第二个参数为参数数组。</li>
 </ol>
 </li>
-<li>Function.prototype.apply()<ol>
-<li>跟call方法类似，也是用来指定this的指向。</li>
-<li>如果只有一个参数，并且参数为对象，则this指向这个参数对象。</li>
-<li>如果有多个参数，则第一个参数为this要指向的对象，第二个参数为参数数组。</li>
-</ol>
-</li>
-<li>Function.prototype.bind()<ol>
-<li>bind方法用于将函数中的this绑定到某个对象，并且返回一个新函数。</li>
-<li>bind方法也可以用于绑定参数。</li>
-<li>如果只有一个参数，并且参数为对象，则this指向这个参数对象。</li>
-<li>如果有多个参数，则第一个参数为this指向的对象，后面的参数为函数调用时需要的参数。</li>
+<li><p>Function.prototype.bind()</p>
+<ol>
+<li>bind 方法用于将函数中的 this 绑定到某个对象，并且返回一个新函数。</li>
+<li>bind 方法也可以用于绑定参数。</li>
+<li>如果只有一个参数，并且参数为对象，则 this 指向这个参数对象。</li>
+<li>如果有多个参数，则第一个参数为 this 指向的对象，后面的参数为函数调用时需要的参数。</li>
 <li>注意事项：<ol>
 <li>每次调用会返回一个全新的函数</li>
 </ol>
@@ -98,7 +102,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/08/26/this%E5%85%B3%E9%94%AE%E5%AD%97/" data-id="cl7ahrl1l002ctov401wjfjls" class="article-share-link">
+      <a data-url="http://example.com/2022/08/26/this%E5%85%B3%E9%94%AE%E5%AD%97/" data-id="cl7b4i3t5002hx0v4hhgydo95" class="article-share-link">
         Share
       </a>
       

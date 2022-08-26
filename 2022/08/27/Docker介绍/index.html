@@ -32,7 +32,7 @@
 <body>
   <main class="content">
     <section class="outer">
-  <article id="post-Docker" class="article article-type-post" itemscope
+  <article id="post-Docker介绍" class="article article-type-post" itemscope
   itemprop="blogPost" data-scroll-reveal>
 
   <div class="article-inner">
@@ -40,8 +40,8 @@
 
     
     <div class="article-meta">
-      <a href="/2022/08/26/Docker/" class="article-date">
-  <time datetime="2022-08-26T13:08:49.007Z" itemprop="datePublished">2022-08-26</time>
+      <a href="/2022/08/27/Docker%E4%BB%8B%E7%BB%8D/" class="article-date">
+  <time datetime="2022-08-26T23:45:16.508Z" itemprop="datePublished">2022-08-27</time>
 </a>
       
     </div>
@@ -75,10 +75,14 @@
 </li>
 </ol>
 </li>
-<li>Docker介绍<ol>
-<li>Docker属于操作系统层面的虚拟化技术</li>
-<li>Docker与传统的虚拟化技术的不同之处<ol>
-<li>Docker没有虚拟出硬件，并且它的容器直接运行于宿主内核，容器内并没有自己的内核</li>
+</ol>
+<span id="more"></span>
+
+<ol start="2">
+<li>Docker 介绍<ol>
+<li>Docker 属于操作系统层面的虚拟化技术</li>
+<li>Docker 与传统的虚拟化技术的不同之处<ol>
+<li>Docker 没有虚拟出硬件，并且它的容器直接运行于宿主内核，容器内并没有自己的内核</li>
 <li>传统的虚拟化技术需要虚拟出硬件，在其上运行一个操作系统，并且在这个操作系统里面运行应用程序</li>
 </ol>
 </li>
@@ -88,37 +92,37 @@
 </li>
 </ol>
 </li>
-<li>Docker镜像<ol>
+<li>Docker 镜像<ol>
 <li>是一种特殊的文件系统，提供了 容器运行需要的库，配置文件，等等，还包含了容器运行需要的配置参数，它的核心精髓是保证了环境的一致性</li>
-<li>Docker镜像技术是一套统一的接口技术，它适配了不同的开发语言</li>
-<li>Docker镜像采用分层存储结构</li>
+<li>Docker 镜像技术是一套统一的接口技术，它适配了不同的开发语言</li>
+<li>Docker 镜像采用分层存储结构</li>
 <li>中间层镜像:<ol>
 <li>是其他镜像依赖需要的镜像</li>
 <li>用于提高镜像复用性，加速镜像构建</li>
 </ol>
 </li>
 <li>删除镜像<ol>
-<li>两类删除行为：Untagged和Deleted</li>
-<li>有时候删除镜像，可能仅仅是取消了镜像的标签，也就是Untagged的意义，真正影响镜像删除的，要考虑其他镜像是否依赖当前要删除镜像的某一层，或者有容器依赖当前要删除镜像的某一层，或者有 别个标签指向了当前要删除的镜像，这种情况下就不会触发镜像删除行为，也就是Delected行为</li>
+<li>两类删除行为：Untagged 和 Deleted</li>
+<li>有时候删除镜像，可能仅仅是取消了镜像的标签，也就是 Untagged 的意义，真正影响镜像删除的，要考虑其他镜像是否依赖当前要删除镜像的某一层，或者有容器依赖当前要删除镜像的某一层，或者有 别个标签指向了当前要删除的镜像，这种情况下就不会触发镜像删除行为，也就是 Delected 行为</li>
 </ol>
 </li>
 </ol>
 </li>
-<li>Docker容器<ol>
+<li>Docker 容器<ol>
 <li>容器是基于镜像构建，是独立运行的一个或一组应用</li>
-<li>启动容器时，如果需要的镜像不存在，会自动pull下载</li>
-<li>容器里只会存在必须的资源，多余的资源不会存在，所以Docker对资源的利用率很高</li>
-<li>一个容器只有在执行任务时才会处于running状态，不管是否启动</li>
-<li>启动容器的命令为docker run &lt;image&gt;，如果要指定容器在后台运行可以指定-d参数</li>
-<li>启动处于exited状态的容器 docker container start [container-id]</li>
-<li>列出正在执行任务也即running状态的容器 docker container ls</li>
+<li>启动容器时，如果需要的镜像不存在，会自动 pull 下载</li>
+<li>容器里只会存在必须的资源，多余的资源不会存在，所以 Docker 对资源的利用率很高</li>
+<li>一个容器只有在执行任务时才会处于 running 状态，不管是否启动</li>
+<li>启动容器的命令为 docker run &lt;image&gt;，如果要指定容器在后台运行可以指定-d 参数</li>
+<li>启动处于 exited 状态的容器 docker container start [container-id]</li>
+<li>列出正在执行任务也即 running 状态的容器 docker container ls</li>
 <li>列出容器运行结果 docker container logs [containerId]</li>
-<li>对处于后台运行的容器进行操作可以使用docker exec或者attach命令，但推荐使用exec命令，因为exit容器后，不会终止容器</li>
-<li>docker container rm只能删除处于exited的容器，如果要删除处于running状态的容器,可以加-f参数</li>
-<li>删除所有处于exited状态的容器 docker container prune</li>
+<li>对处于后台运行的容器进行操作可以使用 docker exec 或者 attach 命令，但推荐使用 exec 命令，因为 exit 容器后，不会终止容器</li>
+<li>docker container rm 只能删除处于 exited 的容器，如果要删除处于 running 状态的容器,可以加-f 参数</li>
+<li>删除所有处于 exited 状态的容器 docker container prune</li>
 </ol>
 </li>
-<li>Docker数据卷<ol>
+<li>Docker 数据卷<ol>
 <li>数据卷是容器用于管理数据的场所</li>
 <li>数据卷的特性<ol>
 <li>在多个容器之间共享</li>
@@ -128,26 +132,26 @@
 </ol>
 </li>
 <li>创建数据卷 docker volume create [volume-name]</li>
-<li>查看某个数据卷的具体信息docker volume inspect [volume-name]</li>
-<li>删除数据卷docker volume rm，如果要在删除容器的同时删除数据卷可以加上-v参数</li>
-<li>删除未挂载到容器的数据卷docker volume prune</li>
+<li>查看某个数据卷的具体信息 docker volume inspect [volume-name]</li>
+<li>删除数据卷 docker volume rm，如果要在删除容器的同时删除数据卷可以加上-v 参数</li>
+<li>删除未挂载到容器的数据卷 docker volume prune</li>
 </ol>
 </li>
-<li>Docker网络配置<ol>
-<li>-p -P都能指定端口<ol>
-<li>-P随机指定一个主机端口映射到容器开放的端口</li>
-<li>-p主动指定端口映射<ol>
+<li>Docker 网络配置<ol>
+<li>-p -P 都能指定端口<ol>
+<li>-P 随机指定一个主机端口映射到容器开放的端口</li>
+<li>-p 主动指定端口映射<ol>
 <li>几种格式的端口映射<ol>
 <li>hostPort:containerPort<ol>
-<li>这种情况下，不管本地的ip地址是啥，只要主机端口相同，他们指向同一个地址，也就是映射所有接口地址</li>
+<li>这种情况下，不管本地的 ip 地址是啥，只要主机端口相同，他们指向同一个地址，也就是映射所有接口地址</li>
 </ol>
 </li>
 <li>ip:hostPort:containerPort<ol>
-<li>映射指定地址的映射端口，只能通过指定的ip地址加端口访问</li>
+<li>映射指定地址的映射端口，只能通过指定的 ip 地址加端口访问</li>
 </ol>
 </li>
 <li>ip::containerPort<ol>
-<li>映射到指定地址的任意端口，也就是说对于指定的ip地址，随机指定一个主机端口</li>
+<li>映射到指定地址的任意端口，也就是说对于指定的 ip 地址，随机指定一个主机端口</li>
 </ol>
 </li>
 </ol>
@@ -158,8 +162,8 @@
 </li>
 <li>Docker 容器互联<ol>
 <li>用自定义网络来互联容器<ol>
-<li>docker network create -d bridge my-net 其中-d参数指定网络类型</li>
-<li>docker run –network my-net busybox 使用–network参数 指定busybox容器链接到mynet网络</li>
+<li>docker network create -d bridge my-net 其中-d 参数指定网络类型</li>
+<li>docker run –network my-net busybox 使用–network 参数 指定 busybox 容器链接到 mynet 网络</li>
 </ol>
 </li>
 </ol>
@@ -171,7 +175,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/08/26/Docker/" data-id="cl7ahrl020002tov48wfca0us" class="article-share-link">
+      <a data-url="http://example.com/2022/08/27/Docker%E4%BB%8B%E7%BB%8D/" data-id="cl7b4i3pf0002x0v45ad7eqgt" class="article-share-link">
         Share
       </a>
       
@@ -182,15 +186,6 @@
   
   
 <nav class="article-nav">
-  
-  <a href="/2022/08/26/~$Docker/" class="article-nav-link">
-    <strong class="article-nav-caption">Newer</strong>
-    <div class="article-nav-title">
-      
-      (no title)
-      
-    </div>
-  </a>
   
   
   <a href="/2022/08/26/%E5%BC%82%E6%AD%A5%E6%93%8D%E4%BD%9C/" class="article-nav-link">

@@ -57,19 +57,19 @@
       
       
       
-        <h1 id="package-json介绍"><a href="#package-json介绍" class="headerlink" title="package.json介绍"></a>package.json介绍</h1><ol>
-<li>package.json作用<ol>
+        <h1 id="package-json-介绍"><a href="#package-json-介绍" class="headerlink" title="package.json 介绍"></a>package.json 介绍</h1><ol>
+<li>package.json 作用<ol>
 <li>包管理配置文件，管理项目中所依赖的包的配置</li>
 </ol>
 </li>
-<li>package-lock作用<ol>
-<li>本质是锁定(lock)包的版本</li>
+<li>package-lock 作用<ol>
+<li>本质是锁定(lock)包的版本<span id="more"></span></li>
 </ol>
 </li>
 <li>常见属性<ol>
 <li>script<ol>
 <li>定义脚本命令</li>
-<li>每次运行npm run xxx命令时，会创建一个shell脚本，这个脚本会把当前项目的node-modules&#x2F;.bin子目录写入到系统的Path环境变量中</li>
+<li>每次运行 npm run xxx 命令时，会创建一个 shell 脚本，这个脚本会把当前项目的 node-modules&#x2F;.bin 子目录写入到系统的 Path 环境变量中</li>
 </ol>
 </li>
 <li>bin<ol>
@@ -79,32 +79,32 @@
 </li>
 <li>type<ol>
 <li>用来说明包使用的模块化规范</li>
-<li>如果采用ESM模块规范，则type的值为module</li>
-<li>如果采用CommonJS模块规范，则type的值为commonjs</li>
-<li>如果不想修改type，可以修改文件后缀名<ol>
-<li>ESModel模块规范后缀名为.mjs</li>
-<li>CommonJs模块规范后缀名为.cjs</li>
+<li>如果采用 ESM 模块规范，则 type 的值为 module</li>
+<li>如果采用 CommonJS 模块规范，则 type 的值为 commonjs</li>
+<li>如果不想修改 type，可以修改文件后缀名<ol>
+<li>ESModel 模块规范后缀名为.mjs</li>
+<li>CommonJs 模块规范后缀名为.cjs</li>
 </ol>
 </li>
 </ol>
 </li>
 <li>main&amp;module&amp;browser<ol>
 <li>都是用来指定入口文件</li>
-<li>main：定义了包的入口文件,支持node和browser环境</li>
-<li>module定义了包在ESM规范下的入口文件，支持node和browdeer环境</li>
-<li>browser定义了browser环境下的入口文件</li>
-<li>这三个入口文件的加载顺序，一般是ESM规范的文件先行<ol>
+<li>main：定义了包的入口文件,支持 node 和 browser 环境</li>
+<li>module 定义了包在 ESM 规范下的入口文件，支持 node 和 browdeer 环境</li>
+<li>browser 定义了 browser 环境下的入口文件</li>
+<li>这三个入口文件的加载顺序，一般是 ESM 规范的文件先行<ol>
 <li>browser+mjs&gt;module&gt;browser+cjs&gt;main</li>
 </ol>
 </li>
 </ol>
 </li>
 <li>exports<ol>
-<li>定义npm包的所有导出</li>
+<li>定义 npm 包的所有导出</li>
 <li>条件引用<ol>
 <li>引用方式以及模块化文件类型会影响入口文件的引入</li>
-<li>require引入.cjs文件</li>
-<li>import引入.mjs文件</li>
+<li>require 引入.cjs 文件</li>
+<li>import 引入.mjs 文件</li>
 </ol>
 </li>
 </ol>
@@ -115,15 +115,15 @@
 </ol>
 </li>
 <li>engines<ol>
-<li>指定项目能够运行的node以及npm版本</li>
+<li>指定项目能够运行的 node 以及 npm 版本</li>
 </ol>
 </li>
 </ol>
 </li>
-<li>npm扁平化<ol>
-<li>npm扁平化的原因是npm2过多重复依赖导致的磁盘浪费问题以及window系统下路径过长问题</li>
+<li>npm 扁平化<ol>
+<li>npm 扁平化的原因是 npm2 过多重复依赖导致的磁盘浪费问题以及 window 系统下路径过长问题</li>
 <li>缺点<ol>
-<li>幽灵依赖问题（引入没有在package.json中声明的依赖）</li>
+<li>幽灵依赖问题（引入没有在 package.json 中声明的依赖）</li>
 <li>存在一个包的多个版本下，只能实现一个版本的扁平化</li>
 </ol>
 </li>
@@ -134,7 +134,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/08/26/package.json%E4%BB%8B%E7%BB%8D/" data-id="cl7ahrl1e0023tov4gtom4s8c" class="article-share-link">
+      <a data-url="http://example.com/2022/08/26/package.json%E4%BB%8B%E7%BB%8D/" data-id="cl7b4i3sk0023x0v47an6h9nf" class="article-share-link">
         Share
       </a>
       
