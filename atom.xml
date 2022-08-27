@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-08-26T23:46:03.790Z</updated>
+  <updated>2022-08-26T23:59:50.897Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="http://example.com/2022/08/27/Swiper%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/"/>
+    <id>http://example.com/2022/08/27/Swiper%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</id>
+    <published>2022-08-26T23:59:50.614Z</published>
+    <updated>2022-08-26T23:59:50.897Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Swiper使用方法&quot;&gt;&lt;a href=&quot;#Swiper使用方法&quot; class=&quot;headerlink&quot; title=&quot;Swiper使用方法&quot;&gt;&lt;/a&gt;Swiper使用方法&lt;/h1&gt;&lt;ol&gt;
+&lt;li&gt;npm i</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title></title>
@@ -440,29 +462,6 @@
     
     
     <category term="Coursera" scheme="http://example.com/tags/Coursera/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java面向对象基础</title>
-    <link href="http://example.com/2020/06/14/java-object-oriented/"/>
-    <id>http://example.com/2020/06/14/java-object-oriented/</id>
-    <published>2020-06-14T04:43:23.000Z</published>
-    <updated>2022-08-26T23:42:25.829Z</updated>
-    
-    
-    <summary type="html">Java进阶学习之面向对象篇</summary>
-    
-    
-    
-    <category term="技术笔记" scheme="http://example.com/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/"/>
-    
-    <category term="Java" scheme="http://example.com/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/Java/"/>
-    
-    
-    <category term="Java" scheme="http://example.com/tags/Java/"/>
-    
-    <category term="面向对象" scheme="http://example.com/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"/>
     
   </entry>
   

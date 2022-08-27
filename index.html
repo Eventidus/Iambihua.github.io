@@ -65,6 +65,64 @@
     <h1 class="page-type-title"></h1>
     
     
+    <article id="post-Swiper使用方法" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+
+    
+    <div class="article-meta">
+      <a href="/2022/08/27/Swiper%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/" class="article-date">
+  <time datetime="2022-08-26T23:59:50.614Z" itemprop="datePublished">2022-08-27</time>
+</a>
+      
+    </div>
+    
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+        
+      
+      
+        <h1 id="Swiper使用方法"><a href="#Swiper使用方法" class="headerlink" title="Swiper使用方法"></a>Swiper使用方法</h1><ol>
+<li>npm i swiper安装库</li>
+<li>在需要的组件中引入swiper库</li>
+<li>在入口文件引入swipe样式库</li>
+<li>创建Swiper实例(在mounted方法中，但不可以直接书写，需要使用setTimeOut延迟创建swiper实例)</li>
+<li>针对第四步，最优的方法是使用侦听器watch和nextTickhans函数<ol>
+<li>使用nextTickhans的原因是Swipper实例创建成功时，V-for循环未必执行完毕</li>
+</ol>
+</li>
+<li>如果不是在当前组件发起请求，可以直接在mounted方法中创建Swiper实例</li>
+<li>不生效的原因可能是<ol>
+<li>在请求完成之前已经创建Swipper实例</li>
+<li>V-for循环未执行完毕</li>
+<li>没有及时监听到数据变化，需要设置immediate属性</li>
+</ol>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/08/27/Swiper%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/" data-id="cl7b4z7uw0014ycv4b773alx6" class="article-share-link">
+        Share
+      </a>
+      
+    </footer>
+
+  </div>
+
+  
+
+  
+
+</article>
+    
     <article id="post-Docker介绍" class="article article-type-post" itemscope
   itemprop="blogPost" data-scroll-reveal>
 
@@ -117,7 +175,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/08/27/Docker%E4%BB%8B%E7%BB%8D/" data-id="cl7b4ppln000270v41s03674s" class="article-share-link">
+      <a data-url="http://example.com/2022/08/27/Docker%E4%BB%8B%E7%BB%8D/" data-id="cl7b4z7u50004ycv45m473q74" class="article-share-link">
         Share
       </a>
       
@@ -177,7 +235,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/08/26/%E5%BC%82%E6%AD%A5%E6%93%8D%E4%BD%9C/" data-id="cl7b4pq2x003u70v43461935n" class="article-share-link">
+      <a data-url="http://example.com/2022/08/26/%E5%BC%82%E6%AD%A5%E6%93%8D%E4%BD%9C/" data-id="cl7b4z7vp002kycv42l2tf6fa" class="article-share-link">
         Share
       </a>
       
@@ -230,7 +288,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/08/26/this%E5%85%B3%E9%94%AE%E5%AD%97/" data-id="cl7b4pq2u003r70v4go1xhfq8" class="article-share-link">
+      <a data-url="http://example.com/2022/08/26/this%E5%85%B3%E9%94%AE%E5%AD%97/" data-id="cl7b4z7vo002hycv427hthb40" class="article-share-link">
         Share
       </a>
       
@@ -282,7 +340,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/08/26/Promise%E5%AF%B9%E8%B1%A1/" data-id="cl7b4ppqh000y70v41hx44dvy" class="article-share-link">
+      <a data-url="http://example.com/2022/08/26/Promise%E5%AF%B9%E8%B1%A1/" data-id="cl7b4z7uu000yycv4ffcs4qgm" class="article-share-link">
         Share
       </a>
       
@@ -336,7 +394,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/08/26/package.json%E4%BB%8B%E7%BB%8D/" data-id="cl7b4pq2m003m70v4e5w24ziv" class="article-share-link">
+      <a data-url="http://example.com/2022/08/26/package.json%E4%BB%8B%E7%BB%8D/" data-id="cl7b4z7vc0023ycv4duwkgr60" class="article-share-link">
         Share
       </a>
       
@@ -390,7 +448,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/08/26/Module%E8%AF%AD%E6%B3%95/" data-id="cl7b4ppq6000u70v47h6b01op" class="article-share-link">
+      <a data-url="http://example.com/2022/08/26/Module%E8%AF%AD%E6%B3%95/" data-id="cl7b4z7us000uycv4gdmjauh3" class="article-share-link">
         Share
       </a>
       
@@ -449,7 +507,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/08/26/Module%E7%9A%84%E5%8A%A0%E8%BD%BD%E5%AE%9E%E7%8E%B0/" data-id="cl7b4pppy000p70v4aty043lj" class="article-share-link">
+      <a data-url="http://example.com/2022/08/26/Module%E7%9A%84%E5%8A%A0%E8%BD%BD%E5%AE%9E%E7%8E%B0/" data-id="cl7b4z7us000tycv4afajg3yx" class="article-share-link">
         Share
       </a>
       
@@ -506,7 +564,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/08/26/Generator%E5%87%BD%E6%95%B0%E8%AF%AD%E6%B3%95/" data-id="cl7b4ppo8000670v45l2oc7ld" class="article-share-link">
+      <a data-url="http://example.com/2022/08/26/Generator%E5%87%BD%E6%95%B0%E8%AF%AD%E6%B3%95/" data-id="cl7b4z7u80006ycv4agfk26wx" class="article-share-link">
         Share
       </a>
       
@@ -559,60 +617,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/08/26/ECMAScript6/" data-id="cl7b4ppo4000570v4gdf4c7yp" class="article-share-link">
-        Share
-      </a>
-      
-    </footer>
-
-  </div>
-
-  
-
-  
-
-</article>
-    
-    <article id="post-async函数" class="article article-type-post" itemscope
-  itemprop="blogPost" data-scroll-reveal>
-
-  <div class="article-inner">
-    
-
-    
-    <div class="article-meta">
-      <a href="/2022/08/26/async%E5%87%BD%E6%95%B0/" class="article-date">
-  <time datetime="2022-08-26T11:52:43.605Z" itemprop="datePublished">2022-08-26</time>
-</a>
-      
-    </div>
-    
-
-    
-
-    <div class="article-entry" itemprop="articleBody">
-      
-      
-        
-      
-      
-        <h1 id="async函数"><a href="#async函数" class="headerlink" title="async函数"></a>async函数</h1><ol>
-<li>async函数的执行原理就是将Generator函数与自动执行器包装在一个函数里</li>
-<li>async相当于Generator的语法糖</li>
-<li>async自带执行器</li>
-<li>async返回一个Promise对象</li>
-<li>async函数调用then方法时，如果asyn函数有return返回值，那么这个返回值会成为then方法的回调函数的参数</li>
-<li>async函数内部抛出的错误，会使返回的Promise对象变为rejected状态</li>
-<li>await命令后面通常是promise对象</li>
-<li>async函数返回的Promise对象只有等所有await命令执行完成之后才会发生状态变更</li>
-<li>只要有一个await命令的Promise对象变为reject状态，后面的await命令 不会执行</li>
-<li>给当前await命令语句写进try-catch结构，或者调用catch()方法，这样如果当前await命令出现错误，不会影响后面的await命令继续执行</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/08/26/async%E5%87%BD%E6%95%B0/" data-id="cl7b4ppu1001770v471qvbwg8" class="article-share-link">
+      <a data-url="http://example.com/2022/08/26/ECMAScript6/" data-id="cl7b4z7u70005ycv40qb0di2m" class="article-share-link">
         Share
       </a>
       

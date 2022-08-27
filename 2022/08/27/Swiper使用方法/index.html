@@ -32,7 +32,7 @@
 <body>
   <main class="content">
     <section class="outer">
-  <article id="post-ECMAScript6" class="article article-type-post" itemscope
+  <article id="post-Swiper使用方法" class="article article-type-post" itemscope
   itemprop="blogPost" data-scroll-reveal>
 
   <div class="article-inner">
@@ -40,8 +40,8 @@
 
     
     <div class="article-meta">
-      <a href="/2022/08/26/ECMAScript6/" class="article-date">
-  <time datetime="2022-08-26T11:53:07.043Z" itemprop="datePublished">2022-08-26</time>
+      <a href="/2022/08/27/Swiper%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/" class="article-date">
+  <time datetime="2022-08-26T23:59:50.614Z" itemprop="datePublished">2022-08-27</time>
 </a>
       
     </div>
@@ -57,67 +57,20 @@
       
       
       
-        <h1 id="ECMAScript6"><a href="#ECMAScript6" class="headerlink" title="ECMAScript6"></a>ECMAScript6</h1><ol>
-<li><p>JavaScript 为动态类型语言。</p>
-</li>
-<li><p>静态语言：在编译阶段便检查数据类型。动态语言：在执行期间才检查语言的数据类型。</p>
-</li>
-<li><p>扩展运算符 1. 取出参数对象的所有可遍历属性，拷贝到当前对象中。</p>
-<span id="more"></span>
-</li>
-<li><p>常用方法</p>
-<ol>
-<li>filter()<ol>
-<li>语法:array.filter(function(currentValue,index,arr), thisValue)</li>
-<li>功能：返回一个过滤符合要求的元素并且组成新数组</li>
+        <h1 id="Swiper使用方法"><a href="#Swiper使用方法" class="headerlink" title="Swiper使用方法"></a>Swiper使用方法</h1><ol>
+<li>npm i swiper安装库</li>
+<li>在需要的组件中引入swiper库</li>
+<li>在入口文件引入swipe样式库</li>
+<li>创建Swiper实例(在mounted方法中，但不可以直接书写，需要使用setTimeOut延迟创建swiper实例)</li>
+<li>针对第四步，最优的方法是使用侦听器watch和nextTickhans函数<ol>
+<li>使用nextTickhans的原因是Swipper实例创建成功时，V-for循环未必执行完毕</li>
 </ol>
 </li>
-<li>map()<ol>
-<li>功能：返回回调函数对每个原数组元素进行操作(比如加 1)之后组成的新数组，原数组不变。</li>
-</ol>
-</li>
-<li>foreach()<ol>
-<li>遍历数组并且对中的每个元素进行操作。</li>
-</ol>
-</li>
-<li>shift()<ol>
-<li>删除数组的第一个元素，并且返回该元素的值。</li>
-<li>可改变数组的长度。</li>
-</ol>
-</li>
-<li>splice()<ol>
-<li>删除或增加或替换元素</li>
-<li>第一个参数为修改开始的位置</li>
-<li>第二个参数为删除元素个数</li>
-<li>第三个参数为要增加或者替换的元素</li>
-</ol>
-</li>
-<li>split()<ol>
-<li>将字符串分割成字符串数组，字符串的每一个字母都可以是一个数组元素</li>
-<li>参数是一种分隔符</li>
-</ol>
-</li>
-<li>join()<ol>
-<li>将数组组合成一个字符串</li>
-<li>参数是一种分隔符，让生成的字符串根据这个分隔符分隔</li>
-</ol>
-</li>
-<li>indexOf()<ol>
-<li>数组<ol>
-<li>返回某个在数组中的索引，如果没有找到则返回-1</li>
-</ol>
-</li>
-<li>字符串<ol>
-<li>返回第一个子串在字符串出现的索引，如果没有则返回-1</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-<li><p>计算属性概念</p>
-<ol>
-<li>一个对象的属性名从一个变量中获取，并且这个变量用[]表示。</li>
+<li>如果不是在当前组件发起请求，可以直接在mounted方法中创建Swiper实例</li>
+<li>不生效的原因可能是<ol>
+<li>在请求完成之前已经创建Swipper实例</li>
+<li>V-for循环未执行完毕</li>
+<li>没有及时监听到数据变化，需要设置immediate属性</li>
 </ol>
 </li>
 </ol>
@@ -125,7 +78,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/08/26/ECMAScript6/" data-id="cl7b4z7u70005ycv40qb0di2m" class="article-share-link">
+      <a data-url="http://example.com/2022/08/27/Swiper%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/" data-id="cl7b4z7uw0014ycv4b773alx6" class="article-share-link">
         Share
       </a>
       
@@ -137,17 +90,8 @@
   
 <nav class="article-nav">
   
-  <a href="/2022/08/26/Generator%E5%87%BD%E6%95%B0%E8%AF%AD%E6%B3%95/" class="article-nav-link">
-    <strong class="article-nav-caption">Newer</strong>
-    <div class="article-nav-title">
-      
-      (no title)
-      
-    </div>
-  </a>
   
-  
-  <a href="/2022/08/26/async%E5%87%BD%E6%95%B0/" class="article-nav-link">
+  <a href="/2022/08/27/Docker%E4%BB%8B%E7%BB%8D/" class="article-nav-link">
     <strong class="article-nav-caption">Older</strong>
     <div class="article-nav-title"></div>
   </a>

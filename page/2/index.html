@@ -65,6 +65,59 @@
     <h1 class="page-type-title"></h1>
     
     
+    <article id="post-async函数" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+
+    
+    <div class="article-meta">
+      <a href="/2022/08/26/async%E5%87%BD%E6%95%B0/" class="article-date">
+  <time datetime="2022-08-26T11:52:43.605Z" itemprop="datePublished">2022-08-26</time>
+</a>
+      
+    </div>
+    
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+        
+      
+      
+        <h1 id="async函数"><a href="#async函数" class="headerlink" title="async函数"></a>async函数</h1><ol>
+<li>async函数的执行原理就是将Generator函数与自动执行器包装在一个函数里</li>
+<li>async相当于Generator的语法糖</li>
+<li>async自带执行器</li>
+<li>async返回一个Promise对象</li>
+<li>async函数调用then方法时，如果asyn函数有return返回值，那么这个返回值会成为then方法的回调函数的参数</li>
+<li>async函数内部抛出的错误，会使返回的Promise对象变为rejected状态</li>
+<li>await命令后面通常是promise对象</li>
+<li>async函数返回的Promise对象只有等所有await命令执行完成之后才会发生状态变更</li>
+<li>只要有一个await命令的Promise对象变为reject状态，后面的await命令 不会执行</li>
+<li>给当前await命令语句写进try-catch结构，或者调用catch()方法，这样如果当前await命令出现错误，不会影响后面的await命令继续执行</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/08/26/async%E5%87%BD%E6%95%B0/" data-id="cl7b4z7uz001aycv42gqcemsk" class="article-share-link">
+        Share
+      </a>
+      
+    </footer>
+
+  </div>
+
+  
+
+  
+
+</article>
+    
     <article id="post-Iterator遍历器" class="article article-type-post" itemscope
   itemprop="blogPost" data-scroll-reveal>
 
@@ -104,7 +157,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/08/26/Iterator%E9%81%8D%E5%8E%86%E5%99%A8/" data-id="cl7b4ppoo000e70v41tj751xf" class="article-share-link">
+      <a data-url="http://example.com/2022/08/26/Iterator%E9%81%8D%E5%8E%86%E5%99%A8/" data-id="cl7b4z7ue000eycv4civtbg3i" class="article-share-link">
         Share
       </a>
       
@@ -156,7 +209,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/08/26/CORS%E9%80%9A%E4%BF%A1/" data-id="cl7b4ppkc000070v437qz4jry" class="article-share-link">
+      <a data-url="http://example.com/2022/08/26/CORS%E9%80%9A%E4%BF%A1/" data-id="cl7b4z7tz0001ycv413f51289" class="article-share-link">
         Share
       </a>
       
@@ -211,7 +264,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/08/26/VueRouter/" data-id="cl7b4pprl001070v4g0716xn0" class="article-share-link">
+      <a data-url="http://example.com/2022/08/26/VueRouter/" data-id="cl7b4z7uv0011ycv40jhjbuxr" class="article-share-link">
         Share
       </a>
       
@@ -268,7 +321,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/08/26/Vuex/" data-id="cl7b4pptw001470v40skueu06" class="article-share-link">
+      <a data-url="http://example.com/2022/08/26/Vuex/" data-id="cl7b4z7ux0017ycv440g7cgff" class="article-share-link">
         Share
       </a>
       
@@ -333,7 +386,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/19/DeepL/" data-id="cl7b4pple000170v4da93hw07" class="article-share-link">
+      <a data-url="http://example.com/2021/06/19/DeepL/" data-id="cl7b4z7tq0000ycv46kwzghay" class="article-share-link">
         Share
       </a>
       
@@ -403,7 +456,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/15/semver2.0.0/" data-id="cl7b4pq2p003n70v48vsvawbo" class="article-share-link">
+      <a data-url="http://example.com/2021/06/15/semver2.0.0/" data-id="cl7b4z7vg0029ycv47i50dq2v" class="article-share-link">
         Share
       </a>
       
@@ -475,7 +528,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2020/08/04/npm-command/" data-id="cl7b4ppwq001z70v4adbodwsz" class="article-share-link">
+      <a data-url="http://example.com/2020/08/04/npm-command/" data-id="cl7b4z7vb001zycv41fpq8nq3" class="article-share-link">
         Share
       </a>
       
@@ -563,7 +616,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2020/06/15/java-reflection/" data-id="cl7b4ppwn001w70v41dge1enl" class="article-share-link">
+      <a data-url="http://example.com/2020/06/15/java-reflection/" data-id="cl7b4z7vd0025ycv41jvxe7ax" class="article-share-link">
         Share
       </a>
       
@@ -639,84 +692,11 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2020/06/15/Learning%20how%20to%20learn%20prat%201/" data-id="cl7b4pppv000n70v4hqoe0pxv" class="article-share-link">
+      <a data-url="http://example.com/2020/06/15/Learning%20how%20to%20learn%20prat%201/" data-id="cl7b4z7uo000nycv497vj77ap" class="article-share-link">
         Share
       </a>
       
 <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Coursera/" rel="tag">Coursera</a></li></ul>
-
-    </footer>
-
-  </div>
-
-  
-
-  
-
-</article>
-    
-    <article id="post-java-object-oriented" class="article article-type-post" itemscope
-  itemprop="blogPost" data-scroll-reveal>
-
-  <div class="article-inner">
-    
-    <header class="article-header">
-      
-  
-  <h2 class="article-title" itemprop="name">
-    <a href="/2020/06/14/java-object-oriented/">Java面向对象基础</a>
-  </h2>
-  
-  
-
-    </header>
-    
-
-    
-    <div class="article-meta">
-      <a href="/2020/06/14/java-object-oriented/" class="article-date">
-  <time datetime="2020-06-14T04:43:23.000Z" itemprop="datePublished">2020-06-14</time>
-</a>
-      
-<div class="article-category">
-  <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/">技术笔记</a> / <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/Java/">Java</a>
-</div>
-
-    </div>
-    
-
-    
-
-    <div class="article-entry" itemprop="articleBody">
-      
-      
-        
-      
-      
-        <blockquote>
-<p>本文是 Java 的面向对象篇，学习于<a target="_blank" rel="noopener" href="https://www.liaoxuefeng.com/">廖雪峰的 Java 教程</a>.</p>
-</blockquote>
-<h2 id="面向对象基础"><a href="#面向对象基础" class="headerlink" title="面向对象基础"></a>面向对象基础</h2><h3 id="1-方法"><a href="#1-方法" class="headerlink" title="1.方法"></a>1.方法</h3><ul>
-<li><code>private</code>方法和<code>private</code>字段不能外部类访问。</li>
-<li><code>private</code>方法和<code>private</code>字段是用来方便自身类使用的，为了保证类的封装性。</li>
-<li><strong>this</strong> 变量指当前实例。</li>
-<li>局部变量的优先级高于字段，可变参数也是局部变量。</li>
-<li>可变参数的定义：<code>类型... 变量名</code>，相当于数组。
-        
-          <p>
-            <a class="article-more-link" href="/2020/06/14/java-object-oriented/">
-              Read More...
-            </a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2020/06/14/java-object-oriented/" data-id="cl7b4ppwl001u70v43wy23gbu" class="article-share-link">
-        Share
-      </a>
-      
-<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" rel="tag">面向对象</a></li></ul>
 
     </footer>
 
