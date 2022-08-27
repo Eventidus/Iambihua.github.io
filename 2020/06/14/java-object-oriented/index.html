@@ -260,7 +260,10 @@
 <li><p><code>java.base</code>是”根模块”，所有模块直接或间接依赖<code>java.base</code>模块。</p>
 </li>
 <li><p><code>module-info.java</code>是模块的描述文件。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">module</span> hello.world &#123;</span><br><span class="line">	<span class="keyword">requires</span> java.base; <span class="comment">// 可不写，任何模块都会自动引入java.base</span></span><br><span class="line">	<span class="keyword">requires</span> java.xml;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">module</span> <span class="token namespace">hello<span class="token punctuation">.</span>world</span> <span class="token punctuation">&#123;</span>
+	<span class="token keyword">requires</span> <span class="token namespace">java<span class="token punctuation">.</span>base</span><span class="token punctuation">;</span> <span class="token comment">// 可不写，任何模块都会自动引入java.base</span>
+	<span class="token keyword">requires</span> <span class="token namespace">java<span class="token punctuation">.</span>xml</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li><p>以上，其中<code>module</code>是关键字，<code>hello.world</code>是模块的名称，<code>requires</code>表示引用其他模块。</p>
 </li>
@@ -269,7 +272,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.liuzx.me/2020/06/14/java-object-oriented/" data-id="cl7b53wub001uzsv45t90cclh" class="article-share-link">
+      <a data-url="https://www.liuzx.me/2020/06/14/java-object-oriented/" data-id="cl7b5fslm001wa8v4enfd9fux" class="article-share-link">
         Share
       </a>
       
