@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  <title>
+    
+    恍惚
+  </title>
+  <!-- Icon -->
+  
+    <link rel="shortcut icon" href="/images/hexo.svg">
+    
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<script src="/js/pace.min.js"></script>
+
+<meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="恍惚" type="application/atom+xml">
+</head>
+
+<body>
+  <main class="content">
+    <section class="outer">
+  <article id="post-this关键字" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+
+    
+    <div class="article-meta">
+      <a href="/2022/08/26/this%E5%85%B3%E9%94%AE%E5%AD%97/" class="article-date">
+  <time datetime="2022-08-26T11:55:15.407Z" itemprop="datePublished">2022-08-26</time>
+</a>
+      
+    </div>
+    
+
+    
+    
+<div class="tocbot"></div>
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+      
+        <h1 id="this-关键字"><a href="#this-关键字" class="headerlink" title="this 关键字"></a>this 关键字</h1><ol>
+<li><p>this 总是返回一个对象。</p>
+</li>
+<li><p>this 的值为属性或方法当前所在的对象(环境)。</p>
+</li>
+<li><p>使用场合 1. 在全局环境下，this 的值为顶层环境 window。 2. 在构造函数中，this 指向实例对象。 3. 在对象的方法中，this 指向当前方法所在的对象，但如果对一个对象进行赋值时，this 的指向就会改变了。</p>
+<span id="more"></span>
+</li>
+<li><p>多层 this 的情况下，可以考虑使用一个变量指向外层 this。</p>
+</li>
+<li><p>回调函数中的 this 指向当前环境中的全局对象。</p>
+</li>
+<li><p>Function.prototype.call()</p>
+<ol>
+<li>用来指定 this 的指向。</li>
+<li>call 方法的参数如果为空,null,或者 underfined，则默认指向 window 对象。</li>
+<li>如果只有一个参数，并且参数为对象，则 this 指向这个参数对象。</li>
+<li>如果只有一个参数，并且参数为原始值，则 this 指向这个原始值的包装对象。</li>
+<li>如果有多个参数，则第一个参数为 this 指向的对象，后面的参数为函数调用时需要的参数。</li>
+</ol>
+</li>
+<li><p>Function.prototype.apply()</p>
+<ol>
+<li>跟 call 方法类似，也是用来指定 this 的指向。</li>
+<li>如果只有一个参数，并且参数为对象，则 this 指向这个参数对象。</li>
+<li>如果有多个参数，则第一个参数为 this 要指向的对象，第二个参数为参数数组。</li>
+</ol>
+</li>
+<li><p>Function.prototype.bind()</p>
+<ol>
+<li>bind 方法用于将函数中的 this 绑定到某个对象，并且返回一个新函数。</li>
+<li>bind 方法也可以用于绑定参数。</li>
+<li>如果只有一个参数，并且参数为对象，则 this 指向这个参数对象。</li>
+<li>如果有多个参数，则第一个参数为 this 指向的对象，后面的参数为函数调用时需要的参数。</li>
+<li>注意事项：<ol>
+<li>每次调用会返回一个全新的函数</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://www.liuzx.me/2022/08/26/this%E5%85%B3%E9%94%AE%E5%AD%97/" data-id="cl7b5qdzb002htcv4f3ln8aa0" class="article-share-link">
+        Share
+      </a>
+      
+    </footer>
+
+  </div>
+
+  
+  
+<nav class="article-nav">
+  
+  <a href="/2022/08/26/%E5%BC%82%E6%AD%A5%E6%93%8D%E4%BD%9C/" class="article-nav-link">
+    <strong class="article-nav-caption">Newer</strong>
+    <div class="article-nav-title">
+      
+      (no title)
+      
+    </div>
+  </a>
+  
+  
+  <a href="/2022/08/26/Promise%E5%AF%B9%E8%B1%A1/" class="article-nav-link">
+    <strong class="article-nav-caption">Older</strong>
+    <div class="article-nav-title"></div>
+  </a>
+  
+</nav>
+
+  
+
+  
+  
+  
+  
+
+</article>
+</section>
+    <footer class="footer">
+  <div class="outer">
+    <ul class="list-inline">
+      <li>恍惚 &copy; 2022</li>
+      
+        <li>
+          
+            <a href="https://beian.miit.gov.cn/" target="_blank"></a>
+            
+        </li>
+      
+      <li>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></li>
+      <li>theme  <a target="_blank" rel="noopener" href="https://github.com/zhwangart/hexo-theme-ocean">Ocean</a></li>
+    </ul>
+    <p><ul class="list-inline">
+  
+  <li><i class="fe fe-smile-alt tooltip" data-tooltip="UV"></i> <span id="busuanzi_value_site_uv"></span></li>
+  
+  <li><i class="fe fe-bookmark tooltip" data-tooltip="PV"></i> <span id="busuanzi_value_page_pv"></span></li>
+  
+</ul></p>
+  </div>
+</footer>
+  </main>
+  <aside class="sidebar">
+    <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/hexo.svg" alt="恍惚"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">Home</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/about">About</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link nav-item-search" title="Search">
+        <i class="fe fe-search"></i>
+        Search
+      </a>
+    </li>
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      <div class="totop" id="totop">
+  <i class="fe fe-rocket"></i>
+</div>
+    </li>
+    <li class="nav-item">
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="fe fe-feed"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+  </aside>
+  
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/jquery.justifiedGallery.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+
+<script src="/js/tocbot.min.js"></script>
+
+
+<script>
+  // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
+  tocbot.init({
+    tocSelector: '.tocbot',
+    contentSelector: '.article-entry',
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    positionFixedSelector: '.tocbot',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto',
+  });
+</script>
+
+
+
+<script src="/js/ocean.js"></script>
+
+</body>
+
+</html>

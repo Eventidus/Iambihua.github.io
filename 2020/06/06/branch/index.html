@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  <meta name="description" content="Git进阶学习之分支篇">
+  
+  <title>
+    Git分支 |
+    
+    恍惚
+  </title>
+  <!-- Icon -->
+  
+    <link rel="shortcut icon" href="/images/hexo.svg">
+    
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<script src="/js/pace.min.js"></script>
+
+<meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="恍惚" type="application/atom+xml">
+</head>
+
+<body>
+  <main class="content">
+    <section class="outer">
+  <article id="post-branch" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+      
+  
+  <h1 class="article-title" itemprop="name">
+    Git分支
+  </h1>
+  
+  
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      <a href="/2020/06/06/branch/" class="article-date">
+  <time datetime="2020-06-06T04:43:23.000Z" itemprop="datePublished">2020-06-06</time>
+</a>
+      
+<div class="article-category">
+  <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/">技术笔记</a> / <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/Git/">Git</a> / <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/Git/Git%E8%BF%9B%E9%98%B6/">Git进阶</a>
+</div>
+
+    </div>
+    
+
+    
+    
+<div class="tocbot"></div>
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+      
+        <h1 id="Git进阶学习"><a href="#Git进阶学习" class="headerlink" title="Git进阶学习"></a>Git进阶学习</h1><blockquote>
+<p>本文是Git的进阶学习篇，来源于<a target="_blank" rel="noopener" href="https://git-scm.com/book/zh/v2">Git官方网站</a>.<br>入门篇可点击<a target="_blank" rel="noopener" href="https://www.lbihua.cn/2020/07/11/Git/">Git入门学习篇</a>阅读.<br>进阶学习之基础篇可点击<a target="_blank" rel="noopener" href="https://www.lbihua.cn/AdvancedGit/Basic.html">基础</a>.<br>进阶学习之起步篇可点击<a target="_blank" rel="noopener" href="https://www.lbihua.cn/AdvancedGit/Start.html">起步</a>.</p>
+</blockquote>
+<span id="more"></span>
+
+<h2 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h2><ol>
+<li><h5 id="Git仓库对象"><a href="#Git仓库对象" class="headerlink" title="Git仓库对象"></a>Git仓库对象</h5><ul>
+<li><strong>blob对象</strong>保存着文件快照</li>
+<li><strong>树对象</strong>记录着目录结构和<strong>blob对象索引</strong></li>
+<li><strong>提交对象</strong>保存着树对象索引和提交信息</li>
+</ul>
+</li>
+<li><h5 id="Git分支"><a href="#Git分支" class="headerlink" title="Git分支"></a>Git分支</h5><ul>
+<li>创建分支<ul>
+<li><code>git branch &lt;branch&gt;</code></li>
+<li><code>git checkout -b &lt;branch&gt;</code>创建分支并切换</li>
+</ul>
+</li>
+<li>查看分支的指向<ul>
+<li><code> git log --oneline --decorate</code>查看分支指向的提交点</li>
+</ul>
+</li>
+<li>切换分支<ul>
+<li><code>git checkout  &lt;branch&gt;</code>切换分支</li>
+</ul>
+</li>
+<li>分支合并<ul>
+<li><code>git merge &lt;branch&gt;</code></li>
+</ul>
+</li>
+<li>删除分支<ul>
+<li><code>git branch -d &lt;branch&gt;</code></li>
+</ul>
+</li>
+<li>查看分支<ul>
+<li><code>git branch</code>查看当前项目的所有分支</li>
+<li><code>git branch -v</code>查看当前项目的所有分支以及它们的前七位哈希值和提交说明</li>
+<li><code>git branch --merged</code>查看已经合并到当前分支的分支</li>
+<li><code>git branch --no-merged</code>查看未合并到当前分支的分支</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h5 id="Git远程分支"><a href="#Git远程分支" class="headerlink" title="Git远程分支"></a>Git远程分支</h5><ul>
+<li>创建跟踪分支<ul>
+<li>从一个远程分支检出的本地分支叫做跟踪分支，它跟踪的分支叫做上游分支</li>
+<li>设置跟踪分支的目的是在这个分支上进行工作。</li>
+<li>从远程仓库克隆时会自动创建一个跟踪分支 ，即master分支。</li>
+<li><code>git checkout -b &lt;branch&gt; &lt;origin&gt;/&lt;branch&gt;</code></li>
+<li><code>git branch --track &lt;origin&gt;/&lt;branch&gt;</code></li>
+<li><code>git checkout &lt;branch&gt;</code>如果检出的本地分支不存在而刚好存在一个与其名字匹配的远程分支，则在检出时会自动创建跟踪分支</li>
+</ul>
+</li>
+<li>重命名跟踪分支<ul>
+<li><code>git checkout -b &lt;branch&gt; &lt;origin&gt;/&lt;branch&gt;</code></li>
+</ul>
+</li>
+<li>修改被跟踪的上游分支<ul>
+<li><code> git branch -u &lt;origin&gt;/&lt;branch&gt;</code></li>
+</ul>
+</li>
+<li>查看跟踪分支<ul>
+<li><code>git branch -vv</code></li>
+</ul>
+</li>
+<li>删除远程分支<ul>
+<li><code>git push &lt;origin&gt; --delete &lt;branch&gt;</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h5 id="Git变基"><a href="#Git变基" class="headerlink" title="Git变基"></a>Git变基</h5><ul>
+<li>变基是对两个已修改提交的处理，不同于合并，变基是把修改和补丁应用到另一个分支上，而合并是对两个提交快照的内容合并。</li>
+<li>变基与合并有截然不同的的提交历史，变基是线性的，而合并是并行的。</li>
+<li><code>git rebase &lt;branch&gt;</code></li>
+<li>流程：先变基后合并。</li>
+</ul>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://www.liuzx.me/2020/06/06/branch/" data-id="cl7b5qdyl001htcv40opr4ccy" class="article-share-link">
+        Share
+      </a>
+      
+<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/" rel="tag">Git</a></li></ul>
+
+    </footer>
+
+  </div>
+
+  
+  
+<nav class="article-nav">
+  
+  <a href="/2020/06/10/java-annotation/" class="article-nav-link">
+    <strong class="article-nav-caption">Newer</strong>
+    <div class="article-nav-title">
+      
+      Java注解
+      
+    </div>
+  </a>
+  
+  
+  <a href="/2020/06/05/basic/" class="article-nav-link">
+    <strong class="article-nav-caption">Older</strong>
+    <div class="article-nav-title">Git基础</div>
+  </a>
+  
+</nav>
+
+  
+
+  
+  
+  
+  
+
+</article>
+</section>
+    <footer class="footer">
+  <div class="outer">
+    <ul class="list-inline">
+      <li>恍惚 &copy; 2022</li>
+      
+        <li>
+          
+            <a href="https://beian.miit.gov.cn/" target="_blank"></a>
+            
+        </li>
+      
+      <li>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></li>
+      <li>theme  <a target="_blank" rel="noopener" href="https://github.com/zhwangart/hexo-theme-ocean">Ocean</a></li>
+    </ul>
+    <p><ul class="list-inline">
+  
+  <li><i class="fe fe-smile-alt tooltip" data-tooltip="UV"></i> <span id="busuanzi_value_site_uv"></span></li>
+  
+  <li><i class="fe fe-bookmark tooltip" data-tooltip="PV"></i> <span id="busuanzi_value_page_pv"></span></li>
+  
+</ul></p>
+  </div>
+</footer>
+  </main>
+  <aside class="sidebar">
+    <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/hexo.svg" alt="恍惚"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">Home</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/about">About</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link nav-item-search" title="Search">
+        <i class="fe fe-search"></i>
+        Search
+      </a>
+    </li>
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      <div class="totop" id="totop">
+  <i class="fe fe-rocket"></i>
+</div>
+    </li>
+    <li class="nav-item">
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="fe fe-feed"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+  </aside>
+  
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/jquery.justifiedGallery.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+
+<script src="/js/tocbot.min.js"></script>
+
+
+<script>
+  // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
+  tocbot.init({
+    tocSelector: '.tocbot',
+    contentSelector: '.article-entry',
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    positionFixedSelector: '.tocbot',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto',
+  });
+</script>
+
+
+
+<script src="/js/ocean.js"></script>
+
+</body>
+
+</html>

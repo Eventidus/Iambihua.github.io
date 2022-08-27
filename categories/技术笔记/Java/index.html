@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  <title>
+    Categories: Java |
+    
+    恍惚
+  </title>
+  <!-- Icon -->
+  
+    <link rel="shortcut icon" href="/images/hexo.svg">
+    
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<script src="/js/pace.min.js"></script>
+
+<meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="恍惚" type="application/atom+xml">
+</head>
+
+<body>
+  <main class="content">
+    <section class="outer">
+  <article class="articles">
+    
+    <h1 class="page-type-title">Java</h1>
+    
+  
+  
+  
+  
+  
+  
+  <div class="archives-wrap">
+    <div class="archive-year-wrap">
+      <a href="/archives/2020" class="archive-year">2020</a>
+    </div>
+    <div class="archives">
+      
+      <article class="archive-article archive-type-post">
+  
+  
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      
+  
+  <h2 class="archive-article-title" itemprop="name">
+    <a href="/2020/06/15/java-reflection/">Java反射</a>
+  </h2>
+  
+  
+
+      <a href="/2020/06/15/java-reflection/" class="archive-article-date">
+  <time datetime="2020-06-15T04:43:23.000Z" itemprop="datePublished">06/15</time>
+</a>
+    </header>
+    
+      <blockquote>
+<p>本文是Java反射篇，学习于<a target="_blank" rel="noopener" href="https://www.liaoxuefeng.com/wiki/1252599548343744">廖雪峰的Java教程</a></p>
+</blockquote>
+<h2 id="Java反射"><a href="#Java反射" class="headerlink" title="Java反射"></a>Java反射</h2><h3 id="1-Class类"><a href="#1-Class类" class="headerlink" title="1.Class类"></a>1.Class类</h3><ul>
+<li><p>反射：通过<code>Class</code>实例获取相关类信息的方法称为反射。</p>
+</li>
+<li><p><code>JVM</code>会在执行过程中动态加载类到内存，并为其创建一个<code>Class</code>类型的实例，并且该Class实例只能在JVM内部创建。</p>
+</li>
+<li><p>如何获取一个<code>Class</code>实例</p>
+<ul>
+<li>通过一个类的静态变量<code>class</code>获取，如<code>String.class</code>。</li>
+<li>通过实例变量调用<code>getClass()</code>方法。</li>
+<li>通过<code>Class</code>类的静态<code>Class.forName()</code>方法，例<code>Class.forName(String.lang.String)</code>,其中参数中的类名要为完整类名。</li>
+</ul>
+</li>
+<li><p><code>Class</code>实例的比较，可以用<code>==</code>比较，原因是<code>Class</code>实例在JVM中是唯一的。</p>
+</li>
+<li><p>准确判断两个类型是否为同一类型可用<code>==</code>比较。</p>
+</li>
+<li><p>数组例如<code>String[ ]</code>也可以创建<code>Class</code>实例，而且不同于<code>String.class</code>。</p>
+</li>
+<li><p>此外，<code>JVM</code>也为基本类型创建了<code>Class</code>实例,例如<code>int.class</code>。</p>
+</li>
+<li><p>可通过一个<code>Class</code>实例调用<code>newInstance()</code>方法创建一个对应类型的实例，但只能调用该类的无参数构造方法，例如:</p>
+    
+    
+      
+<div class="article-category">
+  <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/">技术笔记</a> / <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/Java/">Java</a>
+</div>
+
+    
+    
+  </div>
+
+</article>
+      
+  
+  
+      <article class="archive-article archive-type-post">
+  
+  
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      
+  
+  <h2 class="archive-article-title" itemprop="name">
+    <a href="/2020/06/14/java-object-oriented/">Java面向对象基础</a>
+  </h2>
+  
+  
+
+      <a href="/2020/06/14/java-object-oriented/" class="archive-article-date">
+  <time datetime="2020-06-14T04:43:23.000Z" itemprop="datePublished">06/14</time>
+</a>
+    </header>
+    
+      <blockquote>
+<p>本文是 Java 的面向对象篇，学习于<a target="_blank" rel="noopener" href="https://www.liaoxuefeng.com/">廖雪峰的 Java 教程</a>.</p>
+</blockquote>
+<h2 id="面向对象基础"><a href="#面向对象基础" class="headerlink" title="面向对象基础"></a>面向对象基础</h2><h3 id="1-方法"><a href="#1-方法" class="headerlink" title="1.方法"></a>1.方法</h3><ul>
+<li><code>private</code>方法和<code>private</code>字段不能外部类访问。</li>
+<li><code>private</code>方法和<code>private</code>字段是用来方便自身类使用的，为了保证类的封装性。</li>
+<li><strong>this</strong> 变量指当前实例。</li>
+<li>局部变量的优先级高于字段，可变参数也是局部变量。</li>
+<li>可变参数的定义：<code>类型... 变量名</code>，相当于数组。
+    
+    
+      
+<div class="article-category">
+  <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/">技术笔记</a> / <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/Java/">Java</a>
+</div>
+
+    
+    
+  </div>
+
+</article>
+      
+  
+  
+      <article class="archive-article archive-type-post">
+  
+  
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      
+  
+  <h2 class="archive-article-title" itemprop="name">
+    <a href="/2020/06/13/java-introduction/">Java入门</a>
+  </h2>
+  
+  
+
+      <a href="/2020/06/13/java-introduction/" class="archive-article-date">
+  <time datetime="2020-06-13T04:43:23.000Z" itemprop="datePublished">06/13</time>
+</a>
+    </header>
+    
+      <blockquote>
+<p>本文是 Java 的入门学习篇，学习于<a target="_blank" rel="noopener" href="https://www.liaoxuefeng.com/wiki/1252599548343744">廖雪峰的 Java 教程</a>。</p>
+</blockquote>
+<h2 id="1-Java-介绍"><a href="#1-Java-介绍" class="headerlink" title="1.Java 介绍"></a>1.Java 介绍</h2><p>最早由 James golis 开发，起初叫 OAK.</p>
+<p>JDK:Java Development Kit</p>
+<ul>
+<li>Java 开发工具箱。</li>
+<li>包含了编译器，调试器，虚拟机等一系列开发工具。</li>
+</ul>
+<p>JRE：Java Runtime Rnvironment</p>
+<ul>
+<li><p>Java 虚拟机。</p>
+</li>
+<li><p>运行字节码文件，JRE 是 JDK 的一部分。</p>
+    
+    
+      
+<div class="article-category">
+  <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/">技术笔记</a> / <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/Java/">Java</a>
+</div>
+
+    
+    
+  </div>
+
+</article>
+      
+  
+  
+      <article class="archive-article archive-type-post">
+  
+  
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      
+  
+  <h2 class="archive-article-title" itemprop="name">
+    <a href="/2020/06/12/java-exception/">Java异常</a>
+  </h2>
+  
+  
+
+      <a href="/2020/06/12/java-exception/" class="archive-article-date">
+  <time datetime="2020-06-12T04:43:23.000Z" itemprop="datePublished">06/12</time>
+</a>
+    </header>
+    
+      <blockquote>
+<p>本文是 Java 异常篇，学习于<a target="_blank" rel="noopener" href="https://www.liaoxuefeng.com/wiki/1252599548343744">廖雪峰的 Java 教程</a></p>
+</blockquote>
+<h2 id="Java-异常"><a href="#Java-异常" class="headerlink" title="Java 异常"></a>Java 异常</h2><h3 id="1-异常类型"><a href="#1-异常类型" class="headerlink" title="1.异常类型"></a>1.异常类型</h3><ul>
+<li><p>异常体系的根为<code>Throwable</code>，它继承自<code>Object</code>。</p>
+</li>
+<li><p><code>Throwable</code>有两个体系<code>Error</code>和<code>Exception</code>。</p>
+</li>
+<li><p><code>Error</code>类</p>
+<ul>
+<li><code>OutOfMemoryError</code></li>
+<li><code>NoClassDefFounderError</code></li>
+<li><code>StackOverError</code></li>
+<li>等等
+    
+    
+      
+<div class="article-category">
+  <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/">技术笔记</a> / <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/Java/">Java</a>
+</div>
+
+    
+    
+  </div>
+
+</article>
+      
+  
+  
+      <article class="archive-article archive-type-post">
+  
+  
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      
+  
+  <h2 class="archive-article-title" itemprop="name">
+    <a href="/2020/06/11/java-core-classes/">Java核心类</a>
+  </h2>
+  
+  
+
+      <a href="/2020/06/11/java-core-classes/" class="archive-article-date">
+  <time datetime="2020-06-11T04:43:23.000Z" itemprop="datePublished">06/11</time>
+</a>
+    </header>
+    
+      <blockquote>
+<p>本文是 Java 的面向对象篇，学习于<a target="_blank" rel="noopener" href="https://www.liaoxuefeng.com/">廖雪峰的 Java 教程</a>.</p>
+</blockquote>
+<h2 id="Java-核心类"><a href="#Java-核心类" class="headerlink" title="Java 核心类"></a>Java 核心类</h2><h3 id="1-String"><a href="#1-String" class="headerlink" title="1.String"></a>1.String</h3><ul>
+<li>String 字符串内部是通过一个<code>char[]</code>表示的。</li>
+<li>String 字符串不可变性的实现：通过内部的<code>private final char[]</code>实现。</li>
+<li>字符串的比较<ul>
+<li>用<code>equals()</code>方法来比较，而不用<code>==</code>。</li>
+<li>Java 编译器在编译期间，会把拥有相同字符串的对象视为同一个对象并且放入常量池，所以用<code>==</code>比较字符串得出的结果会有巧合性。</li>
+<li>忽略大小写比较字符串用<code>equalsIgnoreCase()</code>方法。</li>
+</ul>
+</li>
+<li>判断是否包含子串用<code>contains()</code>方法，参数为<code>CharSequence</code>类，为 String 的子类。</li>
+<li>搜索字串<ul>
+<li><code>indexOf()</code>方法返回字串第一次出现在前半部分的索引。</li>
+<li><code>lastIndexOf()</code>方法返回子串第一次出现在后半部分的索引。
+    
+    
+      
+<div class="article-category">
+  <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/">技术笔记</a> / <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/Java/">Java</a>
+</div>
+
+    
+    
+  </div>
+
+</article>
+      
+  
+  
+      <article class="archive-article archive-type-post">
+  
+  
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      
+  
+  <h2 class="archive-article-title" itemprop="name">
+    <a href="/2020/06/10/java-annotation/">Java注解</a>
+  </h2>
+  
+  
+
+      <a href="/2020/06/10/java-annotation/" class="archive-article-date">
+  <time datetime="2020-06-10T04:43:23.000Z" itemprop="datePublished">06/10</time>
+</a>
+    </header>
+    
+      <blockquote>
+<p>本文是Java注解篇，学习于<a target="_blank" rel="noopener" href="https://www.liaoxuefeng.com/wiki/1252599548343744">廖雪峰的Java教程</a></p>
+</blockquote>
+<h2 id="Java注解"><a href="#Java注解" class="headerlink" title="Java注解"></a>Java注解</h2><h3 id="1-注解"><a href="#1-注解" class="headerlink" title="1.注解"></a>1.注解</h3><ul>
+<li>注解(Annotation)是一种<code>特殊的注释</code>,作用于Java源码的类，方法，字段，参数前。</li>
+<li>注解与代码的关系：从<strong>JVM</strong>的角度看，注解本身对代码的逻辑没有任何影响。</li>
+<li>注解分类<ul>
+<li>作用于编译器，但不会进入<code>.class</code>件，编译后不复存在,例如<ul>
+<li><code>@override</code>告诉编译器检查是否进行了正确的代码覆写</li>
+<li><code>@suppressWarning</code>告诉编译器忽略当前产生的编译警告。</li>
+</ul>
+</li>
+<li>作用于<code>class</code>文件，但加载后不会存在于内存中。</li>
+<li>作用于<code>JVM</code>，在程序运行时能够读取，例如<ul>
+<li>配置了<code>@PostConstruct</code>参数的方法在调用构造方法时被自动调用。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>注解的配置参数必须是常量，注解的配置参数可以有默认值。
+    
+    
+      
+<div class="article-category">
+  <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/">技术笔记</a> / <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/Java/">Java</a>
+</div>
+
+    
+    
+  </div>
+
+</article>
+      
+      
+    </div>
+  </div>
+  
+  
+
+  
+</section>
+    <footer class="footer">
+  <div class="outer">
+    <ul class="list-inline">
+      <li>恍惚 &copy; 2022</li>
+      
+        <li>
+          
+            <a href="https://beian.miit.gov.cn/" target="_blank"></a>
+            
+        </li>
+      
+      <li>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></li>
+      <li>theme  <a target="_blank" rel="noopener" href="https://github.com/zhwangart/hexo-theme-ocean">Ocean</a></li>
+    </ul>
+    <p><ul class="list-inline">
+  
+  <li><i class="fe fe-smile-alt tooltip" data-tooltip="UV"></i> <span id="busuanzi_value_site_uv"></span></li>
+  
+</ul></p>
+  </div>
+</footer>
+  </main>
+  <aside class="sidebar">
+    <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/hexo.svg" alt="恍惚"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">Home</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/about">About</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link nav-item-search" title="Search">
+        <i class="fe fe-search"></i>
+        Search
+      </a>
+    </li>
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      <div class="totop" id="totop">
+  <i class="fe fe-rocket"></i>
+</div>
+    </li>
+    <li class="nav-item">
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="fe fe-feed"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+  </aside>
+  
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/jquery.justifiedGallery.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+
+
+<script src="/js/ocean.js"></script>
+
+</body>
+
+</html>

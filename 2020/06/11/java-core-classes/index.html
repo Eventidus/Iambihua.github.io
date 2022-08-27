@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  <meta name="description" content="Java进阶学习之核心类">
+  
+  <title>
+    Java核心类 |
+    
+    恍惚
+  </title>
+  <!-- Icon -->
+  
+    <link rel="shortcut icon" href="/images/hexo.svg">
+    
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<script src="/js/pace.min.js"></script>
+
+<meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="恍惚" type="application/atom+xml">
+</head>
+
+<body>
+  <main class="content">
+    <section class="outer">
+  <article id="post-java-core-classes" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+      
+  
+  <h1 class="article-title" itemprop="name">
+    Java核心类
+  </h1>
+  
+  
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      <a href="/2020/06/11/java-core-classes/" class="article-date">
+  <time datetime="2020-06-11T04:43:23.000Z" itemprop="datePublished">2020-06-11</time>
+</a>
+      
+<div class="article-category">
+  <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/">技术笔记</a> / <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/Java/">Java</a>
+</div>
+
+    </div>
+    
+
+    
+    
+<div class="tocbot"></div>
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+      
+        <blockquote>
+<p>本文是 Java 的面向对象篇，学习于<a target="_blank" rel="noopener" href="https://www.liaoxuefeng.com/">廖雪峰的 Java 教程</a>.</p>
+</blockquote>
+<h2 id="Java-核心类"><a href="#Java-核心类" class="headerlink" title="Java 核心类"></a>Java 核心类</h2><h3 id="1-String"><a href="#1-String" class="headerlink" title="1.String"></a>1.String</h3><ul>
+<li>String 字符串内部是通过一个<code>char[]</code>表示的。</li>
+<li>String 字符串不可变性的实现：通过内部的<code>private final char[]</code>实现。</li>
+<li>字符串的比较<ul>
+<li>用<code>equals()</code>方法来比较，而不用<code>==</code>。</li>
+<li>Java 编译器在编译期间，会把拥有相同字符串的对象视为同一个对象并且放入常量池，所以用<code>==</code>比较字符串得出的结果会有巧合性。</li>
+<li>忽略大小写比较字符串用<code>equalsIgnoreCase()</code>方法。</li>
+</ul>
+</li>
+<li>判断是否包含子串用<code>contains()</code>方法，参数为<code>CharSequence</code>类，为 String 的子类。</li>
+<li>搜索字串<ul>
+<li><code>indexOf()</code>方法返回字串第一次出现在前半部分的索引。</li>
+<li><code>lastIndexOf()</code>方法返回子串第一次出现在后半部分的索引。<span id="more"></span></li>
+</ul>
+</li>
+<li>判断是否以子串开头或结尾<ul>
+<li><code>startsWith()</code>判断是否以子串开头。</li>
+<li><code>endsWith()</code>判断是否以字串结尾。</li>
+</ul>
+</li>
+<li>提取字串<ul>
+<li><code>substring(2)</code>从索引为 2 处开始提取字串。</li>
+<li><code>substring(2,4)</code>从索引为 2 处开始提取，到索引为 4 处结束，但不包括索引为 4 的值。</li>
+</ul>
+</li>
+<li>去除首尾空白字符<ul>
+<li><code>trim()</code>方法，空白字符包括<code>\t</code>、<code>\r</code>、<code>\n</code>。</li>
+<li><code>strip()</code>方法，与<code>trim</code>方法的区别就是可以去除中文空格字符<code>\u3000</code>。</li>
+</ul>
+</li>
+<li>判断是否为空<ul>
+<li><code>isBlank()</code>方法可以判断是否包含空白字符。</li>
+<li><code>isEmpty</code>方法可以判断是否字符串的长度是否为 0，<em>空白字符也可作为一个字符串长度。</em></li>
+</ul>
+</li>
+<li>替换子串用<code>replace(s1,s2)</code>方法，其中第一个参数 s1 表示被替换的子串，第二个参数 s2 为替换的子串。</li>
+<li><code>spilt()</code>方法可以分割字符串。</li>
+<li>格式化字符串<ul>
+<li><code>formatted()</code></li>
+<li><code>format()</code>静态方法</li>
+<li>示例代码</li>
+</ul>
+</li>
+</ul>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token class-name">String</span> s <span class="token operator">=</span> <span class="token string">"Hi %s, your score is %d!"</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>s<span class="token punctuation">.</span><span class="token function">formatted</span><span class="token punctuation">(</span><span class="token string">"Alice"</span><span class="token punctuation">,</span> <span class="token number">80</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span><span class="token string">"Hi %s, your score is %.2f!"</span><span class="token punctuation">,</span> <span class="token string">"Bob"</span><span class="token punctuation">,</span> <span class="token number">59.5</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li>类型转换<ul>
+<li>基本数据类型或引用类型转 String 类型。<ul>
+<li>使用<code>String.valueOf()</code>静态方法。</li>
+<li>使用<code>toString()</code>静态方法。</li>
+</ul>
+</li>
+<li>String 类型转其他类型：<ul>
+<li>转 int:<code>Integer.parseInt()</code>或<code>Integer.valueOf()</code>方法。</li>
+<li>转 bolean:<code>Bolean.parseBolean()</code>或<code>Boolean.valueOf()</code>方法。</li>
+<li>···</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>char[ ]和 String 的相互转换<ul>
+<li>String 转 char[ ]：<code>char[] arr = s.toCharArray()</code>即<code>toCharArray()</code>方法。</li>
+<li>char[ ]转 String：<code>String s =new String (arr)</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="2-StringBuilder"><a href="#2-StringBuilder" class="headerlink" title="2.StringBuilder"></a>2.StringBuilder</h3><ul>
+<li>在循环中使用 <code>+</code> 拼接字符串会生成许多临时对象，这些会造成内存浪费，同时会影响 GC 效率，<code>StringBuilder</code>可以有效解决这个问题。</li>
+<li><code>StringBuilder</code>是一种可变类，可以预分配缓冲区。</li>
+<li><code>StringBuilder</code>使用<code>append()</code>方法拼接子串。</li>
+<li><code>StringBuilder</code>使用<code>delete()</code>方法删除子串。</li>
+<li><code>StringBuffer</code>是<code>StringBuilder</code>的线程安全版本，实现了相同的接口。</li>
+<li>可以通过同步来保证线程操作，但同步会带来执行速度的下降。</li>
+</ul>
+<h3 id="3-StringJoiner"><a href="#3-StringJoiner" class="headerlink" title="3.StringJoiner"></a>3.StringJoiner</h3><ul>
+<li><code>Stringjoiner</code>类最常用于用分隔符拼接数组，使用<code>add()</code>方法拼接。</li>
+<li>用法：<code>var sj = new StringJoiner(&quot;s1&quot;)</code>，其中参数 s1 为分隔符。</li>
+</ul>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> names <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token string">"Bob"</span><span class="token punctuation">,</span> <span class="token string">"Alice"</span><span class="token punctuation">,</span> <span class="token string">"Grace"</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> sj <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">StringJoiner</span><span class="token punctuation">(</span><span class="token string">", "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token class-name">String</span> name <span class="token operator">:</span> names<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    sj<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li><p>如果要指定开头和结尾，<code>var sj = new StringJoiner(&quot;s1&quot;,&quot;s2&quot;,&quot;s3&quot;)</code>，其中参数 s1 为分隔符，s2 为开头，s3 为结尾。</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> names <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token string">"Bob"</span><span class="token punctuation">,</span> <span class="token string">"Alice"</span><span class="token punctuation">,</span> <span class="token string">"Grace"</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> sj <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">StringJoiner</span><span class="token punctuation">(</span><span class="token string">", "</span><span class="token punctuation">,</span> <span class="token string">"Hello "</span><span class="token punctuation">,</span> <span class="token string">"!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token class-name">String</span> name <span class="token operator">:</span> names<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    sj<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p><code>String.join()</code>为 String 类的静态方法，内部使用了<code>StringJonier</code>类的方法来拼接子串。</p>
+</li>
+<li><p><code>String.join()</code>方法的使用:<code>s.join(&quot;s&quot;,arr)</code>，其中 s 为要拼接的子串，arr 为字符串数组。</p>
+</li>
+</ul>
+<h3 id="4-包装类型"><a href="#4-包装类型" class="headerlink" title="4.包装类型"></a>4.包装类型</h3><ul>
+<li>基本数据类型变为引用类型，其实是使引用类型包含一个基本类型的字段。</li>
+<li>包装类：与某种基本类型对应的引用类型称为包装类(Wrapper Class)。</li>
+<li>需要注意两种引用类型<code>Integer</code>和<code>Character</code>，其他基本与基本类型的名称一致。</li>
+<li>推荐使用包装类型的静态方法<code>valueOf()</code>创建实例，而不通过构造方法创建，因为会有编译警告。</li>
+<li>自动装箱(Auto Boxing):将基本类型自动转换为引用类型。</li>
+<li>自动拆箱(Auto Unboxing):将引用类型自动转换为基本类型。</li>
+<li>自动装箱和自动拆箱只发生在编译阶段，优点是少写代码，缺点是影响执行效率。</li>
+<li>静态工厂方法：能创建新实例的静态方法，它有缓存优化机制。</li>
+<li>如果静态工厂方法<code>valueOf()</code>中的参数很小，会返回相同的实例，由于缓存优化。</li>
+<li>包装类型转化为基本类型<ul>
+<li>使用形如<code>intvalue()</code>的方法、</li>
+<li>使用形如<code>parseInt()</code>的方法。</li>
+</ul>
+</li>
+<li>包装类型的静态变量</li>
+</ul>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">Boolean</span> t <span class="token operator">=</span> <span class="token class-name">Boolean</span><span class="token punctuation">.</span><span class="token constant">TRUE</span><span class="token punctuation">;</span>
+<span class="token class-name">Boolean</span> f <span class="token operator">=</span> <span class="token class-name">Boolean</span><span class="token punctuation">.</span><span class="token constant">FALSE</span><span class="token punctuation">;</span>
+<span class="token comment">// int可表示的最大/最小值:</span>
+<span class="token keyword">int</span> max <span class="token operator">=</span> <span class="token class-name">Integer</span><span class="token punctuation">.</span><span class="token constant">MAX_VALUE</span><span class="token punctuation">;</span> <span class="token comment">// 2147483647</span>
+<span class="token keyword">int</span> min <span class="token operator">=</span> <span class="token class-name">Integer</span><span class="token punctuation">.</span><span class="token constant">MIN_VALUE</span><span class="token punctuation">;</span> <span class="token comment">// -2147483648</span>
+<span class="token comment">// long类型占用的bit和byte数量:</span>
+<span class="token keyword">int</span> sizeOfLong <span class="token operator">=</span> <span class="token class-name">Long</span><span class="token punctuation">.</span><span class="token constant">SIZE</span><span class="token punctuation">;</span> <span class="token comment">// 64 (bits)</span>
+<span class="token keyword">int</span> bytesOfLong <span class="token operator">=</span> <span class="token class-name">Long</span><span class="token punctuation">.</span><span class="token constant">BYTES</span><span class="token punctuation">;</span> <span class="token comment">// 8 (bytes)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="5-JavaBean"><a href="#5-JavaBean" class="headerlink" title="5.JavaBean"></a>5.JavaBean</h3><ul>
+<li><code>JavaBean</code>主要用来传递数据，即把一组数据组合成一个 JavaBean 便于传输。</li>
+<li>一组对应的读写方法称为属性。</li>
+<li>只有读方法的称为只读属性，只有写方法的称为只写属性。</li>
+</ul>
+<h3 id="6-Enum"><a href="#6-Enum" class="headerlink" title="6.Enum"></a>6.Enum</h3><ul>
+<li>用<code>enum</code>关键字定义的类称为枚举类，它被编译器编译为<code>final class Xxx extends Enum &#123; … &#125;</code>；</li>
+<li>注意：<ul>
+<li>枚举常量带有类型信息。</li>
+<li>不能用非枚举类型的值给枚举常量赋值。</li>
+<li>不同类型的枚举不能相互比较。</li>
+</ul>
+</li>
+<li>枚举的比较<ul>
+<li><code>== </code>运算符，枚举类是一种特殊的 class，可以用<code>==</code>运算符比较，因为每一个枚举常量在 JVM 内都是一个唯一的实例。</li>
+<li><code>equals()</code>方法，可编译通过，但更推荐用<code>==</code>运算符，可以写更少的代码。</li>
+</ul>
+</li>
+<li>枚举类的特点<ul>
+<li>继承自<code>java.lang.Enum</code>，且枚举类无法被继承，因为枚举类被<code>fintal</code>关键字修饰。</li>
+<li>只能定义 enum 的实例，不能用 new 操作符创建实例。</li>
+<li>可以用于<code>switch</code>语句。</li>
+<li>每一个枚举常量在内部都是一个唯一的实例。</li>
+</ul>
+</li>
+<li><code>name()</code>返回枚举常量名。</li>
+<li><code>ordinal()</code>返回枚举常量按顺序定义的序号，以 0 开始计数。</li>
+<li>enum 的构造方法应该声明为<code>private类型</code>。</li>
+<li>给枚举常量添加字段，字段强烈建议声明为<code>final</code>类型，并且在<code>pirvate</code>构造方法中初始化。</li>
+</ul>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">enum</span> <span class="token class-name">Weekday</span> <span class="token punctuation">&#123;</span>
+    <span class="token function">MON</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"星期一"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">TUE</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">"星期二"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">WED</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token string">"星期三"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">THU</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token string">"星期四"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">FRI</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token string">"星期五"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">SAT</span><span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">,</span> <span class="token string">"星期六"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">SUN</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">"星期日"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">final</span> <span class="token keyword">int</span> dayValue<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token keyword">final</span> <span class="token class-name">String</span> chinese<span class="token punctuation">;</span>
+
+    <span class="token keyword">private</span> <span class="token class-name">Weekday</span><span class="token punctuation">(</span><span class="token keyword">int</span> dayValue<span class="token punctuation">,</span> <span class="token class-name">String</span> chinese<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>dayValue <span class="token operator">=</span> dayValue<span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>chinese <span class="token operator">=</span> chinese<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="7-Record"><a href="#7-Record" class="headerlink" title="7.Record"></a>7.Record</h3><ul>
+<li>不变类的两个特点<ul>
+<li><code>class</code>用<code>final</code>关键字修饰。</li>
+<li>字段也用<code>final</code>关键字修饰。</li>
+</ul>
+</li>
+<li>用关键字<code>record</code>声明的类称为记录类。</li>
+<li>跟枚举类一样，它不直接继承自<code>Record</code>类，而由编译器实现继承，并且被编译器编译为<code>public final class Xxx extends Record &#123;···&#125;</code></li>
+<li>记录类的声明方式</li>
+</ul>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">record</span> <span class="token class-name">Xxx</span><span class="token punctuation">(</span>type x<span class="token punctuation">,</span>type y<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>它被编译器编译后的代码为：</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">final</span> <span class="token keyword">class</span> <span class="token class-name">Point</span> <span class="token keyword">extends</span> <span class="token class-name">Record</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">private</span> <span class="token keyword">final</span> type x<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token keyword">final</span> type y<span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">Point</span><span class="token punctuation">(</span>type x<span class="token punctuation">,</span> type y<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>x <span class="token operator">=</span> x<span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>y <span class="token operator">=</span> y<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token keyword">public</span> type <span class="token function">x</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>x<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token keyword">public</span> type <span class="token function">y</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>y<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> <span class="token class-name">String</span><span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span><span class="token string">"Point[x=%s, y=%s]"</span><span class="token punctuation">,</span> x<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">equals</span><span class="token punctuation">(</span><span class="token class-name">Object</span> o<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">hashCode</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li>可以在记录类的构造方法中编写逻辑检查语法。</li>
+<li>可以在记录类中用<code>of()</code>静态方法创建实例。</li>
+</ul>
+<h3 id="8-BigInteger"><a href="#8-BigInteger" class="headerlink" title="8.BigInteger"></a>8.BigInteger</h3><ul>
+<li>由 CPU 原生提供的 long 整型最大位数是 64 位，可直接通过 CPU 进行计算。</li>
+<li><code>java.math.BigInteger</code>表示任意大小的整数，内部以<code>int[ ]</code>数组表示。</li>
+<li>使用 BigInteger 做运算的时候，要用实例方法。</li>
+<li><code>BigInteger</code>转<code>long</code>时，如果超出<code>long</code>范围，用<code>longValneExact()</code>方法会报出<code>ArithmeticException</code>异常，用<code>longValne()</code>方法不会报出异常，但会丢失高位信息，即得出的结果不准确。</li>
+<li><code>BigInteger</code>类型也可转基本类型，因为<code>BigInteger</code>也继承自<code>Number</code>类。</li>
+</ul>
+<h3 id="9-BigDecimal"><a href="#9-BigDecimal" class="headerlink" title="9.BigDecimal"></a>9.BigDecimal</h3><ul>
+<li><code>BigDecimal</code>表示任意精度的浮点数。</li>
+<li>使用<code>scale()</code>方法可以返回小数位数，如果返回负数，表示这是整数，并且末尾有整数 0。</li>
+<li>使用<code>stripTrailingZeros()</code>方法可以返回一个相等的，去除了末尾 0 的<code>BigDecimal</code>数。</li>
+<li>使用<code>setScale()</code>方法可以设置精度，如果设置精度小与原始精度，就要考虑四舍五入或者直接截断。</li>
+<li><code>RoundingMode.HALF_UP</code>常量表示四舍五入。</li>
+<li><code>RoundingMode.Down</code>常量表示直接截断。</li>
+<li>比较两个<code>BigDecimal</code>使用<code>compareTo()</code>方法。</li>
+<li><code>BigDecimal</code>实际上是由<code>BigInteger</code>和<code>sacle</code>表示的。</li>
+</ul>
+<h3 id="10-Math"><a href="#10-Math" class="headerlink" title="10.Math"></a>10.Math</h3><ul>
+<li>数学公式<ul>
+<li><code>Math.abs()</code>计算绝对值。</li>
+<li><code>Math.max()</code>计算最大值，<code>min()</code>计算最小值</li>
+<li><code>Math.pow(x,y)</code>计算$x^y$次方。</li>
+<li><code>Math.sqrt(x)</code>计算$\sqrt{x}$。</li>
+<li><code>Math.exp(x)</code>计算$e^x$。</li>
+<li><code>Math.log(x)</code>计算$\log_ex$。</li>
+<li><code>Math.log10(x)</code>计算$\ln x$。</li>
+<li><code>Math.sin(x)</code>计算$\sin x$。</li>
+<li><code>Math.cos(x)</code>计算$\cos x$。</li>
+<li><code>Math.tan(x)</code>计算$\tan x$。</li>
+<li><code>Math.asin(x)</code>计算$asin x$。</li>
+<li><code>Math.acos(x)</code>计算$acos x$。</li>
+<li><code>Math.PI</code>数学常量，表示$\Pi$</li>
+<li><code>Math.E</code>数学常量，表示 e。</li>
+</ul>
+</li>
+<li><code>Math.random()</code>返回<code>[0,1</code>之间的随机数。</li>
+</ul>
+<h3 id="11-Random"><a href="#11-Random" class="headerlink" title="11.Random"></a>11.Random</h3><ul>
+<li><code>Random</code>类用来创建伪随机数，伪随机数是指给定一个种子，会产生相同的随机数序列。</li>
+<li><code>Math.random()</code>实际上内部调用了<code>Random</code>类。</li>
+<li><code>SecureRandom</code>类用来产生安全的随机数。</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://www.liuzx.me/2020/06/11/java-core-classes/" data-id="cl7b5qdyo001otcv4bixbc61z" class="article-share-link">
+        Share
+      </a>
+      
+<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%A0%B8%E5%BF%83%E7%B1%BB/" rel="tag">核心类</a></li></ul>
+
+    </footer>
+
+  </div>
+
+  
+  
+<nav class="article-nav">
+  
+  <a href="/2020/06/12/Learning%20how%20to%20learn%20part%202/" class="article-nav-link">
+    <strong class="article-nav-caption">Newer</strong>
+    <div class="article-nav-title">
+      
+      Learning how to learn part2
+      
+    </div>
+  </a>
+  
+  
+  <a href="/2020/06/10/java-annotation/" class="article-nav-link">
+    <strong class="article-nav-caption">Older</strong>
+    <div class="article-nav-title">Java注解</div>
+  </a>
+  
+</nav>
+
+  
+
+  
+  
+  
+  
+
+</article>
+</section>
+    <footer class="footer">
+  <div class="outer">
+    <ul class="list-inline">
+      <li>恍惚 &copy; 2022</li>
+      
+        <li>
+          
+            <a href="https://beian.miit.gov.cn/" target="_blank"></a>
+            
+        </li>
+      
+      <li>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></li>
+      <li>theme  <a target="_blank" rel="noopener" href="https://github.com/zhwangart/hexo-theme-ocean">Ocean</a></li>
+    </ul>
+    <p><ul class="list-inline">
+  
+  <li><i class="fe fe-smile-alt tooltip" data-tooltip="UV"></i> <span id="busuanzi_value_site_uv"></span></li>
+  
+  <li><i class="fe fe-bookmark tooltip" data-tooltip="PV"></i> <span id="busuanzi_value_page_pv"></span></li>
+  
+</ul></p>
+  </div>
+</footer>
+  </main>
+  <aside class="sidebar">
+    <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/hexo.svg" alt="恍惚"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">Home</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/about">About</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link nav-item-search" title="Search">
+        <i class="fe fe-search"></i>
+        Search
+      </a>
+    </li>
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      <div class="totop" id="totop">
+  <i class="fe fe-rocket"></i>
+</div>
+    </li>
+    <li class="nav-item">
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="fe fe-feed"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+  </aside>
+  
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/jquery.justifiedGallery.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+
+<script src="/js/tocbot.min.js"></script>
+
+
+<script>
+  // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
+  tocbot.init({
+    tocSelector: '.tocbot',
+    contentSelector: '.article-entry',
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    positionFixedSelector: '.tocbot',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto',
+  });
+</script>
+
+
+
+<script src="/js/ocean.js"></script>
+
+</body>
+
+</html>

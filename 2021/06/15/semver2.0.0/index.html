@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  <title>
+    语义化版本2.0.0介绍 |
+    
+    恍惚
+  </title>
+  <!-- Icon -->
+  
+    <link rel="shortcut icon" href="/images/hexo.svg">
+    
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<script src="/js/pace.min.js"></script>
+
+<meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="恍惚" type="application/atom+xml">
+</head>
+
+<body>
+  <main class="content">
+    <section class="outer">
+  <article id="post-semver2.0.0" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+      
+  
+  <h1 class="article-title" itemprop="name">
+    语义化版本2.0.0介绍
+  </h1>
+  
+  
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      <a href="/2021/06/15/semver2.0.0/" class="article-date">
+  <time datetime="2021-06-15T04:43:23.000Z" itemprop="datePublished">2021-06-15</time>
+</a>
+      
+<div class="article-category">
+  <a class="article-category-link" href="/categories/%E6%89%A9%E5%B1%95%E9%98%85%E8%AF%BB/">扩展阅读</a>
+</div>
+
+    </div>
+    
+
+    
+    
+<div class="tocbot"></div>
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+      
+        <h1 id="语义化版本-2-0-0-介绍"><a href="#语义化版本-2-0-0-介绍" class="headerlink" title="语义化版本 2.0.0 介绍"></a>语义化版本 2.0.0 介绍</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>语义化版本是为了解决软件开发过程中依赖关系混乱或者依赖锁死的情况。</p>
+<p>它的标准格式如下：</p>
+<blockquote>
+<p><strong>x.y.z</strong></p>
+</blockquote>
+<p>其中 x 表示主版本号，y 表示次版本号，z 表示修订号。</p>
+<span id="more"></span>
+
+<p>对这几种版本号的解释如下：</p>
+<p>X 主版本号，表示做了<strong>不向下兼容的修改</strong>时递增。</p>
+<p>Y 次版本号，表示做了<strong>向下兼容的新增及修改</strong>时递增。</p>
+<p>Z 修订号，表示做了<strong>向下兼容的问题修复</strong>时递增。</p>
+<h2 id="规范"><a href="#规范" class="headerlink" title="规范"></a>规范</h2><ol>
+<li><p>必须定义公共 API，且公共 API 应该力求准确和完整。</p>
+</li>
+<li><p>x,y,z 必须都为非负整数，且禁止在数字前补零。</p>
+</li>
+<li><p>0.y.z 表示软件处于初始开发阶段,y 与 z 可以根据初始开发阶段的情况递增。</p>
+</li>
+<li><p>1.0.0 表示软件开发成功的第一个版本号，也是界定公共 API 成熟的标志。</p>
+</li>
+<li><p>次版本号递增的原则:</p>
+<ul>
+<li>新功能添加时。</li>
+<li>某一功能被弃用时。</li>
+<li>某一功能被改进时。(其中可包括修订级别的改变)</li>
+<li>次版本号递增时，修订号必须归零。</li>
+</ul>
+</li>
+<li><p>主版本号递增时，次版本号和修订号必须清零，其中可包括次版本号和修订号的改变。</p>
+</li>
+<li><p>先行版本号添加原则:</p>
+<ul>
+<li>由连接号和描述符组成。</li>
+<li>添加在修订号后面。</li>
+<li>先行版本号表示这个版本并非稳定并有非兼容情况出现。</li>
+<li>优先级低于相关联的标准版本号。</li>
+</ul>
+</li>
+<li><p>版本编译元数据添加原则:</p>
+<ul>
+<li>由加号和描述符组成。</li>
+<li>添加在修订号或者先行版本号后面。</li>
+<li>版本编译元数据不参与版本优先级比较。</li>
+</ul>
+</li>
+<li><p>优先级比较原则:一一拆分为各种版本号比较。</p>
+</li>
+</ol>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>本文章内容参考于<a target="_blank" rel="noopener" href="https://semver.org/lang/zh-CN/#spec-item-9%E3%80%82">https://semver.org/lang/zh-CN/#spec-item-9。</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://www.liuzx.me/2021/06/15/semver2.0.0/" data-id="cl7b5qdz60029tcv45sqj5f1a" class="article-share-link">
+        Share
+      </a>
+      
+<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%89%88%E6%9C%AC%E5%8F%B7/" rel="tag">版本号</a></li></ul>
+
+    </footer>
+
+  </div>
+
+  
+  
+<nav class="article-nav">
+  
+  <a href="/2021/06/19/DeepL/" class="article-nav-link">
+    <strong class="article-nav-caption">Newer</strong>
+    <div class="article-nav-title">
+      
+      DeepL
+      
+    </div>
+  </a>
+  
+  
+  <a href="/2020/08/04/npm-command/" class="article-nav-link">
+    <strong class="article-nav-caption">Older</strong>
+    <div class="article-nav-title">npm常用命令</div>
+  </a>
+  
+</nav>
+
+  
+
+  
+  
+  
+  
+
+</article>
+</section>
+    <footer class="footer">
+  <div class="outer">
+    <ul class="list-inline">
+      <li>恍惚 &copy; 2022</li>
+      
+        <li>
+          
+            <a href="https://beian.miit.gov.cn/" target="_blank"></a>
+            
+        </li>
+      
+      <li>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></li>
+      <li>theme  <a target="_blank" rel="noopener" href="https://github.com/zhwangart/hexo-theme-ocean">Ocean</a></li>
+    </ul>
+    <p><ul class="list-inline">
+  
+  <li><i class="fe fe-smile-alt tooltip" data-tooltip="UV"></i> <span id="busuanzi_value_site_uv"></span></li>
+  
+  <li><i class="fe fe-bookmark tooltip" data-tooltip="PV"></i> <span id="busuanzi_value_page_pv"></span></li>
+  
+</ul></p>
+  </div>
+</footer>
+  </main>
+  <aside class="sidebar">
+    <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/hexo.svg" alt="恍惚"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">Home</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/about">About</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link nav-item-search" title="Search">
+        <i class="fe fe-search"></i>
+        Search
+      </a>
+    </li>
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      <div class="totop" id="totop">
+  <i class="fe fe-rocket"></i>
+</div>
+    </li>
+    <li class="nav-item">
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="fe fe-feed"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+  </aside>
+  
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/jquery.justifiedGallery.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+
+<script src="/js/tocbot.min.js"></script>
+
+
+<script>
+  // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
+  tocbot.init({
+    tocSelector: '.tocbot',
+    contentSelector: '.article-entry',
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    positionFixedSelector: '.tocbot',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto',
+  });
+</script>
+
+
+
+<script src="/js/ocean.js"></script>
+
+</body>
+
+</html>

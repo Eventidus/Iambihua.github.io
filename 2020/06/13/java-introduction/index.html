@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  <meta name="description" content="Java进阶学习之入门篇~">
+  
+  <title>
+    Java入门 |
+    
+    恍惚
+  </title>
+  <!-- Icon -->
+  
+    <link rel="shortcut icon" href="/images/hexo.svg">
+    
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<script src="/js/pace.min.js"></script>
+
+<meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="恍惚" type="application/atom+xml">
+</head>
+
+<body>
+  <main class="content">
+    <section class="outer">
+  <article id="post-java-introduction" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+      
+  
+  <h1 class="article-title" itemprop="name">
+    Java入门
+  </h1>
+  
+  
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      <a href="/2020/06/13/java-introduction/" class="article-date">
+  <time datetime="2020-06-13T04:43:23.000Z" itemprop="datePublished">2020-06-13</time>
+</a>
+      
+<div class="article-category">
+  <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/">技术笔记</a> / <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/Java/">Java</a>
+</div>
+
+    </div>
+    
+
+    
+    
+<div class="tocbot"></div>
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+      
+        <blockquote>
+<p>本文是 Java 的入门学习篇，学习于<a target="_blank" rel="noopener" href="https://www.liaoxuefeng.com/wiki/1252599548343744">廖雪峰的 Java 教程</a>。</p>
+</blockquote>
+<h2 id="1-Java-介绍"><a href="#1-Java-介绍" class="headerlink" title="1.Java 介绍"></a>1.Java 介绍</h2><p>最早由 James golis 开发，起初叫 OAK.</p>
+<p>JDK:Java Development Kit</p>
+<ul>
+<li>Java 开发工具箱。</li>
+<li>包含了编译器，调试器，虚拟机等一系列开发工具。</li>
+</ul>
+<p>JRE：Java Runtime Rnvironment</p>
+<ul>
+<li><p>Java 虚拟机。</p>
+</li>
+<li><p>运行字节码文件，JRE 是 JDK 的一部分。</p>
+<span id="more"></span>
+<p>JSR：Java Specification request</p>
+</li>
+<li><p>Java 规范要求。</p>
+</li>
+<li><p>规范 Java 平台新增加的功能。</p>
+</li>
+</ul>
+<p>JCP：Java Community process</p>
+<ul>
+<li>Java 社区流程。</li>
+<li>审核 JSR。</li>
+</ul>
+<h2 id="2-Java-工具"><a href="#2-Java-工具" class="headerlink" title="2.Java 工具"></a>2.Java 工具</h2><p>java</p>
+<ul>
+<li>其实就是虚拟机，执行字节码文件。</li>
+</ul>
+<p>javac</p>
+<ul>
+<li>全称 Java Compiler,编译源文件为字节码文件。</li>
+</ul>
+<p>jar</p>
+<ul>
+<li>把字节码文件打包为 jar 压缩文件。</li>
+</ul>
+<p>javadoc</p>
+<ul>
+<li>生成注释文档。</li>
+</ul>
+<p>jdb</p>
+<ul>
+<li>全称 Java Debugger,Java 调试器，用于开发时进行代码调试。</li>
+</ul>
+<h2 id="3-Java-基础"><a href="#3-Java-基础" class="headerlink" title="3.Java 基础"></a>3.Java 基础</h2><p>Java 类名书写规范</p>
+<ul>
+<li>类名必须以英文字母开头，后接字母.数字或下划线。</li>
+<li>类名首字母习惯大写，此后后面的每个单词首字母都大写。</li>
+</ul>
+<p>Java 程序的入口方法</p>
+<ul>
+<li>静态的 main 方法，Java 程序总是从 main 方法开始执行的。</li>
+</ul>
+<p>方法名书写规范</p>
+<ul>
+<li>方法名必须以英文字母开头，后接字母，数字或下划线。</li>
+<li>方法名首字母习惯小写，此后后面的每个单词首字母大写。</li>
+</ul>
+<p>Java 的文档注释</p>
+<ul>
+<li>标识在方法和类名的定义处，用于自动创建文档。</li>
+</ul>
+<p>Java 变量</p>
+<ul>
+<li>分为基本类型变量和隐形类型变量。</li>
+<li>基本类型变量如未初始化，则默认值为 0.</li>
+<li>引用类型变量如未初始化，则默认值为 null.</li>
+</ul>
+<p>Java 基本数据类型</p>
+<ul>
+<li><p>int</p>
+<ul>
+<li>占 4 个字节。</li>
+<li>范围：-2147483648-2147483647.</li>
+</ul>
+</li>
+<li><p>short</p>
+<ul>
+<li>占 2 个字节.</li>
+<li>范围：-32768-32767.</li>
+</ul>
+</li>
+<li><p>byte</p>
+<ul>
+<li>占 1 个字节.</li>
+<li>范围：-128-127.</li>
+</ul>
+</li>
+<li><p>long</p>
+<ul>
+<li>占 8 个字节.</li>
+<li>范围：-9223372036854775808 -9223372036854775807</li>
+</ul>
+</li>
+<li><p>double</p>
+<ul>
+<li>占 8 个字节.</li>
+</ul>
+</li>
+<li><p>float</p>
+<ul>
+<li>占 4 个字节.</li>
+</ul>
+</li>
+<li><p>char</p>
+<ul>
+<li>占 2 个字节.</li>
+</ul>
+</li>
+</ul>
+<p>java 运算</p>
+<ul>
+<li><p>两个整数相除，结果忽略小数部分。</p>
+</li>
+<li><p>按位运算是对 4 字节的 8 位二进制数进行左移或者右移。</p>
+</li>
+<li><p>如果对负数进行按位右移，由于符号位为 1 不动，所以结果仍然是负数。</p>
+</li>
+<li><p>无符号位移运算用&gt;&gt;&gt;或&lt;&lt;&lt;,表示符号位也会跟着变动。</p>
+</li>
+<li><p>与运算</p>
+<ul>
+<li>两个数同时为 1，结果才为 1。</li>
+<li>与运算的常见用途：两个 IP 地址进行与运算，判断一个 IP 是否在给定的网段内。</li>
+</ul>
+</li>
+<li><p>或运算</p>
+<ul>
+<li>其中一个数为 1，结果才为 1.</li>
+</ul>
+</li>
+<li><p>非运算</p>
+<pre><code>-
+</code></pre>
+<p>非 0 即 1，非 1 即 0.</p>
+</li>
+<li><p>异或运算</p>
+<ul>
+<li>两个数不同，结果为 1，否则为 0.</li>
+</ul>
+</li>
+<li><p>浮点数四舍五入转换为整数</p>
+<ul>
+<li>浮点数+0.5 后再进行转换。</li>
+</ul>
+</li>
+</ul>
+<p>Java 字符的表示</p>
+<ul>
+<li>一是用单引号括起来的字符表示。</li>
+<li>二是用单引号括起来的转义字符表示。</li>
+<li>其中转义字符的表示：\u+四位十六进制数。</li>
+</ul>
+<p>Java 字符串连接</p>
+<ul>
+<li>字符串变量可用+号连接其他字符串或者其他数据类型。</li>
+<li>如果用+号连接其他数据类型，则其他数据类型的会先自动转变为字符串。</li>
+<li>Java 表示多行字符串可用符号 ”‘ “’ 。</li>
+<li>Java 的不可变性指的是字符串内容不会变，只是指针指向了另一个字符串内容。</li>
+</ul>
+<p>null 值</p>
+<ul>
+<li>表示变量未指向任何对象。</li>
+</ul>
+<p>Java 数组</p>
+<ul>
+<li>是同一数据类型的集合。</li>
+<li>初始化时，如果是整数，默认值为 0，如果是浮点数默认值为 0.0，如果是布尔，默认值为 false。</li>
+</ul>
+<p>判断两个浮点数是否相同</p>
+<ul>
+<li>两个浮点数之差的绝对值是否小于 0.00001.</li>
+</ul>
+<p>Java 特殊的三个数值</p>
+<ul>
+<li>NaN Not a Number.</li>
+<li>Infinity 无穷大。</li>
+<li>-Infinity 负无穷大。</li>
+</ul>
+<p>基本类型变量和引用型变量的值</p>
+<ul>
+<li><p>基本类型变量的值是数值。</p>
+</li>
+<li><p>引用型变量的值为引用，相当于指针。</p>
+</li>
+<li><p>比较方法：</p>
+<ul>
+<li>两个基本类型变量的比较用&#x3D;&#x3D;。</li>
+<li>两个引用类型变量的比较用 equals 方法。</li>
+</ul>
+</li>
+</ul>
+<p>Java 类型转换</p>
+<ul>
+<li>低等级类型向高等级类型转换是自动转换。</li>
+<li>高等级类型向低等级类型转换是强制转换。</li>
+</ul>
+<p>java 数组大小与引用</p>
+<ul>
+<li>数组大小不会变化，所谓变化只是指向了新的数组。</li>
+<li>Java 数组变量指向一个新数组后，原数组不会消失，只是无法通过引用访问。</li>
+</ul>
+<p>for 循环与 for-each 循环</p>
+<ul>
+<li>for 循环执行流程：先初始化计时器，再判断循环条件，最后再更新计时器。</li>
+<li>for-each 循环适用于数组.</li>
+</ul>
+<p>conuite 与 break</p>
+<ul>
+<li>continue 结束本次循环。</li>
+<li>break 结束当前所在的一层循环。</li>
+</ul>
+<p>数组相关</p>
+<ul>
+<li><p>打印数组变量时，输出的是数组首元素索引。</p>
+</li>
+<li><p>数组的排序</p>
+<ul>
+<li>常见排序方法</li>
+<li>Array.sort()方法，默认从小到大排序。</li>
+</ul>
+</li>
+<li><p>二维数组的长度</p>
+<ul>
+<li>二维数组的元素是数组，所以二维数组的长度为数组元素个数。</li>
+<li>二位数组元素的长度不要求相同。</li>
+</ul>
+</li>
+<li><p>数组元素的两种打印输出方法</p>
+<ul>
+<li>for 循环</li>
+<li>Array.toString() 方法格式化输出。</li>
+<li>Array.deepToString()方法格式化输出，适用于多维数组。</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://www.liuzx.me/2020/06/13/java-introduction/" data-id="cl7b5qdyr001utcv406q8c6hw" class="article-share-link">
+        Share
+      </a>
+      
+<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JDK/" rel="tag">JDK</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java%E5%9F%BA%E7%A1%80/" rel="tag">Java基础</a></li></ul>
+
+    </footer>
+
+  </div>
+
+  
+  
+<nav class="article-nav">
+  
+  <a href="/2020/06/13/Learning%20how%20to%20learn%20part%203/" class="article-nav-link">
+    <strong class="article-nav-caption">Newer</strong>
+    <div class="article-nav-title">
+      
+      Learning how to learn part3
+      
+    </div>
+  </a>
+  
+  
+  <a href="/2020/06/12/Hexo-upgrade/" class="article-nav-link">
+    <strong class="article-nav-caption">Older</strong>
+    <div class="article-nav-title">Hexo版本升级指南</div>
+  </a>
+  
+</nav>
+
+  
+
+  
+  
+  
+  
+
+</article>
+</section>
+    <footer class="footer">
+  <div class="outer">
+    <ul class="list-inline">
+      <li>恍惚 &copy; 2022</li>
+      
+        <li>
+          
+            <a href="https://beian.miit.gov.cn/" target="_blank"></a>
+            
+        </li>
+      
+      <li>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></li>
+      <li>theme  <a target="_blank" rel="noopener" href="https://github.com/zhwangart/hexo-theme-ocean">Ocean</a></li>
+    </ul>
+    <p><ul class="list-inline">
+  
+  <li><i class="fe fe-smile-alt tooltip" data-tooltip="UV"></i> <span id="busuanzi_value_site_uv"></span></li>
+  
+  <li><i class="fe fe-bookmark tooltip" data-tooltip="PV"></i> <span id="busuanzi_value_page_pv"></span></li>
+  
+</ul></p>
+  </div>
+</footer>
+  </main>
+  <aside class="sidebar">
+    <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/hexo.svg" alt="恍惚"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">Home</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/about">About</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link nav-item-search" title="Search">
+        <i class="fe fe-search"></i>
+        Search
+      </a>
+    </li>
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      <div class="totop" id="totop">
+  <i class="fe fe-rocket"></i>
+</div>
+    </li>
+    <li class="nav-item">
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="fe fe-feed"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+  </aside>
+  
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/jquery.justifiedGallery.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+
+<script src="/js/tocbot.min.js"></script>
+
+
+<script>
+  // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
+  tocbot.init({
+    tocSelector: '.tocbot',
+    contentSelector: '.article-entry',
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    positionFixedSelector: '.tocbot',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto',
+  });
+</script>
+
+
+
+<script src="/js/ocean.js"></script>
+
+</body>
+
+</html>

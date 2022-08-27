@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  <title>
+    
+    恍惚
+  </title>
+  <!-- Icon -->
+  
+    <link rel="shortcut icon" href="/images/hexo.svg">
+    
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<script src="/js/pace.min.js"></script>
+
+<meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="恍惚" type="application/atom+xml">
+</head>
+
+<body>
+  <main class="content">
+    <section class="outer">
+  <article id="post-Vuex" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+
+    
+    <div class="article-meta">
+      <a href="/2022/08/26/Vuex/" class="article-date">
+  <time datetime="2022-08-26T11:45:49.861Z" itemprop="datePublished">2022-08-26</time>
+</a>
+      
+    </div>
+    
+
+    
+    
+<div class="tocbot"></div>
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+      
+        <h1 id="Vuex"><a href="#Vuex" class="headerlink" title="Vuex"></a>Vuex</h1><ol>
+<li><p>作用：集中管理项目中组件公用的数据</p>
+</li>
+<li><p>使用场景：项目过大，组件多，并且数据量多的情况下可以使用 vuex</p>
+</li>
+<li><p>vuex 的状态是响应式的</p>
+</li>
+<li><p>mutations 不能直接更改状态</p>
+</li>
+<li><p>Vuex 使用步骤： 1. 创建 store 目录，在这个目录下创建 index.js 文件 2. 导入 Vue 及 Vuex 库 3. 安装 Vuex 库，即 Vue.use(Vuex) 4. 创建 vuex 实例，通过 new Vuex.Store({})方法 5. 向外导出 Vuex 实例 6. 在入口文件中导入 vuex 实例 7. 注册 vuex 实例</p>
+<span id="more"></span>
+</li>
+<li><p>vuex 的几个核心概念</p>
+<ol>
+<li>state<ol>
+<li>类似于 vue 的 data 属性，存储数据源</li>
+</ol>
+</li>
+<li>mutations<ol>
+<li>mutation 是同步事务</li>
+<li>类似于 vue 实例的 methods 属性，修改数据源状态，但不能处理异步方法</li>
+<li>不能直接修改 state 的值，可在子组件中通过调用 this.$store.commit(‘xxx’)来更改 store 中 state 的值</li>
+<li>mutation 相当于注册事件，而 commit 相当于触发事件</li>
+<li>mutation 载荷：在 commit 方法中提交额外的参数</li>
+<li>在 commit 方法中，也可以提交一个对象形式的参数，并且这个对象包含一个叫做 type 的属性,它的值为 mutation 中的某个方法名</li>
+<li>有载荷和对象风格这两种提交 commit 的方式</li>
+<li>在 mutation 中使用异步可能会导致程序很难被调试</li>
+</ol>
+</li>
+<li>getters<ol>
+<li>可以理解为 vuex 的计算 computed 属性</li>
+<li>默认 state 作为第一个参数，第二个参数可以为其他 getter</li>
+<li>可以通过属性的方式访问（会缓存结果），也可以通过方法访问（不会缓存结果），相同点是可通过 store.getters 对象进行访问</li>
+</ol>
+</li>
+<li>actions<ol>
+<li>相当于能处理异步操作的 mutation</li>
+<li>actions 提交的是 mutation</li>
+<li>类似于 vue 实例的 methods 属性，可以书写自己的业务逻辑，或者处理异步方法</li>
+<li>Action 函数接收一个与 store 实例具有相同方法和属性的 context 对象参数</li>
+<li>为了简化代码 context 对象可通过解构赋值为{commit}方法来提交 mutation，相当于 const {commit}&#x3D;context</li>
+<li>store.dispatch()方法可以触发 action，它的优点是可以破除异步限制，一般在根组件发出请求</li>
+<li>有载荷和对象风格这两种分发方式</li>
+<li>只有当所有触发函数完成后，返回的 Promise 才会执行</li>
+</ol>
+</li>
+<li>modules<ol>
+<li>将 store 分割成模块，每个模块都有自己的 state,mutations,getters,actions 属性</li>
+<li>解决可能的 store 对象臃肿问题</li>
+<li>对于模块内部的 mutation 及 getter 函数，第一个参数为模块的局部状态对象</li>
+<li>对于模块内部的 action，局部状态通过 context.state 暴露出来，而根节点为 context.rootState</li>
+<li>可使用 store.registerModule()方法动态注册模块</li>
+<li>可使用 store.hashModule(modulename)检查模块是否被注册</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>可以通过 vue 实例的$store 属性对象进行访问</p>
+</li>
+<li><p>使用映射函数的好处是可以减少代码重复书写良，和扩展运算符结合使用</p>
+</li>
+<li><p>mapState 函数可以帮忙生成 computed 属性，但是它返回的是一个对象，所以还需用对象展开运算符去除里面的所有对象。</p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://www.liuzx.me/2022/08/26/Vuex/" data-id="cl7b5qdyj001dtcv46nmeai3b" class="article-share-link">
+        Share
+      </a>
+      
+    </footer>
+
+  </div>
+
+  
+  
+<nav class="article-nav">
+  
+  <a href="/2022/08/26/VueRouter/" class="article-nav-link">
+    <strong class="article-nav-caption">Newer</strong>
+    <div class="article-nav-title">
+      
+      (no title)
+      
+    </div>
+  </a>
+  
+  
+  <a href="/2021/06/19/DeepL/" class="article-nav-link">
+    <strong class="article-nav-caption">Older</strong>
+    <div class="article-nav-title">DeepL</div>
+  </a>
+  
+</nav>
+
+  
+
+  
+  
+  
+  
+
+</article>
+</section>
+    <footer class="footer">
+  <div class="outer">
+    <ul class="list-inline">
+      <li>恍惚 &copy; 2022</li>
+      
+        <li>
+          
+            <a href="https://beian.miit.gov.cn/" target="_blank"></a>
+            
+        </li>
+      
+      <li>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></li>
+      <li>theme  <a target="_blank" rel="noopener" href="https://github.com/zhwangart/hexo-theme-ocean">Ocean</a></li>
+    </ul>
+    <p><ul class="list-inline">
+  
+  <li><i class="fe fe-smile-alt tooltip" data-tooltip="UV"></i> <span id="busuanzi_value_site_uv"></span></li>
+  
+  <li><i class="fe fe-bookmark tooltip" data-tooltip="PV"></i> <span id="busuanzi_value_page_pv"></span></li>
+  
+</ul></p>
+  </div>
+</footer>
+  </main>
+  <aside class="sidebar">
+    <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/hexo.svg" alt="恍惚"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">Home</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/about">About</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link nav-item-search" title="Search">
+        <i class="fe fe-search"></i>
+        Search
+      </a>
+    </li>
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      <div class="totop" id="totop">
+  <i class="fe fe-rocket"></i>
+</div>
+    </li>
+    <li class="nav-item">
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="fe fe-feed"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+  </aside>
+  
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/jquery.justifiedGallery.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+
+<script src="/js/tocbot.min.js"></script>
+
+
+<script>
+  // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
+  tocbot.init({
+    tocSelector: '.tocbot',
+    contentSelector: '.article-entry',
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    positionFixedSelector: '.tocbot',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto',
+  });
+</script>
+
+
+
+<script src="/js/ocean.js"></script>
+
+</body>
+
+</html>
