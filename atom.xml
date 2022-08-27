@@ -3,11 +3,11 @@
   <title>恍惚</title>
   
   <subtitle>人必须坚持不懈地生成和创造才能臻于完满</subtitle>
-  <link href="https://www.liuzx.me/atom.xml" rel="self"/>
+  <link href="http://example.com/atom.xml" rel="self"/>
   
-  <link href="https://www.liuzx.me/"/>
+  <link href="http://example.com/"/>
   <updated>2022-08-26T23:59:50.897Z</updated>
-  <id>https://www.liuzx.me/</id>
+  <id>http://example.com/</id>
   
   <author>
     <name>恍惚</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title></title>
-    <link href="https://www.liuzx.me/2022/08/27/Swiper%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/"/>
-    <id>https://www.liuzx.me/2022/08/27/Swiper%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</id>
+    <link href="http://example.com/2022/08/27/Swiper%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/"/>
+    <id>http://example.com/2022/08/27/Swiper%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</id>
     <published>2022-08-26T23:59:50.614Z</published>
     <updated>2022-08-26T23:59:50.897Z</updated>
     
@@ -40,8 +40,8 @@
   
   <entry>
     <title></title>
-    <link href="https://www.liuzx.me/2022/08/27/Docker%E4%BB%8B%E7%BB%8D/"/>
-    <id>https://www.liuzx.me/2022/08/27/Docker%E4%BB%8B%E7%BB%8D/</id>
+    <link href="http://example.com/2022/08/27/Docker%E4%BB%8B%E7%BB%8D/"/>
+    <id>http://example.com/2022/08/27/Docker%E4%BB%8B%E7%BB%8D/</id>
     <published>2022-08-26T23:45:16.508Z</published>
     <updated>2022-08-26T23:46:03.790Z</updated>
     
@@ -73,8 +73,8 @@
   
   <entry>
     <title></title>
-    <link href="https://www.liuzx.me/2022/08/26/%E5%BC%82%E6%AD%A5%E6%93%8D%E4%BD%9C/"/>
-    <id>https://www.liuzx.me/2022/08/26/%E5%BC%82%E6%AD%A5%E6%93%8D%E4%BD%9C/</id>
+    <link href="http://example.com/2022/08/26/%E5%BC%82%E6%AD%A5%E6%93%8D%E4%BD%9C/"/>
+    <id>http://example.com/2022/08/26/%E5%BC%82%E6%AD%A5%E6%93%8D%E4%BD%9C/</id>
     <published>2022-08-26T11:55:34.489Z</published>
     <updated>2022-08-26T11:55:34.712Z</updated>
     
@@ -94,8 +94,8 @@
   
   <entry>
     <title></title>
-    <link href="https://www.liuzx.me/2022/08/26/this%E5%85%B3%E9%94%AE%E5%AD%97/"/>
-    <id>https://www.liuzx.me/2022/08/26/this%E5%85%B3%E9%94%AE%E5%AD%97/</id>
+    <link href="http://example.com/2022/08/26/this%E5%85%B3%E9%94%AE%E5%AD%97/"/>
+    <id>http://example.com/2022/08/26/this%E5%85%B3%E9%94%AE%E5%AD%97/</id>
     <published>2022-08-26T11:55:15.407Z</published>
     <updated>2022-08-26T13:37:45.911Z</updated>
     
@@ -114,8 +114,8 @@
   
   <entry>
     <title></title>
-    <link href="https://www.liuzx.me/2022/08/26/Promise%E5%AF%B9%E8%B1%A1/"/>
-    <id>https://www.liuzx.me/2022/08/26/Promise%E5%AF%B9%E8%B1%A1/</id>
+    <link href="http://example.com/2022/08/26/Promise%E5%AF%B9%E8%B1%A1/"/>
+    <id>http://example.com/2022/08/26/Promise%E5%AF%B9%E8%B1%A1/</id>
     <published>2022-08-26T11:54:56.482Z</published>
     <updated>2022-08-26T13:35:54.987Z</updated>
     
@@ -133,8 +133,8 @@
   
   <entry>
     <title></title>
-    <link href="https://www.liuzx.me/2022/08/26/package.json%E4%BB%8B%E7%BB%8D/"/>
-    <id>https://www.liuzx.me/2022/08/26/package.json%E4%BB%8B%E7%BB%8D/</id>
+    <link href="http://example.com/2022/08/26/package.json%E4%BB%8B%E7%BB%8D/"/>
+    <id>http://example.com/2022/08/26/package.json%E4%BB%8B%E7%BB%8D/</id>
     <published>2022-08-26T11:54:37.309Z</published>
     <updated>2022-08-26T13:36:11.900Z</updated>
     
@@ -154,8 +154,8 @@
   
   <entry>
     <title></title>
-    <link href="https://www.liuzx.me/2022/08/26/Module%E8%AF%AD%E6%B3%95/"/>
-    <id>https://www.liuzx.me/2022/08/26/Module%E8%AF%AD%E6%B3%95/</id>
+    <link href="http://example.com/2022/08/26/Module%E8%AF%AD%E6%B3%95/"/>
+    <id>http://example.com/2022/08/26/Module%E8%AF%AD%E6%B3%95/</id>
     <published>2022-08-26T11:54:18.568Z</published>
     <updated>2022-08-26T13:36:26.184Z</updated>
     
@@ -175,8 +175,8 @@
   
   <entry>
     <title></title>
-    <link href="https://www.liuzx.me/2022/08/26/Module%E7%9A%84%E5%8A%A0%E8%BD%BD%E5%AE%9E%E7%8E%B0/"/>
-    <id>https://www.liuzx.me/2022/08/26/Module%E7%9A%84%E5%8A%A0%E8%BD%BD%E5%AE%9E%E7%8E%B0/</id>
+    <link href="http://example.com/2022/08/26/Module%E7%9A%84%E5%8A%A0%E8%BD%BD%E5%AE%9E%E7%8E%B0/"/>
+    <id>http://example.com/2022/08/26/Module%E7%9A%84%E5%8A%A0%E8%BD%BD%E5%AE%9E%E7%8E%B0/</id>
     <published>2022-08-26T11:53:49.957Z</published>
     <updated>2022-08-26T13:36:41.987Z</updated>
     
@@ -201,8 +201,8 @@
   
   <entry>
     <title></title>
-    <link href="https://www.liuzx.me/2022/08/26/Generator%E5%87%BD%E6%95%B0%E8%AF%AD%E6%B3%95/"/>
-    <id>https://www.liuzx.me/2022/08/26/Generator%E5%87%BD%E6%95%B0%E8%AF%AD%E6%B3%95/</id>
+    <link href="http://example.com/2022/08/26/Generator%E5%87%BD%E6%95%B0%E8%AF%AD%E6%B3%95/"/>
+    <id>http://example.com/2022/08/26/Generator%E5%87%BD%E6%95%B0%E8%AF%AD%E6%B3%95/</id>
     <published>2022-08-26T11:53:29.539Z</published>
     <updated>2022-08-26T23:40:14.102Z</updated>
     
@@ -225,8 +225,8 @@
   
   <entry>
     <title></title>
-    <link href="https://www.liuzx.me/2022/08/26/ECMAScript6/"/>
-    <id>https://www.liuzx.me/2022/08/26/ECMAScript6/</id>
+    <link href="http://example.com/2022/08/26/ECMAScript6/"/>
+    <id>http://example.com/2022/08/26/ECMAScript6/</id>
     <published>2022-08-26T11:53:07.043Z</published>
     <updated>2022-08-26T13:38:37.971Z</updated>
     
@@ -245,8 +245,8 @@
   
   <entry>
     <title></title>
-    <link href="https://www.liuzx.me/2022/08/26/async%E5%87%BD%E6%95%B0/"/>
-    <id>https://www.liuzx.me/2022/08/26/async%E5%87%BD%E6%95%B0/</id>
+    <link href="http://example.com/2022/08/26/async%E5%87%BD%E6%95%B0/"/>
+    <id>http://example.com/2022/08/26/async%E5%87%BD%E6%95%B0/</id>
     <published>2022-08-26T11:52:43.605Z</published>
     <updated>2022-08-26T11:52:43.893Z</updated>
     
@@ -266,8 +266,8 @@
   
   <entry>
     <title></title>
-    <link href="https://www.liuzx.me/2022/08/26/Iterator%E9%81%8D%E5%8E%86%E5%99%A8/"/>
-    <id>https://www.liuzx.me/2022/08/26/Iterator%E9%81%8D%E5%8E%86%E5%99%A8/</id>
+    <link href="http://example.com/2022/08/26/Iterator%E9%81%8D%E5%8E%86%E5%99%A8/"/>
+    <id>http://example.com/2022/08/26/Iterator%E9%81%8D%E5%8E%86%E5%99%A8/</id>
     <published>2022-08-26T11:52:15.049Z</published>
     <updated>2022-08-26T11:52:15.690Z</updated>
     
@@ -287,8 +287,8 @@
   
   <entry>
     <title></title>
-    <link href="https://www.liuzx.me/2022/08/26/CORS%E9%80%9A%E4%BF%A1/"/>
-    <id>https://www.liuzx.me/2022/08/26/CORS%E9%80%9A%E4%BF%A1/</id>
+    <link href="http://example.com/2022/08/26/CORS%E9%80%9A%E4%BF%A1/"/>
+    <id>http://example.com/2022/08/26/CORS%E9%80%9A%E4%BF%A1/</id>
     <published>2022-08-26T11:51:48.577Z</published>
     <updated>2022-08-26T13:33:59.772Z</updated>
     
@@ -306,8 +306,8 @@
   
   <entry>
     <title></title>
-    <link href="https://www.liuzx.me/2022/08/26/VueRouter/"/>
-    <id>https://www.liuzx.me/2022/08/26/VueRouter/</id>
+    <link href="http://example.com/2022/08/26/VueRouter/"/>
+    <id>http://example.com/2022/08/26/VueRouter/</id>
     <published>2022-08-26T11:47:29.153Z</published>
     <updated>2022-08-26T13:39:02.058Z</updated>
     
@@ -328,8 +328,8 @@
   
   <entry>
     <title></title>
-    <link href="https://www.liuzx.me/2022/08/26/Vuex/"/>
-    <id>https://www.liuzx.me/2022/08/26/Vuex/</id>
+    <link href="http://example.com/2022/08/26/Vuex/"/>
+    <id>http://example.com/2022/08/26/Vuex/</id>
     <published>2022-08-26T11:45:49.861Z</published>
     <updated>2022-08-26T23:44:00.588Z</updated>
     
@@ -352,8 +352,8 @@
   
   <entry>
     <title>DeepL</title>
-    <link href="https://www.liuzx.me/2021/06/19/DeepL/"/>
-    <id>https://www.liuzx.me/2021/06/19/DeepL/</id>
+    <link href="http://example.com/2021/06/19/DeepL/"/>
+    <id>http://example.com/2021/06/19/DeepL/</id>
     <published>2021-06-19T01:33:43.000Z</published>
     <updated>2021-08-07T05:58:51.000Z</updated>
     
@@ -362,17 +362,17 @@
     
     
     
-    <category term="分享" scheme="https://www.liuzx.me/categories/%E5%88%86%E4%BA%AB/"/>
+    <category term="分享" scheme="http://example.com/categories/%E5%88%86%E4%BA%AB/"/>
     
     
-    <category term="工具" scheme="https://www.liuzx.me/tags/%E5%B7%A5%E5%85%B7/"/>
+    <category term="工具" scheme="http://example.com/tags/%E5%B7%A5%E5%85%B7/"/>
     
   </entry>
   
   <entry>
     <title>语义化版本2.0.0介绍</title>
-    <link href="https://www.liuzx.me/2021/06/15/semver2.0.0/"/>
-    <id>https://www.liuzx.me/2021/06/15/semver2.0.0/</id>
+    <link href="http://example.com/2021/06/15/semver2.0.0/"/>
+    <id>http://example.com/2021/06/15/semver2.0.0/</id>
     <published>2021-06-15T04:43:23.000Z</published>
     <updated>2022-08-26T23:43:51.508Z</updated>
     
@@ -386,17 +386,17 @@
     
     
     
-    <category term="扩展阅读" scheme="https://www.liuzx.me/categories/%E6%89%A9%E5%B1%95%E9%98%85%E8%AF%BB/"/>
+    <category term="扩展阅读" scheme="http://example.com/categories/%E6%89%A9%E5%B1%95%E9%98%85%E8%AF%BB/"/>
     
     
-    <category term="版本号" scheme="https://www.liuzx.me/tags/%E7%89%88%E6%9C%AC%E5%8F%B7/"/>
+    <category term="版本号" scheme="http://example.com/tags/%E7%89%88%E6%9C%AC%E5%8F%B7/"/>
     
   </entry>
   
   <entry>
     <title>npm常用命令</title>
-    <link href="https://www.liuzx.me/2020/08/04/npm-command/"/>
-    <id>https://www.liuzx.me/2020/08/04/npm-command/</id>
+    <link href="http://example.com/2020/08/04/npm-command/"/>
+    <id>http://example.com/2020/08/04/npm-command/</id>
     <published>2020-08-04T04:43:23.000Z</published>
     <updated>2022-08-26T23:43:28.849Z</updated>
     
@@ -412,21 +412,21 @@
     
     
     
-    <category term="技术笔记" scheme="https://www.liuzx.me/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/"/>
+    <category term="技术笔记" scheme="http://example.com/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/"/>
     
     
-    <category term="npm" scheme="https://www.liuzx.me/tags/npm/"/>
+    <category term="npm" scheme="http://example.com/tags/npm/"/>
     
-    <category term="yarn" scheme="https://www.liuzx.me/tags/yarn/"/>
+    <category term="yarn" scheme="http://example.com/tags/yarn/"/>
     
-    <category term="cnpm" scheme="https://www.liuzx.me/tags/cnpm/"/>
+    <category term="cnpm" scheme="http://example.com/tags/cnpm/"/>
     
   </entry>
   
   <entry>
     <title>Java反射</title>
-    <link href="https://www.liuzx.me/2020/06/15/java-reflection/"/>
-    <id>https://www.liuzx.me/2020/06/15/java-reflection/</id>
+    <link href="http://example.com/2020/06/15/java-reflection/"/>
+    <id>http://example.com/2020/06/15/java-reflection/</id>
     <published>2020-06-15T04:43:23.000Z</published>
     <updated>2021-08-07T05:58:51.000Z</updated>
     
@@ -435,21 +435,21 @@
     
     
     
-    <category term="技术笔记" scheme="https://www.liuzx.me/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/"/>
+    <category term="技术笔记" scheme="http://example.com/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/"/>
     
-    <category term="Java" scheme="https://www.liuzx.me/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/Java/"/>
+    <category term="Java" scheme="http://example.com/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/Java/"/>
     
     
-    <category term="Java" scheme="https://www.liuzx.me/tags/Java/"/>
+    <category term="Java" scheme="http://example.com/tags/Java/"/>
     
-    <category term="Java反射" scheme="https://www.liuzx.me/tags/Java%E5%8F%8D%E5%B0%84/"/>
+    <category term="Java反射" scheme="http://example.com/tags/Java%E5%8F%8D%E5%B0%84/"/>
     
   </entry>
   
   <entry>
     <title>Learning how to learn part1</title>
-    <link href="https://www.liuzx.me/2020/06/15/Learning%20how%20to%20learn%20prat%201/"/>
-    <id>https://www.liuzx.me/2020/06/15/Learning%20how%20to%20learn%20prat%201/</id>
+    <link href="http://example.com/2020/06/15/Learning%20how%20to%20learn%20prat%201/"/>
+    <id>http://example.com/2020/06/15/Learning%20how%20to%20learn%20prat%201/</id>
     <published>2020-06-15T04:32:33.000Z</published>
     <updated>2021-08-07T05:58:51.000Z</updated>
     
@@ -458,10 +458,10 @@
     
     
     
-    <category term="Coursera课程" scheme="https://www.liuzx.me/categories/Coursera%E8%AF%BE%E7%A8%8B/"/>
+    <category term="Coursera课程" scheme="http://example.com/categories/Coursera%E8%AF%BE%E7%A8%8B/"/>
     
     
-    <category term="Coursera" scheme="https://www.liuzx.me/tags/Coursera/"/>
+    <category term="Coursera" scheme="http://example.com/tags/Coursera/"/>
     
   </entry>
   
