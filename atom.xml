@@ -6,7 +6,7 @@
   <link href="https://www.liuzx.me/atom.xml" rel="self"/>
   
   <link href="https://www.liuzx.me/"/>
-  <updated>2022-08-31T02:40:40.340Z</updated>
+  <updated>2022-08-31T02:48:27.498Z</updated>
   <id>https://www.liuzx.me/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://www.liuzx.me/2022/08/31/Docker%E4%BB%8B%E7%BB%8D/"/>
     <id>https://www.liuzx.me/2022/08/31/Docker%E4%BB%8B%E7%BB%8D/</id>
     <published>2022-08-31T02:16:23.414Z</published>
-    <updated>2022-08-31T02:40:40.340Z</updated>
+    <updated>2022-08-31T02:48:27.498Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;Docker-介绍&quot;&gt;&lt;a href=&quot;#Docker-介绍&quot; class=&quot;headerlink&quot; title=&quot;Docker 介绍&quot;&gt;&lt;/a&gt;Docker 介绍&lt;/h1&gt;&lt;ol&gt;
@@ -38,19 +38,6 @@
 &lt;/li&gt;
 &lt;li&gt;容器技术&lt;ol&gt;
 &lt;li&gt;操作系统提供接口，让多个应用程序在不同的环境中独立运行，互不干扰。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;li&gt;Docker 介绍&lt;ol&gt;
-&lt;li&gt;Docker 属于操作系统层面的虚拟化技术&lt;/li&gt;
-&lt;li&gt;Docker 与传统的虚拟化技术的不同之处&lt;ol&gt;
-&lt;li&gt;Docker 没有虚拟出硬件，并且它的容器直接运行于宿主内核，容器内并没有自己的内核&lt;/li&gt;
-&lt;li&gt;传统的虚拟化技术需要虚拟出硬件，在其上运行一个操作系统，并且在这个操作系统里面运行应用程序&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;li&gt;命名空间&lt;ol&gt;
-&lt;li&gt;集合相同模块的类，区分不同模块的同名类&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;/ol&gt;

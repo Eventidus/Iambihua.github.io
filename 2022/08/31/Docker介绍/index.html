@@ -75,7 +75,12 @@
 </li>
 </ol>
 </li>
-<li>Docker 介绍<ol>
+</ol>
+<span id="more"></span>
+
+<ol start="2">
+<li><p>Docker 介绍</p>
+<ol>
 <li>Docker 属于操作系统层面的虚拟化技术</li>
 <li>Docker 与传统的虚拟化技术的不同之处<ol>
 <li>Docker 没有虚拟出硬件，并且它的容器直接运行于宿主内核，容器内并没有自己的内核</li>
@@ -88,11 +93,8 @@
 </li>
 </ol>
 </li>
-</ol>
-<span id="more"></span>
-
-<ol start="3">
-<li>Docker 镜像<ol>
+<li><p>Docker 镜像</p>
+<ol>
 <li>是一种特殊的文件系统，提供了 容器运行需要的库，配置文件，等等，还包含了容器运行需要的配置参数，它的核心精髓是保证了环境的一致性</li>
 <li>Docker 镜像技术是一套统一的接口技术，它适配了不同的开发语言<ol>
 <li>Docker 镜像采用分层存储结构，每一次的修改都只对当前所在的一层有效，对前面几层不起作用</li>
@@ -110,7 +112,8 @@
 </li>
 </ol>
 </li>
-<li>Docker 容器<ol>
+<li><p>Docker 容器</p>
+<ol>
 <li>容器是基于镜像构建，是独立运行的一个或一组应用</li>
 <li>容器也是分层存储的，容器在作为基础层的镜像之上又构建用于容器运行的存储层</li>
 <li>启动容器时，如果需要的镜像不存在，会自动 pull 下载</li>
@@ -128,7 +131,8 @@
 <li>docker history container 查看镜像的历史记录</li>
 </ol>
 </li>
-<li>Docker 数据卷<ol>
+<li><p>Docker 数据卷</p>
+<ol>
 <li>数据卷是容器用于管理数据的场所</li>
 <li>数据卷的特性<ol>
 <li>在多个容器之间共享</li>
@@ -143,7 +147,8 @@
 <li>删除未挂载到容器的数据卷 docker volume prune</li>
 </ol>
 </li>
-<li>Docker 网络配置<ol>
+<li><p>Docker 网络配置</p>
+<ol>
 <li>-p -P 都能指定端口<ol>
 <li>-P 随机指定一个主机端口映射到容器开放的端口</li>
 <li>-p 主动指定端口映射<ol>
