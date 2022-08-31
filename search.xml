@@ -65,6 +65,203 @@
 ]]></content>
   </entry>
   <entry>
+    <title></title>
+    <url>/2022/08/31/Docker%E4%BB%8B%E7%BB%8D/</url>
+    <content><![CDATA[<h1 id="Docker-介绍"><a href="#Docker-介绍" class="headerlink" title="Docker 介绍"></a>Docker 介绍</h1><ol>
+<li>虚拟化技术与容器技术<ol>
+<li>虚拟化技术的理解<ol>
+<li>它是一种将计算机物理资源抽象化，转化成计算机虚拟资源以提供给程序使用</li>
+</ol>
+</li>
+<li>虚拟化技术很好地解决了跨平台兼容的问题</li>
+<li>虚拟化只是提高了计算机计算机资源的利用率，并不会减少资源的占用。</li>
+<li>资源隔离<ol>
+<li>将程序分隔在不同的运行环境中</li>
+</ol>
+</li>
+<li>容器技术<ol>
+<li>操作系统提供接口，让多个应用程序在不同的环境中独立运行，互不干扰。</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>Docker 介绍<ol>
+<li>Docker 属于操作系统层面的虚拟化技术</li>
+<li>Docker 与传统的虚拟化技术的不同之处<ol>
+<li>Docker 没有虚拟出硬件，并且它的容器直接运行于宿主内核，容器内并没有自己的内核</li>
+<li>传统的虚拟化技术需要虚拟出硬件，在其上运行一个操作系统，并且在这个操作系统里面运行应用程序</li>
+</ol>
+</li>
+<li>命名空间<ol>
+<li>集合相同模块的类，区分不同模块的同名类</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<span id="more"></span>
+
+<ol start="3">
+<li>Docker 镜像<ol>
+<li>是一种特殊的文件系统，提供了 容器运行需要的库，配置文件，等等，还包含了容器运行需要的配置参数，它的核心精髓是保证了环境的一致性</li>
+<li>Docker 镜像技术是一套统一的接口技术，它适配了不同的开发语言<ol>
+<li>Docker 镜像采用分层存储结构，每一次的修改都只对当前所在的一层有效，对前面几层不起作用</li>
+</ol>
+</li>
+<li>中间层镜像:<ol>
+<li>是其他镜像依赖需要的镜像</li>
+<li>用于提高镜像复用性，加速镜像构建</li>
+</ol>
+</li>
+<li>删除镜像<ol>
+<li>两类删除行为：Untagged 和 Deleted</li>
+<li>有时候删除镜像，可能仅仅是取消了镜像的标签，也就是 Untagged 的意义，真正影响镜像删除的，要考虑其他镜像是否依赖当前要删除镜像的某一层，或者有容器依赖当前要删除镜像的某一层，或者有 别个标签指向了当前要删除的镜像，这种情况下就不会触发镜像删除行为，也就是 Delected 行为</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>Docker 容器<ol>
+<li>容器是基于镜像构建，是独立运行的一个或一组应用</li>
+<li>容器也是分层存储的，容器在作为基础层的镜像之上又构建用于容器运行的存储层</li>
+<li>启动容器时，如果需要的镜像不存在，会自动 pull 下载</li>
+<li>容器里只会存在必须的资源，多余的资源不会存在，所以 Docker 对资源的利用率很高</li>
+<li>一个容器只有在执行任务时才会处于 running 状态，不管是否启动</li>
+<li>启动容器的命令为 docker run &lt;image&gt;，如果要指定容器在后台运行可以指定-d 参数</li>
+<li>启动处于 exited 状态的容器 docker container start [container-id]</li>
+<li>列出正在执行任务也即 running 状态的容器 docker container ls</li>
+<li>列出容器运行结果 docker container logs [containerId]</li>
+<li>对处于后台运行的容器进行操作可以使用 docker exec 或者 attach 命令，但推荐使用 exec 命令，因为 exit 容器后，不会终止容器</li>
+<li>docker container rm 只能删除处于 exited 的容器，如果要删除处于 running 状态的容器,可以加-f 参数</li>
+<li>删除所有处于 exited 状态的容器 docker container prune</li>
+<li>docker diff [container]查看对容器的更改</li>
+<li>docker commit -a xxx -m xxx containerName [REPOSITORY[:TAG]] 从容器创建一个新镜像</li>
+<li>docker history container 查看镜像的历史记录</li>
+</ol>
+</li>
+<li>Docker 数据卷<ol>
+<li>数据卷是容器用于管理数据的场所</li>
+<li>数据卷的特性<ol>
+<li>在多个容器之间共享</li>
+<li>对数据卷的生效会即时生效</li>
+<li>删除容器后，数据卷并不会消失</li>
+<li>对数据卷的更新，不会影响镜像</li>
+</ol>
+</li>
+<li>创建数据卷 docker volume create [volume-name]</li>
+<li>查看某个数据卷的具体信息 docker volume inspect [volume-name]</li>
+<li>删除数据卷 docker volume rm，如果要在删除容器的同时删除数据卷可以加上-v 参数</li>
+<li>删除未挂载到容器的数据卷 docker volume prune</li>
+</ol>
+</li>
+<li>Docker 网络配置<ol>
+<li>-p -P 都能指定端口<ol>
+<li>-P 随机指定一个主机端口映射到容器开放的端口</li>
+<li>-p 主动指定端口映射<ol>
+<li>几种格式的端口映射<ol>
+<li>hostPort:containerPort<ol>
+<li>这种情况下，不管本地的 ip 地址是啥，只要主机端口相同，他们指向同一个地址，也就是映射所有接口地址</li>
+</ol>
+</li>
+<li>ip:hostPort:containerPort<ol>
+<li>映射指定地址的映射端口，只能通过指定的 ip 地址加端口访问</li>
+</ol>
+</li>
+<li>ip::containerPort<ol>
+<li>映射到指定地址的任意端口，也就是说对于指定的 ip 地址，随机指定一个主机端口</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>Docker 容器互联<ol>
+<li>用自定义网络来互联容器<ol>
+<li>docker network create -d bridge my-net 其中-d 参数指定网络类型</li>
+<li>docker run –network my-net busybox 使用–network 参数 指定 busybox 容器链接到 mynet 网络</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>Dockerfile<ol>
+<li>是一个文本文件，以指令为基础一层层构建镜像</li>
+<li>如果不以任何镜像为基础，可以使用 scratch 镜像，scratch 镜像是一种虚拟空白镜像</li>
+<li>使用指令书写命令的原则<ol>
+<li>能写在一层的命令尽量写在一个指令里，因为一个指令构建一层镜像</li>
+<li>尽力确保镜像只包含自己需要的东西，多余的东西记得及时清理，因为当前一层的镜像只能在当前一层处理，在下一层处理无效，负责会随着镜像的构建存在，造成镜像臃肿</li>
+</ol>
+</li>
+<li>docker build xxx 命令用于构建镜像</li>
+<li>Dockerfile 的文件名并不固定</li>
+<li>Dockerfile 文件指令<ol>
+<li>RUN 指令用于运行命令，每执行一次就会就会狗创建一层镜像</li>
+<li>COPY 指令用于将源文件复制到目标文件</li>
+<li>ADD 指令相当于进化版的 COPY 指令，只是增加了一些功能，ADD 指令更适用于自动加压缩，权限调整等场合</li>
+<li>CMD 指令跟 RUN 指令类似，只不过 RUN 指令用在容器构建时，而 CMD 指令用在指令运行时，CMD 指令为启动的容器指定默认要执行的程序，只能有一个，如果有多个，则最后一个覆盖前面的，但它会被 docker run 参数中指定的命令覆盖</li>
+<li>ENV 指令 设置环境变量，这样可以在全局环境中通过$引用这个环境变量</li>
+<li>ARG 指令与 ENV 指令环境变量一致，不过它的作用域在 Dockerfile 内</li>
+<li>Volume 指令定义匿名卷，容器会自动挂载到匿名卷</li>
+<li>EXPOSE 指令声明要暴露出去的指令</li>
+<li>WORKDIR 指令指定容器工作的目录</li>
+<li>USER 指令用于指定执行后续程序需要的用户和用户组</li>
+<li>HEALTHCHECK 指令用于指定程序监听 docker 容器服务的运行状态</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>Docker Compose<ol>
+<li>用于实现 Docker 容器集群的快速编排</li>
+<li>本质是定义和运行有多个容器的应用</li>
+<li>两个概念<ol>
+<li>服务<ol>
+<li>多个有相同镜像的实例</li>
+</ol>
+</li>
+<li>项目<ol>
+<li>相关联的多个容器组成的业务单元</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>Compose 用 python 语言编写，可通过 pip 安装</li>
+<li>Docker Compose 使用 YAML 文件对容器进行管理</li>
+<li>Compose 模板文件<ol>
+<li>build 指令指定 Dockerfile 文件所在的目录，可以利用这个指令构建镜像，而不用再从 compose 模板文件书写<ol>
+<li>context 指令指定 dockerfile 文件所在目录</li>
+<li>dockerfile 指令指定 dockerfile 文件名</li>
+<li>args 指令指定构建镜像时的变量</li>
+<li>cache-form 指令指定构建镜像时的缓存</li>
+<li>cap-add 指令指定为容器增加的内核能力</li>
+<li>cap-drop 指令指定为容器去掉的内核能力</li>
+<li>command 指令指定容器启动后默认执行的命令</li>
+<li>container_name 指令指定容器名称</li>
+<li>devices 指令设定设备映射关系</li>
+<li>depends_on 指令设备的依赖，先后启动的问题</li>
+<li>dns 指令定义 DNS 服务器</li>
+<li>dns_search 指令用于配置 DNS 搜索域</li>
+<li>tmpfs 指令用于指定挂载一个 tmpfs 文件系统到容器</li>
+<li>env_file 指令用于指定环境变量的路径</li>
+<li>environment 指令用来设定环境变量</li>
+<li>expose 指令指定容器向外暴露的端口，但不映射到宿主机</li>
+<li>external_links 指令指定连接的 compose 外部的容器</li>
+<li>image 指令指定镜像</li>
+<li>labels 指令为容器添加元素据信息</li>
+<li>network_mode 指令用来设置网络模式</li>
+<li>ports 指令指定主机以及容器端口</li>
+<li>secrets 指令用于存储敏感数据</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+]]></content>
+  </entry>
+  <entry>
     <title>DeepL</title>
     <url>/2021/06/19/DeepL/</url>
     <content><![CDATA[<h1 id="DeepL"><a href="#DeepL" class="headerlink" title="DeepL"></a>DeepL</h1><blockquote>
@@ -169,199 +366,6 @@
 <li><p>计算属性概念</p>
 <ol>
 <li>一个对象的属性名从一个变量中获取，并且这个变量用[]表示。</li>
-</ol>
-</li>
-</ol>
-]]></content>
-  </entry>
-  <entry>
-    <title></title>
-    <url>/2022/08/31/Docker%E4%BB%8B%E7%BB%8D/</url>
-    <content><![CDATA[<h1 id="Docker介绍"><a href="#Docker介绍" class="headerlink" title="Docker介绍"></a>Docker介绍</h1><ol>
-<li>虚拟化技术与容器技术<ol>
-<li>虚拟化技术的理解<ol>
-<li>它是一种将计算机物理资源抽象化，转化成计算机虚拟资源以提供给程序使用</li>
-</ol>
-</li>
-<li>虚拟化技术很好地解决了跨平台兼容的问题</li>
-<li>虚拟化只是提高了计算机计算机资源的利用率，并不会减少资源的占用。</li>
-<li>资源隔离<ol>
-<li>将程序分隔在不同的运行环境中</li>
-</ol>
-</li>
-<li>容器技术<ol>
-<li>操作系统提供接口，让多个应用程序在不同的环境中独立运行，互不干扰。</li>
-</ol>
-</li>
-</ol>
-</li>
-<li>Docker介绍<ol>
-<li>Docker属于操作系统层面的虚拟化技术</li>
-<li>Docker与传统的虚拟化技术的不同之处<ol>
-<li>Docker没有虚拟出硬件，并且它的容器直接运行于宿主内核，容器内并没有自己的内核</li>
-<li>传统的虚拟化技术需要虚拟出硬件，在其上运行一个操作系统，并且在这个操作系统里面运行应用程序</li>
-</ol>
-</li>
-<li>命名空间<ol>
-<li>集合相同模块的类，区分不同模块的同名类</li>
-</ol>
-</li>
-</ol>
-</li>
-<li>Docker镜像<ol>
-<li>是一种特殊的文件系统，提供了 容器运行需要的库，配置文件，等等，还包含了容器运行需要的配置参数，它的核心精髓是保证了环境的一致性</li>
-<li>Docker镜像技术是一套统一的接口技术，它适配了不同的开发语言<ol>
-<li>Docker镜像采用分层存储结构，每一次的修改都只对当前所在的一层有效，对前面几层不起作用</li>
-</ol>
-</li>
-<li>中间层镜像:<ol>
-<li>是其他镜像依赖需要的镜像</li>
-<li>用于提高镜像复用性，加速镜像构建</li>
-</ol>
-</li>
-<li>删除镜像<ol>
-<li>两类删除行为：Untagged和Deleted</li>
-<li>有时候删除镜像，可能仅仅是取消了镜像的标签，也就是Untagged的意义，真正影响镜像删除的，要考虑其他镜像是否依赖当前要删除镜像的某一层，或者有容器依赖当前要删除镜像的某一层，或者有 别个标签指向了当前要删除的镜像，这种情况下就不会触发镜像删除行为，也就是Delected行为</li>
-</ol>
-</li>
-</ol>
-</li>
-<li>Docker容器<ol>
-<li>容器是基于镜像构建，是独立运行的一个或一组应用</li>
-<li>容器也是分层存储的，容器在作为基础层的镜像之上又构建用于容器运行的存储层</li>
-<li>启动容器时，如果需要的镜像不存在，会自动pull下载</li>
-<li>容器里只会存在必须的资源，多余的资源不会存在，所以Docker对资源的利用率很高</li>
-<li>一个容器只有在执行任务时才会处于running状态，不管是否启动</li>
-<li>启动容器的命令为docker run &lt;image&gt;，如果要指定容器在后台运行可以指定-d参数</li>
-<li>启动处于exited状态的容器 docker container start [container-id]</li>
-<li>列出正在执行任务也即running状态的容器 docker container ls</li>
-<li>列出容器运行结果 docker container logs [containerId]</li>
-<li>对处于后台运行的容器进行操作可以使用docker exec或者attach命令，但推荐使用exec命令，因为exit容器后，不会终止容器</li>
-<li>docker container rm只能删除处于exited的容器，如果要删除处于running状态的容器,可以加-f参数</li>
-<li>删除所有处于exited状态的容器 docker container prune</li>
-<li>docker diff [container]查看对容器的更改</li>
-<li>docker commit -a xxx -m xxx containerName [REPOSITORY[:TAG]] 从容器创建一个新镜像</li>
-<li>docker history container查看镜像的历史记录</li>
-</ol>
-</li>
-<li>Docker数据卷<ol>
-<li>数据卷是容器用于管理数据的场所</li>
-<li>数据卷的特性<ol>
-<li>在多个容器之间共享</li>
-<li>对数据卷的生效会即时生效</li>
-<li>删除容器后，数据卷并不会消失</li>
-<li>对数据卷的更新，不会影响镜像</li>
-</ol>
-</li>
-<li>创建数据卷 docker volume create [volume-name]</li>
-<li>查看某个数据卷的具体信息docker volume inspect [volume-name]</li>
-<li>删除数据卷docker volume rm，如果要在删除容器的同时删除数据卷可以加上-v参数</li>
-<li>删除未挂载到容器的数据卷docker volume prune</li>
-</ol>
-</li>
-<li>Docker网络配置<ol>
-<li>-p -P都能指定端口<ol>
-<li>-P随机指定一个主机端口映射到容器开放的端口</li>
-<li>-p主动指定端口映射<ol>
-<li>几种格式的端口映射<ol>
-<li>hostPort:containerPort<ol>
-<li>这种情况下，不管本地的ip地址是啥，只要主机端口相同，他们指向同一个地址，也就是映射所有接口地址</li>
-</ol>
-</li>
-<li>ip:hostPort:containerPort<ol>
-<li>映射指定地址的映射端口，只能通过指定的ip地址加端口访问</li>
-</ol>
-</li>
-<li>ip::containerPort<ol>
-<li>映射到指定地址的任意端口，也就是说对于指定的ip地址，随机指定一个主机端口</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-<li>Docker 容器互联<ol>
-<li>用自定义网络来互联容器<ol>
-<li>docker network create -d bridge my-net 其中-d参数指定网络类型</li>
-<li>docker run –network my-net busybox 使用–network参数 指定busybox容器链接到mynet网络</li>
-</ol>
-</li>
-</ol>
-</li>
-<li>Dockerfile<ol>
-<li>是一个文本文件，以指令为基础一层层构建镜像</li>
-<li>如果不以任何镜像为基础，可以使用scratch镜像，scratch镜像是一种虚拟空白镜像</li>
-<li>使用指令书写命令的原则<ol>
-<li>能写在一层的命令尽量写在一个指令里，因为一个指令构建一层镜像</li>
-<li>尽力确保镜像只包含自己需要的东西，多余的东西记得及时清理，因为当前一层的镜像只能在当前一层处理，在下一层处理无效，负责会随着镜像的构建存在，造成镜像臃肿</li>
-</ol>
-</li>
-<li>docker build xxx命令用于构建镜像</li>
-<li>Dockerfile的文件名并不固定</li>
-<li>Dockerfile文件指令<ol>
-<li>RUN指令用于运行命令，每执行一次就会就会狗创建一层镜像</li>
-<li>COPY指令用于将源文件复制到目标文件</li>
-<li>ADD指令相当于进化版的COPY指令，只是增加了一些功能，ADD指令更适用于自动加压缩，权限调整等场合</li>
-<li>CMD指令跟RUN指令类似，只不过RUN指令用在容器构建时，而CMD指令用在指令运行时，CMD指令为启动的容器指定默认要执行的程序，只能有一个，如果有多个，则最后一个覆盖前面的，但它会被docker run参数中指定的命令覆盖</li>
-<li>ENV指令 设置环境变量，这样可以在全局环境中通过$引用这个环境变量</li>
-<li>ARG指令与ENV指令环境变量一致，不过它的作用域在Dockerfile内</li>
-<li>Volume指令定义匿名卷，容器会自动挂载到匿名卷</li>
-<li>EXPOSE指令声明要暴露出去的指令</li>
-<li>WORKDIR指令指定容器工作的目录</li>
-<li>USER指令用于指定执行后续程序需要的用户和用户组</li>
-<li>HEALTHCHECK指令用于指定程序监听docker容器服务的运行状态</li>
-</ol>
-</li>
-</ol>
-</li>
-<li>Docker Compose<ol>
-<li>用于实现Docker容器集群的快速编排</li>
-<li>本质是定义和运行有多个容器的应用</li>
-<li>两个概念<ol>
-<li>服务<ol>
-<li>多个有相同镜像的实例</li>
-</ol>
-</li>
-<li>项目<ol>
-<li>相关联的多个容器组成的业务单元</li>
-</ol>
-</li>
-</ol>
-</li>
-<li>Compose用python语言编写，可通过pip安装</li>
-<li>Docker Compose使用YAML文件对容器进行管理</li>
-<li>Compose模板文件<ol>
-<li>build指令指定Dockerfile文件所在的目录，可以利用这个指令构建镜像，而不用再从compose模板文件书写<ol>
-<li>context指令指定dockerfile文件所在目录</li>
-<li>dockerfile指令指定dockerfile文件名</li>
-<li>args指令指定构建镜像时的变量</li>
-<li>cache-form指令指定构建镜像时的缓存</li>
-<li>cap-add指令指定为容器增加的内核能力</li>
-<li>cap-drop指令指定为容器去掉的内核能力</li>
-<li>command指令指定容器启动后默认执行的命令</li>
-<li>container_name指令指定容器名称</li>
-<li>devices指令设定设备映射关系</li>
-<li>depends_on指令设备的依赖，先后启动的问题</li>
-<li>dns指令定义DNS服务器</li>
-<li>dns_search指令用于配置DNS搜索域</li>
-<li>tmpfs指令用于指定挂载一个tmpfs文件系统到容器</li>
-<li>env_file指令用于指定环境变量的路径</li>
-<li>environment指令用来设定环境变量</li>
-<li>expose指令指定容器向外暴露的端口，但不映射到宿主机</li>
-<li>external_links指令指定连接的compose外部的容器</li>
-<li>image指令指定镜像</li>
-<li>labels指令为容器添加元素据信息</li>
-<li>network_mode指令用来设置网络模式</li>
-<li>ports指令指定主机以及容器端口</li>
-<li>secrets指令用于存储敏感数据</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-</li>
 </ol>
 </li>
 </ol>
@@ -536,7 +540,7 @@
 <h2 id="git-远程仓库"><a href="#git-远程仓库" class="headerlink" title="git 远程仓库"></a>git 远程仓库</h2><ol>
 <li><p>生成 SSHKey</p>
 <ul>
-<li>ssh-keygen -t rsa -C “<a href="mailto:&#117;&#x73;&#101;&#x72;&#x40;&#x65;&#x78;&#97;&#x6d;&#x70;&#108;&#101;&#x2e;&#99;&#x6f;&#109;">&#117;&#x73;&#101;&#x72;&#x40;&#x65;&#x78;&#97;&#x6d;&#x70;&#108;&#101;&#x2e;&#99;&#x6f;&#109;</a>“.</li>
+<li>ssh-keygen -t rsa -C “<a href="mailto:&#117;&#115;&#101;&#x72;&#64;&#x65;&#x78;&#97;&#x6d;&#112;&#108;&#101;&#46;&#99;&#x6f;&#x6d;">&#117;&#115;&#101;&#x72;&#64;&#x65;&#x78;&#97;&#x6d;&#112;&#108;&#101;&#46;&#99;&#x6f;&#x6d;</a>“.</li>
 <li>id_rsa 私钥，id_ras.pub 公钥.</li>
 </ul>
 </li>
@@ -555,7 +559,7 @@
 <ul>
 <li><p>两种关联方式：</p>
 <ul>
-<li>git remote add origin <a href="mailto:&#103;&#x69;&#x74;&#64;&#x67;&#x69;&#116;&#x68;&#x75;&#98;&#x2e;&#99;&#x6f;&#x6d;">&#103;&#x69;&#x74;&#64;&#x67;&#x69;&#116;&#x68;&#x75;&#98;&#x2e;&#99;&#x6f;&#x6d;</a>:用户名&#x2F; 仓库名.git.</li>
+<li>git remote add origin <a href="mailto:&#x67;&#105;&#x74;&#x40;&#103;&#x69;&#x74;&#104;&#117;&#x62;&#x2e;&#99;&#111;&#x6d;">&#x67;&#105;&#x74;&#x40;&#103;&#x69;&#x74;&#104;&#117;&#x62;&#x2e;&#99;&#111;&#x6d;</a>:用户名&#x2F; 仓库名.git.</li>
 <li>git remote add origin <a href="https://github.com/%E7%94%A8%E6%88%B7%E5%90%8D/%E4%BB%93%E5%BA%93%E5%90%8D.git">https://github.com/用户名/仓库名.git</a></li>
 </ul>
 </li>
@@ -581,7 +585,7 @@
 <ul>
 <li><p>两种克隆方式：</p>
 <ul>
-<li>git clone <a href="mailto:&#x67;&#x69;&#116;&#64;&#x67;&#105;&#116;&#x68;&#x75;&#98;&#x2e;&#99;&#111;&#109;">&#x67;&#x69;&#116;&#64;&#x67;&#105;&#116;&#x68;&#x75;&#98;&#x2e;&#99;&#111;&#109;</a>:用户名&#x2F;仓库名.git.</li>
+<li>git clone <a href="mailto:&#x67;&#105;&#116;&#64;&#x67;&#105;&#x74;&#x68;&#117;&#98;&#x2e;&#x63;&#x6f;&#x6d;">&#x67;&#105;&#116;&#64;&#x67;&#105;&#x74;&#x68;&#117;&#98;&#x2e;&#x63;&#x6f;&#x6d;</a>:用户名&#x2F;仓库名.git.</li>
 <li>git clone <a href="https://github/%E7%94%A8%E6%88%B7%E5%90%8D/%E4%BB%93%E5%BA%93%E5%90%8D.git">https://github/用户名/仓库名.git</a>.</li>
 </ul>
 </li>
@@ -1589,37 +1593,6 @@
   </entry>
   <entry>
     <title></title>
-    <url>/2022/08/26/Module%E8%AF%AD%E6%B3%95/</url>
-    <content><![CDATA[<h1 id="Module-语法"><a href="#Module-语法" class="headerlink" title="Module 语法"></a>Module 语法</h1><ol>
-<li>ES6 模块可在编译时(即静态阶段)确定模块的编译关系，而 CommonJS 只能在运行时确定模块的依赖关系，所以 ES6 模块可实现静态优化。</li>
-<li>ES6 模块支持按需加载需要的模块方法，但 CommonJS 只能加载所有的模块方法。</li>
-<li>ES6 模块自动采用严格模式。</li>
-<li>export 命令规定模块的对外接口，import 命令用于从模块中导入需要的功能。</li>
-<li>export 命令可以输出变量，函数和类。</li>
-<li>通过 import 命令导入的模块，可在模块导入语句的头部提前执行。<span id="more"></span></li>
-<li>按需导入的变量名应与按需导出的名字一致，</li>
-<li>如果有多个导入相同模块的语句，那么只会执行一次。</li>
-<li>模块的整体加载即 import * as x from ‘xxx’，将模块全部加载进对象 x 中。</li>
-<li>export default 命令与 export 命令的区别<ol>
-<li>前者的 import 不需要大括号，而后者需要。</li>
-<li>前者在模块中只能使用一次，而后者可以使用多次。</li>
-<li>前者的 import 可以直接起别名，而后者只能使用 as 关键词。</li>
-<li>前者可以同时默认导入和按需导入。</li>
-</ol>
-</li>
-<li>export default 的本周是将后面的值赋给一个叫 default 的对象。</li>
-<li>export { x,y } from ‘my_module’相当于如下两行语句<ol>
-<li>import {x,y} from ‘my_module’;</li>
-<li>export {x,y};</li>
-</ol>
-</li>
-<li>支持 const 声明的常量跨模块共享。</li>
-<li>import()函数用来动态加载模块，并且返回一个 Promise 对象。</li>
-</ol>
-]]></content>
-  </entry>
-  <entry>
-    <title></title>
     <url>/2022/08/26/Promise%E5%AF%B9%E8%B1%A1/</url>
     <content><![CDATA[<h1 id="Promise-对象"><a href="#Promise-对象" class="headerlink" title="Promise 对象"></a>Promise 对象</h1><ol>
 <li>Promise 是一种异步编程的解决方案，简单来说就像一种容器，里面保存着某个只有未来才会结束的事件的结果。</li>
@@ -1707,6 +1680,37 @@
   </entry>
   <entry>
     <title></title>
+    <url>/2022/08/26/Module%E8%AF%AD%E6%B3%95/</url>
+    <content><![CDATA[<h1 id="Module-语法"><a href="#Module-语法" class="headerlink" title="Module 语法"></a>Module 语法</h1><ol>
+<li>ES6 模块可在编译时(即静态阶段)确定模块的编译关系，而 CommonJS 只能在运行时确定模块的依赖关系，所以 ES6 模块可实现静态优化。</li>
+<li>ES6 模块支持按需加载需要的模块方法，但 CommonJS 只能加载所有的模块方法。</li>
+<li>ES6 模块自动采用严格模式。</li>
+<li>export 命令规定模块的对外接口，import 命令用于从模块中导入需要的功能。</li>
+<li>export 命令可以输出变量，函数和类。</li>
+<li>通过 import 命令导入的模块，可在模块导入语句的头部提前执行。<span id="more"></span></li>
+<li>按需导入的变量名应与按需导出的名字一致，</li>
+<li>如果有多个导入相同模块的语句，那么只会执行一次。</li>
+<li>模块的整体加载即 import * as x from ‘xxx’，将模块全部加载进对象 x 中。</li>
+<li>export default 命令与 export 命令的区别<ol>
+<li>前者的 import 不需要大括号，而后者需要。</li>
+<li>前者在模块中只能使用一次，而后者可以使用多次。</li>
+<li>前者的 import 可以直接起别名，而后者只能使用 as 关键词。</li>
+<li>前者可以同时默认导入和按需导入。</li>
+</ol>
+</li>
+<li>export default 的本周是将后面的值赋给一个叫 default 的对象。</li>
+<li>export { x,y } from ‘my_module’相当于如下两行语句<ol>
+<li>import {x,y} from ‘my_module’;</li>
+<li>export {x,y};</li>
+</ol>
+</li>
+<li>支持 const 声明的常量跨模块共享。</li>
+<li>import()函数用来动态加载模块，并且返回一个 Promise 对象。</li>
+</ol>
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
     <url>/2022/08/27/Swiper%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</url>
     <content><![CDATA[<h1 id="Swiper使用方法"><a href="#Swiper使用方法" class="headerlink" title="Swiper使用方法"></a>Swiper使用方法</h1><ol>
 <li>npm i swiper安装库</li>
@@ -1722,6 +1726,67 @@
 <li>在请求完成之前已经创建Swipper实例</li>
 <li>V-for循环未执行完毕</li>
 <li>没有及时监听到数据变化，需要设置immediate属性</li>
+</ol>
+</li>
+</ol>
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2022/08/26/VueRouter/</url>
+    <content><![CDATA[<h1 id="VueRouter"><a href="#VueRouter" class="headerlink" title="VueRouter"></a>VueRouter</h1><ol>
+<li><p>导入 vue 及 vue-router 库</p>
+</li>
+<li><p>安装 vue-router 插件</p>
+</li>
+<li><p>导入路由组件</p>
+</li>
+<li><p>创建路由数组即 routes 数组，数组一般有 1. path 属性定义访问路径 2. component 属性指定组件名 3. redirect 属性用于路由重定向 4. meta 属性是一个对象，为路由记录添加其他额外信息，通过这个信息以实现控制路由的访问等功能</p>
+<span id="more"></span>
+</li>
+<li><p>创建路由器对象即通过 new VueRouter()构造函数,将 routes 数组传入构造函数参数里,其他参数：mode:指定 url 地址是否带有 # 号</p>
+</li>
+<li><p>导出路由配置文件</p>
+</li>
+<li><p>在 main.js 主入口文件中引入路由规则文件，并且注册路由</p>
+</li>
+<li><p>vue 路由是一种键值对，它表示的是路径与路由组件之间的映射</p>
+</li>
+<li><p>路由的$route 属性用于获取路由相关信息如 query,params，fullPath(可用于组件的隐藏或显示)等</p>
+<ol>
+<li>query 查询参数，也就是 url 地址?后面的参数,不需要预先占位。</li>
+<li>params 路径参数相当于 url 地址的一部分，用于动态指定 url 地址，需要预先占位。</li>
+</ol>
+</li>
+<li><p>路由传参的时候，如何指定 params 参数可传也可不传</p>
+<ol>
+<li>在配置路由规则的时候，在路由占位的后面加上一个问号。</li>
+<li>如果同时提供了 path 和 params，那么 params 会被省略，但是 query 不会。</li>
+<li>如果同时提供了 name 和 params，那么 params 可以正常工作。</li>
+</ol>
+</li>
+<li><p>路由的$router 属性用于编程式导航进行路由跳转(Push|replace)等</p>
+</li>
+<li><p>路由有声明式导航(router-link)和编程式导航，其中声明式导航必须有 to 属性</p>
+</li>
+<li><p>三种路由跳转方法</p>
+<ol>
+<li>push()方法会在路由历史栈中添加一条新的记录</li>
+<li>replace()方法只是替换，而不会向历史栈中添加一条新的记录</li>
+<li>go()表示在历史栈中前进或后退多步</li>
+</ol>
+</li>
+<li><p>路由的前进或者后退</p>
+<ol>
+<li>router.forward()前进一步</li>
+<li>router.back()后退一步</li>
+</ol>
+</li>
+<li><p>三种使用 props 传参的方式</p>
+<ol>
+<li>布尔模式：props&#x3D;true,这时 props 的值为 params</li>
+<li>对象模式：props 的值为一个对象</li>
+<li>函数模式：返回一个 props 对，route &#x3D;&gt; ({ })</li>
 </ol>
 </li>
 </ol>
@@ -1793,84 +1858,6 @@
 </li>
 <li><p>mapState 函数可以帮忙生成 computed 属性，但是它返回的是一个对象，所以还需用对象展开运算符去除里面的所有对象。</p>
 </li>
-</ol>
-]]></content>
-  </entry>
-  <entry>
-    <title></title>
-    <url>/2022/08/26/VueRouter/</url>
-    <content><![CDATA[<h1 id="VueRouter"><a href="#VueRouter" class="headerlink" title="VueRouter"></a>VueRouter</h1><ol>
-<li><p>导入 vue 及 vue-router 库</p>
-</li>
-<li><p>安装 vue-router 插件</p>
-</li>
-<li><p>导入路由组件</p>
-</li>
-<li><p>创建路由数组即 routes 数组，数组一般有 1. path 属性定义访问路径 2. component 属性指定组件名 3. redirect 属性用于路由重定向 4. meta 属性是一个对象，为路由记录添加其他额外信息，通过这个信息以实现控制路由的访问等功能</p>
-<span id="more"></span>
-</li>
-<li><p>创建路由器对象即通过 new VueRouter()构造函数,将 routes 数组传入构造函数参数里,其他参数：mode:指定 url 地址是否带有 # 号</p>
-</li>
-<li><p>导出路由配置文件</p>
-</li>
-<li><p>在 main.js 主入口文件中引入路由规则文件，并且注册路由</p>
-</li>
-<li><p>vue 路由是一种键值对，它表示的是路径与路由组件之间的映射</p>
-</li>
-<li><p>路由的$route 属性用于获取路由相关信息如 query,params，fullPath(可用于组件的隐藏或显示)等</p>
-<ol>
-<li>query 查询参数，也就是 url 地址?后面的参数,不需要预先占位。</li>
-<li>params 路径参数相当于 url 地址的一部分，用于动态指定 url 地址，需要预先占位。</li>
-</ol>
-</li>
-<li><p>路由传参的时候，如何指定 params 参数可传也可不传</p>
-<ol>
-<li>在配置路由规则的时候，在路由占位的后面加上一个问号。</li>
-<li>如果同时提供了 path 和 params，那么 params 会被省略，但是 query 不会。</li>
-<li>如果同时提供了 name 和 params，那么 params 可以正常工作。</li>
-</ol>
-</li>
-<li><p>路由的$router 属性用于编程式导航进行路由跳转(Push|replace)等</p>
-</li>
-<li><p>路由有声明式导航(router-link)和编程式导航，其中声明式导航必须有 to 属性</p>
-</li>
-<li><p>三种路由跳转方法</p>
-<ol>
-<li>push()方法会在路由历史栈中添加一条新的记录</li>
-<li>replace()方法只是替换，而不会向历史栈中添加一条新的记录</li>
-<li>go()表示在历史栈中前进或后退多步</li>
-</ol>
-</li>
-<li><p>路由的前进或者后退</p>
-<ol>
-<li>router.forward()前进一步</li>
-<li>router.back()后退一步</li>
-</ol>
-</li>
-<li><p>三种使用 props 传参的方式</p>
-<ol>
-<li>布尔模式：props&#x3D;true,这时 props 的值为 params</li>
-<li>对象模式：props 的值为一个对象</li>
-<li>函数模式：返回一个 props 对，route &#x3D;&gt; ({ })</li>
-</ol>
-</li>
-</ol>
-]]></content>
-  </entry>
-  <entry>
-    <title></title>
-    <url>/2022/08/26/async%E5%87%BD%E6%95%B0/</url>
-    <content><![CDATA[<h1 id="async函数"><a href="#async函数" class="headerlink" title="async函数"></a>async函数</h1><ol>
-<li>async函数的执行原理就是将Generator函数与自动执行器包装在一个函数里</li>
-<li>async相当于Generator的语法糖</li>
-<li>async自带执行器</li>
-<li>async返回一个Promise对象</li>
-<li>async函数调用then方法时，如果asyn函数有return返回值，那么这个返回值会成为then方法的回调函数的参数</li>
-<li>async函数内部抛出的错误，会使返回的Promise对象变为rejected状态</li>
-<li>await命令后面通常是promise对象</li>
-<li>async函数返回的Promise对象只有等所有await命令执行完成之后才会发生状态变更</li>
-<li>只要有一个await命令的Promise对象变为reject状态，后面的await命令 不会执行</li>
-<li>给当前await命令语句写进try-catch结构，或者调用catch()方法，这样如果当前await命令出现错误，不会影响后面的await命令继续执行</li>
 </ol>
 ]]></content>
   </entry>
@@ -2056,6 +2043,23 @@
       <tags>
         <tag>Git</tag>
       </tags>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2022/08/26/async%E5%87%BD%E6%95%B0/</url>
+    <content><![CDATA[<h1 id="async函数"><a href="#async函数" class="headerlink" title="async函数"></a>async函数</h1><ol>
+<li>async函数的执行原理就是将Generator函数与自动执行器包装在一个函数里</li>
+<li>async相当于Generator的语法糖</li>
+<li>async自带执行器</li>
+<li>async返回一个Promise对象</li>
+<li>async函数调用then方法时，如果asyn函数有return返回值，那么这个返回值会成为then方法的回调函数的参数</li>
+<li>async函数内部抛出的错误，会使返回的Promise对象变为rejected状态</li>
+<li>await命令后面通常是promise对象</li>
+<li>async函数返回的Promise对象只有等所有await命令执行完成之后才会发生状态变更</li>
+<li>只要有一个await命令的Promise对象变为reject状态，后面的await命令 不会执行</li>
+<li>给当前await命令语句写进try-catch结构，或者调用catch()方法，这样如果当前await命令出现错误，不会影响后面的await命令继续执行</li>
+</ol>
+]]></content>
   </entry>
   <entry>
     <title>Git分支</title>
@@ -2987,6 +2991,175 @@
       </tags>
   </entry>
   <entry>
+    <title>Java反射</title>
+    <url>/2020/06/15/java-reflection/</url>
+    <content><![CDATA[<blockquote>
+<p>本文是Java反射篇，学习于<a href="https://www.liaoxuefeng.com/wiki/1252599548343744">廖雪峰的Java教程</a></p>
+</blockquote>
+<h2 id="Java反射"><a href="#Java反射" class="headerlink" title="Java反射"></a>Java反射</h2><h3 id="1-Class类"><a href="#1-Class类" class="headerlink" title="1.Class类"></a>1.Class类</h3><ul>
+<li><p>反射：通过<code>Class</code>实例获取相关类信息的方法称为反射。</p>
+</li>
+<li><p><code>JVM</code>会在执行过程中动态加载类到内存，并为其创建一个<code>Class</code>类型的实例，并且该Class实例只能在JVM内部创建。</p>
+</li>
+<li><p>如何获取一个<code>Class</code>实例</p>
+<ul>
+<li>通过一个类的静态变量<code>class</code>获取，如<code>String.class</code>。</li>
+<li>通过实例变量调用<code>getClass()</code>方法。</li>
+<li>通过<code>Class</code>类的静态<code>Class.forName()</code>方法，例<code>Class.forName(String.lang.String)</code>,其中参数中的类名要为完整类名。</li>
+</ul>
+</li>
+<li><p><code>Class</code>实例的比较，可以用<code>==</code>比较，原因是<code>Class</code>实例在JVM中是唯一的。</p>
+</li>
+<li><p>准确判断两个类型是否为同一类型可用<code>==</code>比较。</p>
+</li>
+<li><p>数组例如<code>String[ ]</code>也可以创建<code>Class</code>实例，而且不同于<code>String.class</code>。</p>
+</li>
+<li><p>此外，<code>JVM</code>也为基本类型创建了<code>Class</code>实例,例如<code>int.class</code>。</p>
+</li>
+<li><p>可通过一个<code>Class</code>实例调用<code>newInstance()</code>方法创建一个对应类型的实例，但只能调用该类的无参数构造方法，例如:</p>
+<span id="more"></span>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">Class</span> cls <span class="token operator">=</span> <span class="token class-name">String</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">;</span>
+<span class="token class-name">String</span> s <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">)</span> cls<span class="token punctuation">.</span><span class="token function">newInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+</li>
+<li><p><code>JVM</code>的动态加载:JVM在执行Java程序的时候，并不会一次性加载所有class到内存，而是会优先把首先用到的class加载进内存，尚未需要的class并不会被加载。</p>
+</li>
+</ul>
+<h3 id="2-Field实例"><a href="#2-Field实例" class="headerlink" title="2.Field实例"></a>2.Field实例</h3><ul>
+<li><p>获取<code>Filed</code>实例</p>
+<ul>
+<li><code>Field getField(name)</code>参数为字段名，获取<code>public</code>实例字段，包括父类。</li>
+<li><code>Filed getDeclaredField(name)</code>参数为字段名，只获取当前类的所有Field实例字段。</li>
+<li><code>Field[] getFields()</code>获取所有<code>public</code>实例字段，包括父类。</li>
+<li><code>Field[] getDeclaredFields()</code>只获取当前类的所有<code>public</code>实例字段。</li>
+</ul>
+</li>
+<li><p>Field实例包含的几个方法</p>
+<ul>
+<li><code>getName()</code>获取字段名称。</li>
+<li><code>getType()</code>获取字段类型。</li>
+<li><code>getModifiers()</code>获取字段修饰符，会返回一个<code>int</code>类型的数值，最后再通过静态<code>Modifier.isPublic()</code>等方法判断是否为<code>public</code> 等修饰符。</li>
+</ul>
+</li>
+<li><p>获取字段的值可通过Field实例调用<code>get(p)</code>方法来获取字段的值，其中参数p为原类型实例。</p>
+</li>
+<li><p><code>setAccesible(true)</code>方法可以设置某非<code>public</code>字段的值可访问。</p>
+</li>
+<li><p><code>set(Object,Objie)</code>方法可用来设置字段的值，其中第一个参数为原类型实例，第二个参数为待修改的值。</p>
+</li>
+<li><p>示例代码</p>
+</li>
+</ul>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>lang<span class="token punctuation">.</span>reflect<span class="token punctuation">.</span></span><span class="token class-name">Field</span></span><span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token punctuation">&#123;</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">Exception</span> <span class="token punctuation">&#123;</span>
+        <span class="token class-name">Person</span> p <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token string">"Xiao Ming"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>p<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// "Xiao Ming"</span>
+        <span class="token class-name">Class</span> c <span class="token operator">=</span> p<span class="token punctuation">.</span><span class="token function">getClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">Field</span> f <span class="token operator">=</span> c<span class="token punctuation">.</span><span class="token function">getDeclaredField</span><span class="token punctuation">(</span><span class="token string">"name"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        f<span class="token punctuation">.</span><span class="token function">setAccessible</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        f<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>p<span class="token punctuation">,</span> <span class="token string">"Xiao Hong"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>p<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// "Xiao Hong"</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Person</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> name<span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token class-name">String</span> name<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h3 id="3-Method实例"><a href="#3-Method实例" class="headerlink" title="3.Method实例"></a>3.Method实例</h3><ul>
+<li><p>获取<code>Method</code>实例</p>
+<ul>
+<li><code>Method getMethod(name,Class)</code>，第一个参数为原类型实例，第二个参数为方法名<code>name</code>的参数的数据类型所对应的Class实例，获取public实例方法(包括父类)。</li>
+<li><code>Method getDeclaredMethod(name, Class...)</code>只获取当前类的实例方法。</li>
+<li><code>Method[] getMethod()</code>获取所有<code>public</code>实例方法(包括父类)。</li>
+<li><code>Method[] getDeclaredMethod()</code>只获取当前类的所有实例方法。</li>
+</ul>
+</li>
+<li><p><code>Method</code>实例包含的几个方法</p>
+<ul>
+<li><code>getName()</code>获取方法名字。</li>
+<li><code>getReturnTyoe()</code>获取方法的返回类型。</li>
+<li><code>getParameterTypes()</code>获取方法的参数类型，是一个Class数组。</li>
+<li><code>getModifies()</code>获取方法的修饰符。</li>
+<li><code>invoke()</code>方法相当于调用该实例方法,第一个参数为调用该方法的实例，并且参数要与实例方法参数一致。</li>
+</ul>
+</li>
+<li><p><code>setAccesible(true)</code>可设置某非<code>public</code>方法可访问。</p>
+</li>
+<li><p>通过反射调用方法时，仍然遵循多态原则。</p>
+</li>
+</ul>
+<h3 id="4-Constructor实例"><a href="#4-Constructor实例" class="headerlink" title="4.Constructor实例"></a>4.Constructor实例</h3><ul>
+<li>获取<code>Constructor</code>实例<ul>
+<li><code>Constructor getConstructor()</code>获取当前类的某个public构造方法。</li>
+<li><code>Constructor getDeclaredConstructor()</code>获取当前类的某个构造方法。</li>
+<li><code>Constructor[] getConstructor()</code>获取当前类的所有<code>public</code>构造方法。</li>
+<li><code>Constructor[] getConstructor()</code>获取当前类的所有<code>public</code>构造方法。</li>
+</ul>
+</li>
+<li><code>Constructo</code>实例可以调用拥有多种参数的构造方法。</li>
+<li>设置<code>setAccessible(true)</code>来访问非<code>public</code>构造方法。</li>
+<li>代码示例</li>
+</ul>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>lang<span class="token punctuation">.</span>reflect<span class="token punctuation">.</span></span><span class="token class-name">Constructor</span></span><span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">Exception</span> <span class="token punctuation">&#123;</span>
+        <span class="token comment">// 获取构造方法Integer(int):</span>
+        <span class="token class-name">Constructor</span> cons1 <span class="token operator">=</span> <span class="token class-name">Integer</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">.</span><span class="token function">getConstructor</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// 调用构造方法:</span>
+        <span class="token class-name">Integer</span> n1 <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token class-name">Integer</span><span class="token punctuation">)</span> cons1<span class="token punctuation">.</span><span class="token function">newInstance</span><span class="token punctuation">(</span><span class="token number">123</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>n1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">// 获取构造方法Integer(String)</span>
+        <span class="token class-name">Constructor</span> cons2 <span class="token operator">=</span> <span class="token class-name">Integer</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">.</span><span class="token function">getConstructor</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">Integer</span> n2 <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token class-name">Integer</span><span class="token punctuation">)</span> cons2<span class="token punctuation">.</span><span class="token function">newInstance</span><span class="token punctuation">(</span><span class="token string">"456"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>n2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="5-反射与继承关系"><a href="#5-反射与继承关系" class="headerlink" title="5.反射与继承关系"></a>5.反射与继承关系</h3><ul>
+<li><code>getSuperClass()</code>方法可以获取子类的父类。</li>
+<li><code>getInterfaces()</code>方法可以获取子类实现的接口类，注意这个方法的返回类型是<code>Class[]</code>数组,也只能获取当前类的接口，不包括父类。</li>
+<li><code>isAssignableForm()</code>方法可以判断两个Class实例向上转型是否成功。</li>
+</ul>
+<h3 id="6-动态代理"><a href="#6-动态代理" class="headerlink" title="6.动态代理"></a>6.动态代理</h3><ul>
+<li>动态代理：能够在运行期动态创建接口对象的方式叫做动态代理。</li>
+<li>如何实现动态代理<ul>
+<li>定义<code>InvocationHandler</code>实例，用来负责实现接口的方法调用。</li>
+<li>通过<code>Proxy.newProxyInstance()</code>创建接口实例，它有三个参数<ul>
+<li>接口类的<code>ClassLoader</code>，可通过<code>getClassLoader()</code>获取。</li>
+<li>接口数组。</li>
+<li>用来实现接口方法调用的<code>InvocationHandler</code>实例。</li>
+</ul>
+</li>
+<li>将返回的Object类型实例强制转换为接口类型。</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>技术笔记</category>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>Java反射</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Java面向对象基础</title>
     <url>/2020/06/14/java-object-oriented/</url>
     <content><![CDATA[<blockquote>
@@ -3193,175 +3366,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Java反射</title>
-    <url>/2020/06/15/java-reflection/</url>
-    <content><![CDATA[<blockquote>
-<p>本文是Java反射篇，学习于<a href="https://www.liaoxuefeng.com/wiki/1252599548343744">廖雪峰的Java教程</a></p>
-</blockquote>
-<h2 id="Java反射"><a href="#Java反射" class="headerlink" title="Java反射"></a>Java反射</h2><h3 id="1-Class类"><a href="#1-Class类" class="headerlink" title="1.Class类"></a>1.Class类</h3><ul>
-<li><p>反射：通过<code>Class</code>实例获取相关类信息的方法称为反射。</p>
-</li>
-<li><p><code>JVM</code>会在执行过程中动态加载类到内存，并为其创建一个<code>Class</code>类型的实例，并且该Class实例只能在JVM内部创建。</p>
-</li>
-<li><p>如何获取一个<code>Class</code>实例</p>
-<ul>
-<li>通过一个类的静态变量<code>class</code>获取，如<code>String.class</code>。</li>
-<li>通过实例变量调用<code>getClass()</code>方法。</li>
-<li>通过<code>Class</code>类的静态<code>Class.forName()</code>方法，例<code>Class.forName(String.lang.String)</code>,其中参数中的类名要为完整类名。</li>
-</ul>
-</li>
-<li><p><code>Class</code>实例的比较，可以用<code>==</code>比较，原因是<code>Class</code>实例在JVM中是唯一的。</p>
-</li>
-<li><p>准确判断两个类型是否为同一类型可用<code>==</code>比较。</p>
-</li>
-<li><p>数组例如<code>String[ ]</code>也可以创建<code>Class</code>实例，而且不同于<code>String.class</code>。</p>
-</li>
-<li><p>此外，<code>JVM</code>也为基本类型创建了<code>Class</code>实例,例如<code>int.class</code>。</p>
-</li>
-<li><p>可通过一个<code>Class</code>实例调用<code>newInstance()</code>方法创建一个对应类型的实例，但只能调用该类的无参数构造方法，例如:</p>
-<span id="more"></span>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">Class</span> cls <span class="token operator">=</span> <span class="token class-name">String</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">;</span>
-<span class="token class-name">String</span> s <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">)</span> cls<span class="token punctuation">.</span><span class="token function">newInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-</li>
-<li><p><code>JVM</code>的动态加载:JVM在执行Java程序的时候，并不会一次性加载所有class到内存，而是会优先把首先用到的class加载进内存，尚未需要的class并不会被加载。</p>
-</li>
-</ul>
-<h3 id="2-Field实例"><a href="#2-Field实例" class="headerlink" title="2.Field实例"></a>2.Field实例</h3><ul>
-<li><p>获取<code>Filed</code>实例</p>
-<ul>
-<li><code>Field getField(name)</code>参数为字段名，获取<code>public</code>实例字段，包括父类。</li>
-<li><code>Filed getDeclaredField(name)</code>参数为字段名，只获取当前类的所有Field实例字段。</li>
-<li><code>Field[] getFields()</code>获取所有<code>public</code>实例字段，包括父类。</li>
-<li><code>Field[] getDeclaredFields()</code>只获取当前类的所有<code>public</code>实例字段。</li>
-</ul>
-</li>
-<li><p>Field实例包含的几个方法</p>
-<ul>
-<li><code>getName()</code>获取字段名称。</li>
-<li><code>getType()</code>获取字段类型。</li>
-<li><code>getModifiers()</code>获取字段修饰符，会返回一个<code>int</code>类型的数值，最后再通过静态<code>Modifier.isPublic()</code>等方法判断是否为<code>public</code> 等修饰符。</li>
-</ul>
-</li>
-<li><p>获取字段的值可通过Field实例调用<code>get(p)</code>方法来获取字段的值，其中参数p为原类型实例。</p>
-</li>
-<li><p><code>setAccesible(true)</code>方法可以设置某非<code>public</code>字段的值可访问。</p>
-</li>
-<li><p><code>set(Object,Objie)</code>方法可用来设置字段的值，其中第一个参数为原类型实例，第二个参数为待修改的值。</p>
-</li>
-<li><p>示例代码</p>
-</li>
-</ul>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>lang<span class="token punctuation">.</span>reflect<span class="token punctuation">.</span></span><span class="token class-name">Field</span></span><span class="token punctuation">;</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token punctuation">&#123;</span>
-
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">Exception</span> <span class="token punctuation">&#123;</span>
-        <span class="token class-name">Person</span> p <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token string">"Xiao Ming"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>p<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// "Xiao Ming"</span>
-        <span class="token class-name">Class</span> c <span class="token operator">=</span> p<span class="token punctuation">.</span><span class="token function">getClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token class-name">Field</span> f <span class="token operator">=</span> c<span class="token punctuation">.</span><span class="token function">getDeclaredField</span><span class="token punctuation">(</span><span class="token string">"name"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        f<span class="token punctuation">.</span><span class="token function">setAccessible</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        f<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>p<span class="token punctuation">,</span> <span class="token string">"Xiao Hong"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>p<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// "Xiao Hong"</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span>
-
-<span class="token keyword">class</span> <span class="token class-name">Person</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">private</span> <span class="token class-name">String</span> name<span class="token punctuation">;</span>
-
-    <span class="token keyword">public</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token class-name">String</span> name<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-
-    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-<h3 id="3-Method实例"><a href="#3-Method实例" class="headerlink" title="3.Method实例"></a>3.Method实例</h3><ul>
-<li><p>获取<code>Method</code>实例</p>
-<ul>
-<li><code>Method getMethod(name,Class)</code>，第一个参数为原类型实例，第二个参数为方法名<code>name</code>的参数的数据类型所对应的Class实例，获取public实例方法(包括父类)。</li>
-<li><code>Method getDeclaredMethod(name, Class...)</code>只获取当前类的实例方法。</li>
-<li><code>Method[] getMethod()</code>获取所有<code>public</code>实例方法(包括父类)。</li>
-<li><code>Method[] getDeclaredMethod()</code>只获取当前类的所有实例方法。</li>
-</ul>
-</li>
-<li><p><code>Method</code>实例包含的几个方法</p>
-<ul>
-<li><code>getName()</code>获取方法名字。</li>
-<li><code>getReturnTyoe()</code>获取方法的返回类型。</li>
-<li><code>getParameterTypes()</code>获取方法的参数类型，是一个Class数组。</li>
-<li><code>getModifies()</code>获取方法的修饰符。</li>
-<li><code>invoke()</code>方法相当于调用该实例方法,第一个参数为调用该方法的实例，并且参数要与实例方法参数一致。</li>
-</ul>
-</li>
-<li><p><code>setAccesible(true)</code>可设置某非<code>public</code>方法可访问。</p>
-</li>
-<li><p>通过反射调用方法时，仍然遵循多态原则。</p>
-</li>
-</ul>
-<h3 id="4-Constructor实例"><a href="#4-Constructor实例" class="headerlink" title="4.Constructor实例"></a>4.Constructor实例</h3><ul>
-<li>获取<code>Constructor</code>实例<ul>
-<li><code>Constructor getConstructor()</code>获取当前类的某个public构造方法。</li>
-<li><code>Constructor getDeclaredConstructor()</code>获取当前类的某个构造方法。</li>
-<li><code>Constructor[] getConstructor()</code>获取当前类的所有<code>public</code>构造方法。</li>
-<li><code>Constructor[] getConstructor()</code>获取当前类的所有<code>public</code>构造方法。</li>
-</ul>
-</li>
-<li><code>Constructo</code>实例可以调用拥有多种参数的构造方法。</li>
-<li>设置<code>setAccessible(true)</code>来访问非<code>public</code>构造方法。</li>
-<li>代码示例</li>
-</ul>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>lang<span class="token punctuation">.</span>reflect<span class="token punctuation">.</span></span><span class="token class-name">Constructor</span></span><span class="token punctuation">;</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">Exception</span> <span class="token punctuation">&#123;</span>
-        <span class="token comment">// 获取构造方法Integer(int):</span>
-        <span class="token class-name">Constructor</span> cons1 <span class="token operator">=</span> <span class="token class-name">Integer</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">.</span><span class="token function">getConstructor</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token comment">// 调用构造方法:</span>
-        <span class="token class-name">Integer</span> n1 <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token class-name">Integer</span><span class="token punctuation">)</span> cons1<span class="token punctuation">.</span><span class="token function">newInstance</span><span class="token punctuation">(</span><span class="token number">123</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>n1<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-        <span class="token comment">// 获取构造方法Integer(String)</span>
-        <span class="token class-name">Constructor</span> cons2 <span class="token operator">=</span> <span class="token class-name">Integer</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">.</span><span class="token function">getConstructor</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token class-name">Integer</span> n2 <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token class-name">Integer</span><span class="token punctuation">)</span> cons2<span class="token punctuation">.</span><span class="token function">newInstance</span><span class="token punctuation">(</span><span class="token string">"456"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>n2<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="5-反射与继承关系"><a href="#5-反射与继承关系" class="headerlink" title="5.反射与继承关系"></a>5.反射与继承关系</h3><ul>
-<li><code>getSuperClass()</code>方法可以获取子类的父类。</li>
-<li><code>getInterfaces()</code>方法可以获取子类实现的接口类，注意这个方法的返回类型是<code>Class[]</code>数组,也只能获取当前类的接口，不包括父类。</li>
-<li><code>isAssignableForm()</code>方法可以判断两个Class实例向上转型是否成功。</li>
-</ul>
-<h3 id="6-动态代理"><a href="#6-动态代理" class="headerlink" title="6.动态代理"></a>6.动态代理</h3><ul>
-<li>动态代理：能够在运行期动态创建接口对象的方式叫做动态代理。</li>
-<li>如何实现动态代理<ul>
-<li>定义<code>InvocationHandler</code>实例，用来负责实现接口的方法调用。</li>
-<li>通过<code>Proxy.newProxyInstance()</code>创建接口实例，它有三个参数<ul>
-<li>接口类的<code>ClassLoader</code>，可通过<code>getClassLoader()</code>获取。</li>
-<li>接口数组。</li>
-<li>用来实现接口方法调用的<code>InvocationHandler</code>实例。</li>
-</ul>
-</li>
-<li>将返回的Object类型实例强制转换为接口类型。</li>
-</ul>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>技术笔记</category>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-        <tag>Java反射</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>npm常用命令</title>
     <url>/2020/08/04/npm-command/</url>
     <content><![CDATA[<h1 id="npm-常见命令"><a href="#npm-常见命令" class="headerlink" title="npm 常见命令"></a>npm 常见命令</h1><h2 id="一-npm-amp-yarn-介绍"><a href="#一-npm-amp-yarn-介绍" class="headerlink" title="一.npm&amp;yarn 介绍"></a>一.npm&amp;yarn 介绍</h2><p>npm 是一个基于 Node.js 的包管理工具。<br>yarn 是 Facebook、Google、Exponent 和 Tilde 联合推出了一个新的 包管理工具,与 npm 相比有些优势。<br>npm 在安装 Node.js 时会被一并安装，yarn 则需要额外安装。</p>
@@ -3480,6 +3484,67 @@
 </li>
 </ol>
 ]]></content>
+  </entry>
+  <entry>
+    <title>语义化版本2.0.0介绍</title>
+    <url>/2021/06/15/semver2.0.0/</url>
+    <content><![CDATA[<h1 id="语义化版本-2-0-0-介绍"><a href="#语义化版本-2-0-0-介绍" class="headerlink" title="语义化版本 2.0.0 介绍"></a>语义化版本 2.0.0 介绍</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>语义化版本是为了解决软件开发过程中依赖关系混乱或者依赖锁死的情况。</p>
+<p>它的标准格式如下：</p>
+<blockquote>
+<p><strong>x.y.z</strong></p>
+</blockquote>
+<p>其中 x 表示主版本号，y 表示次版本号，z 表示修订号。</p>
+<span id="more"></span>
+
+<p>对这几种版本号的解释如下：</p>
+<p>X 主版本号，表示做了<strong>不向下兼容的修改</strong>时递增。</p>
+<p>Y 次版本号，表示做了<strong>向下兼容的新增及修改</strong>时递增。</p>
+<p>Z 修订号，表示做了<strong>向下兼容的问题修复</strong>时递增。</p>
+<h2 id="规范"><a href="#规范" class="headerlink" title="规范"></a>规范</h2><ol>
+<li><p>必须定义公共 API，且公共 API 应该力求准确和完整。</p>
+</li>
+<li><p>x,y,z 必须都为非负整数，且禁止在数字前补零。</p>
+</li>
+<li><p>0.y.z 表示软件处于初始开发阶段,y 与 z 可以根据初始开发阶段的情况递增。</p>
+</li>
+<li><p>1.0.0 表示软件开发成功的第一个版本号，也是界定公共 API 成熟的标志。</p>
+</li>
+<li><p>次版本号递增的原则:</p>
+<ul>
+<li>新功能添加时。</li>
+<li>某一功能被弃用时。</li>
+<li>某一功能被改进时。(其中可包括修订级别的改变)</li>
+<li>次版本号递增时，修订号必须归零。</li>
+</ul>
+</li>
+<li><p>主版本号递增时，次版本号和修订号必须清零，其中可包括次版本号和修订号的改变。</p>
+</li>
+<li><p>先行版本号添加原则:</p>
+<ul>
+<li>由连接号和描述符组成。</li>
+<li>添加在修订号后面。</li>
+<li>先行版本号表示这个版本并非稳定并有非兼容情况出现。</li>
+<li>优先级低于相关联的标准版本号。</li>
+</ul>
+</li>
+<li><p>版本编译元数据添加原则:</p>
+<ul>
+<li>由加号和描述符组成。</li>
+<li>添加在修订号或者先行版本号后面。</li>
+<li>版本编译元数据不参与版本优先级比较。</li>
+</ul>
+</li>
+<li><p>优先级比较原则:一一拆分为各种版本号比较。</p>
+</li>
+</ol>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>本文章内容参考于<a href="https://semver.org/lang/zh-CN/#spec-item-9%E3%80%82">https://semver.org/lang/zh-CN/#spec-item-9。</a></p>
+]]></content>
+      <categories>
+        <category>扩展阅读</category>
+      </categories>
+      <tags>
+        <tag>版本号</tag>
+      </tags>
   </entry>
   <entry>
     <title>Git起步</title>
@@ -3786,66 +3851,5 @@
 </li>
 </ol>
 ]]></content>
-  </entry>
-  <entry>
-    <title>语义化版本2.0.0介绍</title>
-    <url>/2021/06/15/semver2.0.0/</url>
-    <content><![CDATA[<h1 id="语义化版本-2-0-0-介绍"><a href="#语义化版本-2-0-0-介绍" class="headerlink" title="语义化版本 2.0.0 介绍"></a>语义化版本 2.0.0 介绍</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>语义化版本是为了解决软件开发过程中依赖关系混乱或者依赖锁死的情况。</p>
-<p>它的标准格式如下：</p>
-<blockquote>
-<p><strong>x.y.z</strong></p>
-</blockquote>
-<p>其中 x 表示主版本号，y 表示次版本号，z 表示修订号。</p>
-<span id="more"></span>
-
-<p>对这几种版本号的解释如下：</p>
-<p>X 主版本号，表示做了<strong>不向下兼容的修改</strong>时递增。</p>
-<p>Y 次版本号，表示做了<strong>向下兼容的新增及修改</strong>时递增。</p>
-<p>Z 修订号，表示做了<strong>向下兼容的问题修复</strong>时递增。</p>
-<h2 id="规范"><a href="#规范" class="headerlink" title="规范"></a>规范</h2><ol>
-<li><p>必须定义公共 API，且公共 API 应该力求准确和完整。</p>
-</li>
-<li><p>x,y,z 必须都为非负整数，且禁止在数字前补零。</p>
-</li>
-<li><p>0.y.z 表示软件处于初始开发阶段,y 与 z 可以根据初始开发阶段的情况递增。</p>
-</li>
-<li><p>1.0.0 表示软件开发成功的第一个版本号，也是界定公共 API 成熟的标志。</p>
-</li>
-<li><p>次版本号递增的原则:</p>
-<ul>
-<li>新功能添加时。</li>
-<li>某一功能被弃用时。</li>
-<li>某一功能被改进时。(其中可包括修订级别的改变)</li>
-<li>次版本号递增时，修订号必须归零。</li>
-</ul>
-</li>
-<li><p>主版本号递增时，次版本号和修订号必须清零，其中可包括次版本号和修订号的改变。</p>
-</li>
-<li><p>先行版本号添加原则:</p>
-<ul>
-<li>由连接号和描述符组成。</li>
-<li>添加在修订号后面。</li>
-<li>先行版本号表示这个版本并非稳定并有非兼容情况出现。</li>
-<li>优先级低于相关联的标准版本号。</li>
-</ul>
-</li>
-<li><p>版本编译元数据添加原则:</p>
-<ul>
-<li>由加号和描述符组成。</li>
-<li>添加在修订号或者先行版本号后面。</li>
-<li>版本编译元数据不参与版本优先级比较。</li>
-</ul>
-</li>
-<li><p>优先级比较原则:一一拆分为各种版本号比较。</p>
-</li>
-</ol>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>本文章内容参考于<a href="https://semver.org/lang/zh-CN/#spec-item-9%E3%80%82">https://semver.org/lang/zh-CN/#spec-item-9。</a></p>
-]]></content>
-      <categories>
-        <category>扩展阅读</category>
-      </categories>
-      <tags>
-        <tag>版本号</tag>
-      </tags>
   </entry>
 </search>

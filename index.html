@@ -88,7 +88,7 @@
         
       
       
-        <h1 id="Docker介绍"><a href="#Docker介绍" class="headerlink" title="Docker介绍"></a>Docker介绍</h1><ol>
+        <h1 id="Docker-介绍"><a href="#Docker-介绍" class="headerlink" title="Docker 介绍"></a>Docker 介绍</h1><ol>
 <li>虚拟化技术与容器技术<ol>
 <li>虚拟化技术的理解<ol>
 <li>它是一种将计算机物理资源抽象化，转化成计算机虚拟资源以提供给程序使用</li>
@@ -106,10 +106,10 @@
 </li>
 </ol>
 </li>
-<li>Docker介绍<ol>
-<li>Docker属于操作系统层面的虚拟化技术</li>
-<li>Docker与传统的虚拟化技术的不同之处<ol>
-<li>Docker没有虚拟出硬件，并且它的容器直接运行于宿主内核，容器内并没有自己的内核</li>
+<li>Docker 介绍<ol>
+<li>Docker 属于操作系统层面的虚拟化技术</li>
+<li>Docker 与传统的虚拟化技术的不同之处<ol>
+<li>Docker 没有虚拟出硬件，并且它的容器直接运行于宿主内核，容器内并没有自己的内核</li>
 <li>传统的虚拟化技术需要虚拟出硬件，在其上运行一个操作系统，并且在这个操作系统里面运行应用程序</li>
 </ol>
 </li>
@@ -119,168 +119,18 @@
 </li>
 </ol>
 </li>
-<li>Docker镜像<ol>
-<li>是一种特殊的文件系统，提供了 容器运行需要的库，配置文件，等等，还包含了容器运行需要的配置参数，它的核心精髓是保证了环境的一致性</li>
-<li>Docker镜像技术是一套统一的接口技术，它适配了不同的开发语言<ol>
-<li>Docker镜像采用分层存储结构，每一次的修改都只对当前所在的一层有效，对前面几层不起作用</li>
 </ol>
-</li>
-<li>中间层镜像:<ol>
-<li>是其他镜像依赖需要的镜像</li>
-<li>用于提高镜像复用性，加速镜像构建</li>
-</ol>
-</li>
-<li>删除镜像<ol>
-<li>两类删除行为：Untagged和Deleted</li>
-<li>有时候删除镜像，可能仅仅是取消了镜像的标签，也就是Untagged的意义，真正影响镜像删除的，要考虑其他镜像是否依赖当前要删除镜像的某一层，或者有容器依赖当前要删除镜像的某一层，或者有 别个标签指向了当前要删除的镜像，这种情况下就不会触发镜像删除行为，也就是Delected行为</li>
-</ol>
-</li>
-</ol>
-</li>
-<li>Docker容器<ol>
-<li>容器是基于镜像构建，是独立运行的一个或一组应用</li>
-<li>容器也是分层存储的，容器在作为基础层的镜像之上又构建用于容器运行的存储层</li>
-<li>启动容器时，如果需要的镜像不存在，会自动pull下载</li>
-<li>容器里只会存在必须的资源，多余的资源不会存在，所以Docker对资源的利用率很高</li>
-<li>一个容器只有在执行任务时才会处于running状态，不管是否启动</li>
-<li>启动容器的命令为docker run &lt;image&gt;，如果要指定容器在后台运行可以指定-d参数</li>
-<li>启动处于exited状态的容器 docker container start [container-id]</li>
-<li>列出正在执行任务也即running状态的容器 docker container ls</li>
-<li>列出容器运行结果 docker container logs [containerId]</li>
-<li>对处于后台运行的容器进行操作可以使用docker exec或者attach命令，但推荐使用exec命令，因为exit容器后，不会终止容器</li>
-<li>docker container rm只能删除处于exited的容器，如果要删除处于running状态的容器,可以加-f参数</li>
-<li>删除所有处于exited状态的容器 docker container prune</li>
-<li>docker diff [container]查看对容器的更改</li>
-<li>docker commit -a xxx -m xxx containerName [REPOSITORY[:TAG]] 从容器创建一个新镜像</li>
-<li>docker history container查看镜像的历史记录</li>
-</ol>
-</li>
-<li>Docker数据卷<ol>
-<li>数据卷是容器用于管理数据的场所</li>
-<li>数据卷的特性<ol>
-<li>在多个容器之间共享</li>
-<li>对数据卷的生效会即时生效</li>
-<li>删除容器后，数据卷并不会消失</li>
-<li>对数据卷的更新，不会影响镜像</li>
-</ol>
-</li>
-<li>创建数据卷 docker volume create [volume-name]</li>
-<li>查看某个数据卷的具体信息docker volume inspect [volume-name]</li>
-<li>删除数据卷docker volume rm，如果要在删除容器的同时删除数据卷可以加上-v参数</li>
-<li>删除未挂载到容器的数据卷docker volume prune</li>
-</ol>
-</li>
-<li>Docker网络配置<ol>
-<li>-p -P都能指定端口<ol>
-<li>-P随机指定一个主机端口映射到容器开放的端口</li>
-<li>-p主动指定端口映射<ol>
-<li>几种格式的端口映射<ol>
-<li>hostPort:containerPort<ol>
-<li>这种情况下，不管本地的ip地址是啥，只要主机端口相同，他们指向同一个地址，也就是映射所有接口地址</li>
-</ol>
-</li>
-<li>ip:hostPort:containerPort<ol>
-<li>映射指定地址的映射端口，只能通过指定的ip地址加端口访问</li>
-</ol>
-</li>
-<li>ip::containerPort<ol>
-<li>映射到指定地址的任意端口，也就是说对于指定的ip地址，随机指定一个主机端口</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-<li>Docker 容器互联<ol>
-<li>用自定义网络来互联容器<ol>
-<li>docker network create -d bridge my-net 其中-d参数指定网络类型</li>
-<li>docker run –network my-net busybox 使用–network参数 指定busybox容器链接到mynet网络</li>
-</ol>
-</li>
-</ol>
-</li>
-<li>Dockerfile<ol>
-<li>是一个文本文件，以指令为基础一层层构建镜像</li>
-<li>如果不以任何镜像为基础，可以使用scratch镜像，scratch镜像是一种虚拟空白镜像</li>
-<li>使用指令书写命令的原则<ol>
-<li>能写在一层的命令尽量写在一个指令里，因为一个指令构建一层镜像</li>
-<li>尽力确保镜像只包含自己需要的东西，多余的东西记得及时清理，因为当前一层的镜像只能在当前一层处理，在下一层处理无效，负责会随着镜像的构建存在，造成镜像臃肿</li>
-</ol>
-</li>
-<li>docker build xxx命令用于构建镜像</li>
-<li>Dockerfile的文件名并不固定</li>
-<li>Dockerfile文件指令<ol>
-<li>RUN指令用于运行命令，每执行一次就会就会狗创建一层镜像</li>
-<li>COPY指令用于将源文件复制到目标文件</li>
-<li>ADD指令相当于进化版的COPY指令，只是增加了一些功能，ADD指令更适用于自动加压缩，权限调整等场合</li>
-<li>CMD指令跟RUN指令类似，只不过RUN指令用在容器构建时，而CMD指令用在指令运行时，CMD指令为启动的容器指定默认要执行的程序，只能有一个，如果有多个，则最后一个覆盖前面的，但它会被docker run参数中指定的命令覆盖</li>
-<li>ENV指令 设置环境变量，这样可以在全局环境中通过$引用这个环境变量</li>
-<li>ARG指令与ENV指令环境变量一致，不过它的作用域在Dockerfile内</li>
-<li>Volume指令定义匿名卷，容器会自动挂载到匿名卷</li>
-<li>EXPOSE指令声明要暴露出去的指令</li>
-<li>WORKDIR指令指定容器工作的目录</li>
-<li>USER指令用于指定执行后续程序需要的用户和用户组</li>
-<li>HEALTHCHECK指令用于指定程序监听docker容器服务的运行状态</li>
-</ol>
-</li>
-</ol>
-</li>
-<li>Docker Compose<ol>
-<li>用于实现Docker容器集群的快速编排</li>
-<li>本质是定义和运行有多个容器的应用</li>
-<li>两个概念<ol>
-<li>服务<ol>
-<li>多个有相同镜像的实例</li>
-</ol>
-</li>
-<li>项目<ol>
-<li>相关联的多个容器组成的业务单元</li>
-</ol>
-</li>
-</ol>
-</li>
-<li>Compose用python语言编写，可通过pip安装</li>
-<li>Docker Compose使用YAML文件对容器进行管理</li>
-<li>Compose模板文件<ol>
-<li>build指令指定Dockerfile文件所在的目录，可以利用这个指令构建镜像，而不用再从compose模板文件书写<ol>
-<li>context指令指定dockerfile文件所在目录</li>
-<li>dockerfile指令指定dockerfile文件名</li>
-<li>args指令指定构建镜像时的变量</li>
-<li>cache-form指令指定构建镜像时的缓存</li>
-<li>cap-add指令指定为容器增加的内核能力</li>
-<li>cap-drop指令指定为容器去掉的内核能力</li>
-<li>command指令指定容器启动后默认执行的命令</li>
-<li>container_name指令指定容器名称</li>
-<li>devices指令设定设备映射关系</li>
-<li>depends_on指令设备的依赖，先后启动的问题</li>
-<li>dns指令定义DNS服务器</li>
-<li>dns_search指令用于配置DNS搜索域</li>
-<li>tmpfs指令用于指定挂载一个tmpfs文件系统到容器</li>
-<li>env_file指令用于指定环境变量的路径</li>
-<li>environment指令用来设定环境变量</li>
-<li>expose指令指定容器向外暴露的端口，但不映射到宿主机</li>
-<li>external_links指令指定连接的compose外部的容器</li>
-<li>image指令指定镜像</li>
-<li>labels指令为容器添加元素据信息</li>
-<li>network_mode指令用来设置网络模式</li>
-<li>ports指令指定主机以及容器端口</li>
-<li>secrets指令用于存储敏感数据</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-
+        
+          <p>
+            <a class="article-more-link" href="/2022/08/31/Docker%E4%BB%8B%E7%BB%8D/">
+              Read More...
+            </a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.liuzx.me/2022/08/31/Docker%E4%BB%8B%E7%BB%8D/" data-id="cl7gzpd7x0005qgv486mlh58a" class="article-share-link">
+      <a data-url="https://www.liuzx.me/2022/08/31/Docker%E4%BB%8B%E7%BB%8D/" data-id="cl7h0jshf0001j8v41m7bayhx" class="article-share-link">
         Share
       </a>
       
@@ -338,7 +188,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.liuzx.me/2022/08/27/Swiper%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/" data-id="cl7gzpd8j0011qgv4gsxw98n9" class="article-share-link">
+      <a data-url="https://www.liuzx.me/2022/08/27/Swiper%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/" data-id="cl7h0jsic0011j8v44slbddqz" class="article-share-link">
         Share
       </a>
       
@@ -398,7 +248,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.liuzx.me/2022/08/26/%E5%BC%82%E6%AD%A5%E6%93%8D%E4%BD%9C/" data-id="cl7gzpd9c002kqgv4codthy0c" class="article-share-link">
+      <a data-url="https://www.liuzx.me/2022/08/26/%E5%BC%82%E6%AD%A5%E6%93%8D%E4%BD%9C/" data-id="cl7h0jsjc002nj8v4fa507enz" class="article-share-link">
         Share
       </a>
       
@@ -451,7 +301,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.liuzx.me/2022/08/26/this%E5%85%B3%E9%94%AE%E5%AD%97/" data-id="cl7gzpd98002cqgv40hum8m0z" class="article-share-link">
+      <a data-url="https://www.liuzx.me/2022/08/26/this%E5%85%B3%E9%94%AE%E5%AD%97/" data-id="cl7h0jsj7002hj8v4dgn27jgo" class="article-share-link">
         Share
       </a>
       
@@ -503,7 +353,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.liuzx.me/2022/08/26/Promise%E5%AF%B9%E8%B1%A1/" data-id="cl7gzpd8i000yqgv4679z1nnn" class="article-share-link">
+      <a data-url="https://www.liuzx.me/2022/08/26/Promise%E5%AF%B9%E8%B1%A1/" data-id="cl7h0jsia000uj8v459ojc5u0" class="article-share-link">
         Share
       </a>
       
@@ -557,7 +407,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.liuzx.me/2022/08/26/package.json%E4%BB%8B%E7%BB%8D/" data-id="cl7gzpd900025qgv47msv29rb" class="article-share-link">
+      <a data-url="https://www.liuzx.me/2022/08/26/package.json%E4%BB%8B%E7%BB%8D/" data-id="cl7h0jsiv0025j8v4bfj021g1" class="article-share-link">
         Share
       </a>
       
@@ -611,7 +461,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.liuzx.me/2022/08/26/Module%E8%AF%AD%E6%B3%95/" data-id="cl7gzpd8g000uqgv47su1gk08" class="article-share-link">
+      <a data-url="https://www.liuzx.me/2022/08/26/Module%E8%AF%AD%E6%B3%95/" data-id="cl7h0jsib000yj8v4a41v5blo" class="article-share-link">
         Share
       </a>
       
@@ -670,7 +520,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.liuzx.me/2022/08/26/Module%E7%9A%84%E5%8A%A0%E8%BD%BD%E5%AE%9E%E7%8E%B0/" data-id="cl7gzpd8g000tqgv4a6nkajtw" class="article-share-link">
+      <a data-url="https://www.liuzx.me/2022/08/26/Module%E7%9A%84%E5%8A%A0%E8%BD%BD%E5%AE%9E%E7%8E%B0/" data-id="cl7h0jsi8000tj8v437yb01kt" class="article-share-link">
         Share
       </a>
       
@@ -727,7 +577,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.liuzx.me/2022/08/26/Generator%E5%87%BD%E6%95%B0%E8%AF%AD%E6%B3%95/" data-id="cl7gzpd7y0006qgv4bfweapba" class="article-share-link">
+      <a data-url="https://www.liuzx.me/2022/08/26/Generator%E5%87%BD%E6%95%B0%E8%AF%AD%E6%B3%95/" data-id="cl7h0jshp0006j8v41j5ufyo1" class="article-share-link">
         Share
       </a>
       
@@ -780,7 +630,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.liuzx.me/2022/08/26/ECMAScript6/" data-id="cl7gzpd7t0002qgv4628s0ep0" class="article-share-link">
+      <a data-url="https://www.liuzx.me/2022/08/26/ECMAScript6/" data-id="cl7h0jshl0003j8v4akn99iio" class="article-share-link">
         Share
       </a>
       
