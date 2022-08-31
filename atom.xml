@@ -6,7 +6,7 @@
   <link href="https://www.liuzx.me/atom.xml" rel="self"/>
   
   <link href="https://www.liuzx.me/"/>
-  <updated>2022-08-26T23:59:50.897Z</updated>
+  <updated>2022-08-31T02:16:23.842Z</updated>
   <id>https://www.liuzx.me/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="https://www.liuzx.me/2022/08/31/Docker%E4%BB%8B%E7%BB%8D/"/>
+    <id>https://www.liuzx.me/2022/08/31/Docker%E4%BB%8B%E7%BB%8D/</id>
+    <published>2022-08-31T02:16:23.414Z</published>
+    <updated>2022-08-31T02:16:23.842Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Docker介绍&quot;&gt;&lt;a href=&quot;#Docker介绍&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title></title>
@@ -32,39 +53,6 @@
 &lt;li&gt;npm i</summary>
         
       
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="https://www.liuzx.me/2022/08/27/Docker%E4%BB%8B%E7%BB%8D/"/>
-    <id>https://www.liuzx.me/2022/08/27/Docker%E4%BB%8B%E7%BB%8D/</id>
-    <published>2022-08-26T23:45:16.508Z</published>
-    <updated>2022-08-26T23:46:03.790Z</updated>
-    
-    
-    <summary type="html">&lt;h1 id=&quot;Docker&quot;&gt;&lt;a href=&quot;#Docker&quot; class=&quot;headerlink&quot; title=&quot;Docker&quot;&gt;&lt;/a&gt;Docker&lt;/h1&gt;&lt;ol&gt;
-&lt;li&gt;虚拟化技术与容器技术&lt;ol&gt;
-&lt;li&gt;虚拟化技术的理解&lt;ol&gt;
-&lt;li&gt;它是一种将计算机物理资源抽象化，转化成计算机虚拟资源以提供给程序使用&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;li&gt;虚拟化技术很好地解决了跨平台兼容的问题&lt;/li&gt;
-&lt;li&gt;虚拟化只是提高了计算机计算机资源的利用率，并不会减少资源的占用。&lt;/li&gt;
-&lt;li&gt;资源隔离&lt;ol&gt;
-&lt;li&gt;将程序分隔在不同的运行环境中&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;li&gt;容器技术&lt;ol&gt;
-&lt;li&gt;操作系统提供接口，让多个应用程序在不同的环境中独立运行，互不干扰。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;/ol&gt;</summary>
     
     
     

@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  <title>
+    
+    恍惚
+  </title>
+  <!-- Icon -->
+  
+    <link rel="shortcut icon" href="/images/hexo.svg">
+    
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<script src="/js/pace.min.js"></script>
+
+<meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="恍惚" type="application/atom+xml">
+</head>
+
+<body>
+  <main class="content">
+    <section class="outer">
+  <article id="post-Docker介绍" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+
+    
+    <div class="article-meta">
+      <a href="/2022/08/31/Docker%E4%BB%8B%E7%BB%8D/" class="article-date">
+  <time datetime="2022-08-31T02:16:23.414Z" itemprop="datePublished">2022-08-31</time>
+</a>
+      
+    </div>
+    
+
+    
+    
+<div class="tocbot"></div>
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+      
+        <h1 id="Docker介绍"><a href="#Docker介绍" class="headerlink" title="Docker介绍"></a>Docker介绍</h1><ol>
+<li>虚拟化技术与容器技术<ol>
+<li>虚拟化技术的理解<ol>
+<li>它是一种将计算机物理资源抽象化，转化成计算机虚拟资源以提供给程序使用</li>
+</ol>
+</li>
+<li>虚拟化技术很好地解决了跨平台兼容的问题</li>
+<li>虚拟化只是提高了计算机计算机资源的利用率，并不会减少资源的占用。</li>
+<li>资源隔离<ol>
+<li>将程序分隔在不同的运行环境中</li>
+</ol>
+</li>
+<li>容器技术<ol>
+<li>操作系统提供接口，让多个应用程序在不同的环境中独立运行，互不干扰。</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>Docker介绍<ol>
+<li>Docker属于操作系统层面的虚拟化技术</li>
+<li>Docker与传统的虚拟化技术的不同之处<ol>
+<li>Docker没有虚拟出硬件，并且它的容器直接运行于宿主内核，容器内并没有自己的内核</li>
+<li>传统的虚拟化技术需要虚拟出硬件，在其上运行一个操作系统，并且在这个操作系统里面运行应用程序</li>
+</ol>
+</li>
+<li>命名空间<ol>
+<li>集合相同模块的类，区分不同模块的同名类</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>Docker镜像<ol>
+<li>是一种特殊的文件系统，提供了 容器运行需要的库，配置文件，等等，还包含了容器运行需要的配置参数，它的核心精髓是保证了环境的一致性</li>
+<li>Docker镜像技术是一套统一的接口技术，它适配了不同的开发语言<ol>
+<li>Docker镜像采用分层存储结构，每一次的修改都只对当前所在的一层有效，对前面几层不起作用</li>
+</ol>
+</li>
+<li>中间层镜像:<ol>
+<li>是其他镜像依赖需要的镜像</li>
+<li>用于提高镜像复用性，加速镜像构建</li>
+</ol>
+</li>
+<li>删除镜像<ol>
+<li>两类删除行为：Untagged和Deleted</li>
+<li>有时候删除镜像，可能仅仅是取消了镜像的标签，也就是Untagged的意义，真正影响镜像删除的，要考虑其他镜像是否依赖当前要删除镜像的某一层，或者有容器依赖当前要删除镜像的某一层，或者有 别个标签指向了当前要删除的镜像，这种情况下就不会触发镜像删除行为，也就是Delected行为</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>Docker容器<ol>
+<li>容器是基于镜像构建，是独立运行的一个或一组应用</li>
+<li>容器也是分层存储的，容器在作为基础层的镜像之上又构建用于容器运行的存储层</li>
+<li>启动容器时，如果需要的镜像不存在，会自动pull下载</li>
+<li>容器里只会存在必须的资源，多余的资源不会存在，所以Docker对资源的利用率很高</li>
+<li>一个容器只有在执行任务时才会处于running状态，不管是否启动</li>
+<li>启动容器的命令为docker run &lt;image&gt;，如果要指定容器在后台运行可以指定-d参数</li>
+<li>启动处于exited状态的容器 docker container start [container-id]</li>
+<li>列出正在执行任务也即running状态的容器 docker container ls</li>
+<li>列出容器运行结果 docker container logs [containerId]</li>
+<li>对处于后台运行的容器进行操作可以使用docker exec或者attach命令，但推荐使用exec命令，因为exit容器后，不会终止容器</li>
+<li>docker container rm只能删除处于exited的容器，如果要删除处于running状态的容器,可以加-f参数</li>
+<li>删除所有处于exited状态的容器 docker container prune</li>
+<li>docker diff [container]查看对容器的更改</li>
+<li>docker commit -a xxx -m xxx containerName [REPOSITORY[:TAG]] 从容器创建一个新镜像</li>
+<li>docker history container查看镜像的历史记录</li>
+</ol>
+</li>
+<li>Docker数据卷<ol>
+<li>数据卷是容器用于管理数据的场所</li>
+<li>数据卷的特性<ol>
+<li>在多个容器之间共享</li>
+<li>对数据卷的生效会即时生效</li>
+<li>删除容器后，数据卷并不会消失</li>
+<li>对数据卷的更新，不会影响镜像</li>
+</ol>
+</li>
+<li>创建数据卷 docker volume create [volume-name]</li>
+<li>查看某个数据卷的具体信息docker volume inspect [volume-name]</li>
+<li>删除数据卷docker volume rm，如果要在删除容器的同时删除数据卷可以加上-v参数</li>
+<li>删除未挂载到容器的数据卷docker volume prune</li>
+</ol>
+</li>
+<li>Docker网络配置<ol>
+<li>-p -P都能指定端口<ol>
+<li>-P随机指定一个主机端口映射到容器开放的端口</li>
+<li>-p主动指定端口映射<ol>
+<li>几种格式的端口映射<ol>
+<li>hostPort:containerPort<ol>
+<li>这种情况下，不管本地的ip地址是啥，只要主机端口相同，他们指向同一个地址，也就是映射所有接口地址</li>
+</ol>
+</li>
+<li>ip:hostPort:containerPort<ol>
+<li>映射指定地址的映射端口，只能通过指定的ip地址加端口访问</li>
+</ol>
+</li>
+<li>ip::containerPort<ol>
+<li>映射到指定地址的任意端口，也就是说对于指定的ip地址，随机指定一个主机端口</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>Docker 容器互联<ol>
+<li>用自定义网络来互联容器<ol>
+<li>docker network create -d bridge my-net 其中-d参数指定网络类型</li>
+<li>docker run –network my-net busybox 使用–network参数 指定busybox容器链接到mynet网络</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>Dockerfile<ol>
+<li>是一个文本文件，以指令为基础一层层构建镜像</li>
+<li>如果不以任何镜像为基础，可以使用scratch镜像，scratch镜像是一种虚拟空白镜像</li>
+<li>使用指令书写命令的原则<ol>
+<li>能写在一层的命令尽量写在一个指令里，因为一个指令构建一层镜像</li>
+<li>尽力确保镜像只包含自己需要的东西，多余的东西记得及时清理，因为当前一层的镜像只能在当前一层处理，在下一层处理无效，负责会随着镜像的构建存在，造成镜像臃肿</li>
+</ol>
+</li>
+<li>docker build xxx命令用于构建镜像</li>
+<li>Dockerfile的文件名并不固定</li>
+<li>Dockerfile文件指令<ol>
+<li>RUN指令用于运行命令，每执行一次就会就会狗创建一层镜像</li>
+<li>COPY指令用于将源文件复制到目标文件</li>
+<li>ADD指令相当于进化版的COPY指令，只是增加了一些功能，ADD指令更适用于自动加压缩，权限调整等场合</li>
+<li>CMD指令跟RUN指令类似，只不过RUN指令用在容器构建时，而CMD指令用在指令运行时，CMD指令为启动的容器指定默认要执行的程序，只能有一个，如果有多个，则最后一个覆盖前面的，但它会被docker run参数中指定的命令覆盖</li>
+<li>ENV指令 设置环境变量，这样可以在全局环境中通过$引用这个环境变量</li>
+<li>ARG指令与ENV指令环境变量一致，不过它的作用域在Dockerfile内</li>
+<li>Volume指令定义匿名卷，容器会自动挂载到匿名卷</li>
+<li>EXPOSE指令声明要暴露出去的指令</li>
+<li>WORKDIR指令指定容器工作的目录</li>
+<li>USER指令用于指定执行后续程序需要的用户和用户组</li>
+<li>HEALTHCHECK指令用于指定程序监听docker容器服务的运行状态</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>Docker Compose<ol>
+<li>用于实现Docker容器集群的快速编排</li>
+<li>本质是定义和运行有多个容器的应用</li>
+<li>两个概念<ol>
+<li>服务<ol>
+<li>多个有相同镜像的实例</li>
+</ol>
+</li>
+<li>项目<ol>
+<li>相关联的多个容器组成的业务单元</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>Compose用python语言编写，可通过pip安装</li>
+<li>Docker Compose使用YAML文件对容器进行管理</li>
+<li>Compose模板文件<ol>
+<li>build指令指定Dockerfile文件所在的目录，可以利用这个指令构建镜像，而不用再从compose模板文件书写<ol>
+<li>context指令指定dockerfile文件所在目录</li>
+<li>dockerfile指令指定dockerfile文件名</li>
+<li>args指令指定构建镜像时的变量</li>
+<li>cache-form指令指定构建镜像时的缓存</li>
+<li>cap-add指令指定为容器增加的内核能力</li>
+<li>cap-drop指令指定为容器去掉的内核能力</li>
+<li>command指令指定容器启动后默认执行的命令</li>
+<li>container_name指令指定容器名称</li>
+<li>devices指令设定设备映射关系</li>
+<li>depends_on指令设备的依赖，先后启动的问题</li>
+<li>dns指令定义DNS服务器</li>
+<li>dns_search指令用于配置DNS搜索域</li>
+<li>tmpfs指令用于指定挂载一个tmpfs文件系统到容器</li>
+<li>env_file指令用于指定环境变量的路径</li>
+<li>environment指令用来设定环境变量</li>
+<li>expose指令指定容器向外暴露的端口，但不映射到宿主机</li>
+<li>external_links指令指定连接的compose外部的容器</li>
+<li>image指令指定镜像</li>
+<li>labels指令为容器添加元素据信息</li>
+<li>network_mode指令用来设置网络模式</li>
+<li>ports指令指定主机以及容器端口</li>
+<li>secrets指令用于存储敏感数据</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://www.liuzx.me/2022/08/31/Docker%E4%BB%8B%E7%BB%8D/" data-id="cl7gzo3dh0005ycv47u6m5j8y" class="article-share-link">
+        Share
+      </a>
+      
+    </footer>
+
+  </div>
+
+  
+  
+<nav class="article-nav">
+  
+  
+  <a href="/2022/08/27/Swiper%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/" class="article-nav-link">
+    <strong class="article-nav-caption">Older</strong>
+    <div class="article-nav-title"></div>
+  </a>
+  
+</nav>
+
+  
+
+  
+  
+  
+  
+
+</article>
+</section>
+    <footer class="footer">
+  <div class="outer">
+    <ul class="list-inline">
+      <li>恍惚 &copy; 2022</li>
+      
+        <li>
+          
+            <a href="https://beian.miit.gov.cn/" target="_blank"></a>
+            
+        </li>
+      
+      <li>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></li>
+      <li>theme  <a target="_blank" rel="noopener" href="https://github.com/zhwangart/hexo-theme-ocean">Ocean</a></li>
+    </ul>
+    <p><ul class="list-inline">
+  
+  <li><i class="fe fe-smile-alt tooltip" data-tooltip="UV"></i> <span id="busuanzi_value_site_uv"></span></li>
+  
+  <li><i class="fe fe-bookmark tooltip" data-tooltip="PV"></i> <span id="busuanzi_value_page_pv"></span></li>
+  
+</ul></p>
+  </div>
+</footer>
+  </main>
+  <aside class="sidebar">
+    <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/hexo.svg" alt="恍惚"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">Home</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/about">About</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link nav-item-search" title="Search">
+        <i class="fe fe-search"></i>
+        Search
+      </a>
+    </li>
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      <div class="totop" id="totop">
+  <i class="fe fe-rocket"></i>
+</div>
+    </li>
+    <li class="nav-item">
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="fe fe-feed"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+  </aside>
+  
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/jquery.justifiedGallery.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+
+<script src="/js/tocbot.min.js"></script>
+
+
+<script>
+  // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
+  tocbot.init({
+    tocSelector: '.tocbot',
+    contentSelector: '.article-entry',
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    positionFixedSelector: '.tocbot',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto',
+  });
+</script>
+
+
+
+<script src="/js/ocean.js"></script>
+
+</body>
+
+</html>
